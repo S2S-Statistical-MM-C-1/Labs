@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
 library(webexercises)
 ```
 
-# R and RStudio {#RStudio} TEST
+# R and RStudio {#RStudio}
 
 Welcome to the first S2S lab! The contents of these labs are based on the textbook [***Probability and Statistics with R***](https://read.kortext.com/reader/pdf/92741/A) by Ugarte, Militino and Arnholt. Today you will be introduced to R and RStudio and learn how to use them both to define and manipulate your own vectors. 
 
