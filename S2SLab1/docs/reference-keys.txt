@@ -1,4 +1,4 @@
-RStudio
+r-and-rstudio-rstudio-test
 downloadR
 downloadRS
 UseR
