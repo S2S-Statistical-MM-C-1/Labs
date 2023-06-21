@@ -1,5 +1,5 @@
 --- 
-title: "Welcome to S2S Labs"
+title: "S2S: Statistical Methods, Models and Computing"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
 library(webexercises)
 ```
 
-# Links to Labs
+# Links to S2S Labs{-}
 
 * [Lab 1](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab1/docs)
 
