@@ -1,9 +1,10 @@
 tab:birthtable
+tab:temptable
 packages
 data
 arrays
-matrices
-factors
-lists
-data-frames
+mat
+fact
+list
+df
 exercises

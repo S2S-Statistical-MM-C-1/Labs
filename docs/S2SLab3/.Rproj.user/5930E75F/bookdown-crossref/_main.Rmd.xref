@@ -1,0 +1,25 @@
+h1:reading Reading in Data
+h2:directory Setting your working directory
+h2:read.table 
+fig:chol-image chol.txt file
+h2:read.csv 
+h1:data Working With Data
+h2:checking Checking variables
+h2:dealing-with-na-values Dealing with  values
+h2:sorting-data-frames Sorting data frames
+h2:subsetting Subsetting
+h2:summarising-data Summarising data
+h2:creating-variables Creating variables
+tab:subject-table Cholesterol data for the fourteenth patient.
+h2:merging-data-frames Merging data frames
+h1:functions Functions
+h2:probability-functions Probability functions
+fig:normal-image Summary of probability functions for the standard normal distribution.
+tab:dist-tab Distribution names and arguments to use with probability functions.
+h2:flow-control Flow control
+h2:creating-functions Creating functions
+h1:exercises Further Exercises
+h2:exercise-1 Exercise 1
+h2:exercise-2 Exercise 2
+h2:exercise-3 Exercise 3
+

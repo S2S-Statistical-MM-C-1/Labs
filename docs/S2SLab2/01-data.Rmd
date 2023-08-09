@@ -1,17 +1,17 @@
 # Data Structures {#data}
 
-R uses various different type of 'data structures' which are really just ways to store information of varying types. A lot of the data structures R uses are defined in terms of vectors, so it is important you are familiar with constructing and manipulating vectors in R (see Lab 1<!-- could add link to github lab 1 once published -->).
+R uses various different types of 'data structures' which are really just ways to store information of varying types. A lot of the data structures R uses are defined in terms of vectors, so it is important you are familiar with constructing and manipulating vectors in R (see Lab 1<!-- could add link to github lab 1 once published -->).
 
 Some of the common data structures we will become familiar with are;
 
-* **vectors**
-* **arrays**
-* **matrices**
-* **factors**
-* **lists**
-* **data frames**
+* [**vectors**]()
+* [**arrays**](#arrays)
+* [**matrices**](#mat)
+* [**factors**](#fact)
+* [**lists**](#list)
+* [**data frames**](#df)
 
-## Arrays
+## Arrays {#arrays}
 
 Arrays are defined as multidimensional arrangements of elements. This means that rather than storing data in a one dimensional vector, you can spread the elements of this vector across multiple dimensions.
 
@@ -21,7 +21,7 @@ This sounds quite complicated so let's look at an example. First, let's create a
 vect <- 1:24
 ```
 
-We can then use the `array()` function to turn `vect` into an array. The `array()` function takes the following arguments:
+We can then use the `array()` function to turn the vector `vect` into an array. The `array()` function takes the following arguments:
 
 * `data =`: this is the vector of elements that we want to populate the array with.
 * `dim =`: this is another vector giving the maximum number of rows first, then the maximum number of columns and finally the maximum number of 'layers'.
@@ -33,11 +33,13 @@ A1 <- array(data = vect, dim = c(2, 4, 3))
 A1
 ```
 
-Here we have populated `A1` with the values 1 to 24, so that it has dimensions 2 $\times$ 4 $\times$ 3. This means that we have created 3 layers where each layer is a 2 $\times$ 4 matrix. The values from `vect` are entered into `A1` going down the columns first, then moving from left to right before moving onto the next layer. This order of entering elements is called column-major order, since columns are filled in first.
+Here we have populated `A1` with the values 1 to 24, so that it has dimensions 2 $\times$ 4 $\times$ 3. This means that we have created 3 layers where each layer is a 2 $\times$ 4 matrix.
+
+The values from `vect` are entered into `A1` going down the columns first, then moving from left to right before moving onto the next layer. This order of entering elements is called column-major order, since columns are filled in first.
 
 <!-- task for arrays? -->
 
-## Matrices
+## Matrices {#mat}
 
 Matrices can be thought of as two dimensional arrays i.e. they don't have an argument saying how many layers they should contain. Therefore, matrices can also be created using the `array()` function and ensuring that the `dim =` argument is provided with a vector only of length two. This vector then corresponds to the number of rows and columns, respectively, that the matrix has.
 
@@ -72,9 +74,9 @@ array(data = letters, dim = c(5, 5))
 
 It is also possible to create matrices using the `matrix()` function. This has the advantage of allowing you to specify whether the elements should be filled in using column-major order or row-major order (where the elements are filled in from left to right along rows and then from top to bottom). The arguments that the `matrix()` function can be given are:
 
-* `data =`: this is the vector of elements that we want to fill in the matrix with
-* `nrow =`: this is the number of rows the matrix should contain
-* `ncol =`: this is the number of columns the matrix should contain
+* `data =`: this is the vector of elements that we want to fill in the matrix with.
+* `nrow =`: this is the number of rows the matrix should contain.
+* `ncol =`: this is the number of columns the matrix should contain.
 * `byrow =`: this takes values `TRUE` or `FALSE` and states whether the elements should be entered in row-major order (`TRUE`) or column-major order (`FALSE`). By default, the value is `FALSE` and elements will be entered in column-major order if you miss out this argument.
 
 Only one of `nrow =` or `ncol =` needs to be included in the `matrix()` function because R will automatically calculate how many of the non-specified argument are required, based on the length of the vector given to `data =`.
@@ -151,7 +153,7 @@ dimnames(births) <- list(cities, years)
 births
 ```
 
-Here, we have used the function `dimnames()`. By itself, `dimnames()` will extract the row and column names of a matrix, but we can also set these names by using the `<-` operator. We have put the two vectors on the right hand side of the `<-` operator, meaning we want the row and column names to be these two vectors (we'll look at the `list()` function these vectors have been wrapped in in more detail in Section \@ref(lists)).
+Here, we have used the function `dimnames()`. By itself, `dimnames()` will extract the row and column names of a matrix, but we can also set these names by using the `<-` operator. We have put the two vectors on the right hand side of the `<-` operator, meaning we want the row and column names to be these two vectors (we'll look at the `list()` function these vectors have been wrapped in in more detail in Section \@ref(list)).
 
 We can now use either the row/column names to extract particular elements from the matrix. We do this using square brackets, `[ ]`, similar to with vectors, but we now need to specify the row and column we are interested in.
 
@@ -169,7 +171,10 @@ Note that when we use the row/column names, they are in quotation marks because 
 
 **Complete the code to show the number of births in Glasgow in all 3 years.**
 
+::: {.webex-code}
 `births[``r fitb(c(print(" \"Glasgow\", ", quote=FALSE), print(" \"Glasgow\", c(\"2017\", \"2018\", \"2019\") ", quote=FALSE), print(" \"Glasgow\", 1:3 ", quote=FALSE), print(" \"Glasgow\", c(1, 2, 3) ", quote=FALSE), print(" 2, ", quote=FALSE), print(" 2, c(\"2017\", \"2018\", \"2019\") ", quote=FALSE), print(" 2, 1:3 ", quote=FALSE), print(" 2, c(1, 2, 3) ", quote=FALSE)), ignore_ws=TRUE)``]`
+
+:::
 
 `r hide("Hint")`
 There are several ways we could extract the data for these years. For example, we can specify that we want the row relating to Glasgow using either `"Glasgow"` or simply `2`.
@@ -182,7 +187,7 @@ Alternatively, you could specify columns 1 to 3 using `1:3` or `c(1, 2, 3)`, or 
 :::
 
 <!-- avoid dimension reduction with drop=FALSE -->
-When extracting an entire row or column using `[ ]`, the object that. R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).
+When extracting an entire row or column using `[ ]`, the object that R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).
 
 ```{r mat9}
 dim(births["Edinburgh", ])
@@ -190,7 +195,7 @@ dim(births["Edinburgh", ])
 
 For example, the above code returns the value `NULL` when using the `dim()` function. `dim()` should return the dimensions of an array, but since the extracted row for births in Edinburgh is a vector, there are no dimensions to return.
 
-Instead, we can include the argument `drop = FALSE` within the square brackets to keep the returned row as a vector.
+Instead, we can include the argument `drop = FALSE` within the square brackets to keep the returned row as a matrix.
 
 ```{r mat10}
 dim(births["Edinburgh", , drop = FALSE])
@@ -200,8 +205,8 @@ Now we can see that the row is seen as a 1 $\times$ 3 matrix by R.
 We can apply a function across the rows or columns of a matrix to calculate the mean or standard deviation for example using the function `apply()`. The arguments that can be given to `apply()` include:
 
 * `X =`: this is the matrix (or array) we want to apply the function to.
-* `MARGIN =`: this tells R whether we want to apply the function to the rows or the columns. A value of `1` means function will be applied to the rows and `2` means the function will be applied to each column.
-* `FUN =`: this is the function we want to apply. It can be things like the mean, `mean`, median, `median`, or standard deviation, `sd`.
+* `MARGIN =`: this tells R whether we want to apply the function to the rows or the columns. A value of `1` means the function will be applied to the rows and `2` means the function will be applied to each column.
+* `FUN =`: this is the function we want to apply. It can be things like the mean (`mean`), median (`median`), or standard deviation (`sd`).
 
 For example, if we wanted to know the mean births for each city across the three years, we can use the following code.
 
@@ -211,12 +216,16 @@ apply(X = births, MARGIN = 1, FUN = mean)
 
 ::: {.webex-check .webex-box}
 
-**What is the standard deviation for the number of births in 2019?** *(Give your answer to three decimal places)*
+**What is the standard deviation for the number of births in 2019?**
 
-`r fitb(2337.263)`
+`r fitb(2337.263)` *(Give your answer to three decimal places)*
 
 `r hide("Hint")`
-We can calculate the standard deviation in all three years using the `apply()` function. Because we want to find the standard deviation in each column, we need to set `MARGIN = 2`. The `FUN`ction we should use is `sd`.
+We can calculate the standard deviation in all three years using the `apply()` function. Because we want to find the standard deviation in each column, we need to set `MARGIN = 2`. The `FUN`ction we should use is `sd`. That is;
+
+```{r}
+apply(X = births, MARGIN = 2, FUN = sd)
+```
 
 It is then easy to pick out the standard deviation for 2019.
 `r unhide()`
@@ -281,7 +290,7 @@ solve(X, z)
 
 This then gives the solution $\boldsymbol{y}=\begin{bmatrix}1&1&3\end{bmatrix}^\intercal$, which is what we expected to see.
 
-## Factors
+## Factors {#fact}
 
 Factors are similar to vectors in R, however they have additional information which gives the levels of the categories stored within the vector. This is obviously most useful when categorical data is being stored, for example someone's gender or marriage status.
 
@@ -303,7 +312,8 @@ degree1
 By itself, `degree` is not very informative about what level of degree each student was awarded. We can fill in the rest of this information using the `factor()` function.
 
 ```{r fact2}
-degree_factor1 <- factor(x = degree1, levels = 1:3, labels = c("Bachelor's", "Master's", "PhD"))
+degree_factor1 <- factor(x = degree1, levels = 1:3,
+                         labels = c("Bachelor's", "Master's", "PhD"))
 degree_factor1
 ```
 
@@ -358,7 +368,7 @@ survey
 
 :::
 
-## Lists
+## Lists {#list}
 
 Lists are objects in R that bring together elements of different modes (for example character, numeric or logical vectors or even matrices or arrays) into the same object. Lists are created using the `list()` function which doesn't have any particular arguments required. Instead, the name of each element is given as well as what this element should be - this could be a vector, a matrix or an array.
 
@@ -371,7 +381,9 @@ titanic <- list(director = "James Cameron",
                 release.date = "23/01/1998",
                 budget = 200000000,
                 gross.profit = 2222985568,
-                production.companies = c("Twentieth Century Fox", "Paramount Pictures", "Lightstorm Entertainment"))
+                production.companies = c("Twentieth Century Fox",
+                                         "Paramount Pictures",
+                                         "Lightstorm Entertainment"))
 titanic
 ```
 
@@ -383,7 +395,7 @@ titanic[[4]]
 titanic$release.date
 ```
 
-We could also be more specific and extract a particular entry from one of the elements of the list using single square brackets, `[ ]`, after the double square brackets or `$` operator. For example, if we wanted to know who the second billed actor is then we can use any of the following lines of code.
+We could also be more specific and extract a particular entry from one of the elements of the list using single square brackets, `[ ]`, after the double square brackets or `$` operator. For example, if we wanted to know who the second billed actor is, then we can use any of the following lines of code.
 
 ```{r list3}
 titanic[["actors"]][2]
@@ -399,11 +411,11 @@ names(titanic)
 
 <!-- task to create a list using list() -->
 
-## Data Frames
+## Data Frames {#df}
 
 Data frames in R are very similar to matrices. The key difference however is that whilst all elements in a matrix must be of the same mode, each column in a data frame can be of a different mode. If you needed to store a numeric vector, a logical vector and a character vector that all relate to the same subjects for example, then a data frame is the way to do this!
 
-Data frames are a very common type of data structure used within R. Most of the data you will see saved in packages (we'll see more about this later), or the data you will use for fitting statistical models will be saved in a data frame.
+Data frames are a very common type of data structure used within R. Most of the data you will see saved in packages, or the data you will use for fitting statistical models will be saved in a data frame.
 
 To create a data frame, we can use the function `data.frame()`. The only arguments needed are the pre-existing vectors, which all need to be of the same length, that you want to save within the data frame. Some additional arguments include:
 

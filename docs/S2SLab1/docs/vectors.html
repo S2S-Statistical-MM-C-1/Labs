@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Vectors | S2S Lab 1</title>
   <meta name="description" content="2 Vectors | S2S Lab 1" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Vectors | S2S Lab 1" />
   <meta property="og:type" content="book" />
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,10 +117,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="include/webex.css" type="text/css" />
 </head>
@@ -152,7 +148,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.7" data-path="vectors.html"><a href="vectors.html#filter"><i class="fa fa-check"></i><b>2.7</b> Filtering vectors</a></li>
 <li class="chapter" data-level="2.8" data-path="vectors.html"><a href="vectors.html#help"><i class="fa fa-check"></i><b>2.8</b> Getting help</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>3</b> Exercises</a></li>
+<li class="chapter" data-level="3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>3</b> Further Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -174,25 +175,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> Vectors<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Vectors are fundamental in R. They allow you store data of numerous different types, whether that be numbers, text or logical statements, and easily complete mathematical operations or extract certain elements of the data.</p>
 <p>Let's create some vectors in R to explore their properties. Copy and run the following code in your own R script.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vectors.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb1-2"><a href="vectors.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span></code></pre></div>
-<p>You should notice that two 'Values' appear in the <strong>Environment</strong> tab, <code>x</code> and <code>y</code>. This is because we have assigned values to each of these names using the <code>&lt;-</code> operator in the code above.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vectors.html#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-2"><a href="vectors.html#cb1-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span></code></pre></div>
+<p>You should notice that two '<code>Values</code>' appear in the <strong>Environment</strong> tab, <code>x</code> and <code>y</code>. This is because we have assigned values to each of these names using the <code>&lt;-</code> operator in the code above.</p>
 <ul>
 <li><code>x</code> is the single value 3, which can be thought of as a vector of length 1.</li>
-<li><code>y</code> is a vector of length 3 and of the form <span class="math inline">\(\begin{bmatrix}2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>. The function <code>c()</code> has been used to 'combine' these values into one vector.</li>
+<li><code>y</code> is a vector of length 3 and of the form <span class="math inline">\(\begin{bmatrix}2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>. The function <code>c()</code> has been used to '<strong>c</strong>ombine' these values into one vector.</li>
 </ul>
 <!--add link to Ugarte chapter 1.3 (or maybe at the end of vectors section?) -->
 <div id="addition" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Addition<a href="vectors.html#addition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can also use R to add vectors together. Let's try it out by running the following code.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="vectors.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="vectors.html#cb2-1" tabindex="-1"></a>x <span class="sc">+</span> y</span></code></pre></div>
 <pre><code>[1] 5 7 4</code></pre>
 <p>The output shown above should appear in the <strong>console</strong> at the bottom left of the RStudio window.</p>
 <p>Here, R has 'recycled' the element of the vector <code>x</code> until it is the same length as the vector <code>y</code>, and elementwise addition has then been completed. This essentially means R has completed <span class="math inline">\(3+2\)</span> to calculate the first element, <span class="math inline">\(3+4\)</span> to find the second and <span class="math inline">\(3+1\)</span> to find the third.</p>
 <p>What happens if we try to add together two vectors of unequal length, but they both have more than one element? We can try this out by creating a new, longer vector <span class="math inline">\(z=\begin{bmatrix}3&amp;3&amp;5&amp;8&amp;2\end{bmatrix}^\intercal\)</span> and then adding this to <code>y</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="vectors.html#cb4-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
-<span id="cb4-2"><a href="vectors.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="vectors.html#cb4-3" aria-hidden="true" tabindex="-1"></a>y <span class="sc">+</span> z</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="vectors.html#cb4-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="vectors.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="vectors.html#cb4-3" tabindex="-1"></a>y <span class="sc">+</span> z</span></code></pre></div>
 <pre><code>Warning in y + z: longer object length is not a multiple of shorter object
 length</code></pre>
 <pre><code>[1]  5  7  6 10  6</code></pre>
@@ -204,11 +205,11 @@ length</code></pre>
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="vectors.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb7-2"><a href="vectors.html#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb7-3"><a href="vectors.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="vectors.html#cb7-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
-<span id="cb7-5"><a href="vectors.html#cb7-5" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="vectors.html#cb7-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb7-2"><a href="vectors.html#cb7-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb7-3"><a href="vectors.html#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="vectors.html#cb7-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb7-5"><a href="vectors.html#cb7-5" tabindex="-1"></a>c</span></code></pre></div>
 <pre><code>[1] 4 4 1</code></pre>
 </div>
 </div>
@@ -216,7 +217,7 @@ Solution
 <div id="vectlog" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Logical operators<a href="vectors.html#vectlog" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vectors can contain logical values (<code>TRUE</code>/<code>FALSE</code>) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vectors.html#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vectors.html#cb9-1" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 <p>Here, R has again recycled the element from <code>x</code> to make it the same length as <code>y</code>, then it returns a vector telling us for which elements the statement <code>x &lt; y</code> is true. For example, the first element of <code>y</code> is 2 which is less than 3, so <code>x &lt; y</code> is <code>FALSE</code>.</p>
 <p>Other logical operators that we can use with vectors include:</p>
@@ -260,19 +261,11 @@ Solution
 <td align="center"><code>|</code></td>
 <td align="left">vector union</td>
 </tr>
-<tr class="odd">
-<td align="center"><code>&amp;&amp;</code></td>
-<td align="left">scalar intersection</td>
-</tr>
-<tr class="even">
-<td align="center"><code>||</code></td>
-<td align="left">scalar union</td>
-</tr>
 </tbody>
 </table>
 <p>Let's explore how these operators behave by creating two new logical vectors.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vectors.html#cb11-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb11-2"><a href="vectors.html#cb11-2" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vectors.html#cb11-1" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="vectors.html#cb11-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <div class="webex-box">
 <p><strong>Write some code to find:</strong></p>
 <ul>
@@ -285,26 +278,25 @@ Solution
 Solution
 </button>
 <p><strong>Intersection</strong>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="vectors.html#cb12-1" aria-hidden="true" tabindex="-1"></a>s <span class="sc">&amp;</span> t</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="vectors.html#cb12-1" tabindex="-1"></a>s <span class="sc">&amp;</span> t</span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 <p>We can see that the operator <code>&amp;</code> returns a <code>TRUE</code> statement only when both elements being compared are <code>TRUE</code>.</p>
 <p><strong>Union</strong>:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vectors.html#cb14-1" aria-hidden="true" tabindex="-1"></a>s <span class="sc">|</span> t</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vectors.html#cb14-1" tabindex="-1"></a>s <span class="sc">|</span> t</span></code></pre></div>
 <pre><code>[1] TRUE TRUE TRUE</code></pre>
 <p>The <code>|</code> operator returns a <code>TRUE</code> statement when either of the elements being compared are <code>TRUE</code></p>
 <p><strong>Inequality</strong>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="vectors.html#cb16-1" aria-hidden="true" tabindex="-1"></a>s <span class="sc">!=</span> t</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="vectors.html#cb16-1" tabindex="-1"></a>s <span class="sc">!=</span> t</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
 <p>The <code>!=</code> operator returns a <code>TRUE</code> statement only when both elements are different.</p>
 <p>Try using some of the other operators listed above to see if they return the vectors you expect.</p>
 </div>
 </div>
-<p>What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector, in other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (<code>[ ]</code>).</p>
+<p>What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (<code>[ ]</code>).</p>
 <p>For example, <code>z[4]</code> would extract the fourth element from <code>z</code>, that is the number 8.</p>
 <p>The following code can be used to check whether the second element of <code>s</code> is the same as the third element of <code>t</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="vectors.html#cb18-1" aria-hidden="true" tabindex="-1"></a>s[<span class="dv">2</span>] <span class="sc">==</span> t[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="vectors.html#cb18-1" tabindex="-1"></a>s[<span class="dv">2</span>] <span class="sc">==</span> t[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
-<p><strong>Note:</strong> since we have chosen only one element of the vectors here, this is when we would use the scalar logical operators <code>&amp;&amp;</code> and <code>||</code> to find the intersection and union respectively.</p>
 <div class="webex-box">
 <p><strong>Create the vectors <span class="math inline">\(u=\begin{bmatrix} 4 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> and <span class="math inline">\(v=\begin{bmatrix} 1 &amp; 0 &amp; 5 \end{bmatrix}^\intercal\)</span>. Write code to check</strong></p>
 <ul>
@@ -315,14 +307,16 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="vectors.html#cb20-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
-<span id="cb20-2"><a href="vectors.html#cb20-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="vectors.html#cb21-1" aria-hidden="true" tabindex="-1"></a>(u <span class="sc">+</span> v)[<span class="dv">1</span>] <span class="sc">==</span> (x <span class="sc">+</span> y)[<span class="dv">1</span>] <span class="co">#checking equality of the first elements</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="vectors.html#cb20-1" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb20-2"><a href="vectors.html#cb20-2" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span></code></pre></div>
+<p><strong>Equality of the first elements:</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="vectors.html#cb21-1" tabindex="-1"></a>(u <span class="sc">+</span> v)[<span class="dv">1</span>] <span class="sc">==</span> (x <span class="sc">+</span> y)[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 <p>Here we have wrapped both <code>u+v</code> and <code>x+y</code> in brackets first so that we can then index the resulting vector. Alternatively, you could save <code>u+v</code> and <code>x+y</code> as new vectors, called something different, using the <code>&lt;-</code> operator.</p>
 <p><code>u+v</code> is equal to <span class="math inline">\(\begin{bmatrix} 5 &amp; 4 &amp; 6 \end{bmatrix}^\intercal\)</span> so its first element is 5.
 <code>x+y</code> is equal to <span class="math inline">\(\begin{bmatrix} 5 &amp; 7 &amp; 4 \end{bmatrix}^\intercal\)</span> so its first element is also 5. It makes sense then that a <code>TRUE</code> statement is returned when checking the equality of the first elements of these two vectors.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="vectors.html#cb23-1" aria-hidden="true" tabindex="-1"></a>(u <span class="sc">+</span> v)[<span class="dv">3</span>] <span class="sc">==</span> (x <span class="sc">+</span> y)[<span class="dv">2</span>] <span class="co">#checking equality of the third and second elements respectively</span></span></code></pre></div>
+<p><strong>Equality of the third and second elements:</strong></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="vectors.html#cb23-1" tabindex="-1"></a>(u <span class="sc">+</span> v)[<span class="dv">3</span>] <span class="sc">==</span> (x <span class="sc">+</span> y)[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>[1] FALSE</code></pre>
 <p>Similarly, we can see that the third entry of <code>u+v</code> is 6 and the second entry of <code>x+y</code> is 7. Since these are clearly not equal we would expect R to return a <code>FALSE</code> statement when checking their equality, which we can see above.</p>
 </div>
@@ -332,24 +326,32 @@ Solution
 <h2><span class="header-section-number">2.3</span> Other types of vectors<a href="vectors.html#other-types-of-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>So far we have looked at numeric vectors and logical vectors. R can also store vectors with other types of elements, for example a character vector can be used to store strings of text.</p>
 <p>The code below shows how to create a character vector;</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="vectors.html#cb25-1" aria-hidden="true" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;sheep&quot;</span>, <span class="st">&quot;cow&quot;</span>, <span class="st">&quot;horse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="vectors.html#cb25-1" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;sheep&quot;</span>, <span class="st">&quot;cow&quot;</span>, <span class="st">&quot;horse&quot;</span>)</span></code></pre></div>
 <p>Vectors containing complex numbers can also be created as follows;</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="vectors.html#cb26-1" aria-hidden="true" tabindex="-1"></a>complex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">+</span>1i, <span class="dv">0</span><span class="sc">+</span>0i, <span class="dv">3</span><span class="sc">+</span>2i)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="vectors.html#cb26-1" tabindex="-1"></a>complex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">+</span>1i, <span class="dv">0</span><span class="sc">+</span>0i, <span class="dv">3</span><span class="sc">+</span>2i)</span></code></pre></div>
 <p>The function <code>typof()</code> is going to be useful for checking how R has stored the elements of a particular vector. To check the type of vector <code>animals</code> is, we can run the code;</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="vectors.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(animals)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="vectors.html#cb27-1" tabindex="-1"></a><span class="fu">typeof</span>(animals)</span></code></pre></div>
 <pre><code>[1] &quot;character&quot;</code></pre>
 <p>This tells us that R has stored <code>animals</code> as a character vector, meaning each element is stored as a string of text.</p>
 <div class="webex-check webex-box">
 <p><strong>What type of vector is <code>s</code>?</strong> <select class='webex-select'><option value='blank'></option><option value='answer'>logical</option><option value=''>numeric</option><option value=''>complex</option><option value=''>character</option></select></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" tabindex="-1"></a><span class="fu">typeof</span>(s)</span></code></pre></div>
+<pre><code>[1] &quot;logical&quot;</code></pre>
+<p>Using <code>typeof()</code>, we can see that <code>s</code> is stored by R as a logical vector.</p>
+</div>
 </div>
 <p>What happens if we try to combine two vectors which are of different types in R? Let's run some code and see.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(t, y) <span class="co">#t is a logical vector and y is a numeric vector</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" tabindex="-1"></a><span class="fu">c</span>(t, y)</span></code></pre></div>
 <pre><code>[1] 0 1 1 2 4 1</code></pre>
-<p>Here R has returned the vector <span class="math inline">\(\begin{bmatrix} 0&amp;1&amp;1&amp;2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>, rather than <span class="math inline">\(\begin{bmatrix} \mbox{FALSE} &amp; \mbox{TRUE} &amp; \mbox{TRUE} &amp; 2 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> as might be expected. So what's happened?</p>
-<p>When R combines vectors of different types it will ensure all the elements are of the same type as this is how vectors need to be stored in R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.</p>
+<p>Here, <code>t</code> is a logical vector and <code>y</code> is a numeric vector. R has returned the vector <span class="math inline">\(\begin{bmatrix} 0&amp;1&amp;1&amp;2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>, rather than <span class="math inline">\(\begin{bmatrix} \mbox{FALSE} &amp; \mbox{TRUE} &amp; \mbox{TRUE} &amp; 2 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> as might be expected. So what's happened?</p>
+<p>When R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.</p>
 <p>The entries <code>TRUE</code> and <code>FALSE</code> within the vector <code>t</code> therefore need to be presented numerically. A <code>FALSE</code> statement will take the value 0 and a <code>TRUE</code> statement will take the value 1.</p>
-<p>Let's look at combining a numeric vector with a complex vector.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(y, complex) <span class="co">#y is a numeric vector and &#39;complex&#39; is a vector containing complex numbers</span></span></code></pre></div>
+<p>Let's look at combining a numeric vector with a complex vector. Remember that <code>y</code> is a numeric vector and <code>complex</code> is a vector containing complex numbers.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="vectors.html#cb33-1" tabindex="-1"></a><span class="fu">c</span>(y, complex)</span></code></pre></div>
 <pre><code>[1] 2+0i 4+0i 1+0i 2+1i 0+0i 3+2i</code></pre>
 <p>Now all elements are presented as a complex number. That is because R considers complex vectors to be more complex than numeric vectors.</p>
 <div class="webex-box">
@@ -358,11 +360,11 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="vectors.html#cb33-1" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">c</span>(s, animals)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">c</span>(s, animals)</span></code></pre></div>
 <pre><code>[1] &quot;TRUE&quot;  &quot;TRUE&quot;  &quot;FALSE&quot; &quot;dog&quot;   &quot;sheep&quot; &quot;cow&quot;   &quot;horse&quot;</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(combined)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="vectors.html#cb37-1" tabindex="-1"></a><span class="fu">typeof</span>(combined)</span></code></pre></div>
 <pre><code>[1] &quot;character&quot;</code></pre>
-<p>The resulting vector is <span class="math inline">\(\begin{bmatrix} \mbox{&#39;TRUE&#39;} &amp; \mbox{&#39;TRUE&#39;} &amp; \mbox{&#39;FALSE&#39;} &amp; \mbox{&#39;dog&#39;} &amp; \mbox{&#39;sheep&#39;} &amp; \mbox{&#39;cow&#39;} &amp; \mbox{&#39;horse&#39;} \end{bmatrix}^\intercal\)</span> which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).</p>
+<p>The resulting vector is <span class="math inline">\(\begin{bmatrix} ``\mbox{TRUE&quot;} &amp; ``\mbox{TRUE&quot;} &amp; ``\mbox{FALSE&quot;} &amp; ``\mbox{dog&quot;} &amp; ``\mbox{sheep&quot;} &amp; ``\mbox{cow&quot;} &amp; ``\mbox{horse&quot;} \end{bmatrix}^\intercal\)</span> which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).</p>
 </div>
 </div>
 <p>It is possible to coerce vectors of one type to be another type. This can be done using one of the functions</p>
@@ -373,11 +375,11 @@ Solution
 <li><code>as.character()</code></li>
 </ul>
 <p>For example, if we wanted to change the logical vector <code>s</code> to be a numeric vector we could use the following code.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="vectors.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(s)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="vectors.html#cb39-1" tabindex="-1"></a><span class="fu">as.numeric</span>(s)</span></code></pre></div>
 <pre><code>[1] 1 1 0</code></pre>
 <p>We again see that <code>TRUE</code> statements have been given the value 1 and <code>FALSE</code> statements have been given the value 0.</p>
 <p>It is important to ensure that this coercion makes sense to do! It doesn't make much sense to represent the vector <code>animals</code> as a numerical vector, and in fact if we tried to R would show us a warning message.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="vectors.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(animals)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="vectors.html#cb41-1" tabindex="-1"></a><span class="fu">as.numeric</span>(animals)</span></code></pre></div>
 <pre><code>Warning: NAs introduced by coercion</code></pre>
 <pre><code>[1] NA NA NA NA</code></pre>
 <p>R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with <code>NA</code>. This tells us that each element of the now numeric vector doesn't have a value.</p>
@@ -387,26 +389,29 @@ Solution
 <h2><span class="header-section-number">2.4</span> Indexing vectors<a href="vectors.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We have seen briefly how to index vectors using square brackets (<code>[ ]</code>) but we can now look at indexing in more detail. Specific elements can be extracted using positive indices or can be omitted from a vector using negative indices.</p>
 <p>Let's again look at the vector <code>z</code> (remember <span class="math inline">\(z=\begin{bmatrix}3&amp;3&amp;5&amp;8&amp;2 \end{bmatrix}^\intercal\)</span>) and extract the first two elements.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="vectors.html#cb42-1" aria-hidden="true" tabindex="-1"></a>z[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="vectors.html#cb44-1" tabindex="-1"></a>z[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>[1] 3 3</code></pre>
+<p>In order to extract these two elements, we need to provide a vector giving the positions of the elements we want within the square brackets, <code>[ ]</code>.</p>
 <p>If we wanted to remove the third entry from <code>z</code> we can use the following code.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="vectors.html#cb44-1" aria-hidden="true" tabindex="-1"></a>z[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vectors.html#cb46-1" tabindex="-1"></a>z[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>[1] 3 3 8 2</code></pre>
 <p>Note that it is not possible to use both positive and negative indices at the same time, so we couldn't remove the first entry of a vector at the same time as extracting the second and third entries for example.</p>
 <div class="webex-check webex-box">
 <p><strong>Complete the code that would remove the third and fourth elements from the vector <code>animals</code>.</strong></p>
+<div class="webex-code">
 <p><code>animals[</code><input class='webex-solveme nospaces' size='9' data-answer='["-c(3, 4)","c(-3, -4)","c(1, 2)"]'/><code>]</code></p>
+</div>
 <div class="webex-solution">
 <button>
 Hint
 </button>
 <p>There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vectors.html#cb46-1" aria-hidden="true" tabindex="-1"></a>animals[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="vectors.html#cb48-1" tabindex="-1"></a>animals[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>[1] &quot;dog&quot;   &quot;sheep&quot;</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="vectors.html#cb48-1" aria-hidden="true" tabindex="-1"></a>animals[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="vectors.html#cb50-1" tabindex="-1"></a>animals[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>[1] &quot;dog&quot;   &quot;sheep&quot;</code></pre>
 <p>Alternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="vectors.html#cb50-1" aria-hidden="true" tabindex="-1"></a>animals[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="vectors.html#cb52-1" tabindex="-1"></a>animals[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>[1] &quot;dog&quot;   &quot;sheep&quot;</code></pre>
 </div>
 </div>
@@ -421,13 +426,13 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="vectors.html#cb52-1" aria-hidden="true" tabindex="-1"></a>binary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb52-2"><a href="vectors.html#cb52-2" aria-hidden="true" tabindex="-1"></a>logical <span class="ot">&lt;-</span> <span class="fu">as.logical</span>(binary)</span>
-<span id="cb52-3"><a href="vectors.html#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="vectors.html#cb52-4" aria-hidden="true" tabindex="-1"></a>logical[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="vectors.html#cb54-1" tabindex="-1"></a>binary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb54-2"><a href="vectors.html#cb54-2" tabindex="-1"></a>logical <span class="ot">&lt;-</span> <span class="fu">as.logical</span>(binary)</span>
+<span id="cb54-3"><a href="vectors.html#cb54-3" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="vectors.html#cb54-4" tabindex="-1"></a>logical[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE</code></pre>
 <p>In the above code we have chosen to extract the first and third elements. Alternatively, we could remove the second and fourth elements instead.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="vectors.html#cb54-1" aria-hidden="true" tabindex="-1"></a>logical[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="vectors.html#cb56-1" tabindex="-1"></a>logical[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -437,27 +442,27 @@ Solution
 <p>So far we have manually entered the elements of all the vectors we have created. If a vector is simply a sequence of numbers (following some pattern), R has some nice functions which will speed up how we create these vectors.</p>
 <p>The operator <code>from:to</code> can be used to generate a sequence of integers from the number on the left hand side (<code>from</code>), up to the number on the right hand side (<code>to</code>). All we need to do is change the values of <code>from</code> and <code>to</code>.</p>
 <p>The following code generates a sequence of integers from 2 up to 8.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="vectors.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span><span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="vectors.html#cb58-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span><span class="dv">8</span></span></code></pre></div>
 <pre><code>[1] 2 3 4 5 6 7 8</code></pre>
 <p>This can be useful if we want to extract (or omit) a sequence of elements from a vector which are all next to each other. Let's start by creating quite a long vector (the code <code>letters</code> in R will generate a vector of all 26 lowercase letters of the alphabet). If we then want to extract the first five letters of the alphabet, we can use the code <code>1:5</code> within our indexing. The following code shows how this is done.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="vectors.html#cb58-1" aria-hidden="true" tabindex="-1"></a>longvector <span class="ot">&lt;-</span> letters</span>
-<span id="cb58-2"><a href="vectors.html#cb58-2" aria-hidden="true" tabindex="-1"></a>longvector[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="vectors.html#cb60-1" tabindex="-1"></a>longvector <span class="ot">&lt;-</span> letters</span>
+<span id="cb60-2"><a href="vectors.html#cb60-2" tabindex="-1"></a>longvector[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>[1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
 <p>What if we want to generate a non-consecutive sequence of numbers? What about a sequence of non-integer values?</p>
 <p>We can do this using the function <code>seq()</code> in R. A function is a piece of code that tells R to complete some predetermined steps which will depend on the values provided to some 'arguments' within the brackets <code>( )</code>. The arguments that the function <code>seq()</code> can be provided with are:</p>
 <ul>
-<li><code>from =</code>: this is the starting value of our sequence (it can be an integer or a non-integer)</li>
-<li><code>to =</code>: this is the final value of our sequence (it can be an integer or a non-integer)</li>
-<li><code>by =</code>: this is the size of the jump between consecutive numbers in our sequence</li>
-<li><code>length.out =</code>: this is the total number of values we want to be included in our sequence</li>
+<li><code>from =</code>: this is the starting value of our sequence (it can be an integer or a non-integer).</li>
+<li><code>to =</code>: this is the final value of our sequence (it can be an integer or a non-integer).</li>
+<li><code>by =</code>: this is the size of the jump between consecutive numbers in our sequence.</li>
+<li><code>length.out =</code>: this is the total number of values we want to be included in our sequence.</li>
 </ul>
 <p>Hopefully you can see that if we specify each of <code>to =</code>, <code>by =</code> and <code>length.out =</code> then they might not necessarily all match up. Therefore we actually only need to specify two of <code>to =</code>, <code>by =</code> or <code>length.out =</code> within the <code>seq()</code> function.</p>
 <p>Let's look at some examples of using <code>seq()</code>.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="vectors.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="vectors.html#cb62-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span></code></pre></div>
 <pre><code> [1] 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 3.8 4.0</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="vectors.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">3</span>, <span class="at">to =</span> <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="vectors.html#cb64-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">3</span>, <span class="at">to =</span> <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">9</span>)</span></code></pre></div>
 <pre><code>[1] 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="vectors.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="vectors.html#cb66-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>[1] 4.0 4.5 5.0 5.5 6.0 6.5 7.0</code></pre>
 <div class="webex-box">
 <p><strong>Write some code to create the sequence 4.10, 4.15, 4.20, 4.25, 4.30, 4.35, 4.40 using the function <code>seq()</code></strong></p>
@@ -466,11 +471,11 @@ Solution
 Solution
 </button>
 <p>There are three different ways we could generate this sequence using the <code>seq()</code> function.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="vectors.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">to =</span> <span class="fl">4.40</span>, <span class="at">by =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="vectors.html#cb68-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">to =</span> <span class="fl">4.40</span>, <span class="at">by =</span> <span class="fl">0.05</span>)</span></code></pre></div>
 <pre><code>[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="vectors.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">to =</span> <span class="fl">4.40</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="vectors.html#cb70-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">to =</span> <span class="fl">4.40</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="vectors.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">by =</span> <span class="fl">0.05</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="vectors.html#cb72-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">4.10</span>, <span class="at">by =</span> <span class="fl">0.05</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40</code></pre>
 </div>
 </div>
@@ -479,20 +484,20 @@ Solution
 <h2><span class="header-section-number">2.6</span> Repeating constants<a href="vectors.html#repeat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Another function in R that's going to be useful is the <code>rep()</code> function. This allows us to create a vector which consists of repeated elements, or repeated sequences of elements. The arguments that <code>rep()</code> can be provided with are:</p>
 <ul>
-<li><code>x =</code>: this is value (or sequence) that we want to be repeated</li>
-<li><code>times =</code>: this is the number of times the value should be repeated - if <code>x</code> is a sequence then the full sequence will be repeated this many times</li>
-<li><code>each =</code>: if <code>x</code> is a sequence then this is the number of times the first element of the sequence should be repeated before moving on to repeating the second element and so on</li>
-<li><code>length.out =</code>: this is the total number of elements we want to be included in the vector of repeated values</li>
+<li><code>x =</code>: this is the value (or sequence) that we want to be repeated.</li>
+<li><code>times =</code>: this is the number of times the value should be repeated - if <code>x</code> is a sequence then the full sequence will be repeated this many times.</li>
+<li><code>each =</code>: if <code>x</code> is a sequence then this is the number of times the first element of the sequence should be repeated before moving on to repeating the second element and so on.</li>
+<li><code>length.out =</code>: this is the total number of elements we want to be included in the vector of repeated values.</li>
 </ul>
 <p>If we specify all of <code>times =</code>, <code>each =</code> and <code>length.out =</code>, they might not necessarily be in agreement with each other. Therefore, only one of <code>times =</code>, <code>each =</code> or <code>length.out =</code> needs to be specified.</p>
 <p>Let's look at some examples of using <code>rep()</code>.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="vectors.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">times =</span> <span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="vectors.html#cb74-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">times =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>[1] 2 2 2 2 2 2</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="vectors.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="vectors.html#cb76-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>[1] 1 1 2 2 3 3</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="vectors.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">times =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="vectors.html#cb78-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">times =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code></pre></div>
 <pre><code> [1] 1 2 2 3 3 3 4 4 4 4</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="vectors.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="at">length.out =</span> <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="vectors.html#cb80-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="at">length.out =</span> <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
 <div class="webex-box">
 <p><strong>Write some code to create each of the following repeating sequences using <code>rep()</code>:</strong></p>
@@ -505,11 +510,11 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="vectors.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="vectors.html#cb82-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>[1] 3 4 5 3 4 5 3 4 5</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="vectors.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>), <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="vectors.html#cb84-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>), <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>[1] 2 2 4 4 6 6</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="vectors.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="vectors.html#cb86-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>[1] &quot;blue&quot; &quot;blue&quot; &quot;blue&quot; &quot;red&quot;  &quot;red&quot; </code></pre>
 </div>
 </div>
@@ -526,8 +531,8 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="vectors.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">7</span>, <span class="at">by =</span> <span class="dv">1</span>), </span>
-<span id="cb86-2"><a href="vectors.html#cb86-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">times =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="vectors.html#cb88-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>, </span>
+<span id="cb88-2"><a href="vectors.html#cb88-2" tabindex="-1"></a>    <span class="at">times =</span> <span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">times =</span> <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>[1] 2 3 3 4 5 5 6 7 7</code></pre>
 </div>
 </div>
@@ -535,15 +540,15 @@ Solution
 <div id="filter" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> Filtering vectors<a href="vectors.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can combine what we have already learned in terms of logical operators (Section <a href="vectors.html#vectlog">2.2</a>) and indexing vectors (Section <a href="vectors.html#index">2.4</a>) in order to extract elements which satisfy certain conditions.</p>
-<p>For example, if we create the vector <span class="math inline">\(\begin{bmatrix}2 &amp; 2 &amp; 3 &amp; 6 \end{bmatrix}\)</span>, then we can extract the elements of this vector which are greater than or equal to 3 in one easy step.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="vectors.html#cb88-1" aria-hidden="true" tabindex="-1"></a>vect <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="cb88-2"><a href="vectors.html#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-3"><a href="vectors.html#cb88-3" aria-hidden="true" tabindex="-1"></a>vect[vect <span class="sc">&gt;=</span> <span class="dv">3</span>]</span></code></pre></div>
+<p>For example, if we create the vector <span class="math inline">\(\begin{bmatrix}2 &amp; 2 &amp; 3 &amp; 6 \end{bmatrix}^\intercal\)</span>, then we can extract the elements of this vector which are greater than or equal to 3 in one easy step.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="vectors.html#cb90-1" tabindex="-1"></a>vect <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb90-2"><a href="vectors.html#cb90-2" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="vectors.html#cb90-3" tabindex="-1"></a>vect[vect <span class="sc">&gt;=</span> <span class="dv">3</span>]</span></code></pre></div>
 <pre><code>[1] 3 6</code></pre>
 <p>This works because R will initially run the logical operator <code>vect &gt;= 3</code> which will return the following logical vector.</p>
 <pre><code>[1] FALSE FALSE  TRUE  TRUE</code></pre>
 <p>Using this logical vector to index inside the square brackets returns exactly the same result as above.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="vectors.html#cb91-1" aria-hidden="true" tabindex="-1"></a>vect[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="vectors.html#cb93-1" tabindex="-1"></a>vect[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)]</span></code></pre></div>
 <pre><code>[1] 3 6</code></pre>
 <div class="webex-box">
 <p><strong>Write some code to extract the elements of the vector <code>z</code> which are greater than 5.</strong></p>
@@ -551,17 +556,17 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="vectors.html#cb93-1" aria-hidden="true" tabindex="-1"></a>z[z <span class="sc">&gt;</span> <span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="vectors.html#cb95-1" tabindex="-1"></a>z[z <span class="sc">&gt;</span> <span class="dv">5</span>]</span></code></pre></div>
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
 <p>A function within R which can be used to give the same results as logical operators within the square brackets is the <code>subset()</code> function. This returns the elements of a specified vector which satisfy a given logical expression. The arguments that <code>subset()</code> can be provided with are:</p>
 <ul>
-<li><code>x =</code>: this is the vector we want to extract elements from</li>
-<li><code>subset =</code>: this is the logical expression used to select the elements to keep</li>
+<li><code>x =</code>: this is the vector we want to extract elements from.</li>
+<li><code>subset =</code>: this is the logical expression used to select the elements to keep.</li>
 </ul>
 <p>We can use <code>subset()</code> to extract the elements of the vector <code>vect</code> which are greater than or equal to 3, exactly as we did before.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="vectors.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> vect, <span class="at">subset =</span> (vect <span class="sc">&gt;=</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="vectors.html#cb97-1" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> vect, <span class="at">subset =</span> (vect <span class="sc">&gt;=</span> <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>[1] 3 6</code></pre>
 <div class="webex-box">
 <p><strong>Extract the elements of the vector <code>z</code> which are greater than 5 using the <code>subset()</code> function.</strong></p>
@@ -569,7 +574,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="vectors.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> z, <span class="at">subset =</span> (z <span class="sc">&gt;</span> <span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="vectors.html#cb99-1" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> z, <span class="at">subset =</span> (z <span class="sc">&gt;</span> <span class="dv">5</span>))</span></code></pre></div>
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
@@ -580,9 +585,9 @@ Solution
 <h2><span class="header-section-number">2.8</span> Getting help<a href="vectors.html#help" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you are ever unsure of the arguments required in a particular function in R, or even what that function does, there are ways to find out. R contains extensive help files on any function that can be used. To access these, simply put a <code>?</code> in front of the function name, or use the function <code>help()</code>.</p>
 <p>For example, if we were unsure what the function <code>rep()</code> is used for, then we can run either of the following lines of code.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="vectors.html#cb99-1" aria-hidden="true" tabindex="-1"></a>?rep</span></code></pre></div>
-<pre><code>starting httpd help server ... done</code></pre>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="vectors.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(rep)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="vectors.html#cb101-1" tabindex="-1"></a>?rep</span>
+<span id="cb101-2"><a href="vectors.html#cb101-2" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="vectors.html#cb101-3" tabindex="-1"></a><span class="fu">help</span>(rep)</span></code></pre></div>
 <hr />
 <p>For more information on accessing the online and inbuilt help in RSudio, see <a href="https://read.kortext.com/reader/pdf/92741/14">Section 1.5 Getting Help</a> in <em>Probability and Statistics with R</em>.</p>
 <!-- `args()` only gives the argument names for more complex functions like `lm()` which haven't been introduced yet -->
@@ -641,7 +646,7 @@ check_func = function() {
     this.innerHTML = "Hide Answers";
   } else {
     cl.add("unchecked");
-    this.innerHTML = "Show Answers";
+    this.innerHTML = "Check Answers";
   }
 }
 
@@ -751,7 +756,7 @@ window.onload = function() {
     check_sections[i].classList.add("unchecked");
 
     let btn = document.createElement("button");
-    btn.innerHTML = "Show Answers";
+    btn.innerHTML = "Check Answers";
     btn.classList.add("webex-check-button");
     btn.onclick = check_func;
     check_sections[i].appendChild(btn);

@@ -1,5 +1,5 @@
 ---
-title: "S2S Lab 3 - Note to Iain - MB had to comment out data-ans2, data-ans5.2, data-ans7.1 and data-ans7.4 to get it to compile on his PC"
+title: "S2S Lab 3"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -16,7 +16,7 @@ set.seed(1406)
 
 # Reading in Data {#reading}
 
-In Lab 2 <!--link to lab 2 -->, we saw how to read data frames into our **Environment** tab from a pre-installed and loaded R package. In reality, the data you are using won't always come from an R package and will likely be stored elsewhere. In this lab we will learn how to read data into R from different locations.
+In Lab 2, <!--link to lab 2 --> we saw how to read data frames into our **Environment** tab from a pre-installed and loaded R package. In reality, the data you are using won't always come from an R package and will likely be stored elsewhere. In this lab we will learn how to read data into R from different locations.
 
 ## Setting your working directory {#directory}
 
@@ -46,13 +46,13 @@ The only necessary argument in `read.table()` is `file =`, however it is always 
 
 For example, "*chol.txt*" is shown in Figure \@ref(fig:chol-image). This is a data set from an observational experiment measuring the cholesterol levels of patients and their smoking status. The variables included are:
 
-* "id": a unique code identifying each patient in the experiment.
-* "ldl": a measure of each patient's low-density lipoprotein (LDL) cholesterol level.
-* "hdl": a measure of each patient's high-density lipoprotein (HDL) cholesterol level.
-* "trig": a measure of the triglycerides levels in each patient's blood
-* "age": the patient's age in years.
-* "gender": the patient's gender (female or male).
-* "smoke": whether a patient is a current-smoker, ex-smoker, or non-smoker.
+* `"id"`: a unique code identifying each patient in the experiment.
+* `"ldl"`: a measure of each patient's low-density lipoprotein (LDL) cholesterol level.
+* `"hdl"`: a measure of each patient's high-density lipoprotein (HDL) cholesterol level.
+* `"trig"`: a measure of the triglycerides levels in each patient's blood.
+* `"age"`: the patient's age in years.
+* `"gender"`: the patient's gender (female or male).
+* `"smoke"`: whether a patient is a current-smoker, ex-smoker, or non-smoker.
 
 We can see in Figure \@ref(fig:chol-image) that "*chol.txt*" does include column names (i.e `header = TRUE`) and that each element of the data set is separated with a space (i.e. `sep = ""`). The missing values in "*chol.txt*" are already represented by `"NA"`, so we don't need to worry about `na.strings =`.
 
@@ -67,7 +67,7 @@ chol <- read.table(file = "chol.txt", header = TRUE)
 ```
 
 ```{r read1.2, echo=FALSE}
-chol <- read.table(file = "Data/chol.txt", header = TRUE)
+chol <- read.table(file = "Data/chol.txt", header = TRUE, fileEncoding = 'UTF-8-BOM')
 ```
 
 Note that we have left out `sep = ""` because this is the default value of the argument so it is not required to type it in the function `read.table()`.
@@ -88,6 +88,14 @@ Again, the only necessary argument in `read.csv()` is `file =`.
 
 **Read the file "*edu.csv*" into R and save it as a data frame called `education`.**
 
+This is a data set containing information on the total numbers of pupils and teachers in schools of different education levels in Scotland. The variables included are:
+
+* `"year"`: the year measurements were taken in (2016-2022).
+* `"level"`: the level of education measurements were taken from ("ELC", "Primary" or "Secondary").
+* `"schools"`: the total number of schools across Scotland in the given year/level combination.
+* `"teachers"`: the total number of teachers employed in all the schools in the given year/level combination.
+* `"pupils"`: the total number of pupils attending all the schools in the given year/level combination.
+
 `r hide("Solution")`
 If you were to look at the original file "*edu.csv*", you would see something similar to Figure \@ref(fig:edu-image). Here, we can see that there are column headings and that there are two missing values denoted by "*".
 
@@ -102,7 +110,8 @@ education <- read.csv(file = "edu.csv", na.strings = "*")
 ```
 
 ```{r read2.2, echo=FALSE}
-education <- read.csv(file = "Data/edu.csv", na.strings = "*")
+education <- read.csv(file = "Data/edu.csv", na.strings = "*", fileEncoding = 'UTF-8-BOM')
+# Added fileEncoding = 'UTF-8-BOM' argument here and following to avoid first variable name being prefaced with "ï.." on MB's PC
 ```
 `r unhide()`
 

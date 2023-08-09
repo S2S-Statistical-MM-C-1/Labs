@@ -1,0 +1,2 @@
+"0","education <- read.csv(file = ""Data/edu.csv"", na.strings = ""*"", fileEncoding = 'UTF-8-BOM')"
+"0","# Added fileEncoding = 'UTF-8-BOM' argument here and following to avoid first variable name being prefaced with ""ï.."" on MB's PC"

@@ -1,0 +1,9 @@
+tab:birthtable
+packages
+data
+arrays
+matrices
+factors
+lists
+data-frames
+exercises

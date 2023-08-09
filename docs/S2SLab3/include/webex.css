@@ -16,6 +16,10 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
+.webex-code {
+  background-color: rgba(127, 127, 127, 0.05);
+}
+
 .webex-total_correct {
   margin-left: 1em;
 }
