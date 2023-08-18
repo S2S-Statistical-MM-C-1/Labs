@@ -1,0 +1,6 @@
+<ul style:"margin-top:-0.6em; margin-left:1.2em;">
+  `meansX[i] <- mean(``r fitb("rnorm")``(nx, mean = ``r fitb(90)``, sd = ``r fitb(12)``))`
+</ul>
+  <ul style:"margin-top:-0.6em;">
+  `}`
+</ul>
