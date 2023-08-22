@@ -136,7 +136,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#central-limit-theorem"><i class="fa fa-check"></i><b>1.1</b> Central Limit Theorem</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="sampling-distribution-for-bar-x---bar-y.html"><a href="sampling-distribution-for-bar-x---bar-y.html"><i class="fa fa-check"></i><b>2</b> Sampling distribution for <span class="math inline">\(\bar X - \bar Y\)</span></a></li>
-<li class="chapter" data-level="3" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>3</b> Further Exercises</a></li>
+<li class="chapter" data-level="3" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>3</b> Further Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -168,15 +172,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Z=\frac{\bar X-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,\, 1)
 \]</span>
 as <span class="math inline">\(n\rightarrow\infty\)</span>.</p>
-<p>This can be rephrased to say that the sampling distribution of <span class="math inline">\(\bar X\)</span> is approximately <span class="math inline">\(N\Big(\mu, \frac{\sigma}{\sqrt{n}}\Big)\)</span>, provided the size of the sample taken, <span class="math inline">\(n\)</span>, is sufficiently large.</p>
-<!--recreate figure 6.2??-->
-<!--code6.12/6.13 use X~Uniform(-11, 41) -->
+<p>This can be rephrased to say that the sampling distribution of <span class="math inline">\(\bar X\)</span> is approximately <span class="math inline">\(N\Big(\mu,\,\frac{\sigma}{\sqrt{n}}\Big)\)</span>, provided the size of the sample taken, <span class="math inline">\(n\)</span>, is sufficiently large.</p>
 <p>This term <em>sufficiently large</em> should make you wonder, how big does a sample need to be to be considered sufficiently large? This actually depends on the distribution that the random variable <span class="math inline">\(X\)</span> follows.</p>
 <p>Let's look at an example of sampling from different distributions to determine how big a sample we need for the sampling distribution of <span class="math inline">\(\bar X\)</span> to be considered normal. Specifically, we will sample from the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions. Note that both these distributions have mean and standard deviation approximately equal to 15 - you should try and show this yourself!</p>
 <div class="webex-box webex-check">
 <p><strong>If we were to take samples of size <span class="math inline">\(n=2\)</span> from the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> distribution, what distribution would <span class="math inline">\(\bar X\)</span> follow, according to the Central Limit Theorem?</strong></p>
 <div id="radio_KEIXVYKCIM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value="answer"></input> <span><span class="math inline">\(N\Big(15,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(N\Big(-11,\textstyle\frac{41}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(\mbox{Unif}\Big(-11,41\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(N\Big(15,15\Big)\)</span></span></label>
+<label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value="answer"></input> <span><span class="math inline">\(N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(N\Big(-11,\,\textstyle\frac{41}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(\mbox{Unif}\Big(-11,\,41\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_KEIXVYKCIM" value=""></input> <span><span class="math inline">\(N\Big(15,\,15\Big)\)</span></span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -189,14 +191,14 @@ Solution
 </ul>
 <p>We can then use these values to show that, according to the Central Limit Theorem,</p>
 <p><span class="math display">\[
-\bar X\sim N\Big(15,\textstyle\frac{15}{\sqrt{2}}\Big)
+\bar X\sim N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)
 \]</span></p>
 </div>
 </div>
 <div class="webex-box webex-check">
 <p><strong>If we were to take samples of size <span class="math inline">\(n=2\)</span> from the <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distribution, what distribution would <span class="math inline">\(\bar X\)</span> follow, according to the Central Limit Theorem?</strong></p>
 <div id="radio_XHVCSEDXTL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(N\Big(\textstyle\frac{1}{15},\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value="answer"></input> <span><span class="math inline">\(N\Big(15,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(N\Big(15,15\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span></span></label>
+<label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(N\Big(\textstyle\frac{1}{15},\,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value="answer"></input> <span><span class="math inline">\(N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(N\Big(15,\,15\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_XHVCSEDXTL" value=""></input> <span><span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span></span></label>
 </div>
 <div class="webex-solution">
 <button>
@@ -209,11 +211,11 @@ Solution
 </ul>
 <p>We can then use these values to show that, according to the Central Limit Theorem,</p>
 <p><span class="math display">\[
-\bar X\sim N\Big(15,\textstyle\frac{15}{\sqrt{2}}\Big)
+\bar X\sim N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)
 \]</span></p>
 </div>
 </div>
-<p>To see if the sampling distribution of <span class="math inline">\(\bar X\)</span> is indeed normal, with mean <span class="math inline">\(\mu=15\)</span> and standard deviation <span class="math inline">\(\sigma=\textstyle\frac{15}{\sqrt{2}}\)</span>, we want to draw <span class="math inline">\(m=10,000\)</span> random samples of size <span class="math inline">\(n=2\)</span> from both the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions and use these samples to calculate 10,000 values of the mean, <span class="math inline">\(\bar x\)</span>. We can then plot the distribution of these sample means and compare it to the <span class="math inline">\(N\Big(15,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span> distribution for both cases.</p>
+<p>To see if the sampling distribution of <span class="math inline">\(\bar X\)</span> is indeed normal, with mean <span class="math inline">\(\mu=15\)</span> and standard deviation <span class="math inline">\(\sigma=\textstyle\frac{15}{\sqrt{2}}\)</span>, we want to draw <span class="math inline">\(m=10,000\)</span> random samples of size <span class="math inline">\(n=2\)</span> from both the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions and use these samples to calculate 10,000 values of the mean, <span class="math inline">\(\bar x\)</span>. We can then plot the distribution of these sample means and compare it to the <span class="math inline">\(N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)\)</span> distribution for both cases.</p>
 <p>To start with, let's set up two empty vectors, <code>means_unif_2</code> and <code>means_expo_2</code>, which will be used to store each of the 10,000 means calculated from samples taken from the Uniform and Exponential distributions respectively. This is done using the function <code>numeric()</code> which creates an empty vector with length equal to the value you provide as the argument, in this case <code>m</code> = 10,000.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a></span>
@@ -221,7 +223,6 @@ Solution
 <span id="cb1-4"><a href="index.html#cb1-4" tabindex="-1"></a>means_expo_2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(m)</span></code></pre></div>
 <p>To draw the samples from each distribution and calculate the mean, a for loop is used. For the Uniform distribution, <code>runif()</code> is used to draw a random sample of size <span class="math inline">\(n=2\)</span> from the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> distribution, and then the function <code>mean()</code> is used to calculate the mean of these two values. The for loop stores this mean as one of the values in the vector <code>means_unif_2</code>, and repeats until 10,000 random samples have been drawn and used to calculate a mean.</p>
 <p>The same process is used to draw the samples from the Exponential distribution, except the function <code>rexp()</code> is used to draw the random samples (for more details on probability functions, refer to Lab 3).</p>
-<!-- sample size 2-->
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m){</span>
 <span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>  means_unif_2[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">11</span>, <span class="at">max =</span> <span class="dv">41</span>))</span>
 <span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a>}</span>
@@ -301,7 +302,7 @@ Solution
 <li><code>alpha =</code>: this sets the opacity of the fill colour. You can set this argument to be any value between 0 and 1 - a value of 1 means the colour will be fully opaque and a value of 0 means the colour will be transparent.</li>
 </ul>
 <p>The code above produces the following two plots.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/samp4.2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="webex-box webex-check">
 <p><strong>Do you think the the sampling distribution of <span class="math inline">\(\bar X\)</span>, when samples of size <span class="math inline">\(n=2\)</span> are taken from the <span class="math inline">\(\mbox{Unif}(-11,\,41)\)</span> distribution, is approximately normal?</strong></p>
 <p><select class='webex-select'><option value='blank'></option><option value='answer'>Yes</option><option value=''>No</option><option value=''>Can't say</option></select></p>
@@ -313,7 +314,6 @@ Solution
 <p>It seems that a sample size of <span class="math inline">\(n=2\)</span> is not <em>sufficiently large</em> to give a sampling distribution of <span class="math inline">\(\bar X\)</span> which follows the normal distribution, when we are sampling from the Exponential distribution. In order for the Central Limit Theorem to hold true then, we need to take larger samples from the <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distribution.</p>
 <p>Let's take samples of size <span class="math inline">\(n=10\)</span> and <span class="math inline">\(n=40\)</span> from both the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions, to investigate how the sample size affects the sampling distribution of <span class="math inline">\(\bar X\)</span>.</p>
 <p>In the code below, we take 10,000 random samples of size <span class="math inline">\(n=10\)</span> from the Uniform and Exponential distributions and then save the mean of each sample in either the vector <code>means_unif_10</code>, if the sample was taken from the Uniform distribution, or <code>means_expo_10</code>, if the sample was from the Exponential distribution.</p>
-<!--sample size 10, 40, 100-->
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a>means_unif_10 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(m)</span>
 <span id="cb5-2"><a href="index.html#cb5-2" tabindex="-1"></a>means_expo_10 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(m)</span>
 <span id="cb5-3"><a href="index.html#cb5-3" tabindex="-1"></a></span>
@@ -336,7 +336,7 @@ Solution
 <span id="cb6-9"><a href="index.html#cb6-9" tabindex="-1"></a>  means_expo_40[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">rexp</span>(<span class="at">n =</span> <span class="dv">40</span>, <span class="at">rate =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>))</span>
 <span id="cb6-10"><a href="index.html#cb6-10" tabindex="-1"></a>}</span></code></pre></div>
 <div class="webex-box webex-check">
-<p><strong>Complete the code below to draw 10,000 samples of size <span class="math inline">\(n=100\)</span> from the <span class="math inline">\(\mbox{Unif}(-11\,41)\)</span> distribution, and another 10,000 samples of size <span class="math inline">\(n=100\)</span> from the <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distribution.</strong></p>
+<p><strong>Complete the code below to draw 10,000 samples of size <span class="math inline">\(n=100\)</span> from the <span class="math inline">\(\mbox{Unif}(-11,\,41)\)</span> distribution, and another 10,000 samples of size <span class="math inline">\(n=100\)</span> from the <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distribution.</strong></p>
 <div class="webex-code">
 <pre><code> means_unif_100 &lt;- numeric(m)
  means_expo_100 &lt;- numeric(m)</code></pre>
@@ -389,27 +389,25 @@ Solution
 <span id="cb9-10"><a href="index.html#cb9-10" tabindex="-1"></a></span>
 <span id="cb9-11"><a href="index.html#cb9-11" tabindex="-1"></a>means<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="fu">factor</span>(means<span class="sc">$</span>size, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;n = 2&quot;</span>, <span class="st">&quot;n = 10&quot;</span>, <span class="st">&quot;n = 40&quot;</span>, <span class="st">&quot;n = 100&quot;</span>))</span></code></pre></div>
 <p>We can then plot the two sampling distributions of <span class="math inline">\(\bar X\)</span> from the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions when the sample size is <span class="math inline">\(n=10\)</span> using the code below. We have to subset the data from <code>means</code> to show only the means which are from a sample size of <span class="math inline">\(n=10\)</span>. Also, because the sample size has changed, the distribution that the Central Limit Theorem states <span class="math inline">\(\bar X\)</span> will follow in both cases is now <span class="math inline">\(N\Big(15,\,\textstyle\frac{15}{\sqrt{10}}\Big)\)</span>, so this is the distribution we want to superimpose using <code>stat_function()</code>.</p>
-<!--sample size 10-->
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(means, <span class="at">subset =</span> (size <span class="sc">==</span> <span class="st">&quot;n = 10&quot;</span>))) <span class="sc">+</span></span>
 <span id="cb10-2"><a href="index.html#cb10-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean), <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>) <span class="sc">+</span></span>
 <span id="cb10-3"><a href="index.html#cb10-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(distribution <span class="sc">~</span> .) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="index.html#cb10-4" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">31</span>)) <span class="sc">+</span></span>
 <span id="cb10-5"><a href="index.html#cb10-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sample size n = 10&quot;</span>,</span>
 <span id="cb10-6"><a href="index.html#cb10-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(<span class="fu">bar</span>(x)), <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="index.html#cb10-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">10</span>)), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb10-8"><a href="index.html#cb10-8" tabindex="-1"></a>                <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<span id="cb10-7"><a href="index.html#cb10-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">10</span>)), <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>,</span>
+<span id="cb10-8"><a href="index.html#cb10-8" tabindex="-1"></a>                <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/samp8-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>We can also show the sampling distributions of <span class="math inline">\(\bar X\)</span> from the Uniform and Exponential distributions when the sample size is <span class="math inline">\(n=40\)</span>. This done using the code below. Again, note that the distribution the Central Limit Theorem states the sampling distribution of <span class="math inline">\(\bar X\)</span> will follow is now <span class="math inline">\(N\Big(15,\,\textstyle\frac{15}{\sqrt{40}}\Big)\)</span> because the sample size has changed.</p>
-<!--sample size 40-->
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(means, <span class="at">subset =</span> (size <span class="sc">==</span> <span class="st">&quot;n = 40&quot;</span>))) <span class="sc">+</span></span>
 <span id="cb11-2"><a href="index.html#cb11-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean), <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="index.html#cb11-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(distribution <span class="sc">~</span> .) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="index.html#cb11-4" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">24</span>)) <span class="sc">+</span></span>
 <span id="cb11-5"><a href="index.html#cb11-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sample size n = 40&quot;</span>,</span>
 <span id="cb11-6"><a href="index.html#cb11-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(<span class="fu">bar</span>(x)), <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="index.html#cb11-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">40</span>)), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb11-8"><a href="index.html#cb11-8" tabindex="-1"></a>                <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<span id="cb11-7"><a href="index.html#cb11-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">40</span>)), <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>,</span>
+<span id="cb11-8"><a href="index.html#cb11-8" tabindex="-1"></a>                <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/samp9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="webex-box webex-check">
 <p><strong>Complete the code below to plot the sampling distribution of <span class="math inline">\(\bar X\)</span> for the samples of size <span class="math inline">\(n=100\)</span> taken from the <span class="math inline">\(\mbox{Unif}(-11,\, 41)\)</span> and <span class="math inline">\(\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)\)</span> distributions. Superimpose the normal distribution that each sampling distribution follows according to the Central Limit Theorem.</strong></p>
 <div class="webex-code">
@@ -430,26 +428,26 @@ Solution
 <code>stat_function(fun = dnorm, args = list(mean =</code><input class='webex-solveme nospaces' size='2' data-answer='["15"]'/><code>, sd =</code><input class='webex-solveme nospaces' size='12' data-answer='["15/sqrt(100)","1.5"]'/><code>),</code>
 </ul>
 <ul style="margin-top:-0.8em; margin-left:7.6em;">
-<code>col = "black", linetype = 2, fill = "black",</code>
+<code>geom =</code><input class='webex-solveme nospaces' size='6' data-answer='["\"area\""]'/><code>, col = "black", linetype = 2, fill = "black",</code>
 </ul>
 <ul style="margin-top:-0.8em; margin-left:7.6em;">
-<code>alpha = 0.2, geom =</code><input class='webex-solveme nospaces' size='6' data-answer='["\"area\""]'/><code>)</code>
+<code>alpha = 0.2)</code>
 </ul>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<!--sample size 100-->
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(means, <span class="at">subset =</span> (size <span class="sc">==</span> <span class="st">&quot;n = 100&quot;</span>))) <span class="sc">+</span></span>
 <span id="cb14-2"><a href="index.html#cb14-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean), <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="index.html#cb14-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(distribution <span class="sc">~</span> .) <span class="sc">+</span></span>
 <span id="cb14-4"><a href="index.html#cb14-4" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">21</span>)) <span class="sc">+</span></span>
 <span id="cb14-5"><a href="index.html#cb14-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sample size n = 100&quot;</span>,</span>
 <span id="cb14-6"><a href="index.html#cb14-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(<span class="fu">bar</span>(x)), <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="index.html#cb14-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb14-8"><a href="index.html#cb14-8" tabindex="-1"></a>                <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<span id="cb14-7"><a href="index.html#cb14-7" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="dv">15</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)),</span>
+<span id="cb14-8"><a href="index.html#cb14-8" tabindex="-1"></a>                <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb14-9"><a href="index.html#cb14-9" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/samp-ans2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <hr />

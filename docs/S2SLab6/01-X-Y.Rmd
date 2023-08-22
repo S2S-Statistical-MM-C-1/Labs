@@ -20,11 +20,11 @@ Specifically, we will;
 ::: {.webex-box .webex-check}
 **Using the statement above about the distribution of $\bar X-\bar Y$, what distribution would you expect the differences in sample means to follow?**
 
-```{r echo=FALSE}
-opts3 <- sample(c(answer = "$N\\Big(50,\\sqrt{\\textstyle\\frac{12^2}{120}+\\textstyle\\frac{10^2}{96}}\\Big)$",
-           "$N\\Big(50,\\sqrt{\\textstyle\\frac{12}{120}+\\textstyle\\frac{10}{96}}\\Big)$",
-           "$N\\Big(50,\\sqrt{\\textstyle\\frac{12^2}{20,000}+\\textstyle\\frac{10^2}{20,000}}\\Big)$",
-           "$N\\Big(90,\\sqrt{\\textstyle\\frac{12^2}{120}+\\textstyle\\frac{10^2}{96}}\\Big)$"), size = 4)
+```{r mcq-opts3, echo=FALSE}
+opts3 <- sample(c(answer = "$N\\Big(50,\\,\\sqrt{\\textstyle\\frac{12^2}{120}+\\textstyle\\frac{10^2}{96}}\\Big)$",
+           "$N\\Big(50,\\,\\sqrt{\\textstyle\\frac{12}{120}+\\textstyle\\frac{10}{96}}\\Big)$",
+           "$N\\Big(50,\\,\\sqrt{\\textstyle\\frac{12^2}{20,000}+\\textstyle\\frac{10^2}{20,000}}\\Big)$",
+           "$N\\Big(90,\\,\\sqrt{\\textstyle\\frac{12^2}{120}+\\textstyle\\frac{10^2}{96}}\\Big)$"), size = 4)
 ```
 
 `r longmcq(opts3)`
@@ -37,7 +37,7 @@ We also know that $Y\sim N(40,\,10)$ and that we want to take samples of size 96
 Plugging these values into the given distribution for $\bar X-\bar Y$ tells us that,
 
 $$
-\bar X-\bar Y\sim N\Big(90-40=50,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)
+\bar X-\bar Y\sim N\Big(90-40=50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)
 $$
 `r unhide()`
 :::
@@ -70,7 +70,7 @@ $$
 :::
 
 `r hide("Solution")`
-```{r}
+```{r XY-ans1}
 m <- 20000
 nx <- 120
 
@@ -83,9 +83,9 @@ for(i in 1:m){
 `r unhide()`
 :::
 
-Similarly, we can draw 20,000 samples of size $n_Y=$ 96 from the $N(40, 10)$ distribution and calculate the mean of each sample using the following code. As we've seen before, this makes use of a for loop to draw each sample and calculate its mean, before saving the mean in the vector `meansY`.
+Similarly, we can draw 20,000 samples of size $n_Y=$ 96 from the $N(40,\, 10)$ distribution and calculate the mean of each sample using the following code. As we've seen before, this makes use of a for loop to draw each sample and calculate its mean, before saving the mean in the vector `meansY`.
 
-```{r}
+```{r XY1}
 m <- 20000
 ny <- 96
 
@@ -98,7 +98,7 @@ for(i in 1:m){
 
 We can then calculate the difference between each pair of means and store these differences in the data frame `XY`. We use a data frame, rather than a vector here, so that we can go on to plot the distribution of differences using `ggplot2`.
 
-```{r}
+```{r XY2}
 XY <- data.frame(diff = meansX - meansY)
 ```
 
@@ -106,19 +106,19 @@ XY <- data.frame(diff = meansX - meansY)
 
 Finally, we can use `ggplot2` to plot the kernel density estimate of the differences between each pair of sample means from the $N(90,\,12)$ and $N(40,\,10)$ distributions. We do this using the `geom_density()` function.
 
-We know that $\bar X-\bar Y$ follows the $N\Big(50,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution, so we can superimpose this above the kernel density estimate to assess how similar they are. We do this by including the layer `stat_function()`. Because the distribution we want to show is a normal distribution, we use the argument `fun = dnorm`. The mean and standard deviation, $50$ and $\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}$ respectively, are included within a list given to the argument `args =`. We can also set some stylistic choices of how this normal distribution should appear using the `col =`, `linetype =`, `fill =`, `alpha =` and `geom =` arguments.
+We know that $\bar X-\bar Y$ follows the $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution, so we can superimpose this above the kernel density estimate to assess how similar they are. We do this by including the layer `stat_function()`. Because the distribution we want to show is a normal distribution, we use the argument `fun = dnorm`. The mean and standard deviation, $50$ and $\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}$ respectively, are included within a list given to the argument `args =`. We can also set some stylistic choices of how this normal distribution should appear using the `col =`, `linetype =`, `fill =`, `alpha =` and `geom =` arguments.
 
-```{r}
+```{r XY3}
 ggplot(data = XY) +
   geom_density(aes(x = diff), fill = "cadetblue3") +
   stat_function(fun = dnorm, args = list(mean = 50, sd = sqrt(12^2/120 + 10^2/96)),
-                col = "black", linetype = 2, fill = "black", alpha = 0.2, geom = "area") +
+                geom = "area", col = "black", linetype = 2, fill = "black", alpha = 0.2) +
   labs(x = expression(bar(X)-bar(Y)), y = "Density")
   
 ```
 
 ::: {.webex-box .webex-check}
-**Do you think the kernel density estimate of the distribution of the differences between pairs of sample means is approximately equal to the $N\Big(50,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution?**
+**Do you think the kernel density estimate of the distribution of the differences between pairs of sample means is approximately equal to the $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution?**
 
 `r mcq(c(answer="Yes", "No", "Can't say"))`
 :::
@@ -128,15 +128,15 @@ We can use our calculated differences between the sample means of $X$ and $Y$ to
 
 We can use the values of differences between the pairs of sample means to answer this. We use a logical statement, `XY$diff > 48`, to identify which of the calculated differences are greater than 48. This logical statement returns 20,000 values - `TRUE` if the corresponding difference was greater than 48 and `FALSE` if the difference was less than or equal to 48. We can then plug this logical vector into the `mean()` function to tell us the proportion of differences that were greater than 48. This proportion is a good approximation of the true probability $P\big(\bar X-\bar Y>48\big)$ and using the code below, we see that this is roughly equal to `r mean(XY$diff > 48)`.
 
-```{r}
+```{r XY4}
 mean(XY$diff > 48)
 ```
 
-Because we have used our samples to calculate this probability, this is known as an *empirical* probability. We could also find the true, theoretical probability that $P\big(\bar X-\bar Y>48\big)$ by using the fact that $\bar X-\bar Y\sim N\Big(50,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$.
+Because we have used our samples to calculate this probability, this is known as an *empirical* probability. We could also find the true, theoretical probability that $P\big(\bar X-\bar Y>48\big)$ by using the fact that $\bar X-\bar Y\sim N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$.
 
 We can use the function `pnorm()` to find the probability that $P\big(\bar X-\bar Y\leq 48\big)$. Then, in order to find $P\big(\bar X-\bar Y>48\big)$, we simply calculate $1-$ the result from `pnorm()`. This is shown in the code below.
 
-```{r}
+```{r XY5}
 1-pnorm(48, mean = 50, sd = sqrt(12^2/120 + 10^2/96))
 ```
 
