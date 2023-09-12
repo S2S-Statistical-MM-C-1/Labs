@@ -1,0 +1,8 @@
+fig:VDI-image
+fig:rstud-image
+RStudio
+downloadR
+downloadRS
+accessing-rstudio-virtually
+UseR
+practise-code

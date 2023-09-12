@@ -1,0 +1,19 @@
+install.packages("twenty48")
+library(twenty48)
+
+play_2048()
+
+install.packages("pixelpuzzle")
+library(pixelpuzzle)
+
+pixelpuzzle()
+
+install.packages("wordler")
+library(wordler)
+
+play_wordler()
+
+install.packages("tictactoe")
+library(tictactoe)
+
+ttt(ttt_human(), ttt_ai())

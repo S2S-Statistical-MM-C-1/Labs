@@ -1,7 +1,0 @@
-"0","normal <- function(n, m = 0, s = 1){"
-"0","  x <- rnorm(n = n, mean = m, sd = s)"
-"0","  x <- sort(x)"
-"0","  prob <- pnorm(q = x, mean = m, sd = s)"
-"0","  pdf <- dnorm(x = x, mean = m, sd = s)"
-"0","  cbind(x, prob, pdf)"
-"0","}"

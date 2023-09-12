@@ -1,2 +1,0 @@
-"0","kable(dist_table, booktabs=TRUE, caption=""Distribution names and arguments to use with probability functions."") %>%"
-"0","  column_spec(1:3, background=""white"")"
