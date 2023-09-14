@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Using RStudio | Level 2 Statistics</title>
   <meta name="description" content="3 Using RStudio | Level 2 Statistics" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Using RStudio | Level 2 Statistics" />
   <meta property="og:type" content="book" />
@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="accessing-rstudio-virtually.html"/>
+<link rel="prev" href="virtual.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -117,10 +117,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="include/webex.css" type="text/css" />
 </head>
@@ -139,11 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#downloadR"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#downloadRS"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#update"><i class="fa fa-check"></i><b>1.3</b> Updating R and RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="accessing-rstudio-virtually.html"><a href="accessing-rstudio-virtually.html"><i class="fa fa-check"></i><b>2</b> Accessing RStudio Virtually</a></li>
+<li class="chapter" data-level="2" data-path="virtual.html"><a href="virtual.html"><i class="fa fa-check"></i><b>2</b> Accessing RStudio Virtually</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="virtual.html"><a href="virtual.html#virtual-desktop"><i class="fa fa-check"></i><b>2.1</b> Virtual Desktop</a></li>
+<li class="chapter" data-level="2.2" data-path="virtual.html"><a href="virtual.html#posit-cloud"><i class="fa fa-check"></i><b>2.2</b> Posit Cloud</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="UseR.html"><a href="UseR.html"><i class="fa fa-check"></i><b>3</b> Using RStudio</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="UseR.html"><a href="UseR.html#practise-code"><i class="fa fa-check"></i><b>3.1</b> Practise code</a></li>
+<li class="chapter" data-level="3.1" data-path="UseR.html"><a href="UseR.html#practise-code"><i class="fa fa-check"></i><b>3.1</b> Practise Code</a></li>
 </ul></li>
 </ul>
 
@@ -166,8 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Using RStudio<a href="UseR.html#UseR" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Open the RStudio app and create a new text file (called an "R script") by:</p>
 <ul>
-<li>clicking <img src="Images/NewFile.png" style="width:5.0%" /> in the top left of the RStudio window</li>
-<li>selecting <img src="Images/RScript.png" style="width:12.0%" /> from the drop down menu options</li>
+<li>clicking '<img src="Images/NewFile.png" style="width:3.0%" />' in the top left of the RStudio window</li>
+<li>selecting '<img src="Images/RScript.png" style="width:3.0%" /> R Script' from the drop down menu options</li>
 </ul>
 <p>This will open a new pane in the RStudio window which is where you will write all of your code. RStudio is arranged with four panes, the default layout of which you can see below.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:rstud-image"></span>
@@ -178,32 +179,32 @@ Figure 3.1: RStudio window
 </div>
 <ol style="list-style-type: decimal">
 <li><p>This is the <strong>source pane</strong>. This is where you will view, write and edit all your code and view data in a spreadsheet format. Typically this pane isn't displayed when you first launch RStudio; instead, you need to open a new (or pre-existing) R script or load in some data.</p>
-<p>We 'run' code from here by selecting the row(s) we want to execute and clicking the <img src="Images/Run.png" style="width:8.0%" /> icon in the top right of this pane (alternatively hold the <code>ctrl</code> key (or <code>cmd</code> on Mac) and hit <code>enter</code> at the same time).</p></li>
+<p>We 'run' code from here by selecting the row(s) we want to execute and clicking the '<img src="Images/Run.png" style="width:3.0%" /> Run' icon in the top right of this pane (alternatively hold the <code>ctrl</code> key (or <code>cmd</code> on Mac) and hit <code>enter</code> at the same time).</p></li>
 <li><p>This is the <strong>console pane</strong>. This is where you can view the outcome of any code you have 'run', as well as type in commands and view output messages such as warnings or errors from code that doesn't work correctly.</p></li>
 <li><p>This pane has several different tabs, but the most used one is the <strong>Environment</strong> tab. This lists some information about the 'objects' you have created in your code, such as data frames, vectors or statistical models which we'll learn more about throughout these labs.</p></li>
 <li><p>This pane also has several tabs. The ones of note here are the <strong>Files</strong> tab which shows the folders and files the current RStudio session has access to; the <strong>Plots</strong> tab which shows any plots or graphs you have created in your code; and the <strong>Help</strong> tab which can be used to learn more about the properties of different functions that can be used in R Studio.</p></li>
 </ol>
 <div id="practise-code" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Practise code<a href="UseR.html#practise-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.1</span> Practise Code<a href="UseR.html#practise-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To test that your RStudio is working as expected, copy and paste the following code to the R Script you have just created. You can then 'run' this code to see the result.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="UseR.html#cb1-1" tabindex="-1"></a>(<span class="dv">112</span><span class="sc">/</span><span class="dv">8</span>)<span class="sc">*</span><span class="fl">0.5</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="UseR.html#cb2-1" tabindex="-1"></a>(<span class="dv">112</span><span class="sc">/</span><span class="dv">8</span>)<span class="sc">*</span><span class="fl">0.5</span></span></code></pre></div>
 <p>You should see the value 7 pasted in the console pane.</p>
 <p>It is also good to know that you can use "packages" in R. To install the package <code>ggplot2</code> on to your device, copy and paste the code below into your R script, then make sure to run these two lines.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="UseR.html#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb2-2"><a href="UseR.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="UseR.html#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb3-2"><a href="UseR.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>The <code>ggplot2</code> package is used to create graphs and plots in R Studio. Again, copy and paste the code below then run it to see an example of a plot you can create in R. You don't need to understand any of this code at the moment, it will all be explained in your courses!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="UseR.html#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="UseR.html#cb3-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(cyl), <span class="at">y =</span> mpg), <span class="at">fill =</span> <span class="st">&quot;slateblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="UseR.html#cb3-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;cyl&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="UseR.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="UseR.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(cyl), <span class="at">y =</span> mpg), <span class="at">fill =</span> <span class="st">&quot;slateblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="UseR.html#cb4-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;cyl&quot;</span>)</span></code></pre></div>
 <p>Now you should see the following plot in the plots tab.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>To save an R script with any code you have written, simply click the <img src="Images/Save.png" style="width:3.0%" /> icon at the top left of the source pane and choose where to save the file (make sure this is somewhere you can find it again!). R scripts are saved as .r files.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>To save an R script with any code you have written, simply click the '<img src="Images/Save.png" style="width:3.0%" />' icon at the top left of the source pane and choose where to save the file (make sure this is somewhere you can find it again!). R scripts are saved as .r files.</p>
 <p>To open a previously saved R script, either click on the .r file in the folder you've saved it to, or within RStudio go to <code>File &gt; Open File...</code> and choose the .r file from there.</p>
 <p>Now that you have RStudio installed and know everything works as expected, you can run the following code to play a game of Wordle in the console pane!</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="UseR.html#cb4-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;wordler&quot;</span>)</span>
-<span id="cb4-2"><a href="UseR.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(wordler)</span>
-<span id="cb4-3"><a href="UseR.html#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="UseR.html#cb4-4" tabindex="-1"></a><span class="fu">play_wordler</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="UseR.html#cb5-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;wordler&quot;</span>)</span>
+<span id="cb5-2"><a href="UseR.html#cb5-2" tabindex="-1"></a><span class="fu">library</span>(wordler)</span>
+<span id="cb5-3"><a href="UseR.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="UseR.html#cb5-4" tabindex="-1"></a><span class="fu">play_wordler</span>()</span></code></pre></div>
 
 </div>
 </div>
@@ -418,7 +419,7 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="accessing-rstudio-virtually.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="virtual.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
