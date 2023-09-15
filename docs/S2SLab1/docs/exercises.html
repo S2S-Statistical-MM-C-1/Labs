@@ -131,12 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R and RStudio</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#downloadR"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#downloadRS"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#UseR"><i class="fa fa-check"></i><b>1.3</b> Using RStudio</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S2S Labs</a></li>
 <li class="chapter" data-level="2" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>2</b> Vectors</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="vectors.html"><a href="vectors.html#addition"><i class="fa fa-check"></i><b>2.1</b> Addition</a></li>
@@ -175,16 +170,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Further Exercises<a href="exercises.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="exercise-1" class="section level2 unnumbered hasAnchor">
 <h2>Exercise 1<a href="exercises.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The code below creates the vectors <code>a</code> and <code>b</code> which are randomly set to be either <code>TRUE</code> or <code>FALSE</code> (this is done using the <code>sample()</code> function which you can learn more about using the <code>help()</code> function).</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="exercises.html#cb102-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="dv">1</span>)</span>
-<span id="cb102-2"><a href="exercises.html#cb102-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="dv">1</span>)</span></code></pre></div>
+<p>The code below creates the vectors <code>a</code> and <code>b</code>. <code>a</code> randomly takes the value 1 or 2 and <code>b</code> randomly takes the value 2 or 4 (this is done using the <code>sample()</code> function which you can learn more about using the <code>help()</code> function).</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="exercises.html#cb103-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">1</span>)</span>
+<span id="cb103-2"><a href="exercises.html#cb103-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">1</span>)</span></code></pre></div>
 <p>Create a new vector <code>c</code> which is:</p>
 <ul>
-<li><code>TRUE</code> if both <code>a</code> and <code>b</code> are <code>TRUE</code>.</li>
-<li><code>TRUE</code> if both <code>a</code> and <code>b</code> are <code>FALSE</code>.</li>
+<li><code>TRUE</code> if both <code>a</code> and <code>b</code> are equal.</li>
 <li><code>FALSE</code> if <code>a</code> and <code>b</code> are different.</li>
 </ul>
-<p>Think about how to use the logical operators <code>&amp;</code>, <code>|</code> or <code>!</code> to do this.</p>
+<p>Create another vector <code>d</code> which is:</p>
+<ul>
+<li><code>FALSE</code> if <code>a</code> is 1 and <code>b</code> is 2.</li>
+<li><code>TRUE</code> if <code>a</code> is 2 and <code>b</code> is 2.</li>
+<li><code>FALSE</code> if <code>a</code> is 1 and <code>b</code> is 4.</li>
+<li><code>FALSE</code> if <code>a</code> is 2 and <code>b</code> is 4.</li>
+</ul>
 </div>
 <div id="exercise-2" class="section level2 unnumbered hasAnchor">
 <h2>Exercise 2<a href="exercises.html#exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>

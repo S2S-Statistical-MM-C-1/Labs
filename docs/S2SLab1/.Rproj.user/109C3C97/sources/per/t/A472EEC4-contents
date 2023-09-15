@@ -57,10 +57,6 @@ c
 
 :::
 
----
-
-[Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6) of *Probability and Statistics with R* explains in detail how R adds two vectors together.
-
 ## Logical operators {#vectlog}
 
 Vectors can contain logical values (`TRUE`/`FALSE`) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.
@@ -69,7 +65,7 @@ Vectors can contain logical values (`TRUE`/`FALSE`) rather than numerical values
 x < y
 ```
 
-Here, R has again recycled the element from `x` to make it the same length as `y`, then it returns a vector telling us for which elements the statement `x < y` is true. For example, the first element of `x` is 3 which is greater than 2, so `x < y` is `FALSE`.
+Here, R has again recycled the element from `x` to make it the same length as `y`, then it returns a vector telling us for which elements the statement `x < y` is true. For example, the first element of `y` is 2 which is less than 3, so `x < y` is `FALSE`.
 
 Other logical operators that we can use with vectors include:
 
@@ -81,43 +77,42 @@ Other logical operators that we can use with vectors include:
 | `>=`     | greater than or equal to |
 | `==`     | exact equality           |
 | `!=`     | exact inequality         |
+| `&`      | vector intersection      |
+| `|`      | vector union             |
 
-Let's explore how these operators behave with two new numerical vectors.
+Let's explore how these operators behave by creating two new logical vectors.
 
 ```{r vect5}
-s <- c(2, 4, 1)
-t <- c(2, 3, 4)
+s <- c(TRUE, TRUE, FALSE)
+t <- c(FALSE, TRUE, TRUE)
 ```
 
 ::: {.webex-box}
 
-**Write some code to show:**
+**Write some code to find:**
 
-* **which elements of `s` and `t` are equal to each other**
-* **which elements of `s` are less than the corresponding element in `t`**
-* **which elements of `s` and `t` are unequal**
+* **the intersection the vectors `s` and `t`.**
+* **the union of vectors `s` and `t`**
+* **whether the elements of `s` and `t` are unequal**
 
 `r hide("Solution")`
-When using logical operators with vectors, R will compare the vectors elementwise meaning the first elements of each vector will be compared to each other, then the second elements and so on.
-
-**Equality**:
+**Intersection**:
 ```{r vect-ans2.1}
-s == t
+s & t
 ```
-This tells us that the first element of `s` is equal to the first element of `t` (they are both the value 2), whereas the second elements of `s` and `t` are not equal and neither are the third elements.
+We can see that the operator `&` returns a `TRUE` statement only when both elements being compared are `TRUE`.
 
-**Less than**:
+**Union**:
 ```{r vect-ans2.2}
-s < t
+s | t
 ```
-The first element of `s` is not less than the first elements of `t` (that is 2 < 2 is not a true statement) so this returns `FALSE`. The statement `s < t` is `TRUE` for the third elements because the third element of `s` is 1 and for `t` it is 4 which equates to the statement 1 < 4.
-
+The `|` operator returns a `TRUE` statement when either of the elements being compared are `TRUE`
 
 **Inequality**:
 ```{r vect-ans2.3}
 s != t
 ```
-This return the opposite of `s == t`. The first elements of `s` and `t` are both 2 so they are equal meaning `!=` will return `FALSE`. Since the second elements are 4 and 3 respectively, these are unequal so `!=` returns `TRUE`.
+The `!=` operator returns a `TRUE` statement only when both elements are different.
 
 Try using some of the other operators listed above to see if they return the vectors you expect.
 `r unhide()`
@@ -126,7 +121,7 @@ Try using some of the other operators listed above to see if they return the vec
 
 What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (`[ ]`).
 
-For example, `s[3]` would extract the third element from `s`, that is the number `r s[3]`.
+For example, `z[4]` would extract the fourth element from `z`, that is the number `r z[4]`.
 
 The following code can be used to check whether the second element of `s` is the same as the third element of `t`.
 
@@ -167,9 +162,6 @@ Similarly, we can see that the third entry of `u+v` is `r (u+v)[3]` and the seco
 
 :::
 
----
-
-Look at [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6) of *Probability and Statistics with R* for more information on logical operators and vectors.
 
 ## Other types of vectors 
 
@@ -267,9 +259,7 @@ as.numeric(animals)
 
 R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quoation marks "") which is R's symbol for "Not Available", which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value.  R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero),
 
----
-
-To read more about the types of vectors R can handle, see [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6) of *Probability and Statistics with R*.
+<!-- task on coercing vectors? -->
 
 ## Indexing vectors {#index}
 
@@ -299,10 +289,10 @@ Note that it is not possible to use both positive and negative indices at the sa
 `animals[``r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)``]`
 :::
 
-`r hide("Solution")`
+`r hide("Hint")`
 There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.
 
-```{r vect-ans6.1}
+```{r vect-hint1.1}
 animals[-c(3, 4)]
 
 animals[c(-3, -4)]
@@ -310,7 +300,7 @@ animals[c(-3, -4)]
 
 Alternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.
 
-```{r vect-ans6.2}
+```{r vect-hint1.2}
 animals[c(1, 2)]
 ```
 
@@ -327,7 +317,7 @@ animals[c(1, 2)]
 * **Extract the first and third elements of this vector `logical`.**
 
 `r hide("Solution")`
-```{r vect-ans7.1}
+```{r vect-ans6.1}
 binary <- c(1, 1, 0, 1)
 logical <- as.logical(binary)
 
@@ -335,7 +325,7 @@ logical[c(1, 3)]
 ```
 In the above code we have chosen to extract the first and third elements. Alternatively, we could remove the second and fourth elements instead.
 
-```{r vect-ans7.2}
+```{r vect-ans6.2}
 logical[-c(2, 4)]
 ```
 
@@ -392,7 +382,7 @@ seq(from = 4, by = 0.5, length.out = 7)
 `r hide("Solution")`
 There are three different ways we could generate this sequence using the `seq()` function.
 
-```{r vect-ans8}
+```{r vect-ans7}
 seq(from = 4.10, to = 4.40, by = 0.05)
 seq(from = 4.10, to = 4.40, length.out = 7)
 seq(from = 4.10, by = 0.05, length.out = 7)
@@ -402,10 +392,6 @@ seq(from = 4.10, by = 0.05, length.out = 7)
 `r unhide()`
 
 :::
-
----
-
-You can see additional examples of using the `seq()` function in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11) of *Probability and Statistics with R*.
 
 ## Repeating constants {#repeat}
 
@@ -436,7 +422,7 @@ rep(x = c(TRUE, FALSE), length.out = 8)
 * **`r rep(c("blue", "red"), times=c(3, 2))`**
 
 `r hide("Solution")`
-```{r vect-ans9, eval=TRUE}
+```{r vect-ans8, eval=TRUE}
 rep(3:5, times = 3)
 rep(c(2, 4, 6), each = 2)
 rep(c("blue", "red"), times=c(3, 2))
@@ -456,7 +442,7 @@ Then have a think about how many times each of these elements should be repeated
 `r unhide()`
 
 `r hide("Solution")`
-```{r vect-ans10}
+```{r vect-ans9}
 rep(x = 2:7, 
     times = rep(x = c(1, 2), times = 3))
 ```
@@ -467,7 +453,7 @@ rep(x = 2:7,
 
 ---
 
-You can see additional examples of using the `rep()` function in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11) of *Probability and Statistics with R*.
+You can see additional examples of using the `seq()` and `rep()` functions in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11) of *Probability and Statistics with R*.
 
 ## Filtering vectors {#filter}
 
@@ -498,7 +484,7 @@ vect[c(FALSE, FALSE, TRUE, TRUE)]
 **Write some code to extract the elements of the vector `z` which are greater than 5.**
 
 `r hide("Solution")`
-```{r vect-ans11}
+```{r vect-ans10}
 z[z > 5]
 ```
 
@@ -522,7 +508,7 @@ subset(x = vect, subset = (vect >= 3))
 **Extract the elements of the vector `z` which are greater than 5 using the `subset()` function.**
 
 `r hide("Solution")`
-```{r vect-ans12}
+```{r vect-ans11}
 subset(x = z, subset = (z > 5))
 ```
 
@@ -542,26 +528,18 @@ For example, if we were unsure what the function `rep()` is used for, then we ca
 
 ```{r help1, eval=FALSE}
 ?rep
-```
 
-```{r help2, eval=FALSE}
 help(rep)
 ```
 
-This tells us in the **Help** tab that the first argument for the `rep()` function is called `x =` and a short description of what should be provided to this argument is given. It also describes the other arguments `times =`, `length.out =` and `each =`.
-
-The order that arguments appear in in the help file is important because you don't actually need to use the names of the arguments when using a function. Instead, you can just provide the values for each argument, and as long as they are in the same order as they appear in in the help file, R will know which value corresponds to which argument. This is known as using positional arguments.
-
-Sometimes you might see a value associated with a specific argument in the help file, for example `x = 5`. This is the "default" value for that argument and it means that if you don't specify a different value for the argument, then R will use the default value when executing the function. We'll see more about default values as we encounter more complex functions in future labs.
-
 ---
 
-For more information on accessing the online and inbuilt help in RStudio, see [Section 1.5 Getting Help](https://read.kortext.com/reader/pdf/92741/14) in *Probability and Statistics with R*.
+For more information on accessing the online and inbuilt help in RSudio, see [Section 1.5 Getting Help](https://read.kortext.com/reader/pdf/92741/14) in *Probability and Statistics with R*.
 
 <!-- `args()` only gives the argument names for more complex functions like `lm()` which haven't been introduced yet -->
 <!-- If we more specifically wanted to know what the argument names for a function should be, then we can use the function `args()` instead. To find the argument names for the `rep()` function, we can use the following code.
 
-```{r help3}
+```{r help2}
 args(rep)
 ```
 -->

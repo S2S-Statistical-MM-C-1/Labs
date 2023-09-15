@@ -131,12 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R and RStudio</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#downloadR"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#downloadRS"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#UseR"><i class="fa fa-check"></i><b>1.3</b> Using RStudio</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S2S Labs</a></li>
 <li class="chapter" data-level="2" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>2</b> Vectors</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="vectors.html"><a href="vectors.html#addition"><i class="fa fa-check"></i><b>2.1</b> Addition</a></li>
@@ -174,57 +169,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">S2S Lab 1</h1>
 </div>
-<div id="RStudio" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> R and RStudio<a href="index.html#RStudio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to the first S2S lab! The contents of these labs are based on the textbook <a href="https://read.kortext.com/reader/pdf/92741/A"><strong><em>Probability and Statistics with R</em></strong></a> by Ugarte, Militino and Arnholt. Today you will be introduced to R and RStudio and learn how to use them both to define and manipulate your own vectors.</p>
-<p><a href="https://www.r-project.org/">R</a> is a programming language that you will use to write code in numerous statistics courses throughout your degree. <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> is an accompaniment to R, known as an Integrated Development Environment (IDE). RStudio essentially makes all features of the R programming language easier to use and it is the software you will interact with in these labs, rather than R directly.</p>
-<p>It is best for you to install R and RStudio on your own device and use this for all of the labs, but if you would prefer, R and RStudio are always available from the desktop PCs in the lab.</p>
-<p>If you do not already have R and RStudio downloaded on your device, follow the steps outlined below in Sections <a href="index.html#downloadR">1.1</a> and <a href="index.html#downloadRS">1.2</a> before moving on to Section <a href="index.html#UseR">1.3</a> which will detail how to use RStudio.</p>
-<div id="downloadR" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Installing R<a href="index.html#downloadR" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!-- should there be screenshots of the process? Could make the page messy -->
-<p><a href="https://www.r-project.org/"><img src="Images/Rlogo.svg" style="width:15.0%" alt="R logo" /></a></p>
-<p>The first step is to install R onto your device. This can be done for free from <a href="https://cran.r-project.org/">CRAN</a> (the <strong>C</strong>omprehensive <strong>R</strong> <strong>A</strong>rchive <strong>N</strong>etwork). R is available for Windows, Mac OS, Linux and some other less common operating systems.</p>
-<ul>
-<li>If you are using a Windows device, follow <a href="https://cran.r-project.org/bin/windows/base/">this link</a> and click <em>'Download R-x.y.z for Windows'</em> to download the installer for the latest version of R. Once this is complete, run the installer and accept all default settings.</li>
-<li>If you are using a Mac, follow <a href="https://cran.r-project.org/bin/macosx/">this link</a> and select the .pkg file from the left of the screen to download the installer for the latest version of R. Once this download is complete, open the file and complete the onscreen steps to finish installing R.</li>
-</ul>
-</div>
-<div id="downloadRS" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Installing RStudio<a href="index.html#downloadRS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!-- include screenshots of which links to click? -->
-<p><a href="https://posit.co/download/rstudio-desktop/"><img src="Images/RStudio.svg" style="width:40.0%" alt="RStudio logo" /></a></p>
-<p>Now that R is installed on your device, you are ready to download and install RStudio.</p>
-<p>To do this, go to <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> and click on the link <em>'Download RStudio...'</em>. This should automatically detect what system your device is using but make sure to double check it says either for Windows or for MacOS - whichever is correct!</p>
-<p>This file may take a while to download, but once it has launch the installer and follow the steps to complete the installation.</p>
-<p>You are now ready to use RStudio. Make sure you launch the <strong>RStudio app</strong> to complete the labs, rather than R.</p>
-</div>
-<div id="UseR" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Using RStudio<a href="index.html#UseR" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Once you have opened the RStudio app, create a new text file (called an "R script") by:</p>
-<ul>
-<li>clicking <img src="Images/NewFile.png" style="width:5.0%" /> in the top left of the RStudio window</li>
-<li>selecting <img src="Images/RScript.png" style="width:12.0%" /> from the drop down menu options</li>
-</ul>
-<p>This will open a new pane in the RStudio window which is where you will write all of your code. RStudio is arranged with four panes, the default layout of which you can see below.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rstud-image"></span>
-<img src="Images/RStudioWindow.png" alt="RStudio window"  />
-<p class="caption">
-Figure 1.1: RStudio window
-</p>
-</div>
-<ol style="list-style-type: decimal">
-<li><p>This is the <strong>source pane</strong>. This is where you will view, write and edit all your code and view data in a spreadsheet format. Typically this pane isn't displayed when you first launch RStudio; instead, you need to open a new (or pre-existing) R script or load in some data.</p>
-<p>We 'run' code from here by selecting the row(s) we want to execute and clicking the <img src="Images/Run.png" style="width:8.0%" /> icon in the top right of this pane (alternatively hold the <code>ctrl</code> key (or <code>cmd</code> on Mac) and hit <code>enter</code> at the same time).</p></li>
-<li><p>This is the <strong>console pane</strong>. This is where you can view the outcome of any code you have 'run', as well as type in commands and view output messages such as warnings or errors from code that doesn't work correctly.</p></li>
-<li><p>This pane has several different tabs, but the most used one is the <strong>Environment</strong> tab. This lists some information about the 'objects' you have created in your code, such as data frames, vectors or statistical models which we'll learn more about throughout these labs.</p></li>
-<li><p>This pane also has several tabs. The ones of note here are the <strong>Files</strong> tab which shows the folders and files the current RStudio session has access to; the <strong>Plots</strong> tab which shows any plots or graphs you have created in your code; and the <strong>Help</strong> tab which can be used to learn more about the properties of different functions that can be used in R Studio.</p></li>
-</ol>
-<p>To save an R script with any code you have written, simply click the <img src="Images/Save.png" style="width:3.0%" /> icon at the top left of the source pane and choose where to save the file (make sure this is somewhere you can find it again, like in a folder called '<em>S2S Labs</em>'!). R scripts are saved as .r files.</p>
-<p>To open a previously saved R script, either click on the .r file in the folder you've saved it to, or within RStudio go to <code>File &gt; Open File...</code> and choose the .r file from there.</p>
-<p>Now you are ready to begin using RStudio to write your own code!</p>
+<div id="welcome-to-s2s-labs" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Welcome to S2S Labs<a href="index.html#welcome-to-s2s-labs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Welcome to the first S2S lab! The contents of these labs are based on the textbook <a href="https://read.kortext.com/reader/pdf/92741/A"><strong><em>Probability and Statistics with R</em></strong></a> by Ugarte, Militino and Arnholt. Reference will be made to this textbook throughout the labs and it's a great place to find further details and examples of the sort of things we'll be looking at.</p>
+<p><img src="Images/PASWR2.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>Over the course of the semester, we will have 10 lab slots - one every week on a Wednesday. The labs offer an opportunity to practise using RStudio yourself and follow along with the code being demonstrated. After each lab session, a complete version of the lab, showing solutions to all the tasks as well as separate solutions to the Further Exercises, will be made available on the <a href="https://moodle.gla.ac.uk/course/view.php?id=38593">S2S Moodle page</a>.</p>
+<p>The first three weeks of labs will follow <a href="https://read.kortext.com/reader/pdf/92741/1">Chapter 1 What Is R?</a> of <em>Probability and Statistics with R</em> and provide an introduction to the basics of using R to work with data. You can use this chapter to find extra details of what's covered in the first three labs but everything that is examinable will be covered in the labs themselves.</p>
+<p>There are two pieces of assessment associated with these labs; an R assessment and a Lab Report. More details of these will be provided closer to the time.</p>
 
-</div>
 </div>
 <script>
 

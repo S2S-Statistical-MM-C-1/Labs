@@ -1,8 +1,4 @@
-fig:rstud-image
-RStudio
-downloadR
-downloadRS
-UseR
+welcome-to-s2s-labs
 vectors
 addition
 vectlog

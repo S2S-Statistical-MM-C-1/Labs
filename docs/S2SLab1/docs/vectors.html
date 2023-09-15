@@ -131,12 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R and RStudio</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#downloadR"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#downloadRS"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#UseR"><i class="fa fa-check"></i><b>1.3</b> Using RStudio</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S2S Labs</a></li>
 <li class="chapter" data-level="2" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>2</b> Vectors</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="vectors.html"><a href="vectors.html#addition"><i class="fa fa-check"></i><b>2.1</b> Addition</a></li>
@@ -173,8 +168,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="vectors" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Vectors<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Vectors are fundamental in R. They allow you store data of numerous different types, whether that be numbers, text or logical statements, and easily complete mathematical operations or extract certain elements of the data.</p>
-<p>Let's create some vectors in R to explore their properties. Copy and run the following code in your own R script.</p>
+<p>Vectors are fundamental "objects" in R. They can store data of different types but the data within any single vector must be of the same type. For example, vectors can store numerical, character (text) or logical (<code>TRUE</code>/<code>FALSE</code>) data, and be used to easily execute mathematical operations or extract certain elements of the data. For our purposes in S2S, vectors will often contain the values of a particular variable in a dataset.</p>
+<p>Let's create some trivial vectors in R to explore their properties. Copy and run the following code in your own R script.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vectors.html#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb1-2"><a href="vectors.html#cb1-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span></code></pre></div>
 <p>You should notice that two '<code>Values</code>' appear in the <strong>Environment</strong> tab, <code>x</code> and <code>y</code>. This is because we have assigned values to each of these names using the <code>&lt;-</code> operator in the code above.</p>
@@ -182,7 +177,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>x</code> is the single value 3, which can be thought of as a vector of length 1.</li>
 <li><code>y</code> is a vector of length 3 and of the form <span class="math inline">\(\begin{bmatrix}2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>. The function <code>c()</code> has been used to '<strong>c</strong>ombine' these values into one vector.</li>
 </ul>
-<!--add link to Ugarte chapter 1.3 (or maybe at the end of vectors section?) -->
+<hr />
+<p>Note that you can find further details and examples of creating your own vectors in <a href="https://read.kortext.com/reader/pdf/92741/6">Section 1.3 Vectors</a> of <em>Probability and Statistics with R</em>.</p>
 <div id="addition" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Addition<a href="vectors.html#addition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can also use R to add vectors together. Let's try it out by running the following code.</p>
@@ -200,7 +196,7 @@ length</code></pre>
 <p>We now see a warning message telling us that the length of vector <code>z</code> is not a multiple of the length of vector <code>y</code> - in other words, they have a different number of elements. We still see a result however (5, 7, 6, 10, 6) so the vectors have been added together.</p>
 <p>This time, R recycles each element of <code>y</code> in turn until it is the same length as <code>z</code> and then completes the elementwise addition. <code>y</code> has been extended by adding its first two elements on to the end so that it has five entries like <code>z</code>, meaning R has completed the calculation <span class="math inline">\(\begin{bmatrix}2&amp;4&amp;1&amp;2&amp;4\end{bmatrix}^\intercal+\begin{bmatrix}3&amp;3&amp;5&amp;8&amp;2\end{bmatrix}^\intercal\)</span>.</p>
 <div class="webex-box">
-<p><strong>Create and save the vector <span class="math inline">\(a=\begin{bmatrix}2&amp;2&amp;-1\end{bmatrix}^\intercal\)</span> and scalar <span class="math inline">\(b=2\)</span>, then add these together and save the result as a new vector called <code>c</code>.</strong></p>
+<p><strong>Create and save the vector <span class="math inline">\(a=\begin{bmatrix}2&amp;2&amp;-1\end{bmatrix}^\intercal\)</span> and scalar <span class="math inline">\(b=2\)</span>, then add these together and save the result as a new vector called <code>c</code> and print the contents of <code>c</code> in the console.</strong></p>
 <div class="webex-solution">
 <button>
 Solution
@@ -213,13 +209,15 @@ Solution
 <pre><code>[1] 4 4 1</code></pre>
 </div>
 </div>
+<hr />
+<p><a href="https://read.kortext.com/reader/pdf/92741/6">Section 1.3 Vectors</a> of <em>Probability and Statistics with R</em> explains in detail how R adds two vectors together.</p>
 </div>
 <div id="vectlog" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Logical operators<a href="vectors.html#vectlog" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vectors can contain logical values (<code>TRUE</code>/<code>FALSE</code>) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vectors.html#cb9-1" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
-<p>Here, R has again recycled the element from <code>x</code> to make it the same length as <code>y</code>, then it returns a vector telling us for which elements the statement <code>x &lt; y</code> is true. For example, the first element of <code>y</code> is 2 which is less than 3, so <code>x &lt; y</code> is <code>FALSE</code>.</p>
+<p>Here, R has again recycled the element from <code>x</code> to make it the same length as <code>y</code>, then it returns a vector telling us for which elements the statement <code>x &lt; y</code> is true. For example, the first element of <code>x</code> is 3 which is greater than 2, so <code>x &lt; y</code> is <code>FALSE</code>.</p>
 <p>Other logical operators that we can use with vectors include:</p>
 <table>
 <thead>
@@ -253,54 +251,47 @@ Solution
 <td align="center"><code>!=</code></td>
 <td align="left">exact inequality</td>
 </tr>
-<tr class="odd">
-<td align="center"><code>&amp;</code></td>
-<td align="left">vector intersection</td>
-</tr>
-<tr class="even">
-<td align="center"><code>|</code></td>
-<td align="left">vector union</td>
-</tr>
 </tbody>
 </table>
-<p>Let's explore how these operators behave by creating two new logical vectors.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vectors.html#cb11-1" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb11-2"><a href="vectors.html#cb11-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Let's explore how these operators behave with two new numerical vectors.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vectors.html#cb11-1" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="vectors.html#cb11-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
 <div class="webex-box">
-<p><strong>Write some code to find:</strong></p>
+<p><strong>Write some code to show:</strong></p>
 <ul>
-<li><strong>the intersection the vectors <code>s</code> and <code>t</code>.</strong></li>
-<li><strong>the union of vectors <code>s</code> and <code>t</code></strong></li>
-<li><strong>whether the elements of <code>s</code> and <code>t</code> are unequal</strong></li>
+<li><strong>which elements of <code>s</code> and <code>t</code> are equal to each other</strong></li>
+<li><strong>which elements of <code>s</code> are less than the corresponding element in <code>t</code></strong></li>
+<li><strong>which elements of <code>s</code> and <code>t</code> are unequal</strong></li>
 </ul>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<p><strong>Intersection</strong>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="vectors.html#cb12-1" tabindex="-1"></a>s <span class="sc">&amp;</span> t</span></code></pre></div>
-<pre><code>[1] FALSE  TRUE FALSE</code></pre>
-<p>We can see that the operator <code>&amp;</code> returns a <code>TRUE</code> statement only when both elements being compared are <code>TRUE</code>.</p>
-<p><strong>Union</strong>:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vectors.html#cb14-1" tabindex="-1"></a>s <span class="sc">|</span> t</span></code></pre></div>
-<pre><code>[1] TRUE TRUE TRUE</code></pre>
-<p>The <code>|</code> operator returns a <code>TRUE</code> statement when either of the elements being compared are <code>TRUE</code></p>
+<p>When using logical operators with vectors, R will compare the vectors elementwise meaning the first elements of each vector will be compared to each other, then the second elements and so on.</p>
+<p><strong>Equality</strong>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="vectors.html#cb12-1" tabindex="-1"></a>s <span class="sc">==</span> t</span></code></pre></div>
+<pre><code>[1]  TRUE FALSE FALSE</code></pre>
+<p>This tells us that the first element of <code>s</code> is equal to the first element of <code>t</code> (they are both the value 2), whereas the second elements of <code>s</code> and <code>t</code> are not equal and neither are the third elements.</p>
+<p><strong>Less than</strong>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vectors.html#cb14-1" tabindex="-1"></a>s <span class="sc">&lt;</span> t</span></code></pre></div>
+<pre><code>[1] FALSE FALSE  TRUE</code></pre>
+<p>The first element of <code>s</code> is not less than the first elements of <code>t</code> (that is 2 &lt; 2 is not a true statement) so this returns <code>FALSE</code>. The statement <code>s &lt; t</code> is <code>TRUE</code> for the third elements because the third element of <code>s</code> is 1 and for <code>t</code> it is 4 which equates to the statement 1 &lt; 4.</p>
 <p><strong>Inequality</strong>:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="vectors.html#cb16-1" tabindex="-1"></a>s <span class="sc">!=</span> t</span></code></pre></div>
-<pre><code>[1]  TRUE FALSE  TRUE</code></pre>
-<p>The <code>!=</code> operator returns a <code>TRUE</code> statement only when both elements are different.</p>
+<pre><code>[1] FALSE  TRUE  TRUE</code></pre>
+<p>This return the opposite of <code>s == t</code>. The first elements of <code>s</code> and <code>t</code> are both 2 so they are equal meaning <code>!=</code> will return <code>FALSE</code>. Since the second elements are 4 and 3 respectively, these are unequal so <code>!=</code> returns <code>TRUE</code>.</p>
 <p>Try using some of the other operators listed above to see if they return the vectors you expect.</p>
 </div>
 </div>
 <p>What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (<code>[ ]</code>).</p>
-<p>For example, <code>z[4]</code> would extract the fourth element from <code>z</code>, that is the number 8.</p>
+<p>For example, <code>s[3]</code> would extract the third element from <code>s</code>, that is the number 1.</p>
 <p>The following code can be used to check whether the second element of <code>s</code> is the same as the third element of <code>t</code>.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="vectors.html#cb18-1" tabindex="-1"></a>s[<span class="dv">2</span>] <span class="sc">==</span> t[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 <div class="webex-box">
-<p><strong>Create the vectors <span class="math inline">\(u=\begin{bmatrix} 4 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> and <span class="math inline">\(v=\begin{bmatrix} 1 &amp; 0 &amp; 5 \end{bmatrix}^\intercal\)</span>. Write code to check</strong></p>
+<p><strong>Create the vectors <span class="math inline">\(u=\begin{bmatrix} 4 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> and <span class="math inline">\(v=\begin{bmatrix} 1 &amp; 0 &amp; 5 \end{bmatrix}^\intercal\)</span>. Write code to check:</strong></p>
 <ul>
-<li><strong>whether the first elements of <code>u+v</code> and <code>x+y</code> are the same.</strong></li>
+<li><strong>whether the first elements of <code>u+v</code> and <code>x+y</code> (defined in the previous section) are the same.</strong></li>
 <li><strong>if the third element of <code>u+v</code> is the same as the second element of <code>x+y</code>.</strong></li>
 </ul>
 <div class="webex-solution">
@@ -321,6 +312,8 @@ Solution
 <p>Similarly, we can see that the third entry of <code>u+v</code> is 6 and the second entry of <code>x+y</code> is 7. Since these are clearly not equal we would expect R to return a <code>FALSE</code> statement when checking their equality, which we can see above.</p>
 </div>
 </div>
+<hr />
+<p>Look at <a href="https://read.kortext.com/reader/pdf/92741/6">Section 1.3 Vectors</a> of <em>Probability and Statistics with R</em> for more information on logical operators and vectors.</p>
 </div>
 <div id="other-types-of-vectors" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Other types of vectors<a href="vectors.html#other-types-of-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -340,13 +333,13 @@ Solution
 Solution
 </button>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" tabindex="-1"></a><span class="fu">typeof</span>(s)</span></code></pre></div>
-<pre><code>[1] &quot;logical&quot;</code></pre>
+<pre><code>[1] &quot;double&quot;</code></pre>
 <p>Using <code>typeof()</code>, we can see that <code>s</code> is stored by R as a logical vector.</p>
 </div>
 </div>
 <p>What happens if we try to combine two vectors which are of different types in R? Let's run some code and see.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" tabindex="-1"></a><span class="fu">c</span>(t, y)</span></code></pre></div>
-<pre><code>[1] 0 1 1 2 4 1</code></pre>
+<pre><code>[1] 2 3 4 2 4 1</code></pre>
 <p>Here, <code>t</code> is a logical vector and <code>y</code> is a numeric vector. R has returned the vector <span class="math inline">\(\begin{bmatrix} 0&amp;1&amp;1&amp;2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>, rather than <span class="math inline">\(\begin{bmatrix} \mbox{FALSE} &amp; \mbox{TRUE} &amp; \mbox{TRUE} &amp; 2 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> as might be expected. So what's happened?</p>
 <p>When R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.</p>
 <p>The entries <code>TRUE</code> and <code>FALSE</code> within the vector <code>t</code> therefore need to be presented numerically. A <code>FALSE</code> statement will take the value 0 and a <code>TRUE</code> statement will take the value 1.</p>
@@ -361,7 +354,7 @@ Solution
 Solution
 </button>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">c</span>(s, animals)</span></code></pre></div>
-<pre><code>[1] &quot;TRUE&quot;  &quot;TRUE&quot;  &quot;FALSE&quot; &quot;dog&quot;   &quot;sheep&quot; &quot;cow&quot;   &quot;horse&quot;</code></pre>
+<pre><code>[1] &quot;2&quot;     &quot;4&quot;     &quot;1&quot;     &quot;dog&quot;   &quot;sheep&quot; &quot;cow&quot;   &quot;horse&quot;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="vectors.html#cb37-1" tabindex="-1"></a><span class="fu">typeof</span>(combined)</span></code></pre></div>
 <pre><code>[1] &quot;character&quot;</code></pre>
 <p>The resulting vector is <span class="math inline">\(\begin{bmatrix} ``\mbox{TRUE&quot;} &amp; ``\mbox{TRUE&quot;} &amp; ``\mbox{FALSE&quot;} &amp; ``\mbox{dog&quot;} &amp; ``\mbox{sheep&quot;} &amp; ``\mbox{cow&quot;} &amp; ``\mbox{horse&quot;} \end{bmatrix}^\intercal\)</span> which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).</p>
@@ -376,22 +369,23 @@ Solution
 </ul>
 <p>For example, if we wanted to change the logical vector <code>s</code> to be a numeric vector we could use the following code.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="vectors.html#cb39-1" tabindex="-1"></a><span class="fu">as.numeric</span>(s)</span></code></pre></div>
-<pre><code>[1] 1 1 0</code></pre>
+<pre><code>[1] 2 4 1</code></pre>
 <p>We again see that <code>TRUE</code> statements have been given the value 1 and <code>FALSE</code> statements have been given the value 0.</p>
 <p>It is important to ensure that this coercion makes sense to do! It doesn't make much sense to represent the vector <code>animals</code> as a numerical vector, and in fact if we tried to R would show us a warning message.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="vectors.html#cb41-1" tabindex="-1"></a><span class="fu">as.numeric</span>(animals)</span></code></pre></div>
 <pre><code>Warning: NAs introduced by coercion</code></pre>
 <pre><code>[1] NA NA NA NA</code></pre>
-<p>R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with <code>NA</code>. This tells us that each element of the now numeric vector doesn't have a value.</p>
-<!-- task on coercing vectors? -->
+<p>R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with <code>NA</code> (without any quoation marks "") which is R's symbol for "Not Available", which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value. R also has the symbol <code>NaN</code> ("Not a Number") to represent an impossible value (e.g. result of dividing by zero),</p>
+<hr />
+<p>To read more about the types of vectors R can handle, see <a href="https://read.kortext.com/reader/pdf/92741/6">Section 1.3 Vectors</a> of <em>Probability and Statistics with R</em>.</p>
 </div>
 <div id="index" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Indexing vectors<a href="vectors.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have seen briefly how to index vectors using square brackets (<code>[ ]</code>) but we can now look at indexing in more detail. Specific elements can be extracted using positive indices or can be omitted from a vector using negative indices.</p>
+<p>We have seen briefly how to index vectors using square brackets <code>[ ]</code> but we can now look at indexing in more detail. Specific elements can be extracted using positive indices or can be omitted from a vector using negative indices.</p>
 <p>Let's again look at the vector <code>z</code> (remember <span class="math inline">\(z=\begin{bmatrix}3&amp;3&amp;5&amp;8&amp;2 \end{bmatrix}^\intercal\)</span>) and extract the first two elements.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="vectors.html#cb44-1" tabindex="-1"></a>z[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>[1] 3 3</code></pre>
-<p>In order to extract these two elements, we need to provide a vector giving the positions of the elements we want within the square brackets, <code>[ ]</code>.</p>
+<p>In order to extract these two elements, we need to provide a vector (using <code>c()</code>) giving the positions of the elements we want within the square brackets, <code>[ ]</code>.</p>
 <p>If we wanted to remove the third entry from <code>z</code> we can use the following code.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vectors.html#cb46-1" tabindex="-1"></a>z[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>[1] 3 3 8 2</code></pre>
@@ -403,7 +397,7 @@ Solution
 </div>
 <div class="webex-solution">
 <button>
-Hint
+Solution
 </button>
 <p>There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="vectors.html#cb48-1" tabindex="-1"></a>animals[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
@@ -418,7 +412,7 @@ Hint
 <div class="webex-box">
 <p><strong>This task has three steps, so you should write three lines of code.</strong></p>
 <ul>
-<li><strong>Create the vector <span class="math inline">\(\begin{bmatrix} 1&amp;1&amp;0&amp;1 \end{bmatrix}\)</span> and call it <code>binary</code></strong></li>
+<li><strong>Create the vector <span class="math inline">\(\begin{bmatrix} 1&amp;1&amp;0&amp;1 \end{bmatrix}^\intercal\)</span> and call it <code>binary</code></strong></li>
 <li><strong>Change <code>binary</code> to be a logical vector and save this as a new vector called <code>logical</code></strong></li>
 <li><strong>Extract the first and third elements of this vector <code>logical</code>.</strong></li>
 </ul>
@@ -436,15 +430,17 @@ Solution
 <pre><code>[1]  TRUE FALSE</code></pre>
 </div>
 </div>
+<hr />
+<p><a href="https://read.kortext.com/reader/pdf/92741/10">Section 1.3.2 Vector Indexing</a> of <em>Proability and Statistics with R</em> contains further details of indexing vectors.</p>
 </div>
 <div id="seq" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Sequences<a href="vectors.html#seq" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>So far we have manually entered the elements of all the vectors we have created. If a vector is simply a sequence of numbers (following some pattern), R has some nice functions which will speed up how we create these vectors.</p>
-<p>The operator <code>from:to</code> can be used to generate a sequence of integers from the number on the left hand side (<code>from</code>), up to the number on the right hand side (<code>to</code>). All we need to do is change the values of <code>from</code> and <code>to</code>.</p>
+<p>The operator <code>:</code> can be used, e.g <code>2:8</code>, to generate a sequence of integers from the number on the left hand side (<code>2</code>), up to the number on the right hand side (<code>8</code>).</p>
 <p>The following code generates a sequence of integers from 2 up to 8.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="vectors.html#cb58-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span><span class="dv">8</span></span></code></pre></div>
 <pre><code>[1] 2 3 4 5 6 7 8</code></pre>
-<p>This can be useful if we want to extract (or omit) a sequence of elements from a vector which are all next to each other. Let's start by creating quite a long vector (the code <code>letters</code> in R will generate a vector of all 26 lowercase letters of the alphabet). If we then want to extract the first five letters of the alphabet, we can use the code <code>1:5</code> within our indexing. The following code shows how this is done.</p>
+<p>This can be useful if we want to extract (or omit) a sequence of elements from a vector which are all next to each other. Let's start by creating quite a long vector (the object <code>letters</code> in R is a vector of all 26 lowercase letters of the English alphabet). If we then want to extract the first five letters of the alphabet, we can use the code <code>1:5</code> within our indexing. The following code shows how this is done.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="vectors.html#cb60-1" tabindex="-1"></a>longvector <span class="ot">&lt;-</span> letters</span>
 <span id="cb60-2"><a href="vectors.html#cb60-2" tabindex="-1"></a>longvector[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>[1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
@@ -479,6 +475,8 @@ Solution
 <pre><code>[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40</code></pre>
 </div>
 </div>
+<hr />
+<p>You can see additional examples of using the <code>seq()</code> function in <a href="https://read.kortext.com/reader/pdf/92741/11">Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants</a> of <em>Probability and Statistics with R</em>.</p>
 </div>
 <div id="repeat" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Repeating constants<a href="vectors.html#repeat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -536,6 +534,8 @@ Solution
 <pre><code>[1] 2 3 3 4 5 5 6 7 7</code></pre>
 </div>
 </div>
+<hr />
+<p>You can see additional examples of using the <code>rep()</code> function in <a href="https://read.kortext.com/reader/pdf/92741/11">Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants</a> of <em>Probability and Statistics with R</em>.</p>
 </div>
 <div id="filter" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> Filtering vectors<a href="vectors.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -560,7 +560,7 @@ Solution
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
-<p>A function within R which can be used to give the same results as logical operators within the square brackets is the <code>subset()</code> function. This returns the elements of a specified vector which satisfy a given logical expression. The arguments that <code>subset()</code> can be provided with are:</p>
+<p>A function within R which can be used to give the <strong>same results</strong> as logical operators within the square brackets is the <code>subset()</code> function. This returns the elements of a specified vector which satisfy a given logical expression. The arguments that <code>subset()</code> can be provided with are:</p>
 <ul>
 <li><code>x =</code>: this is the vector we want to extract elements from.</li>
 <li><code>subset =</code>: this is the logical expression used to select the elements to keep.</li>
@@ -579,17 +579,19 @@ Solution
 </div>
 </div>
 <hr />
-<p>For more detail on creating and using vectors in R see <a href="https://read.kortext.com/reader/pdf/92741/6">Section 1.3 Vectors</a> of <em>Probability and Statistics with R</em>.</p>
+<p><a href="https://read.kortext.com/reader/pdf/92741/12">Section 1.3.4 Filtering Vectors</a> of <em>Probability and Statistics with R</em> gives further examples on how to filter vectors.</p>
 </div>
 <div id="help" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> Getting help<a href="vectors.html#help" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you are ever unsure of the arguments required in a particular function in R, or even what that function does, there are ways to find out. R contains extensive help files on any function that can be used. To access these, simply put a <code>?</code> in front of the function name, or use the function <code>help()</code>.</p>
 <p>For example, if we were unsure what the function <code>rep()</code> is used for, then we can run either of the following lines of code.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="vectors.html#cb101-1" tabindex="-1"></a>?rep</span>
-<span id="cb101-2"><a href="vectors.html#cb101-2" tabindex="-1"></a></span>
-<span id="cb101-3"><a href="vectors.html#cb101-3" tabindex="-1"></a><span class="fu">help</span>(rep)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="vectors.html#cb101-1" tabindex="-1"></a>?rep</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="vectors.html#cb102-1" tabindex="-1"></a><span class="fu">help</span>(rep)</span></code></pre></div>
+<p>This tells us in the <strong>Help</strong> tab that the first argument for the <code>rep()</code> function is called <code>x =</code> and a short description of what should be provided to this argument is given. It also describes the other arguments <code>times =</code>, <code>length.out =</code> and <code>each =</code>.</p>
+<p>The order that arguments appear in in the help file is important because you don't actually need to use the names of the arguments when using a function. Instead, you can just provide the values for each argument, and as long as they are in the same order as they appear in in the help file, R will know which value corresponds to which argument. This is known as using positional arguments.</p>
+<p>Sometimes you might see a value associated with a specific argument in the help file, for example <code>x = 5</code>. This is the "default" value for that argument and it means that if you don't specify a different value for the argument, then R will use the default value when executing the function. We'll see more about default values as we encounter more complex functions in future labs.</p>
 <hr />
-<p>For more information on accessing the online and inbuilt help in RSudio, see <a href="https://read.kortext.com/reader/pdf/92741/14">Section 1.5 Getting Help</a> in <em>Probability and Statistics with R</em>.</p>
+<p>For more information on accessing the online and inbuilt help in RStudio, see <a href="https://read.kortext.com/reader/pdf/92741/14">Section 1.5 Getting Help</a> in <em>Probability and Statistics with R</em>.</p>
 <!-- `args()` only gives the argument names for more complex functions like `lm()` which haven't been introduced yet -->
 <!-- If we more specifically wanted to know what the argument names for a function should be, then we can use the function `args()` instead. To find the argument names for the `rep()` function, we can use the following code.
 
