@@ -1,6 +1,6 @@
 ---
 title: "S2S Lab 1"
-subtitle: "Exercise Solutions"
+subtitle: "Further Exercises Solutions"
 output: pdf_document
 ---
 
@@ -10,31 +10,31 @@ knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
 
 # Exercise 1
 
-The code below creates the vectors `a` and `b` which are randomly set to be either `TRUE` or `FALSE` (this is done using the `sample()` function which you can learn more about using the `help()` function).
+The code below creates the vectors `a` and `b`. `a` randomly takes the value 1 or 2 and `b` randomly takes the value 2 or 4 (this is done using the `sample()` function which you can learn more about using the `help()` function).
 
 ```{r}
-a <- sample(c(TRUE, FALSE), 1)
-b <- sample(c(TRUE, FALSE), 1)
+a <- sample(c(1, 2), 1)
+b <- sample(c(2, 4), 1)
 ```
 
 Create a new vector `c` which is:
 
-* `TRUE` if both `a` and `b` are `TRUE`.
-* `TRUE` if both `a` and `b` are `FALSE`.
+* `TRUE` if both `a` and `b` are equal.
 * `FALSE` if `a` and `b` are different.
 
-Think about how to use the logical operators `&`, `|` or `!` to do this.
+Create another vector `d` which is:
+
+* `FALSE` if `a` is 1 and `b` is 2.
+* `TRUE` if `a` is 2 and `b` is 2.
+* `FALSE` if `a` is 1 and `b` is 4.
+* `FALSE` if `a` is 2 and `b` is 4.
 
 ## Solution
 
 ```{r}
-c <- (a & b) | (!a & !b)
-```
-
-Alternatively:
-
-```{r}
 c <- a == b
+
+d <- a >= b
 ```
 
 

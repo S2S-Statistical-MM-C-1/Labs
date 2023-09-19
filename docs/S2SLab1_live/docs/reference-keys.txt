@@ -1,7 +1,5 @@
-RStudio
-downloadR
-downloadRS
-UseR
+welcome-to-s2s-labs
+mentimeter
 vectors
 addition
 vectlog

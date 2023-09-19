@@ -38,7 +38,7 @@ check_func = function() {
     this.innerHTML = "Hide Answers";
   } else {
     cl.add("unchecked");
-    this.innerHTML = "Show Answers";
+    this.innerHTML = "Check Answers";
   }
 }
 
@@ -148,7 +148,7 @@ window.onload = function() {
     check_sections[i].classList.add("unchecked");
 
     let btn = document.createElement("button");
-    btn.innerHTML = "Show Answers";
+    btn.innerHTML = "Check Answers";
     btn.classList.add("webex-check-button");
     btn.onclick = check_func;
     check_sections[i].appendChild(btn);

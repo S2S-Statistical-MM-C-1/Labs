@@ -215,7 +215,8 @@ Solution
 <div id="vectlog" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Logical operators<a href="vectors.html#vectlog" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vectors can contain logical values (<code>TRUE</code>/<code>FALSE</code>) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vectors.html#cb9-1" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vectors.html#cb9-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> (x <span class="sc">&lt;</span> y)</span>
+<span id="cb9-2"><a href="vectors.html#cb9-2" tabindex="-1"></a>w</span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 <p>Here, R has again recycled the element from <code>x</code> to make it the same length as <code>y</code>, then it returns a vector telling us for which elements the statement <code>x &lt; y</code> is true. For example, the first element of <code>x</code> is 3 which is greater than 2, so <code>x &lt; y</code> is <code>FALSE</code>.</p>
 <p>Other logical operators that we can use with vectors include:</p>
@@ -327,37 +328,37 @@ Solution
 <pre><code>[1] &quot;character&quot;</code></pre>
 <p>This tells us that R has stored <code>animals</code> as a character vector, meaning each element is stored as a string of text.</p>
 <div class="webex-check webex-box">
-<p><strong>What type of vector is <code>s</code>?</strong> <select class='webex-select'><option value='blank'></option><option value='answer'>logical</option><option value=''>numeric</option><option value=''>complex</option><option value=''>character</option></select></p>
+<p><strong>What type of vector is <code>w</code>?</strong> <select class='webex-select'><option value='blank'></option><option value='answer'>logical</option><option value=''>numeric</option><option value=''>complex</option><option value=''>character</option></select></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" tabindex="-1"></a><span class="fu">typeof</span>(s)</span></code></pre></div>
-<pre><code>[1] &quot;double&quot;</code></pre>
-<p>Using <code>typeof()</code>, we can see that <code>s</code> is stored by R as a logical vector.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" tabindex="-1"></a><span class="fu">typeof</span>(w)</span></code></pre></div>
+<pre><code>[1] &quot;logical&quot;</code></pre>
+<p>Using <code>typeof()</code>, we can see that <code>w</code> is stored by R as a logical vector.</p>
 </div>
 </div>
 <p>What happens if we try to combine two vectors which are of different types in R? Let's run some code and see.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" tabindex="-1"></a><span class="fu">c</span>(t, y)</span></code></pre></div>
-<pre><code>[1] 2 3 4 2 4 1</code></pre>
-<p>Here, <code>t</code> is a logical vector and <code>y</code> is a numeric vector. R has returned the vector <span class="math inline">\(\begin{bmatrix} 0&amp;1&amp;1&amp;2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>, rather than <span class="math inline">\(\begin{bmatrix} \mbox{FALSE} &amp; \mbox{TRUE} &amp; \mbox{TRUE} &amp; 2 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> as might be expected. So what's happened?</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" tabindex="-1"></a><span class="fu">c</span>(w, y)</span></code></pre></div>
+<pre><code>[1] 0 1 0 2 4 1</code></pre>
+<p>Here, <code>w</code> is a logical vector and <code>y</code> is a numeric vector. R has returned the vector <span class="math inline">\(\begin{bmatrix} 0&amp;1&amp;0&amp;2&amp;4&amp;1 \end{bmatrix}^\intercal\)</span>, rather than <span class="math inline">\(\begin{bmatrix} \mbox{FALSE} &amp; \mbox{TRUE} &amp; \mbox{FALSE} &amp; 2 &amp; 4 &amp; 1 \end{bmatrix}^\intercal\)</span> as might be expected. So what's happened?</p>
 <p>When R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.</p>
-<p>The entries <code>TRUE</code> and <code>FALSE</code> within the vector <code>t</code> therefore need to be presented numerically. A <code>FALSE</code> statement will take the value 0 and a <code>TRUE</code> statement will take the value 1.</p>
+<p>The entries <code>TRUE</code> and <code>FALSE</code> within the vector <code>w</code> therefore need to be presented numerically. A <code>FALSE</code> statement will take the value 0 and a <code>TRUE</code> statement will take the value 1.</p>
 <p>Let's look at combining a numeric vector with a complex vector. Remember that <code>y</code> is a numeric vector and <code>complex</code> is a vector containing complex numbers.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="vectors.html#cb33-1" tabindex="-1"></a><span class="fu">c</span>(y, complex)</span></code></pre></div>
 <pre><code>[1] 2+0i 4+0i 1+0i 2+1i 0+0i 3+2i</code></pre>
 <p>Now all elements are presented as a complex number. That is because R considers complex vectors to be more complex than numeric vectors.</p>
 <div class="webex-box">
-<p><strong>Create a new vector, called <code>combined</code>, which is a combination of the logical vector <code>s</code> and the character vector <code>animals</code>. What type of vector is this?</strong></p>
+<p><strong>Create a new vector, called <code>combined</code>, which is a combination of the logical vector <code>w</code> and the character vector <code>animals</code>. What type of vector is this?</strong></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">c</span>(s, animals)</span></code></pre></div>
-<pre><code>[1] &quot;2&quot;     &quot;4&quot;     &quot;1&quot;     &quot;dog&quot;   &quot;sheep&quot; &quot;cow&quot;   &quot;horse&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">c</span>(w, animals)</span></code></pre></div>
+<pre><code>[1] &quot;FALSE&quot; &quot;TRUE&quot;  &quot;FALSE&quot; &quot;dog&quot;   &quot;sheep&quot; &quot;cow&quot;   &quot;horse&quot;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="vectors.html#cb37-1" tabindex="-1"></a><span class="fu">typeof</span>(combined)</span></code></pre></div>
 <pre><code>[1] &quot;character&quot;</code></pre>
-<p>The resulting vector is <span class="math inline">\(\begin{bmatrix} ``\mbox{TRUE&quot;} &amp; ``\mbox{TRUE&quot;} &amp; ``\mbox{FALSE&quot;} &amp; ``\mbox{dog&quot;} &amp; ``\mbox{sheep&quot;} &amp; ``\mbox{cow&quot;} &amp; ``\mbox{horse&quot;} \end{bmatrix}^\intercal\)</span> which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).</p>
+<p>The resulting vector is <span class="math inline">\(\begin{bmatrix} ``\mbox{FALSE&quot;} &amp; ``\mbox{TRUE&quot;} &amp; ``\mbox{FALSE&quot;} &amp; ``\mbox{dog&quot;} &amp; ``\mbox{sheep&quot;} &amp; ``\mbox{cow&quot;} &amp; ``\mbox{horse&quot;} \end{bmatrix}^\intercal\)</span> which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).</p>
 </div>
 </div>
 <p>It is possible to coerce vectors of one type to be another type. This can be done using one of the functions</p>
@@ -367,9 +368,9 @@ Solution
 <li><code>as.complex()</code></li>
 <li><code>as.character()</code></li>
 </ul>
-<p>For example, if we wanted to change the logical vector <code>s</code> to be a numeric vector we could use the following code.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="vectors.html#cb39-1" tabindex="-1"></a><span class="fu">as.numeric</span>(s)</span></code></pre></div>
-<pre><code>[1] 2 4 1</code></pre>
+<p>For example, if we wanted to change the logical vector <code>w</code> to be a numeric vector we could use the following code.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="vectors.html#cb39-1" tabindex="-1"></a><span class="fu">as.numeric</span>(w)</span></code></pre></div>
+<pre><code>[1] 0 1 0</code></pre>
 <p>We again see that <code>TRUE</code> statements have been given the value 1 and <code>FALSE</code> statements have been given the value 0.</p>
 <p>It is important to ensure that this coercion makes sense to do! It doesn't make much sense to represent the vector <code>animals</code> as a numerical vector, and in fact if we tried to R would show us a warning message.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="vectors.html#cb41-1" tabindex="-1"></a><span class="fu">as.numeric</span>(animals)</span></code></pre></div>

@@ -66,7 +66,8 @@ c
 Vectors can contain logical values (`TRUE`/`FALSE`) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.
 
 ```{r vect4}
-x < y
+w <- (x < y)
+w
 ```
 
 Here, R has again recycled the element from `x` to make it the same length as `y`, then it returns a vector telling us for which elements the statement `x < y` is true. For example, the first element of `x` is 3 which is greater than 2, so `x < y` is `FALSE`.
@@ -197,28 +198,28 @@ This tells us that R has stored `animals` as a character vector, meaning each el
 
 ::: {.webex-check .webex-box}
 
-**What type of vector is `s`?** `r mcq(c(answer="logical", "numeric", "complex", "character"))`
+**What type of vector is `w`?** `r mcq(c(answer="logical", "numeric", "complex", "character"))`
 
 `r hide("Solution")`
 ```{r vect-ans4}
-typeof(s)
+typeof(w)
 ```
 
-Using `typeof()`, we can see that `s` is stored by R as a logical vector.
+Using `typeof()`, we can see that `w` is stored by R as a logical vector.
 `r unhide()`
 :::
 
 What happens  if we try to combine two vectors which are of different types in R? Let's run some code and see.
 
 ```{r vect10}
-c(t, y)
+c(w, y)
 ```
 
-Here, `t` is a logical vector and `y` is a numeric vector. R has returned the vector $\begin{bmatrix} 0&1&1&2&4&1 \end{bmatrix}^\intercal$, rather than $\begin{bmatrix} \mbox{FALSE} & \mbox{TRUE} & \mbox{TRUE} & 2 & 4 & 1 \end{bmatrix}^\intercal$ as might be expected. So what's happened?
+Here, `w` is a logical vector and `y` is a numeric vector. R has returned the vector $\begin{bmatrix} 0&1&0&2&4&1 \end{bmatrix}^\intercal$, rather than $\begin{bmatrix} \mbox{FALSE} & \mbox{TRUE} & \mbox{FALSE} & 2 & 4 & 1 \end{bmatrix}^\intercal$ as might be expected. So what's happened?
 
 When R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.
 
-The entries `TRUE` and `FALSE` within the vector `t` therefore need to be presented numerically. A `FALSE` statement will take the value 0 and a `TRUE` statement will take the value 1.
+The entries `TRUE` and `FALSE` within the vector `w` therefore need to be presented numerically. A `FALSE` statement will take the value 0 and a `TRUE` statement will take the value 1.
 
 Let's look at combining a numeric vector with a complex vector. Remember that `y` is a numeric vector and `complex` is a vector containing complex numbers.
 
@@ -230,16 +231,16 @@ Now all elements are presented as a complex number. That is because R considers 
 
 ::: {.webex-box}
 
-**Create a new vector, called `combined`, which is a combination of the logical vector `s` and the character vector `animals`. What type of vector is this?**
+**Create a new vector, called `combined`, which is a combination of the logical vector `w` and the character vector `animals`. What type of vector is this?**
 
 `r hide("Solution")`
 ```{r vect-ans5, echo=c(1, 3)}
-combined <- c(s, animals)
+combined <- c(w, animals)
 combined
 typeof(combined)
 ```
 
-The resulting vector is $\begin{bmatrix} ``\mbox{TRUE"} & ``\mbox{TRUE"} & ``\mbox{FALSE"} & ``\mbox{dog"} & ``\mbox{sheep"} & ``\mbox{cow"} & ``\mbox{horse"} \end{bmatrix}^\intercal$ which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).
+The resulting vector is $\begin{bmatrix} ``\mbox{FALSE"} & ``\mbox{TRUE"} & ``\mbox{FALSE"} & ``\mbox{dog"} & ``\mbox{sheep"} & ``\mbox{cow"} & ``\mbox{horse"} \end{bmatrix}^\intercal$ which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).
 `r unhide()`
 
 :::
@@ -251,10 +252,10 @@ It is possible to coerce vectors of one type to be another type. This can be don
 * `as.complex()`
 * `as.character()`
 
-For example, if we wanted to change the logical vector `s` to be a numeric vector we could use the following code.
+For example, if we wanted to change the logical vector `w` to be a numeric vector we could use the following code.
 
 ```{r vect12}
-as.numeric(s)
+as.numeric(w)
 ```
 
 We again see that `TRUE` statements have been given the value 1 and `FALSE` statements have been given the value 0.
