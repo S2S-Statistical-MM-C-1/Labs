@@ -3,6 +3,7 @@ fig:edu-image
 tab:subject-table
 fig:normal-image
 tab:dist-tab
+welcome
 reading
 directory
 read.table
