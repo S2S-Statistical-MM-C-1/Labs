@@ -228,7 +228,7 @@ Look at [Section 1.11.3 Sorting a Data Frame by One or More of Its Columns](http
 
 When we want to only view particular elements of a data frame, this is known as subsetting the data. This is useful if you're dealing with extremely large data sets and only want to analyse female subjects, or subjects who are all from the same country for example. Subsetting the data means that you would extract only these subjects that you are actually interested in.
 
-A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in Lab 1). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
+A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in [Lab 1](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab1/docs/)). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
 
 * `x =`: this is the data frame that we want to extract particular elements from.
 * `subset =`: this is a logical statement which determines the elements to keep in the subsetted data frame.

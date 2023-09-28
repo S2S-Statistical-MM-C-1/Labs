@@ -45,9 +45,33 @@ str(education)
 -->
 :::
 
-::: {.webex-box}
+::: {.webex-box .webex-check}
 
-**Write some code to change the variables `year` and `level` in `education` to be factor variables.**
+```{r, echo=FALSE}
+opts <- c("`data.frame`", answer="`factor`", "`matrix`")
+```
+
+
+**Complete the code to change the variables `year` and `level` in `education` to be factor variables.**
+
+::: {.webex-code}
+`education$year <- ``r mcq(opts)``(x = ``r fitb(c("education$year", "education[, \"year\"]", "education[, 1]"))``,`
+<ul style="margin-top: 0em; margin-left: 15em;">
+
+`levels = c(``r fitb("\"2016\", \"2017\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\"", width=15)``))`
+</ul>
+:::
+
+<p>
+</p>
+
+::: {.webex-code}
+`education$year <- ``r mcq(opts)``(x = ``r fitb(c("education$level", "education[, \"level\"]", "education[, 2]"))``,`
+<ul style="margin-top: 0em; margin-left: 15em;">
+
+`levels = c(``r fitb("\"ELC\", \"Primary\", \"Secondary\"", width=15)``))`
+</ul>
+:::
 
 <!--
 `r hide("Solution")`
@@ -215,9 +239,14 @@ For example, the following code orders all the subjects in `chol` by `age` first
 chol[order(chol$age, chol$ldl), ]
 ```
 
-::: {.webex-box}
+::: {.webex-box .webex-check}
 
-**Write code to sort the observations from `education` in decreasing order of the number of pupils.**
+**Complete the code to sort the observations from `education` in decreasing order of the number of pupils.**
+
+:::{.webex-code}
+
+`education[``r mcq(c("sort", answer="order"))``(``r fitb(c("education$pupils", "education[,\"pupils\"]", "education[,5]"))``, decreasing =``r fitb("TRUE")``, ]`
+:::
 <!--
 `r hide("Solution")`
 We need to include the argument `decreasing = TRUE` within the function `order()` so that the observations are ordered from largest number of pupils to the smallest number of pupils. We can use the `order()` function within square brackets to show all variables in the data frame in order of decreasing number of pupils.
@@ -238,7 +267,7 @@ Look at [Section 1.11.3 Sorting a Data Frame by One or More of Its Columns](http
 
 When we want to only view particular elements of a data frame, this is known as subsetting the data. This is useful if you're dealing with extremely large data sets and only want to analyse female subjects, or subjects who are all from the same country for example. Subsetting the data means that you would extract only these subjects that you are actually interested in.
 
-A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in Lab 1). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
+A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in [Lab 1](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab1/docs/)). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
 
 * `x =`: this is the data frame that we want to extract particular elements from.
 * `subset =`: this is a logical statement which determines the elements to keep in the subsetted data frame.
@@ -542,11 +571,23 @@ head(patients[, -c(1:3)])
 
 Because the column showing the patient ID has a different name in `chol_full` and `treatment`, we have had to specify what it is called in each data frame here using `by.x =` and `by.y =` (make sure to check the contents of your data frames to notice things like this!). The argument `all = TRUE` means that we are keeping all information from both data frames, regardless of whether a patient only appears in `chol_full` or only in `treatment`. This is why in the excerpt of `patients` above, there are rows where the value for all variables except `treatment` are `NA`.
 
-::: {.webex-box}
+::: {.webex-box .webex-check}
 
-**The file *class.csv* contains information on the average primary class size in the years 2016 - 2022. Read this file into R and save it as a data frame called `class`.**
+**The file *class.csv* contains information on the average primary class size in the years 2016 - 2022. You can read this file into R and save it as a data frame called `class` using the following code.**
+
+```{r data-ans12, eval=FALSE}
+class <- read.csv(file = "class.csv")
+```
 
 **Merge the information from the data frames `education` and `class` together into a new data frame called `primary`, showing all variables from `education` and the average class size for primary schools only. Look carefully at which row names these two data frames have in common.**
+
+:::{.webex-code}
+`primary <- ``r fitb("merge")``(x = ``r fitb("education")``, y = ``r fitb("class")``,`
+<ul style="margin-top: 0em; margin-left: 8.6em;">
+
+`by = c(``r fitb("\"year\", \"level\"")``), all.y = ``r fitb("TRUE")``)
+</ul>
+:::
 
 <!--
 `r hide("Solution")`

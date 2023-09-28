@@ -238,8 +238,22 @@ str(education)
 
 --></p>
 </div>
-<div class="webex-box">
-<p><strong>Write some code to change the variables <code>year</code> and <code>level</code> in <code>education</code> to be factor variables.</strong></p>
+<div class="webex-box webex-check">
+<p><strong>Complete the code to change the variables <code>year</code> and <code>level</code> in <code>education</code> to be factor variables.</strong></p>
+<div class="webex-code">
+<code>education$year &lt;-</code><select class='webex-select'><option value='blank'></option><option value=''><code>data.frame</code></option><option value='answer'><code>factor</code></option><option value=''><code>matrix</code></option></select><code>(x =</code><input class='webex-solveme nospaces' size='19' data-answer='["education$year","education[, \"year\"]","education[, 1]"]'/><code>,</code>
+<ul style="margin-top: 0em; margin-left: 15em;">
+<code>levels = c(</code><input class='webex-solveme nospaces' size='15' data-answer='["\"2016\", \"2017\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\""]'/><code>))</code>
+</ul>
+</div>
+<p>
+</p>
+<div class="webex-code">
+<code>education$year &lt;-</code><select class='webex-select'><option value='blank'></option><option value=''><code>data.frame</code></option><option value='answer'><code>factor</code></option><option value=''><code>matrix</code></option></select><code>(x =</code><input class='webex-solveme nospaces' size='20' data-answer='["education$level","education[, \"level\"]","education[, 2]"]'/><code>,</code>
+<ul style="margin-top: 0em; margin-left: 15em;">
+<code>levels = c(</code><input class='webex-solveme nospaces' size='15' data-answer='["\"ELC\", \"Primary\", \"Secondary\""]'/><code>))</code>
+</ul>
+</div>
 <!--
 
 <div class='webex-solution'><button>Solution</button>
@@ -2417,8 +2431,11 @@ current
 </tbody>
 </table>
 </div>
-<div class="webex-box">
-<p><strong>Write code to sort the observations from <code>education</code> in decreasing order of the number of pupils.</strong>
+<div class="webex-box webex-check">
+<p><strong>Complete the code to sort the observations from <code>education</code> in decreasing order of the number of pupils.</strong></p>
+<div class="webex-code">
+<p><code>education[</code><select class='webex-select'><option value='blank'></option><option value=''>sort</option><option value='answer'>order</option></select><code>(</code><input class='webex-solveme nospaces' size='20' data-answer='["education$pupils","education[,\"pupils\"]","education[,5]"]'/><code>, decreasing =</code><input class='webex-solveme nospaces' size='4' data-answer='["TRUE"]'/><code>, ]</code></p>
+</div>
 <!--
 
 <div class='webex-solution'><button>Solution</button>
@@ -2619,7 +2636,7 @@ education[order(education$pupils, decreasing = TRUE), ]
 
 </div>
 
---></p>
+-->
 </div>
 <hr />
 <p>Look at <a href="https://read.kortext.com/reader/pdf/92741/55">Section 1.11.3 Sorting a Data Frame by One or More of Its Columns</a> of <em>Probability and Statistics with R</em> to learn more about sorting and ordering data sets.</p>
@@ -2627,7 +2644,7 @@ education[order(education$pupils, decreasing = TRUE), ]
 <div id="subsetting" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Subsetting<a href="data.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When we want to only view particular elements of a data frame, this is known as subsetting the data. This is useful if you're dealing with extremely large data sets and only want to analyse female subjects, or subjects who are all from the same country for example. Subsetting the data means that you would extract only these subjects that you are actually interested in.</p>
-<p>A useful function for extracting elements of a data frame is the function <code>subset()</code> (which we first saw in Lab 1). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that <code>subset()</code> takes are:</p>
+<p>A useful function for extracting elements of a data frame is the function <code>subset()</code> (which we first saw in <a href="https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab1/docs/">Lab 1</a>). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that <code>subset()</code> takes are:</p>
 <ul>
 <li><code>x =</code>: this is the data frame that we want to extract particular elements from.</li>
 <li><code>subset =</code>: this is a logical statement which determines the elements to keep in the subsetted data frame.</li>
@@ -4380,9 +4397,16 @@ Placebo
 </table>
 </div>
 <p>Because the column showing the patient ID has a different name in <code>chol_full</code> and <code>treatment</code>, we have had to specify what it is called in each data frame here using <code>by.x =</code> and <code>by.y =</code> (make sure to check the contents of your data frames to notice things like this!). The argument <code>all = TRUE</code> means that we are keeping all information from both data frames, regardless of whether a patient only appears in <code>chol_full</code> or only in <code>treatment</code>. This is why in the excerpt of <code>patients</code> above, there are rows where the value for all variables except <code>treatment</code> are <code>NA</code>.</p>
-<div class="webex-box">
-<p><strong>The file <em>class.csv</em> contains information on the average primary class size in the years 2016 - 2022. Read this file into R and save it as a data frame called <code>class</code>.</strong></p>
+<div class="webex-box webex-check">
+<p><strong>The file <em>class.csv</em> contains information on the average primary class size in the years 2016 - 2022. You can read this file into R and save it as a data frame called <code>class</code> using the following code.</strong></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data.html#cb47-1" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;class.csv&quot;</span>)</span></code></pre></div>
 <p><strong>Merge the information from the data frames <code>education</code> and <code>class</code> together into a new data frame called <code>primary</code>, showing all variables from <code>education</code> and the average class size for primary schools only. Look carefully at which row names these two data frames have in common.</strong></p>
+<div class="webex-code">
+<code>primary &lt;-</code><input class='webex-solveme nospaces' size='5' data-answer='["merge"]'/><code>(x =</code><input class='webex-solveme nospaces' size='9' data-answer='["education"]'/><code>, y =</code><input class='webex-solveme nospaces' size='5' data-answer='["class"]'/><code>,</code>
+<ul style="margin-top: 0em; margin-left: 8.6em;">
+<code>by = c(</code><input class='webex-solveme nospaces' size='15' data-answer='["\"year\", \"level\""]'/><code>), all.y =</code><input class='webex-solveme nospaces' size='4' data-answer='["TRUE"]'/>`)
+</ul>
+</div>
 <!--
 
 <div class='webex-solution'><button>Solution</button>
