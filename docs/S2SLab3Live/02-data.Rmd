@@ -66,7 +66,7 @@ opts <- c("`data.frame`", answer="`factor`", "`matrix`")
 </p>
 
 ::: {.webex-code}
-`education$year <- ``r mcq(opts)``(x = ``r fitb(c("education$level", "education[, \"level\"]", "education[, 2]"))``,`
+`education$level <- ``r mcq(opts)``(x = ``r fitb(c("education$level", "education[, \"level\"]", "education[, 2]"))``,`
 <ul style="margin-top: 0em; margin-left: 15em;">
 
 `levels = c(``r fitb("\"ELC\", \"Primary\", \"Secondary\"", width=15)``))`
