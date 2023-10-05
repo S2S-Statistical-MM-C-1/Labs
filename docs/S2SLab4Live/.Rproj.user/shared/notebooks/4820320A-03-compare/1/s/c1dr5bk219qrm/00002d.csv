@@ -1,0 +1,4 @@
+"0","par(mfrow = c(1, 2))"
+"0",""
+"0","qqnorm(y = BMI_sitting$BMI,"
+"0","       main = ""Traditional Sitting Group"")"

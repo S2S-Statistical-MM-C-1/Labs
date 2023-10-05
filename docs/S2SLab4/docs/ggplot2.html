@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 ggplot2 | S2S Lab 4</title>
-  <meta name="description" content="4 ggplot2 | S2S Lab 4" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <title>5 ggplot2 | S2S Lab 4</title>
+  <meta name="description" content="5 ggplot2 | S2S Lab 4" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 ggplot2 | S2S Lab 4" />
+  <meta property="og:title" content="5 ggplot2 | S2S Lab 4" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 ggplot2 | S2S Lab 4" />
+  <meta name="twitter:title" content="5 ggplot2 | S2S Lab 4" />
   
   
   
@@ -94,7 +94,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -107,7 +107,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -121,10 +121,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="include/webex.css" type="text/css" />
 </head>
@@ -139,32 +135,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Qualitative Data</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
+<li class="chapter" data-level="2" data-path="qual.html"><a href="qual.html"><i class="fa fa-check"></i><b>2</b> Qualitative Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#sec:tables"><i class="fa fa-check"></i><b>1.1</b> Tables</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#bars"><i class="fa fa-check"></i><b>1.2</b> Barplots</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#sec:dots"><i class="fa fa-check"></i><b>1.3</b> Dot Charts</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#sec:pies"><i class="fa fa-check"></i><b>1.4</b> Pie Charts</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#bi"><i class="fa fa-check"></i><b>1.5</b> Bivariate Data</a></li>
+<li class="chapter" data-level="2.1" data-path="qual.html"><a href="qual.html#tables"><i class="fa fa-check"></i><b>2.1</b> Tables</a></li>
+<li class="chapter" data-level="2.2" data-path="qual.html"><a href="qual.html#bars"><i class="fa fa-check"></i><b>2.2</b> Barplots</a></li>
+<li class="chapter" data-level="2.3" data-path="qual.html"><a href="qual.html#dots"><i class="fa fa-check"></i><b>2.3</b> Dot Charts</a></li>
+<li class="chapter" data-level="2.4" data-path="qual.html"><a href="qual.html#pies"><i class="fa fa-check"></i><b>2.4</b> Pie Charts</a></li>
+<li class="chapter" data-level="2.5" data-path="qual.html"><a href="qual.html#bi"><i class="fa fa-check"></i><b>2.5</b> Bivariate Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="quant.html"><a href="quant.html"><i class="fa fa-check"></i><b>2</b> Quantitative Data</a>
+<li class="chapter" data-level="3" data-path="quant.html"><a href="quant.html"><i class="fa fa-check"></i><b>3</b> Quantitative Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="quant.html"><a href="quant.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>2.1</b> Stem and Leaf Plots</a></li>
-<li class="chapter" data-level="2.2" data-path="quant.html"><a href="quant.html#strip"><i class="fa fa-check"></i><b>2.2</b> Strip Charts</a></li>
-<li class="chapter" data-level="2.3" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
-<li class="chapter" data-level="2.4" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>2.4</b> Kernel Density Estimators</a></li>
+<li class="chapter" data-level="3.1" data-path="quant.html"><a href="quant.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>3.1</b> Stem and Leaf Plots</a></li>
+<li class="chapter" data-level="3.2" data-path="quant.html"><a href="quant.html#strip"><i class="fa fa-check"></i><b>3.2</b> Strip Charts</a></li>
+<li class="chapter" data-level="3.3" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>3.3</b> Histograms</a></li>
+<li class="chapter" data-level="3.4" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>3.4</b> Kernel Density Estimators</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="comp.html"><a href="comp.html"><i class="fa fa-check"></i><b>3</b> Comparing Samples</a>
+<li class="chapter" data-level="4" data-path="comp.html"><a href="comp.html"><i class="fa fa-check"></i><b>4</b> Comparing Samples</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="comp.html"><a href="comp.html#qq-plots"><i class="fa fa-check"></i><b>3.1</b> QQ Plots</a></li>
+<li class="chapter" data-level="4.1" data-path="comp.html"><a href="comp.html#comparing-histograms"><i class="fa fa-check"></i><b>4.1</b> Comparing histograms</a></li>
+<li class="chapter" data-level="4.2" data-path="comp.html"><a href="comp.html#comparing-density-estimates"><i class="fa fa-check"></i><b>4.2</b> Comparing density estimates</a></li>
+<li class="chapter" data-level="4.3" data-path="comp.html"><a href="comp.html#qq-plots"><i class="fa fa-check"></i><b>4.3</b> QQ Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>4</b> ggplot2</a>
+<li class="chapter" data-level="5" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>5</b> ggplot2</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ggplot2.html"><a href="ggplot2.html#ggbars"><i class="fa fa-check"></i><b>4.1</b> Barplots</a></li>
-<li class="chapter" data-level="4.2" data-path="ggplot2.html"><a href="ggplot2.html#gghist"><i class="fa fa-check"></i><b>4.2</b> Histograms</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot2.html"><a href="ggplot2.html#ggkern"><i class="fa fa-check"></i><b>4.3</b> Kernel Density Estimators</a></li>
+<li class="chapter" data-level="5.1" data-path="ggplot2.html"><a href="ggplot2.html#ggbars"><i class="fa fa-check"></i><b>5.1</b> Barplots</a></li>
+<li class="chapter" data-level="5.2" data-path="ggplot2.html"><a href="ggplot2.html#gghist"><i class="fa fa-check"></i><b>5.2</b> Histograms</a></li>
+<li class="chapter" data-level="5.3" data-path="ggplot2.html"><a href="ggplot2.html#ggkern"><i class="fa fa-check"></i><b>5.3</b> Kernel Density Estimators</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>5</b> Further Exercises</a>
+<li class="chapter" data-level="6" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>6</b> Further Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
@@ -186,29 +185,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ggplot2" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> ggplot2<a href="ggplot2.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In Sections <a href="index.html#sec:qual">1</a>, <a href="quant.html#quant">2</a> and <a href="comp.html#comp">3</a>, the functions used to create the plots and graphs we have seen so far exist in "base R". This means that the functions, such as <code>barplot()</code>, <code>hist()</code> and <code>density()</code>, can just be used without having to first load any specific packages.</p>
+<div id="ggplot2" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> ggplot2<a href="ggplot2.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In Sections <a href="qual.html#qual">2</a>, <a href="quant.html#quant">3</a> and <a href="comp.html#comp">4</a>, the functions used to create the plots and graphs we have seen so far exist in "base R". This means that the functions, such as <code>barplot()</code>, <code>hist()</code> and <code>density()</code>, can just be used without having to first load any specific packages.</p>
 <p>One useful package that can be used to create plots and graphs is called <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> (the "gg" stands for "grammar of graphics"). As the developers put it:</p>
 <blockquote>
 <p><em>You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</em></p>
 </blockquote>
 <p>In order to use <code>ggplot2</code>, you must make sure it is first installed on your device and then load it into your RStudio session.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ggplot2.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb61-2"><a href="ggplot2.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ggplot2.html#cb61-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb61-2"><a href="ggplot2.html#cb61-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>Graphs made using <code>ggplot2</code> are done so in <em>layers</em> (different lines of code). Data is mapped to a <em>geometric object</em> (this tells R what type of plot to construct) and the variables are mapped to different aspects of the plot through an <em>aesthetic function</em> (this states, for example, which variables should be used for the x-axis and which for the y-axis). Other visual elements of the plot can be altered with additional <em>layers</em>.</p>
 <p>The basic setup of a <code>ggplot2</code> graph starts with the function <code>ggplot()</code>. The argument that this function takes is:</p>
 <ul>
 <li><code>data =</code>: this is a data frame which contains the data to be used in the plot.</li>
 </ul>
 <p>Additional layers can be added after the <code>ggplot()</code> function using the <code>+</code> operator. For example, the standard setup for a graph using <code>ggplot2</code> would be as follows in the code below.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ggplot2.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dataframe) <span class="sc">+</span></span>
-<span id="cb62-2"><a href="ggplot2.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_object</span>(<span class="fu">aes</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ggplot2.html#cb62-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dataframe) <span class="sc">+</span></span>
+<span id="cb62-2"><a href="ggplot2.html#cb62-2" tabindex="-1"></a>  <span class="fu">geom_object</span>(<span class="fu">aes</span>())</span></code></pre></div>
 <p>Here, you would replace <code>dataframe</code> with the name of the data frame you want to use. The layer <code>geom_object()</code> would also be replaced with the function for the geometric object you want to use. The <code>aes()</code> function is where you can specify what variables you want to include in your plot.</p>
-<p>Some of the geometric objects you can use with <code>ggplot2</code>, as well as their associated options for within the aesthetic function, <code>aes()</code>, are listed in Table <a href="ggplot2.html#tab:ggtable">4.1</a>.</p>
+<p>Some of the geometric objects you can use with <code>ggplot2</code>, as well as their associated options for within the aesthetic function, <code>aes()</code>, are listed in Table <a href="ggplot2.html#tab:ggtable">5.1</a>.</p>
 <table>
 <caption>
-<span id="tab:ggtable">Table 4.1: </span>Geometric objects for different graph types and the aesthetic options each can take.
+<span id="tab:ggtable">Table 5.1: </span>Geometric objects for different graph types and the aesthetic options each can take.
 </caption>
 <thead>
 <tr>
@@ -263,37 +262,37 @@ Density Estimate
 </tr>
 </tbody>
 </table>
-<div id="ggbars" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Barplots<a href="ggplot2.html#ggbars" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let's make our first graph using <code>ggplot2</code>. We can recreate the barplot showing the number of patients from the <code>EPIDURAL</code> data set that fall into the three categories indicating how easy it was to find where to administer the epidural anesthetic, seen in Section <a href="index.html#bars">1.2</a>.</p>
+<div id="ggbars" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Barplots<a href="ggplot2.html#ggbars" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let's make our first graph using <code>ggplot2</code>. We can recreate the barplot showing the number of patients from the <code>EPIDURAL</code> data set that fall into the three categories indicating how easy it was to find where to administer the epidural anesthetic, seen in Section <a href="qual.html#bars">2.2</a>.</p>
 <p>To create the basic barplot, we only need to provide the arguments <code>data = EPIDURAL</code> within the <code>ggplot()</code> function. We want to use the geometric object function <code>geom_bar()</code> to create a barplot and provide <code>x = ease</code> within the <code>aes()</code> function which maps the levels of <code>ease</code> to the x-axis.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ggplot2.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb63-2"><a href="ggplot2.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease))</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ggplot2.html#cb63-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb63-2"><a href="ggplot2.html#cb63-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease))</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot3-1.png" width="672" /></p>
 <p>This creates a very simplistic barplot, where the bars are labelled with each level of the variable <code>ease</code> and are coloured grey. <code>ggplot2</code> uses a default "theme" which colours the background grey and includes grid lines in white.</p>
 <p>We can add titles and axes labels to <code>ggplot2</code> graphs in an additional layer using the function <code>labs()</code>. This takes the arguments <code>title =</code>, <code>x =</code> and <code>y =</code> as shown in the code below.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ggplot2.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb64-2"><a href="ggplot2.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease)) <span class="sc">+</span></span>
-<span id="cb64-3"><a href="ggplot2.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
-<span id="cb64-4"><a href="ggplot2.html#cb64-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ggplot2.html#cb64-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb64-2"><a href="ggplot2.html#cb64-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease)) <span class="sc">+</span></span>
+<span id="cb64-3"><a href="ggplot2.html#cb64-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb64-4"><a href="ggplot2.html#cb64-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot4-1.png" width="672" /></p>
-<p>We were also able to produce barplots in base R where the height of each bar was split based on the levels of a categorical variable (for example, splitting by the different physicians in Section <a href="index.html#bi">1.5</a>). We can do the same using <code>ggplot2</code> by including the aesthetic argument <code>fill = doctor</code> in the <code>aes()</code> function. This means that we want to "fill" each bar to show how many of the patients in each level of <code>ease</code> were seen by each physician.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ggplot2.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb65-2"><a href="ggplot2.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease, <span class="at">fill =</span> doctor)) <span class="sc">+</span></span>
-<span id="cb65-3"><a href="ggplot2.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
-<span id="cb65-4"><a href="ggplot2.html#cb65-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p>We were also able to produce barplots in base R where the height of each bar was split based on the levels of a categorical variable (for example, splitting by the different physicians in Section <a href="qual.html#bi">2.5</a>). We can do the same using <code>ggplot2</code> by including the aesthetic argument <code>fill = doctor</code> in the <code>aes()</code> function. This means that we want to "fill" each bar to show how many of the patients in each level of <code>ease</code> were seen by each physician.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ggplot2.html#cb65-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb65-2"><a href="ggplot2.html#cb65-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease, <span class="at">fill =</span> doctor)) <span class="sc">+</span></span>
+<span id="cb65-3"><a href="ggplot2.html#cb65-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb65-4"><a href="ggplot2.html#cb65-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot5-1.png" width="672" /></p>
 <p>Note that the colours used by <code>ggplot2</code> are chosen automatically. A different one is assigned to each doctor because we have used the argument <code>fill = doctor</code>. A legend is also included in the plot automatically, showing which colour corresponds to which doctor. The title "doctor" is used for the legend since this is the variable name.</p>
 <p>To change the title of the legend, we need to include another layer in the code with the function <code>guides()</code>. We can specify the title using <code>guide_legend("Title")</code> as shown in the code below. This is passed to the argument <code>fill =</code> because "doctor" has been passed to the same <code>fill =</code> argument within the <code>aes()</code> function in <code>geom_bar()</code>.</p>
 <p>By default, barplots showing bivariate data are "stacked" in <code>ggplot2</code>. If we wanted to create separate bars for each doctor within the different levels of <code>ease</code>, then we need to include the argument <code>position = "dodge"</code> within the <code>geom_bar()</code> function. Note that this is outside the <code>aes()</code> function, as shown in the code below.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ggplot2.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb66-2"><a href="ggplot2.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease, <span class="at">fill =</span> doctor), <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb66-3"><a href="ggplot2.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
-<span id="cb66-4"><a href="ggplot2.html#cb66-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
-<span id="cb66-5"><a href="ggplot2.html#cb66-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="st">&quot;Physician&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ggplot2.html#cb66-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb66-2"><a href="ggplot2.html#cb66-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> ease, <span class="at">fill =</span> doctor), <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb66-3"><a href="ggplot2.html#cb66-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb66-4"><a href="ggplot2.html#cb66-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Ease&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
+<span id="cb66-5"><a href="ggplot2.html#cb66-5" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="st">&quot;Physician&quot;</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/ggplot6-1.png" width="672" /></p>
 <div class="webex-box webex-check">
-<p><strong>Complete the code below to create the barplot shown below, showing the number of passengers who survived and did not survive in each class from the <code>TITANIC3</code> data set.</strong></p>
+<p><strong>Complete the code below to create the barplot showing the number of passengers who survived and did not survive in each class from the <code>TITANIC3</code> data set beneath.</strong></p>
 <div class="webex-code">
 <pre><code>ggplot(data = TITANIC) +</code></pre>
 <ul style="margin-top:-2em; margin-left:-0.1em;">
@@ -312,11 +311,11 @@ Density Estimate
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ggplot2.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
-<span id="cb69-2"><a href="ggplot2.html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> pclass, <span class="at">fill =</span> survived), <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb69-3"><a href="ggplot2.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Passengers Surviving the Titanic Sinking in each Class&quot;</span>,</span>
-<span id="cb69-4"><a href="ggplot2.html#cb69-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Class&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
-<span id="cb69-5"><a href="ggplot2.html#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="st">&quot;Did the passenger survive?&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ggplot2.html#cb69-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
+<span id="cb69-2"><a href="ggplot2.html#cb69-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> pclass, <span class="at">fill =</span> survived), <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb69-3"><a href="ggplot2.html#cb69-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Passengers Surviving the Titanic Sinking in each Class&quot;</span>,</span>
+<span id="cb69-4"><a href="ggplot2.html#cb69-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Class&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
+<span id="cb69-5"><a href="ggplot2.html#cb69-5" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="st">&quot;Did the passenger survive?&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <!--
@@ -332,7 +331,7 @@ ggplot(data = EPIDURAL) +
        x = "Weight (kg)")
 ```
 
-<img src="_main_files/figure-html/ggplot7-1.png" width="672" />
+<img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 `ggplot2` constructs strip charts slightly differently from base R; rather than each dot showing the exact weight of each patient, the height of the stack shows how many patients fall into a "bin" of predetermined size - similar to a histogram. `ggplot2` automatically includes values along the scale on the y-axis, however in this case they are not actually very informative as each dot represents one patient.
 
@@ -350,65 +349,65 @@ ggplot(data = EPIDURAL) +
   guides(fill = "none")
 ```
 
-<img src="_main_files/figure-html/ggplot8-1.png" width="672" />
+<img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 -->
 </div>
-<div id="gghist" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Histograms<a href="ggplot2.html#gghist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="gghist" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Histograms<a href="ggplot2.html#gghist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Histograms are easy to make in <code>ggplot2</code> using the function <code>geom_histogram()</code>. It is possible to specify the binwidth used to create the bars by including the argument <code>binwidth =</code> within this function (but outside the <code>aes()</code> function).</p>
 <p>The code below creates a histogram showing the weights of all patients in the <code>EPIDURAL</code> data set. The binwidth has been set so that each bar has a range of 10kg.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ggplot2.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb70-2"><a href="ggplot2.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb70-3"><a href="ggplot2.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb70-4"><a href="ggplot2.html#cb70-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/ggplot9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ggplot2.html#cb70-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb70-2"><a href="ggplot2.html#cb70-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="ggplot2.html#cb70-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb70-4"><a href="ggplot2.html#cb70-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/ggplot7-1.png" width="672" /></p>
 <p>We can change the <code>binwidth =</code> argument so that the interval each bar covers is increased or decreased. In the code below, we have changed the argument to <code>binwidth = 50</code> so each bar covers a range of 50kg, resulting in fewer and wider bars.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ggplot2.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb71-2"><a href="ggplot2.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg), <span class="at">binwidth =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb71-3"><a href="ggplot2.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb71-4"><a href="ggplot2.html#cb71-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/ggplot10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ggplot2.html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb71-2"><a href="ggplot2.html#cb71-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg), <span class="at">binwidth =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
+<span id="cb71-3"><a href="ggplot2.html#cb71-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb71-4"><a href="ggplot2.html#cb71-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/ggplot8-1.png" width="672" /></p>
 <div class="webex-box">
 <p><strong>Create a histogram, using ggplot2, showing the ages of all passengers on the Titanic. Label your plot appropriately and consider using different binwidths to explore the shape of the distribution.</strong></p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ggplot2.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
-<span id="cb72-2"><a href="ggplot2.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> age), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb72-3"><a href="ggplot2.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
-<span id="cb72-4"><a href="ggplot2.html#cb72-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ggplot2.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
+<span id="cb72-2"><a href="ggplot2.html#cb72-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> age), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="ggplot2.html#cb72-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
+<span id="cb72-4"><a href="ggplot2.html#cb72-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/gg-ans2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
-<div id="ggkern" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Kernel Density Estimators<a href="ggplot2.html#ggkern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ggkern" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Kernel Density Estimators<a href="ggplot2.html#ggkern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To create plots of kernel density estimates in <code>ggplot2</code>, we use the function <code>geom_density()</code>. A simple plot showing the kernel density estimate of the weights of all patients from the <code>EPIDURAL</code> data set is created using the code below.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ggplot2.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb73-2"><a href="ggplot2.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg)) <span class="sc">+</span></span>
-<span id="cb73-3"><a href="ggplot2.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>,</span>
-<span id="cb73-4"><a href="ggplot2.html#cb73-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/ggplot11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ggplot2.html#cb73-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb73-2"><a href="ggplot2.html#cb73-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg)) <span class="sc">+</span></span>
+<span id="cb73-3"><a href="ggplot2.html#cb73-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>,</span>
+<span id="cb73-4"><a href="ggplot2.html#cb73-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/ggplot9-1.png" width="672" /></p>
 <p>We are able to superimpose a density estimate above a histogram by creating the histogram and density curve as two separate layers after the <code>ggplot()</code> function. For example, in the code below the histogram is created first and then the density plot is built on top of it.</p>
 <p>Remember that the histogram needs to be a density histogram, and not a frequency histogram, in order to be able to superimpose a density curve. We can create a density histogram in <code>ggplot2</code> by including the argument <code>y = after_stat(density)</code> within the <code>aes()</code> function in <code>geom_histogram()</code>.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ggplot2.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb74-2"><a href="ggplot2.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg, <span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb74-3"><a href="ggplot2.html#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg)) <span class="sc">+</span></span>
-<span id="cb74-4"><a href="ggplot2.html#cb74-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>,</span>
-<span id="cb74-5"><a href="ggplot2.html#cb74-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/ggplot12-1.png" width="672" /></p>
-<p>Section <a href="comp.html#comp">3</a> looked at comparing the distributions of BMI values for patients in the two treatment groups (traditional sitting and hamstring stretch). We can use <code>ggplot2</code> to create side-by-side plots showing a histogram and kernel density estimate of these distributions for the two groups.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ggplot2.html#cb74-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb74-2"><a href="ggplot2.html#cb74-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg, <span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb74-3"><a href="ggplot2.html#cb74-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> kg)) <span class="sc">+</span></span>
+<span id="cb74-4"><a href="ggplot2.html#cb74-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>,</span>
+<span id="cb74-5"><a href="ggplot2.html#cb74-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/ggplot10-1.png" width="672" /></p>
+<p>Section <a href="comp.html#comp">4</a> looked at comparing the distributions of BMI values for patients in the two treatment groups (traditional sitting and hamstring stretch). We can use <code>ggplot2</code> to create side-by-side plots showing a histogram and kernel density estimate of these distributions for the two groups.</p>
 <p>In order to create a plot for each treatment group, we need to use the function <code>facet_grid()</code>. This splits the plots made across different rows and/or columns. We need to include the names of categorical variables in the style of a formula using the <code>~</code> operator. The levels of the variable to the left of <code>~</code> will make up the rows, and if a variable is included to the right of <code>~</code> then the levels of this will make up the columns that the plots are split across. Using the formula <code>. ~ treatment</code> means we have one column for the traditional sitting group and another for the hamstring stretch group.</p>
 <p>In the code below we have coloured the histogram a different colour for each group using the argument <code>fill = treatment</code> within the <code>aes()</code> argument in <code>geom_histogram()</code>. This automatically creates a legend showing which colour is for which group, but because the columns of the plot are already labelled, this legend is unnecessary. We can remove the legend by including <code>fill = "none"</code> within the <code>guides()</code> argument.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ggplot2.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
-<span id="cb75-2"><a href="ggplot2.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> BMI, <span class="at">y =</span> <span class="fu">after_stat</span>(density), <span class="at">fill =</span> treatment), <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb75-3"><a href="ggplot2.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> BMI)) <span class="sc">+</span></span>
-<span id="cb75-4"><a href="ggplot2.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(. <span class="sc">~</span> treatment) <span class="sc">+</span></span>
-<span id="cb75-5"><a href="ggplot2.html#cb75-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patients&#39; BMI&quot;</span>,</span>
-<span id="cb75-6"><a href="ggplot2.html#cb75-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-7"><a href="ggplot2.html#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/ggplot13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ggplot2.html#cb75-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EPIDURAL) <span class="sc">+</span></span>
+<span id="cb75-2"><a href="ggplot2.html#cb75-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> BMI, <span class="at">y =</span> <span class="fu">after_stat</span>(density), <span class="at">fill =</span> treatment), <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb75-3"><a href="ggplot2.html#cb75-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> BMI)) <span class="sc">+</span></span>
+<span id="cb75-4"><a href="ggplot2.html#cb75-4" tabindex="-1"></a>  <span class="fu">facet_grid</span>(. <span class="sc">~</span> treatment) <span class="sc">+</span></span>
+<span id="cb75-5"><a href="ggplot2.html#cb75-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Patients&#39; BMI&quot;</span>,</span>
+<span id="cb75-6"><a href="ggplot2.html#cb75-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (kg)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
+<span id="cb75-7"><a href="ggplot2.html#cb75-7" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/ggplot11-1.png" width="672" /></p>
 <p>We can see from the plots above that both distributions are right skewed, however the skew in the hamstring stretch group is slightly more extreme.</p>
 <div class="webex-box webex-check">
 <p><strong>Complete the code below to create the following histogram and density plots which show the distribution of passenger age for each class of passengers on board the Titanic.</strong></p>
@@ -435,16 +434,18 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ggplot2.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
-<span id="cb79-2"><a href="ggplot2.html#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> <span class="fu">after_stat</span>(density), <span class="at">fill =</span> pclass),</span>
-<span id="cb79-3"><a href="ggplot2.html#cb79-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb79-4"><a href="ggplot2.html#cb79-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
-<span id="cb79-5"><a href="ggplot2.html#cb79-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(pclass <span class="sc">~</span> .) <span class="sc">+</span></span>
-<span id="cb79-6"><a href="ggplot2.html#cb79-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Passenger Ages&quot;</span>,</span>
-<span id="cb79-7"><a href="ggplot2.html#cb79-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
-<span id="cb79-8"><a href="ggplot2.html#cb79-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ggplot2.html#cb79-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TITANIC3) <span class="sc">+</span></span>
+<span id="cb79-2"><a href="ggplot2.html#cb79-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> <span class="fu">after_stat</span>(density), <span class="at">fill =</span> pclass),</span>
+<span id="cb79-3"><a href="ggplot2.html#cb79-3" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb79-4"><a href="ggplot2.html#cb79-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
+<span id="cb79-5"><a href="ggplot2.html#cb79-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(pclass <span class="sc">~</span> .) <span class="sc">+</span></span>
+<span id="cb79-6"><a href="ggplot2.html#cb79-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density of Passenger Ages&quot;</span>,</span>
+<span id="cb79-7"><a href="ggplot2.html#cb79-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
+<span id="cb79-8"><a href="ggplot2.html#cb79-8" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 </div>
 </div>
+<hr />
+<p><code>ggplot2</code> can be used to create many different types of plots and graphs, not just those detailed above. For further examples of constructing barplots, histograms and kernel density estimates in <code>ggplot2</code>, as well as an introduction to the other plots it can be used to create, see <a href="https://read.kortext.com/reader/pdf/92741/169">Section 2.9.5 Graphics with <code>ggplot2</code></a> of <em>Probability and Statistics with R</em>.</p>
 
 </div>
 </div>

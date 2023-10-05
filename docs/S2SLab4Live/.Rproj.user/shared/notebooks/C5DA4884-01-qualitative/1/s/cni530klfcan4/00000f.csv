@@ -1,0 +1,7 @@
+"0","barplot(height = t(epi_tab),"
+"0","        legend.text = TRUE,"
+"0","        beside = TRUE,"
+"0","        col = c(""darkslategray"", ""darkslategray3"", ""darkslategray4""),"
+"0","        main = ""Number of patients treated by each physician in each level of Ease"","
+"0","        xlab = ""Doctor"","
+"0","        ylab = ""Frequency"")"
