@@ -147,9 +147,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="quant.html"><a href="quant.html"><i class="fa fa-check"></i><b>3</b> Quantitative Data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="quant.html"><a href="quant.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>3.1</b> Stem and Leaf Plots</a></li>
-<li class="chapter" data-level="3.2" data-path="quant.html"><a href="quant.html#strip"><i class="fa fa-check"></i><b>3.2</b> Strip Charts</a></li>
-<li class="chapter" data-level="3.3" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>3.3</b> Histograms</a></li>
-<li class="chapter" data-level="3.4" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>3.4</b> Kernel Density Estimators</a></li>
+<li class="chapter" data-level="3.2" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>3.2</b> Histograms</a></li>
+<li class="chapter" data-level="3.3" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>3.3</b> Kernel Density Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="comp.html"><a href="comp.html"><i class="fa fa-check"></i><b>4</b> Comparing Samples</a>
 <ul>
@@ -191,8 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Exercise 1<a href="further-exercises.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The data set <code>VIT2005</code> from the <code>PASWR2</code> package stores information relating to 218 different apartments in Vitoria, Spain. For a full list of the variables included and the information they represent, use the code <code>help(VIT2005)</code>.</p>
 <p>You can load <code>VIT2005</code> into your <strong>Environment</strong> tab using the following code.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="further-exercises.html#cb59-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
-<span id="cb59-2"><a href="further-exercises.html#cb59-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;VIT2005&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="further-exercises.html#cb55-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb55-2"><a href="further-exercises.html#cb55-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;VIT2005&quot;</span>)</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li><p>The variable <code>out</code> details how much of an apartment is exposed to the elements. It has levels <code>"E25"</code>, <code>"E50"</code>, <code>"E75"</code> and <code>"E100"</code> corresponding to 25%, 50%, 75% and 100% exposure respectively.</p>
 <p>Create a frequency table, a pie chart and a barplot in base R which show the number of apartments from <code>VIT2005</code> within each category of the <code>out</code> variable.</p>
@@ -219,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--http://www.stat.berkeley.edu/users/statlabs/data/babies.data-->
 <p>The file "<em>babies.csv</em>" contains data on the birth weight of babies born to different mothers and whether each mother currently smokes or does not smoke (a full list of the variables included in this data set can be found <a href="https://www.stat.berkeley.edu/users/statlabs/labs.html#babies">here</a>).</p>
 <p>Download the data from Moodle and load the data set into your <strong>Environment</strong> tab using the code below and use <code>babies</code> to recreate the following two plots using <code>ggplot2</code>.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="further-exercises.html#cb60-1" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;babies.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="further-exercises.html#cb56-1" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;babies.csv&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ex-plot1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><img src="_main_files/figure-html/ex-plot2-1.png" width="672" /></p>
 

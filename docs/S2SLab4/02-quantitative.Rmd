@@ -42,7 +42,7 @@ opts1 <- c("Left-skewed",
 
 See [Section 2.4.1 Stem-and-Leaf Plots](https://read.kortext.com/reader/pdf/92741/104) of *Probability and Statistics with R* for additional examples.
 
-
+<!--
 ## Strip Charts {#strip}
 
 A strip chart is an alternative to stem and leaf plots. It is sometimes called a dotplot (not to be confused with a dot chart for qualitative data) because dots are placed in the plot for each numeric value of the quantitative data. This is good for visualising one numeric variable on a plot.
@@ -69,7 +69,6 @@ stripchart(x = EPIDURAL$kg,
 
 Again, we can see that the patients' weights are right skewed.
 
-<!--easy task with strip charts?-->
 
 Strip charts can also be used to visualise numeric data, split across different levels of a categorical variable. For example, we can show the weight of patients in each level of the `ease` variable using the following code.
 
@@ -130,7 +129,7 @@ stripchart(x = age ~ pclass,
 ---
 
 You can follow further examples in [Section 2.4.2 Strip Charts](https://read.kortext.com/reader/pdf/92741/105) of *Probability and Statistics with R*.
-
+-->
 
 ## Histograms
 

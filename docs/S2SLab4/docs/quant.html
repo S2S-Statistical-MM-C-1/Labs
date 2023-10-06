@@ -147,9 +147,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="quant.html"><a href="quant.html"><i class="fa fa-check"></i><b>3</b> Quantitative Data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="quant.html"><a href="quant.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>3.1</b> Stem and Leaf Plots</a></li>
-<li class="chapter" data-level="3.2" data-path="quant.html"><a href="quant.html#strip"><i class="fa fa-check"></i><b>3.2</b> Strip Charts</a></li>
-<li class="chapter" data-level="3.3" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>3.3</b> Histograms</a></li>
-<li class="chapter" data-level="3.4" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>3.4</b> Kernel Density Estimators</a></li>
+<li class="chapter" data-level="3.2" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>3.2</b> Histograms</a></li>
+<li class="chapter" data-level="3.3" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>3.3</b> Kernel Density Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="comp.html"><a href="comp.html"><i class="fa fa-check"></i><b>4</b> Comparing Samples</a>
 <ul>
@@ -222,81 +221,110 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <hr />
 <p>See <a href="https://read.kortext.com/reader/pdf/92741/104">Section 2.4.1 Stem-and-Leaf Plots</a> of <em>Probability and Statistics with R</em> for additional examples.</p>
-</div>
-<div id="strip" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Strip Charts<a href="quant.html#strip" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A strip chart is an alternative to stem and leaf plots. It is sometimes called a dotplot (not to be confused with a dot chart for qualitative data) because dots are placed in the plot for each numeric value of the quantitative data. This is good for visualising one numeric variable on a plot.</p>
-<p>Strip charts can be created in R using the function <code>stripchart()</code>. This function takes the arguments:</p>
-<ul>
-<li><code>x =</code>: this is the vector of numeric values or a list of vectors.</li>
-<li><code>data =</code>: this is the data frame that the vector of numeric values comes from (if it is a variable in a data frame).</li>
-<li><code>method =</code>: this is the method used to separate points which represent the same value. Values you can provide to this arguments include <code>"overplot"</code> (this is the default), which plots points directly on top of each other, <code>"jitter"</code> which randomly moves points away from their true value by a small amount so individual points can be seen, or <code>"stack"</code> which stacks points above each other.</li>
-<li><code>offset =</code>: when <code>method = "stack"</code>, this argument specifies the size of the gap that should be between points which are stacked above others.</li>
-<li><code>pch =</code>: this is the plotting character (i.e. the shape) to be used for the points. By default this takes the value 0 which means the points will be square. This argument can take any value from 0 to 25 which all represent different shapes or symbols.</li>
-</ul>
-<p>We can create a strip chart showing the weight of all patients in the <code>EPIDURAL</code> data set using the following code. This code stacks the points which represent patient's of the same weight above each other, making it easier to see the shape of the data.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="quant.html#cb37-1" tabindex="-1"></a><span class="fu">stripchart</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb37-2"><a href="quant.html#cb37-2" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&quot;stack&quot;</span>,</span>
-<span id="cb37-3"><a href="quant.html#cb37-3" tabindex="-1"></a>           <span class="at">offset =</span> <span class="fl">0.5</span>,</span>
-<span id="cb37-4"><a href="quant.html#cb37-4" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">1</span>,</span>
-<span id="cb37-5"><a href="quant.html#cb37-5" tabindex="-1"></a>           <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
-<span id="cb37-6"><a href="quant.html#cb37-6" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">&quot;Patients Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb37-7"><a href="quant.html#cb37-7" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/quant2-1.png" width="672" /></p>
-<p>Again, we can see that the patients' weights are right skewed.</p>
-<!--easy task with strip charts?-->
-<p>Strip charts can also be used to visualise numeric data, split across different levels of a categorical variable. For example, we can show the weight of patients in each level of the <code>ease</code> variable using the following code.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="quant.html#cb38-1" tabindex="-1"></a><span class="fu">stripchart</span>(<span class="at">x =</span> kg <span class="sc">~</span> ease,</span>
-<span id="cb38-2"><a href="quant.html#cb38-2" tabindex="-1"></a>           <span class="at">data =</span> EPIDURAL,</span>
-<span id="cb38-3"><a href="quant.html#cb38-3" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&quot;stack&quot;</span>,</span>
-<span id="cb38-4"><a href="quant.html#cb38-4" tabindex="-1"></a>           <span class="at">offset =</span> <span class="fl">0.5</span>,</span>
-<span id="cb38-5"><a href="quant.html#cb38-5" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">19</span>,</span>
-<span id="cb38-6"><a href="quant.html#cb38-6" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>),</span>
-<span id="cb38-7"><a href="quant.html#cb38-7" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb38-8"><a href="quant.html#cb38-8" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>,</span>
-<span id="cb38-9"><a href="quant.html#cb38-9" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">&quot;Ease&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/quant3-1.png" width="672" /></p>
-<p>Note here that we have provided a "formula" to the argument <code>x =</code>. This is of the form <code>x ~ g</code> where <code>x</code> is the vector of numeric values (in this case <code>kg</code>), and <code>g</code> is the vector containing the groups to be used to split up the data (the variable <code>ease</code> here).</p>
-<p>We have also changed <code>pch =</code> to be 19 which tells R to use filled circles for each point, rather than the empty circles like when <code>pch = 1</code>.</p>
-<p>When splitting the weights of all the patients into the three levels of ease, the right skew seen in the weights before, is no longer apparent. In general it seems that for lighter weight patients, it is easier to find the location to administer the epidural anesthetic and that as patients get heavier, finding the right location becomes more difficult.</p>
-<div class="webex-box webex-check">
-<p><strong>Complete the code below to create a stripchart showing the distribution of passenger ages in each class on board the Titanic.</strong></p>
-<div class="webex-code">
-<code>stripchart(x =</code><input class='webex-solveme nospaces' size='12' data-answer='["age ~ pclass"]'/><code>,</code>
+<!--
+## Strip Charts {#strip}
+
+A strip chart is an alternative to stem and leaf plots. It is sometimes called a dotplot (not to be confused with a dot chart for qualitative data) because dots are placed in the plot for each numeric value of the quantitative data. This is good for visualising one numeric variable on a plot.
+
+Strip charts can be created in R using the function `stripchart()`. This function takes the arguments:
+
+* `x =`: this is the vector of numeric values or a list of vectors.
+* `data =`: this is the data frame that the vector of numeric values comes from (if it is a variable in a data frame).
+* `method =`: this is the method used to separate points which represent the same value. Values you can provide to this arguments include `"overplot"` (this is the default), which plots points directly on top of each other, `"jitter"` which randomly moves points away from their true value by a small amount so individual points can be seen, or `"stack"` which stacks points above each other.
+* `offset =`: when `method = "stack"`, this argument specifies the size of the gap that should be between points which are stacked above others.
+* `pch =`: this is the plotting character (i.e. the shape) to be used for the points. By default this takes the value 0 which means the points will be square. This argument can take any value from 0 to 25 which all represent different shapes or symbols.
+
+We can create a strip chart showing the weight of all patients in the `EPIDURAL` data set using the following code. This code stacks the points which represent patient's of the same weight above each other, making it easier to see the shape of the data.
+
+
+```r
+stripchart(x = EPIDURAL$kg,
+           method = "stack",
+           offset = 0.5,
+           pch = 1,
+           col = "coral1",
+           main = "Patients Weights from the EPIDURAL data set",
+           xlab = "Weight (kg)")
+```
+
+<img src="_main_files/figure-html/quant2-1.png" width="672" />
+
+Again, we can see that the patients' weights are right skewed.
+
+
+Strip charts can also be used to visualise numeric data, split across different levels of a categorical variable. For example, we can show the weight of patients in each level of the `ease` variable using the following code.
+
+
+```r
+stripchart(x = kg ~ ease,
+           data = EPIDURAL,
+           method = "stack",
+           offset = 0.5,
+           pch = 19,
+           col = c("darkslategray", "darkslategray3", "darkslategray4"),
+           main = "Patient Weights from the EPIDURAL data set",
+           xlab = "Weight (kg)",
+           ylab = "Ease")
+```
+
+<img src="_main_files/figure-html/quant3-1.png" width="672" />
+
+Note here that we have provided a "formula" to the argument `x =`. This is of the form `x ~ g` where `x` is the vector of numeric values (in this case `kg`), and `g` is the vector containing the groups to be used to split up the data (the variable `ease` here).
+
+We have also changed `pch =` to be 19 which tells R to use filled circles for each point, rather than the empty circles like when `pch = 1`.
+
+When splitting the weights of all the patients into the three levels of ease, the right skew seen in the weights before, is no longer apparent. In general it seems that for lighter weight patients, it is easier to find the location to administer the epidural anesthetic and that as patients get heavier, finding the right location becomes more difficult.
+
+::: {.webex-box .webex-check}
+**Complete the code below to create a stripchart showing the distribution of passenger ages in each class on board the Titanic.**
+
+::: {.webex-code}
+`stripchart(x = `<input class='webex-solveme nospaces' size='12' data-answer='["age ~ pclass"]'/>`,`
 <ul style="margin-top: -0.8em;">
-<pre><code>      data = TITANIC3,</code></pre>
+
+          data = TITANIC3,
 </ul>
 <ul style="margin-top: -2em; margin-left: 3.6em;">
-<code>method =</code><input class='webex-solveme nospaces' size='7' data-answer='["\"stack\""]'/><code>,</code>
+`method = `<input class='webex-solveme nospaces' size='7' data-answer='["\"stack\""]'/>`,`
 </ul>
 <ul style="margin-top: -1.6em;">
-<pre><code>      pch = 20,
-      col = c(&quot;gray32&quot;, &quot;gray95&quot;, &quot;seashell3&quot;),
-      main = &quot;Ages of Passengers on the Titanic&quot;,
-      xlab = &quot;Age&quot;,
-      ylab = &quot;Class&quot;)</code></pre>
+
+          pch = 20,
+          col = c("gray32", "gray95", "seashell3"),
+          main = "Ages of Passengers on the Titanic",
+          xlab = "Age",
+          ylab = "Class")
 </ul>
+:::
+
+
+<div class='webex-solution'><button>Solution</button>
+
+
+```r
+stripchart(x = age ~ pclass,
+           data = TITANIC3,
+           method = "stack",
+           pch = 20,
+           col = c("gray32", "gray95", "seashell3"),
+           main = "Ages of Passenegers on the Titanic",
+           xlab = "Age",
+           ylab = "Class")
+```
+
+<img src="_main_files/figure-html/quant-ans2-1.png" width="672" />
+
 </div>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="quant.html#cb41-1" tabindex="-1"></a><span class="fu">stripchart</span>(<span class="at">x =</span> age <span class="sc">~</span> pclass,</span>
-<span id="cb41-2"><a href="quant.html#cb41-2" tabindex="-1"></a>           <span class="at">data =</span> TITANIC3,</span>
-<span id="cb41-3"><a href="quant.html#cb41-3" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&quot;stack&quot;</span>,</span>
-<span id="cb41-4"><a href="quant.html#cb41-4" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">20</span>,</span>
-<span id="cb41-5"><a href="quant.html#cb41-5" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray32&quot;</span>, <span class="st">&quot;gray95&quot;</span>, <span class="st">&quot;seashell3&quot;</span>),</span>
-<span id="cb41-6"><a href="quant.html#cb41-6" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">&quot;Ages of Passenegers on the Titanic&quot;</span>,</span>
-<span id="cb41-7"><a href="quant.html#cb41-7" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>,</span>
-<span id="cb41-8"><a href="quant.html#cb41-8" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">&quot;Class&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/quant-ans2-1.png" width="672" /></p>
+
+:::
+
+---
+
+You can follow further examples in [Section 2.4.2 Strip Charts](https://read.kortext.com/reader/pdf/92741/105) of *Probability and Statistics with R*.
+-->
 </div>
-</div>
-<hr />
-<p>You can follow further examples in <a href="https://read.kortext.com/reader/pdf/92741/105">Section 2.4.2 Strip Charts</a> of <em>Probability and Statistics with R</em>.</p>
-</div>
-<div id="histograms" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Histograms<a href="quant.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="histograms" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Histograms<a href="quant.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Histograms are a widely used tool for graphically summarizing quantitative data. They look similar to barplots (for qualitative data), however the width of the "bins" (or bars) can be changed in a histogram. This means that you can choose to include more or fewer observations in each bin shown on the plot.</p>
 <p>The function to create a histogram in R is <code>hist()</code>. This function takes the following arguments:</p>
 <ul>
@@ -309,35 +337,35 @@ Solution
 <p>The only argument that needs to be provided to the <code>hist()</code> function is <code>x =</code>.</p>
 <p>We can create a histogram showing the weight of patients from the <code>EPIDURAL</code> data set using the following code. This code creates a vector using the <code>seq()</code> function to use with the <code>breaks =</code> argument. This vector is <span class="math inline">\(\begin{bmatrix}40&amp;50&amp;60&amp;\dots&amp;180 \end{bmatrix}^\intercal\)</span>, so the histogram has a bin including all observations between 40kg and 50kg, between 50kg and 60kg and so on. Because we have left out the <code>right =</code> argument, these intervals are right-closed. This means they are of the form (40, 50], (50, 60], ..., (170, 180] where "(x" represents "greater than x" and "y]" represents "less than or equal to y").</p>
 <p>The <code>freq =</code> argument has also been left out of this code, so a frequency histogram is created by default. In this case, the height of a bar represents the number of patients that fall into that particular interval.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="quant.html#cb42-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb42-2"><a href="quant.html#cb42-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb42-3"><a href="quant.html#cb42-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
-<span id="cb42-4"><a href="quant.html#cb42-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb42-5"><a href="quant.html#cb42-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="quant.html#cb37-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
+<span id="cb37-2"><a href="quant.html#cb37-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb37-3"><a href="quant.html#cb37-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
+<span id="cb37-4"><a href="quant.html#cb37-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb37-5"><a href="quant.html#cb37-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant4-1.png" width="672" /></p>
 <p>If we add in the argument <code>freq = FALSE</code> a density histogram is created instead. The shape of the histogram is identical to the frequency histogram, however the scale on the y-axis has changed. Now, the height of each bar represents the proportion of the patients that fall into that particular interval.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="quant.html#cb43-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb43-2"><a href="quant.html#cb43-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb43-3"><a href="quant.html#cb43-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb43-4"><a href="quant.html#cb43-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
-<span id="cb43-5"><a href="quant.html#cb43-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb43-6"><a href="quant.html#cb43-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="quant.html#cb38-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
+<span id="cb38-2"><a href="quant.html#cb38-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb38-3"><a href="quant.html#cb38-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb38-4"><a href="quant.html#cb38-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
+<span id="cb38-5"><a href="quant.html#cb38-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb38-6"><a href="quant.html#cb38-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant5-1.png" width="672" /></p>
 <p>We can instead provide a single value to the <code>breaks =</code> argument. Most of the time, this defines the number of bins that should be used in the histogram, however sometimes the plot created will have a slightly different number from what you specify. This is because R uses "pretty values", which essentially means a number of bins will be selected for you, to best produce a sensible looking histogram.</p>
 <p>For example, when we specify <code>breaks = 4</code>, there are 4 bars in the histogram produced. This is because it makes sense to split the range of our data into the four sets (0, 50], (50, 100], (100, 150] and (150, 200].</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="quant.html#cb44-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb44-2"><a href="quant.html#cb44-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">4</span>,</span>
-<span id="cb44-3"><a href="quant.html#cb44-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
-<span id="cb44-4"><a href="quant.html#cb44-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb44-5"><a href="quant.html#cb44-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="quant.html#cb39-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
+<span id="cb39-2"><a href="quant.html#cb39-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">4</span>,</span>
+<span id="cb39-3"><a href="quant.html#cb39-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
+<span id="cb39-4"><a href="quant.html#cb39-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb39-5"><a href="quant.html#cb39-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant6-1.png" width="672" /></p>
 <p>If we instead specify that <code>breaks = 5</code>, note that the histogram produced actually has 7 intervals. This is because the "pretty values" used means that R tries to split the range of our data into at least 5 intervals of the same size, where the upper and lower limit of each interval is an integer. In this case, the intervals used are (40, 60], (60, 80], (80, 100], ..., (160, 180].</p>
 <p>It is always a good idea to produce histograms where different intervals have been used to construct the bins to get a proper sense for the shape of the data.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="quant.html#cb45-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb45-2"><a href="quant.html#cb45-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">5</span>,</span>
-<span id="cb45-3"><a href="quant.html#cb45-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
-<span id="cb45-4"><a href="quant.html#cb45-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb45-5"><a href="quant.html#cb45-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="quant.html#cb40-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
+<span id="cb40-2"><a href="quant.html#cb40-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">5</span>,</span>
+<span id="cb40-3"><a href="quant.html#cb40-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>,</span>
+<span id="cb40-4"><a href="quant.html#cb40-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb40-5"><a href="quant.html#cb40-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant7-1.png" width="672" /></p>
 <div class="webex-box webex-check">
 <p><strong>What single value would you provide to the <code>breaks =</code> argument to create the density histogram of passenger ages on the Titanic shown below?</strong>
@@ -370,24 +398,24 @@ Solution
 Solution
 </button>
 <p>Both chunks of code below will produce the same histogram shown above.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="quant.html#cb50-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age,</span>
-<span id="cb50-2"><a href="quant.html#cb50-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">8</span>,</span>
-<span id="cb50-3"><a href="quant.html#cb50-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb50-4"><a href="quant.html#cb50-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
-<span id="cb50-5"><a href="quant.html#cb50-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="quant.html#cb51-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age,</span>
-<span id="cb51-2"><a href="quant.html#cb51-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">80</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb51-3"><a href="quant.html#cb51-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb51-4"><a href="quant.html#cb51-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
-<span id="cb51-5"><a href="quant.html#cb51-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="quant.html#cb45-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age,</span>
+<span id="cb45-2"><a href="quant.html#cb45-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">8</span>,</span>
+<span id="cb45-3"><a href="quant.html#cb45-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb45-4"><a href="quant.html#cb45-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
+<span id="cb45-5"><a href="quant.html#cb45-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="quant.html#cb46-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age,</span>
+<span id="cb46-2"><a href="quant.html#cb46-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">80</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb46-3"><a href="quant.html#cb46-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb46-4"><a href="quant.html#cb46-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Ages of Passengers on the Titanic&quot;</span>,</span>
+<span id="cb46-5"><a href="quant.html#cb46-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant-ans3.4-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <hr />
 <p>There are several different ways that the breaks used to construct the intervals for a histogram can be constructed. You can read more about these methods in <a href="https://read.kortext.com/reader/pdf/92741/107">Section 2.4.3.1 Histograms</a> from <em>Probability and Statistics with R</em>.</p>
 </div>
-<div id="kernel-density-estimators" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Kernel Density Estimators<a href="quant.html#kernel-density-estimators" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="kernel-density-estimators" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Kernel Density Estimators<a href="quant.html#kernel-density-estimators" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since the shape of histograms can change so drastically based on the intervals defined, they can sometimes be misleading when trying to determine the shape of data. Kernel density estimators offer a more reliable indication of the shape of data by taking weighted localised averages (we don't need to know the technical details for our purposes).</p>
 <p>The function to create a kernel density estimator in R is <code>density(x)</code>. The only argument needed for this function is:</p>
 <ul>
@@ -395,22 +423,22 @@ Solution
 </ul>
 <p>This creates a list object in R which can be used to show the kernel density estimate in a plot. In order to superimpose the density estimate over the histogram of the data, we can use the <code>lines()</code> function.</p>
 <p>For example, the following code creates the histogram of the patients' weights, and then superimposes the kernel density estimate <code>dens</code> on top.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="quant.html#cb52-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
-<span id="cb52-2"><a href="quant.html#cb52-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb52-3"><a href="quant.html#cb52-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb52-4"><a href="quant.html#cb52-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;grey90&quot;</span>,</span>
-<span id="cb52-5"><a href="quant.html#cb52-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
-<span id="cb52-6"><a href="quant.html#cb52-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span>
-<span id="cb52-7"><a href="quant.html#cb52-7" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="quant.html#cb52-8" tabindex="-1"></a>dens <span class="ot">&lt;-</span> <span class="fu">density</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg)</span>
-<span id="cb52-9"><a href="quant.html#cb52-9" tabindex="-1"></a></span>
-<span id="cb52-10"><a href="quant.html#cb52-10" tabindex="-1"></a><span class="fu">lines</span>(dens, <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="quant.html#cb47-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg,</span>
+<span id="cb47-2"><a href="quant.html#cb47-2" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">to =</span> <span class="dv">180</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb47-3"><a href="quant.html#cb47-3" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb47-4"><a href="quant.html#cb47-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;grey90&quot;</span>,</span>
+<span id="cb47-5"><a href="quant.html#cb47-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Patient Weights from the EPIDURAL data set&quot;</span>,</span>
+<span id="cb47-6"><a href="quant.html#cb47-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Weight (kg)&quot;</span>)</span>
+<span id="cb47-7"><a href="quant.html#cb47-7" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="quant.html#cb47-8" tabindex="-1"></a>dens <span class="ot">&lt;-</span> <span class="fu">density</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>kg)</span>
+<span id="cb47-9"><a href="quant.html#cb47-9" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="quant.html#cb47-10" tabindex="-1"></a><span class="fu">lines</span>(dens, <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant8-1.png" width="672" /></p>
 <p>We can again clearly see that the distribution of all patients' weights is right skewed and that the mode is around 85kg.</p>
 <p>In order to use <code>lines()</code> to superimpose the kernel density estimate, the histogram created must be a density histogram. It is also necessary to create a plot first because the <code>lines()</code> function only builds on top of a pre-existing plot. Within the <code>lines()</code> function, the additional arguments <code>col =</code> and <code>lwd =</code> have been included to set the colour and line width respectively of the kernel density estimate.</p>
 <p>In order to show a kernel density estimate in its own plot, we can use the function <code>plot()</code>. The following code can be used to show the same kernel density estimate as above, but this time without the histogram beneath it.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="quant.html#cb53-1" tabindex="-1"></a><span class="fu">plot</span>(dens, <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb53-2"><a href="quant.html#cb53-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="quant.html#cb48-1" tabindex="-1"></a><span class="fu">plot</span>(dens, <span class="at">col =</span> <span class="st">&quot;coral1&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb48-2"><a href="quant.html#cb48-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Density of Patient Weights&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant9-1.png" width="672" /></p>
 <div class="webex-box">
 <p><strong>Create a plot only showing the kernel density estimate for distribution of passenger ages on the Titanic.</strong></p>
@@ -418,10 +446,10 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="quant.html#cb54-1" tabindex="-1"></a>age_dens <span class="ot">&lt;-</span> <span class="fu">density</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb54-2"><a href="quant.html#cb54-2" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="quant.html#cb54-3" tabindex="-1"></a><span class="fu">plot</span>(age_dens, <span class="at">col =</span> <span class="st">&quot;gray32&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb54-4"><a href="quant.html#cb54-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Density of Passeneger Ages&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="quant.html#cb49-1" tabindex="-1"></a>age_dens <span class="ot">&lt;-</span> <span class="fu">density</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb49-2"><a href="quant.html#cb49-2" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="quant.html#cb49-3" tabindex="-1"></a><span class="fu">plot</span>(age_dens, <span class="at">col =</span> <span class="st">&quot;gray32&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb49-4"><a href="quant.html#cb49-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Density of Passeneger Ages&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/quant-ans4-1.png" width="672" /></p>
 </div>
 </div>

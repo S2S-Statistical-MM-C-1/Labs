@@ -1,0 +1,73 @@
+# (APPENDIX) Appendix {-}
+
+# Additional Material
+
+## Dimensions of matrices {#dim}
+<!-- avoid dimension reduction with drop=FALSE -->
+When extracting an entire row or column using `[ ]`, the object that R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).
+
+For example, the code below returns the value `NULL` when using the `dim()` function. `dim()` should return the dimensions of an array, but since the extracted row for births in Edinburgh is a vector, there are no dimensions to return.
+
+```{r mat9}
+dim(births["Edinburgh", ])
+```
+
+If we want to know how many elements are in a vector, we use the function `length()`.
+
+```{r mat9.1}
+length(births["Edinburgh", ])
+```
+
+We can force the output from subseting a matrix/array to be a matrix/array by including a third argument, `drop = FALSE`, within the square brackets to keep the returned row as a matrix/array.
+
+```{r mat10}
+dim(births["Edinburgh", , drop = FALSE])
+```
+
+Now we can see that the row is seen as a 1 $\times$ 3 matrix by R.
+
+
+## Lists {#list}
+
+Lists are objects in R that bring together elements of different modes (for example character, numeric or logical vectors or even matrices or arrays) into the same object. Lists are created using the `list()` function which doesn't have any particular arguments required. Instead, the name of each element is given as well as what this element should be - this could be a vector, a matrix or an array.
+
+For example, we could save information about the movie Titanic in a list using the following code.
+
+```{r list1}
+titanic <- list(director = "James Cameron",
+                actors = c("Leonardo DiCaprio", "Kate Winslet"),
+                runtime = "3 hours 14 minutes",
+                release.date = "23/01/1998",
+                budget = 200000000,
+                gross.profit = 2222985568,
+                production.companies = c("Twentieth Century Fox",
+                                         "Paramount Pictures",
+                                         "Lightstorm Entertainment"))
+titanic
+```
+
+The elements of a list can be accessed using either double square brackets `[[ ]]`, or the `$` operator (when the elements are named). For example, if we wanted to extract the release date from `titanic`, then we can use any of the following code.
+
+```{r list2}
+titanic[["release.date"]]
+titanic[[4]]
+titanic$release.date
+```
+
+We could also be more specific and extract a particular entry from one of the elements of the list using single square brackets, `[ ]`, after the double square brackets or `$` operator. For example, if we wanted to know who the second billed actor is, then we can use any of the following lines of code.
+
+```{r list3}
+titanic[["actors"]][2]
+titanic[[2]][2]
+titanic$actors[2]
+```
+
+If you are unsure of the names of all of the elements of a list, then the `names()` function is useful.
+
+```{r list4}
+names(titanic)
+```
+
+---
+
+You can see other examples of how lists can be used in [Section 1.9.4 Lists](https://read.kortext.com/reader/pdf/92741/29) of *Probability and Statistics with R*.

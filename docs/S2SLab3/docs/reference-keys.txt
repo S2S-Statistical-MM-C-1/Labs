@@ -15,9 +15,11 @@ sorting-data-frames
 subsetting
 summarising-data
 creating-variables
-merging-data-frames
 functions
 probability-functions
-flow-control
 creating-functions
 exercises
+additional-material
+cut
+merge
+flow

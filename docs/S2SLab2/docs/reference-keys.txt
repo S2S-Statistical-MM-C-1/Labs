@@ -7,5 +7,7 @@ arrays
 mat
 fact
 df
-list
 exercises
+additional-material
+dim
+list

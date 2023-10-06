@@ -1,7 +1,9 @@
 ---
 title: "S2S Lab 4"
-subtitle: "Exercise Solutions"
-output: pdf_document
+subtitle: Exercise Solutions
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}

@@ -9,7 +9,6 @@ pies
 bi
 quant
 stem-and-leaf-plots
-strip
 histograms
 kernel-density-estimators
 comp
