@@ -1,0 +1,9 @@
+tab:Xdist
+tab:sampletab-with
+tab:sampletab-without
+tab:summ-tab
+welcome
+sampling-distribution-of-bar-x
+sampling-with-replacement
+sampling-without-replacement
+further-exercises

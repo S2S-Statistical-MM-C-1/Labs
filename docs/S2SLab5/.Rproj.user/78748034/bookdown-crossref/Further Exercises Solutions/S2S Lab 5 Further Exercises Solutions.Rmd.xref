@@ -1,0 +1,9 @@
+h1:exercise-1 Exercise 1
+h2:solution Solution
+tab:echo Sampling distribution for $\\bar X$ when sampling with replacement.
+tab:echo Sampling distribution for $S^2$ when sampling with replacement.
+h1:exercise-2 Exercise 2
+h2:solution-1 Solution
+tab:echo Sampling distribution for $\\bar X$ when sampling without replacement.
+tab:echo Sampling distribution for $S^2$ when sampling without replacement.
+
