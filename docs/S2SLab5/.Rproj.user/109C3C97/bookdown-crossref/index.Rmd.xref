@@ -1,8 +1,2 @@
-h1:sampling-distribution-of-bar-x Sampling Distribution of 
-tab:Xdist Probability distribution for $X$.
-h2:sampling-with-replacement Sampling with replacement
-tab:sampletab-with Mean and variance for every combination of $(x_1, x_2)$ when sampling with replacement, six numbered balls from a bag.
-h2:sampling-without-replacement Sampling without replacement
-tab:sampletab-without Mean and variance for every combination of $(x_1, x_2)$ when sampling without replacement, six numbered balls from a bag.
-tab:summ-tab Summary of properties of the distribution for $X$ and sampling distributions for $\\bar X$ and $S^2$.
+h1:welcome Welcome!
 
