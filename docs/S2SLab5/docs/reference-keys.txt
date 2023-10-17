@@ -3,6 +3,7 @@ tab:sampletab-with
 tab:sampletab-without
 tab:summ-tab
 welcome
+investigating-engagement-in-level-2-statistics
 sampling-distribution-of-bar-x
 sampling-with-replacement
 sampling-without-replacement

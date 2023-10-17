@@ -1,9 +1,9 @@
 {
     "id": "FF208199",
-    "path": "C:/Users/mtb3f/OneDrive - University of Glasgow/Stats Level 2/2023_24 S2S and S2Y/S2S Statistical MM&C 1/Github/Labs/docs/S2SLab5/index.Rmd",
+    "path": "C:/Users/mtb3f/OneDrive - University of Glasgow/Stats Level 2/2023_24 S2S and S2Y/S2S Statistical MM&C 1/Labs/S2SLab5/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "2945545811",
+    "hash": "852143982",
     "contents": "",
     "dirty": false,
     "created": 1696594637991.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "5,19",
-        "scrollLine": "0"
+        "cursorPosition": "44,0",
+        "scrollLine": "45"
     },
     "folds": "",
-    "lastKnownWriteTime": 1696950722,
+    "lastKnownWriteTime": 1697548463,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1696950722,
+    "last_content_update": 1697548463,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -21,6 +21,19 @@ Welcome to the the fifth S2S lab. This lab moves away from teaching specific cod
 
 The sampling distribution is also covered in [Chapter 6 Sampling and Sampling Distributions](https://read.kortext.com/reader/pdf/92741/351) of *Probability and Statistics with R*, specifically [Section 6.4 Sampling Distribution of $\bar X$](https://read.kortext.com/reader/pdf/92741/359) of textbook runs through a similar example that the majority of this lab uses.
 
+## Investigating Engagement in Level 2 Statistics
+
+You are invited to consent to your data to be included in an educational research study to evaluate student levels of engagement and teaching styles in Levels 1&2 Statistics courses in the School of Mathematics and Statistics.
+
+To participate you only need to read the Participant Information Sheet and submit your name and student number.
+
+Level 2 Stats lecturers and tutors will have no knowledge of who has/hasn't given consent for their data to be included in the study.
+
+There is also the optional extra opportunity to join a focus group.
+
+Please click on the [link to Moodle](https://moodle.gla.ac.uk/course/view.php?id=38599#section-7) to see all the information and give your consent.
+
+[![Moodle](images/Moodle.svg){width=40%}](https://moodle.gla.ac.uk/course/view.php?id=38599#section-7)
 
 
 
