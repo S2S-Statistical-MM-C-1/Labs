@@ -1,0 +1,6 @@
+h1:sampling-distribution-of-barx Sampling Distribution of 
+h2:central-limit-theorem Central Limit Theorem
+fig:samp4 Simulated sampling distributions of the sample mean for samples of size n = 2 from a Unif(−11,41) and an Expo(1/15) distributions with superimposed normal distributions.
+fig:samp8 Simulated sampling distributions of the sample mean for samples of size n = 10 from a Unif(−11,41) and an Expo(1/15) distributions with superimposed normal distributions.
+fig:samp9 Simulated sampling distributions of the sample mean for samples of size n = 40 from a Unif(−11,41) and an Expo(1/15) distributions with superimposed normal distributions.
+
