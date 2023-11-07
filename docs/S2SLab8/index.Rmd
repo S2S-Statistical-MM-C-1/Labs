@@ -1,5 +1,5 @@
 ---
-title: "Webexercises/Bookdown Template"
+title: "S2S Lab 8"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
