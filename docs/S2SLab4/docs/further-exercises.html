@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Further Exercises | S2S Lab 4</title>
-  <meta name="description" content="6 Further Exercises | S2S Lab 4" />
+  <title>5 Further Exercises | S2S Lab 4</title>
+  <meta name="description" content="5 Further Exercises | S2S Lab 4" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Further Exercises | S2S Lab 4" />
+  <meta property="og:title" content="5 Further Exercises | S2S Lab 4" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Further Exercises | S2S Lab 4" />
+  <meta name="twitter:title" content="5 Further Exercises | S2S Lab 4" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ggplot2.html"/>
-
+<link rel="prev" href="comp.html"/>
+<link rel="next" href="ggplot2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,16 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="comp.html"><a href="comp.html#comparing-density-estimates"><i class="fa fa-check"></i><b>4.2</b> Comparing density estimates</a></li>
 <li class="chapter" data-level="4.3" data-path="comp.html"><a href="comp.html#qq-plots"><i class="fa fa-check"></i><b>4.3</b> QQ Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>5</b> ggplot2</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="ggplot2.html"><a href="ggplot2.html#ggbars"><i class="fa fa-check"></i><b>5.1</b> Barplots</a></li>
-<li class="chapter" data-level="5.2" data-path="ggplot2.html"><a href="ggplot2.html#gghist"><i class="fa fa-check"></i><b>5.2</b> Histograms</a></li>
-<li class="chapter" data-level="5.3" data-path="ggplot2.html"><a href="ggplot2.html#ggkern"><i class="fa fa-check"></i><b>5.3</b> Kernel Density Estimators</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>6</b> Further Exercises</a>
+<li class="chapter" data-level="5" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>5</b> Further Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>A</b> ggplot2</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ggplot2.html"><a href="ggplot2.html#ggbars"><i class="fa fa-check"></i><b>A.1</b> Barplots</a></li>
+<li class="chapter" data-level="A.2" data-path="ggplot2.html"><a href="ggplot2.html#gghist"><i class="fa fa-check"></i><b>A.2</b> Histograms</a></li>
+<li class="chapter" data-level="A.3" data-path="ggplot2.html"><a href="ggplot2.html#ggkern"><i class="fa fa-check"></i><b>A.3</b> Kernel Density Estimators</a></li>
 </ul></li>
 </ul>
 
@@ -184,14 +185,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="further-exercises" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Further Exercises<a href="further-exercises.html#further-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="further-exercises" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Further Exercises<a href="further-exercises.html#further-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="exercise-1" class="section level2 unnumbered hasAnchor">
 <h2>Exercise 1<a href="further-exercises.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The data set <code>VIT2005</code> from the <code>PASWR2</code> package stores information relating to 218 different apartments in Vitoria, Spain. For a full list of the variables included and the information they represent, use the code <code>help(VIT2005)</code>.</p>
 <p>You can load <code>VIT2005</code> into your <strong>Environment</strong> tab using the following code.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="further-exercises.html#cb75-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
-<span id="cb75-2"><a href="further-exercises.html#cb75-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;VIT2005&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="further-exercises.html#cb56-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb56-2"><a href="further-exercises.html#cb56-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;VIT2005&quot;</span>)</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li><p>The variable <code>out</code> details how much of an apartment is exposed to the elements. It has levels <code>"E25"</code>, <code>"E50"</code>, <code>"E75"</code> and <code>"E100"</code> corresponding to 25%, 50%, 75% and 100% exposure respectively.</p>
 <p>Create a frequency table, a pie chart and a barplot in base R which show the number of apartments from <code>VIT2005</code> within each category of the <code>out</code> variable.</p>
@@ -218,12 +219,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--http://www.stat.berkeley.edu/users/statlabs/data/babies.data-->
 <p>The file "<em>babies.csv</em>" contains data on the birth weight of babies born to different mothers and whether each mother currently smokes or does not smoke (a full list of the variables included in this data set can be found <a href="https://www.stat.berkeley.edu/users/statlabs/labs.html#babies">here</a>).</p>
 <p>Download the data from Moodle and load the data set into your <strong>Environment</strong> tab using the code below and use <code>babies</code> to recreate the following two plots using <code>ggplot2</code>.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="further-exercises.html#cb76-1" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;babies.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="further-exercises.html#cb57-1" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;babies.csv&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/ex-plot1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><img src="_main_files/figure-html/ex-plot2-1.png" width="672" /></p>
 
 </div>
 </div>
+
+
+
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -435,8 +439,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="ggplot2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="comp.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

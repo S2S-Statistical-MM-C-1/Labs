@@ -15,8 +15,8 @@ comp
 comparing-histograms
 comparing-density-estimates
 qq-plots
+further-exercises
 ggplot2
 ggbars
 gghist
 ggkern
-further-exercises

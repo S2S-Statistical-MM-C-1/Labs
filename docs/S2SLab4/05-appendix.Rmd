@@ -1,6 +1,8 @@
+# (APPENDIX) Appendix {-}
+
 # ggplot2
 
-In Sections \@ref(sec:qual), \@ref(quant) and \@ref(comp), the functions used to create the plots and graphs we have seen so far exist in "base R". This means that the functions, such as `barplot()`, `hist()` and `density()`, can just be used without having to first load any specific packages.
+In Sections \@ref(qual), \@ref(quant) and \@ref(comp), the functions used to create the plots and graphs we have seen so far exist in "base R". This means that the functions, such as `barplot()`, `hist()` and `density()`, can just be used without having to first load any specific packages.
 
 One useful package that can be used to create plots and graphs is called [`ggplot2`](https://ggplot2.tidyverse.org/) (the "gg" stands for "grammar of graphics"). As the developers put it:
 
@@ -93,7 +95,7 @@ ggplot(data = EPIDURAL) +
 ```
 
 ::: {.webex-box .webex-check}
-**Complete the code below to create the barplot shown below, showing the number of passengers who survived and did not survive in each class from the `TITANIC3` data set.**
+**Complete the code below to create the barplot showing the number of passengers who survived and did not survive in each class from the `TITANIC3` data set beneath.**
 
 ::: {.webex-code}
 
@@ -136,7 +138,7 @@ ggplot(data = TITANIC3) +
 
 We saw how to create strip charts in base R, in Section [2.2 Strip Charts](#strip). We can also create strip charts in `ggplot2` using the function `geom_dotplot()`. The code below creates a strip chart showing the weights of patients from the `EPIDURAL` data set along the x-axis (since the argument `x = kg` has been included in the `aes()` function).
 
-```{r ggplot7, message=FALSE}
+```{r, message=FALSE}
 ggplot(data = EPIDURAL) +
   geom_dotplot(aes(x = kg)) +
   labs(title = "Patients Weights from the EPIDURAL data set",
@@ -149,7 +151,7 @@ We can create a separate strip chart for the patients in each level of the "ease
 
 We have also chosen to colour the dots based on the level of "ease" they belong to, using `fill = ease`. This automatically creates a legend showing which colour is for which group, but because the rows of the plot are already labelled, this legend is unnecessary. We can remove the legend by including `fill = "none"` within the `guides()` argument.
 
-```{r ggplot8, message=FALSE, fig.height=7}
+```{r, message=FALSE, fig.height=7}
 ggplot(data = EPIDURAL) +
   geom_dotplot(aes(x = kg, fill = ease)) +
   facet_grid(ease ~ .) +
@@ -166,7 +168,7 @@ Histograms are easy to make in `ggplot2` using the function `geom_histogram()`. 
 
 The code below creates a histogram showing the weights of all patients in the `EPIDURAL` data set. The binwidth has been set so that each bar has a range of 10kg.
 
-```{r ggplot9}
+```{r ggplot7}
 ggplot(data = EPIDURAL) +
   geom_histogram(aes(x = kg), binwidth = 10) +
   labs(title = "Patient Weights from the EPIDURAL data set",
@@ -175,7 +177,7 @@ ggplot(data = EPIDURAL) +
 
 We can change the `binwidth =` argument so that the interval each bar covers is increased or decreased. In the code below, we have changed the argument to `binwidth = 50` so each bar covers a range of 50kg, resulting in fewer and wider bars.
 
-```{r ggplot10, warning=FALSE}
+```{r ggplot8, warning=FALSE}
 ggplot(data = EPIDURAL) +
   geom_histogram(aes(x = kg), binwidth = 50) +
   labs(title = "Patient Weights from the EPIDURAL data set",
@@ -200,7 +202,7 @@ ggplot(data = TITANIC3) +
 
 To create plots of kernel density estimates in `ggplot2`, we use the function `geom_density()`. A simple plot showing the kernel density estimate of the weights of all patients from the `EPIDURAL` data set is created using the code below.
 
-```{r ggplot11}
+```{r ggplot9}
 ggplot(data = EPIDURAL) +
   geom_density(aes(x = kg)) +
   labs(title = "Density of Patient Weights",
@@ -211,7 +213,7 @@ We are able to superimpose a density estimate above a histogram by creating the 
 
 Remember that the histogram needs to be a density histogram, and not a frequency histogram, in order to be able to superimpose a density curve. We can create a density histogram in `ggplot2` by including the argument `y = after_stat(density)` within the `aes()` function in `geom_histogram()`.
 
-```{r ggplot12}
+```{r ggplot10}
 ggplot(data = EPIDURAL) +
   geom_histogram(aes(x = kg, y = after_stat(density)), binwidth = 10) +
   geom_density(aes(x = kg)) +
@@ -225,7 +227,7 @@ In order to create a plot for each treatment group, we need to use the function 
 
 In the code below we have coloured the histogram a different colour for each group using the argument `fill = treatment` within the `aes()` argument in `geom_histogram()`. This automatically creates a legend showing which colour is for which group, but because the columns of the plot are already labelled, this legend is unnecessary. We can remove the legend by including `fill = "none"` within the `guides()` argument.
 
-```{r ggplot13}
+```{r ggplot11}
 ggplot(data = EPIDURAL) +
   geom_histogram(aes(x = BMI, y = after_stat(density), fill = treatment), binwidth = 5) +
   geom_density(aes(x = BMI)) +
@@ -286,6 +288,10 @@ ggplot(data = TITANIC3) +
 ```
 `r unhide()`
 :::
+
+---
+
+`ggplot2` can be used to create many different types of plots and graphs, not just those detailed above. For further examples of constructing barplots, histograms and kernel density estimates in `ggplot2`, as well as an introduction to the other plots it can be used to create, see [Section 2.9.5 Graphics with `ggplot2`](https://read.kortext.com/reader/pdf/92741/169) of *Probability and Statistics with R*.
 
 
 
