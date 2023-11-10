@@ -1,0 +1,19 @@
+---
+title: "S2S Lab 9"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, comment=NA)
+```
+
+# Welcome!
+
+Welcome to the ninth S2S lab. This lab on confidence intervals serves two purposes,
+
+1. It is a reference for you to find all the formulas for calculating any confidence intervals relating to population means and differences in population mean, as covered in [Section 8.2](https://read.kortext.com/reader/pdf/92741/454) of *Probability and Statistics with R*. You will always have access to this lab in assessments, so make sure you are familiar with where to find these formulas.
+
+2. It will introduce some examples of calculating confidence intervals for the difference population means of two groups, for several different scenarios relating to whether the variance of boths groups is known and whether they are equal.
