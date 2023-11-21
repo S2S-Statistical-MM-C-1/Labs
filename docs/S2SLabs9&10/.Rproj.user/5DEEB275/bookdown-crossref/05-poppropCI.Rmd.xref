@@ -1,0 +1,8 @@
+h1:population-proportions-intervals-based-on-large-samples-8.4 Population Proportions (Intervals Based on Large Samples) (8.4)
+h2:population-proportions Population Proportions
+h3:asymptoticwald-confidence-interval-8.4.1 Asymptotic/Wald Confidence Interval (8.4.1)
+h4:coverage-probability Coverage probability
+fig:covprob Coverage probabilities of 95% confidence intervals for various values of $\\pi$ when $X\\sim\\mbox{Bin}(25,\\pi)$.
+h3:scorewilson-confidence-interval-8.4.1.1 Score/Wilson Confidence Interval (8.4.1.1)
+h2:difference-in-population-proportions-8.4.2 Difference in population proportions (8.4.2)
+

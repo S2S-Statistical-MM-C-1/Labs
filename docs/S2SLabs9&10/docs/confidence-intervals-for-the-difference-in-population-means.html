@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Confidence Intervals for the Difference in Population Means | S2S Lab 9</title>
+  <meta name="description" content="3 Confidence Intervals for the Difference in Population Means | S2S Lab 9" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Confidence Intervals for the Difference in Population Means | S2S Lab 9" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Confidence Intervals for the Difference in Population Means | S2S Lab 9" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="confidence-intervals-for-population-means.html"/>
+<link rel="next" href="confidence-intervals-for-the-mean-difference-from-paired-data-8.2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
+<li class="chapter" data-level="2" data-path="confidence-intervals-for-population-means.html"><a href="confidence-intervals-for-population-means.html"><i class="fa fa-check"></i><b>2</b> Confidence Intervals for Population Means</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="confidence-intervals-for-population-means.html"><a href="confidence-intervals-for-population-means.html#variance-is-known-8.2.1"><i class="fa fa-check"></i><b>2.1</b> Variance is known (8.2.1)</a></li>
+<li class="chapter" data-level="2.2" data-path="confidence-intervals-for-population-means.html"><a href="confidence-intervals-for-population-means.html#variance-is-unknown-8.2.2"><i class="fa fa-check"></i><b>2.2</b> Variance is unknown (8.2.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="confidence-intervals-for-the-difference-in-population-means.html"><a href="confidence-intervals-for-the-difference-in-population-means.html"><i class="fa fa-check"></i><b>3</b> Confidence Intervals for the Difference in Population Means</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="confidence-intervals-for-the-difference-in-population-means.html"><a href="confidence-intervals-for-the-difference-in-population-means.html#known-equal"><i class="fa fa-check"></i><b>3.1</b> Variances are known and equal (8.2.3)</a></li>
+<li class="chapter" data-level="3.2" data-path="confidence-intervals-for-the-difference-in-population-means.html"><a href="confidence-intervals-for-the-difference-in-population-means.html#known-unequal"><i class="fa fa-check"></i><b>3.2</b> Variances are known and unequal (8.2.4)</a></li>
+<li class="chapter" data-level="3.3" data-path="confidence-intervals-for-the-difference-in-population-means.html"><a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-equal"><i class="fa fa-check"></i><b>3.3</b> Variances are unknown and assumed equal (8.2.5)</a></li>
+<li class="chapter" data-level="3.4" data-path="confidence-intervals-for-the-difference-in-population-means.html"><a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-unequal"><i class="fa fa-check"></i><b>3.4</b> Variances are unknown and unequal (8.2.6)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="confidence-intervals-for-the-mean-difference-from-paired-data-8.2.html"><a href="confidence-intervals-for-the-mean-difference-from-paired-data-8.2.html"><i class="fa fa-check"></i><b>4</b> Confidence Intervals for the Mean Difference from Paired Data (8.2.7)</a></li>
+<li class="chapter" data-level="5" data-path="confidence-intervals-for-population-variances.html"><a href="confidence-intervals-for-population-variances.html"><i class="fa fa-check"></i><b>5</b> Confidence Intervals for Population Variances</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="confidence-intervals-for-population-variances.html"><a href="confidence-intervals-for-population-variances.html#sampling-from-a-normal-population-8.3.1"><i class="fa fa-check"></i><b>5.1</b> Sampling from a Normal population (8.3.1)</a></li>
+<li class="chapter" data-level="5.2" data-path="confidence-intervals-for-population-variances.html"><a href="confidence-intervals-for-population-variances.html#ratio-of-population-variances-8.3.2"><i class="fa fa-check"></i><b>5.2</b> Ratio of population variances (8.3.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="confidence-intervals-based-on-large-samples-8.html"><a href="confidence-intervals-based-on-large-samples-8.html"><i class="fa fa-check"></i><b>6</b> Confidence Intervals Based on Large Samples (8.4)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="confidence-intervals-based-on-large-samples-8.html"><a href="confidence-intervals-based-on-large-samples-8.html#population-proportions"><i class="fa fa-check"></i><b>6.1</b> Population Proportions</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="confidence-intervals-based-on-large-samples-8.html"><a href="confidence-intervals-based-on-large-samples-8.html#asymptoticwald-confidence-interval-8.4.1"><i class="fa fa-check"></i><b>6.1.1</b> Asymptotic/Wald Confidence Interval (8.4.1)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="confidence-intervals-based-on-large-samples-8.html"><a href="confidence-intervals-based-on-large-samples-8.html#scorewilson-confidence-interval-8.4.1.1"><i class="fa fa-check"></i><b>6.1.2</b> Score/Wilson Confidence Interval (8.4.1.1)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="confidence-intervals-based-on-large-samples-8.html"><a href="confidence-intervals-based-on-large-samples-8.html#difference-in-population-proportions-8.4.2"><i class="fa fa-check"></i><b>6.2</b> Difference in population proportions (8.4.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="confidence-interval-for-the-mean-of-a-poisson-random-variable-8.4.html"><a href="confidence-interval-for-the-mean-of-a-poisson-random-variable-8.4.html"><i class="fa fa-check"></i><b>7</b> Confidence Interval for the Mean of a Poisson Random Variable (8.4.3)</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lab 9</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals-for-the-difference-in-population-means" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Confidence Intervals for the Difference in Population Means<a href="confidence-intervals-for-the-difference-in-population-means.html#confidence-intervals-for-the-difference-in-population-means" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When we have two independent random variables which both follow normal distributions, say <span class="math inline">\(X\sim N(\mu_X,\,\sigma_X)\)</span> and <span class="math inline">\(Y\sim N(\mu_Y,\,\sigma_Y)\)</span>, it is often of interest to find a range of values for the difference between the population means, <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span>. This range of values can be found using a confidence interval for <span class="math inline">\(\mu_X-\mu_Y\)</span>, but we have to be aware of the variances of both distributions, as this can change the way the confidence interval is calculated.</p>
+<p>In order to construct confidence intervals, random samples have to be drawn from the underlying distribution. We will use the notation <span class="math inline">\(n_X\)</span> to denote the size of the sample drawn from <span class="math inline">\(X\sim N(\mu_X,\,\sigma_X)\)</span> and <span class="math inline">\(n_Y\)</span> to denote the size of the sample drawn from <span class="math inline">\(Y\sim N(\mu_Y,\,\sigma_Y)\)</span>. Let <span class="math inline">\(x_1, x_2, \ldots , x_{n_X}\)</span> with sample mean <span class="math inline">\(\bar{x}\)</span> and sample variance <span class="math inline">\(s^2_X\)</span> represent the sample from <span class="math inline">\(X\sim N(\mu_X,\,\sigma_X)\)</span> and <span class="math inline">\(y_1, y_2, \ldots , y_{n_Y}\)</span> with sample mean <span class="math inline">\(\bar{y}\)</span> and sample variance <span class="math inline">\(s^2_Y\)</span> represent the sample from <span class="math inline">\(Y\sim N(\mu_Y,\,\sigma_Y)\)</span>.</p>
+<div id="known-equal" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Variances are known and equal (8.2.3)<a href="confidence-intervals-for-the-difference-in-population-means.html#known-equal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the case where the variances of both distributions are known and are equal, that is <span class="math inline">\(\sigma_X^2=\sigma_Y^2=\sigma^2\)</span>, then a <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for the difference in the population means, <span class="math inline">\(\mu_X-\mu_Y\)</span>, is given by <a href="https://read.kortext.com/reader/pdf/92741/467">equation (8.11)</a> in the textbook,</p>
+<div class="webex-code webex-box">
+<p><span class="math display">\[\begin{equation}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\left[\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{2}}\cdot\sigma\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}},\,\,\left(\bar x-\bar y\right)+z_{1-\frac{\alpha}{2}}\cdot\sigma\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\,\right]
+\end{equation}\]</span></p>
+</div>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>Let's consider an example where we can use this result.</p>
+<p>Suppose a farmer is interested in whether a specific fertiliser will increase their annual yield of potatoes. They apply the new fertiliser to 13 of the fields they are growing potatoes in and measure the yield (in tonnes) from each field. They also measure the yield of potatoes from 8 fields where the fertiliser was not applied. Assuming that the yield of potatoes, regardless of whether fertiliser was used, has a standard deviation of 4, find a 95% confidence interval for the mean difference in the yield of potatoes from the fertilised fields and the unfertilised fields.</p>
+<p>The observed yields can be found in the file <em>yields.csv</em>.</p>
+<p>Before we can start to calculate this confidence interval, there are a few steps we need to take.</p>
+<ol style="list-style-type: decimal">
+<li>Read the data frame into R.</li>
+<li>Split it into two subsets, one for the fertilised fields and one for the unfertilised fields.</li>
+<li>Double check that the potato yield for these two groups follows a normal distribution, so that we can use the result above.</li>
+</ol>
+<p>To read <em>yields.csv</em> into R, you will first need to download it from <a href="">Moodle</a> and save it somewhere accessible. Then set your working directory in R to point to wherever you have saved this file. For a reminder on setting your working directory, see <a href="https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab3/docs/reading.html#directory">Lab 3 Section 2.1</a>.</p>
+<p>To load the data frame into the <strong>Environment</strong> tab and call it <code>yields</code>, we can use the code below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb1-1" tabindex="-1"></a>yields <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;yields.csv&quot;</span>)</span></code></pre></div>
+<p>It is always good practise to open the original file to check for missing values and the column headings for example. Make sure to check that the data frame is saved as you would expect, based on this. Once you have read <code>yields</code> into your R session, we should explore its contents.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb2-1" tabindex="-1"></a><span class="fu">head</span>(yields)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">fertiliser</th>
+<th align="right">potato</th>
+<th align="right">lettuce</th>
+<th align="right">supermarket</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Used</td>
+<td align="right">36.62601</td>
+<td align="right">27.82845</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Used</td>
+<td align="right">37.05237</td>
+<td align="right">24.83388</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Not used</td>
+<td align="right">33.60988</td>
+<td align="right">19.04274</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Used</td>
+<td align="right">42.93379</td>
+<td align="right">24.42769</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Not used</td>
+<td align="right">29.82898</td>
+<td align="right">18.01841</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Used</td>
+<td align="right">42.08214</td>
+<td align="right">23.41676</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We can see that there are 4 columns in <code>yields</code>,</p>
+<ul>
+<li><code>fertiliser</code>: this is a categorical variable stating whether fertiliser was used or not in the field.</li>
+<li><code>potato</code>: this is yield (in tonnes) of potatoes harvested from each field.</li>
+<li><code>lettuce</code>: this is the yield (in tonnes) of lettuces harvested from each field - we'll use this data later in the lab.</li>
+<li><code>supermarket</code>: this is a binary variable indicating whether the yield of potatoes from each field has been sold to supermarkets or not - this will be used later on.</li>
+</ul>
+<p>Because <code>fertiliser</code> is a column of categorical data, we should switch it to be a factor.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb3-1" tabindex="-1"></a>yields<span class="sc">$</span>fertiliser <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> yields<span class="sc">$</span>fertiliser, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Used&quot;</span>, <span class="st">&quot;Not used&quot;</span>))</span></code></pre></div>
+<p>Now we can set up two distinct subsets from the data frame. <code>potato_fertilised</code> stores the yields from the fields where fertiliser was used and <code>potato_unfertilised</code> stores the yields from the fields where fertiliser was not used.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb4-1" tabindex="-1"></a>potato_fertilised <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="at">x =</span> yields, <span class="at">subset =</span> (fertiliser <span class="sc">==</span> <span class="st">&quot;Used&quot;</span>),</span>
+<span id="cb4-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb4-2" tabindex="-1"></a>                            <span class="at">select =</span> potato, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb4-4" tabindex="-1"></a>potato_unfertilised <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="at">x =</span> yields, <span class="at">subset =</span> (fertiliser <span class="sc">==</span> <span class="st">&quot;Not used&quot;</span>),</span>
+<span id="cb4-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb4-5" tabindex="-1"></a>                              <span class="at">select =</span> potato, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>We know from the question that these yields come from two distributions which both have a standard deviation equal to 4, but before we can find a confidence interval for the difference between the mean yield from fertilised and unfertilised fields, we need to confirm that the underlying distributions are normal. We can do this by creating a QQ plot for both subsets (for a reminder of QQ plots, see <a href="https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab4/docs/comp.html#qq-plots">Lab 4 Section 4.3</a>).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb5-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-3" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> potato_fertilised,</span>
+<span id="cb5-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-4" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Yield from fertilised fields&quot;</span>)</span>
+<span id="cb5-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-5" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> potato_fertilised)</span>
+<span id="cb5-6"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-7" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> potato_unfertilised,</span>
+<span id="cb5-8"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-8" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Yield from unfertilised fields&quot;</span>)</span>
+<span id="cb5-9"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-9" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> potato_unfertilised)</span>
+<span id="cb5-10"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb5-11" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>These QQ plots seem to suggest that both groups follow a normal distribution, so it is reasonable for us to assume that the yield of potatoes coming from fertilised fields comes from a <span class="math inline">\(N(\mu_{\mbox{f}}, 4)\)</span> distribution, and that the yield of potatoes coming from unfertilised fields comes from a <span class="math inline">\(N(\mu_{\mbox{uf}}, 4)\)</span> distribution.</p>
+<p>Now we are ready to actually compute this 95% confidence interval for the difference in population mean yields from the two types of field, that is <span class="math inline">\(\mu_\mbox{f}-\mu_\mbox{uf}\)</span>. There are a few different ways we could do this in R.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using R as a calculator
+</button>
+<p>In order to use the formula for the confidence interval stated above, there are a few values we need to find. From the question, we already know that <span class="math inline">\(\sigma=4\)</span>, <span class="math inline">\(n_X=13\)</span> and <span class="math inline">\(n_Y=8\)</span>. We can save these values in R using the code below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb6-1" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb6-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb6-2" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb6-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb6-3" tabindex="-1"></a>ny <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
+<p>That leaves us to find <span class="math inline">\(\bar x\)</span>, <span class="math inline">\(\bar y\)</span> and <span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span>, the <span class="math inline">\((1-\frac{\alpha}{2})\)</span><sup>th</sup> quantile from the standard normal distribution. In our case, because we are interested in a 95% confidence interval, <span class="math inline">\(\alpha=0.05\)</span>, so we are looking for the <span class="math inline">\(\left(1-\frac{0.05}{2}\right)=0.975\)</span><sup>th</sup> quantile.</p>
+<p>We can find these three values in R using the code below.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb7-1" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(potato_fertilised)</span>
+<span id="cb7-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb7-2" tabindex="-1"></a>ybar <span class="ot">&lt;-</span> <span class="fu">mean</span>(potato_unfertilised)</span>
+<span id="cb7-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb7-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<p>Now we can see in the <strong>Environment</strong> tab that <span class="math inline">\(\bar x=37.68\)</span> tonnes, <span class="math inline">\(\bar y=33.76\)</span> tonnes and <span class="math inline">\(z_{0.975}=1.96\)</span>.</p>
+<p>Calculating the 95% confidence interval is now just a case of subbing in all the values into the formula shown above. We can do this in R as follows.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb8-1" tabindex="-1"></a>(xbar <span class="sc">-</span> ybar) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="sc">*</span>z<span class="sc">*</span>sigma<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>nx <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>ny)</span></code></pre></div>
+<pre><code>[1] 0.4043094 7.4501215</code></pre>
+<p>Using <code>c(-1, 1)</code> allows us to find the lower and upper limit of the confidence interval in one easy step. We would interpret this confidence interval by saying that we are 95% confident that the difference between the average yields of potatoes from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[0.4043,\, 7.4501\right]\)</span>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the z.test() function
+</button>
+<p>Exactly the same result can be reached by using the function <code>z.test()</code>. This function runs through all the steps we manually calculated in the section above, so can speed up the process of finding a confidence interval. This function is part of the <code>PASWR2</code> package, so we need to load it into the R session. <code>z.test()</code> can take the following arguments,</p>
+<ul>
+<li><code>x =</code>: this is a vector containing the sample data taken from the first normal distribution.</li>
+<li><code>y =</code>: this is a vector containing the sample data taken from the second normal distribution.</li>
+<li><code>sigma.x =</code>: this is the standard deviation of the first normal distribution.</li>
+<li><code>sigma.y =</code>: this is the standard deviation of the second normal distribution.</li>
+<li><code>conf.level =</code>: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use <code>0.95</code> for example.</li>
+</ul>
+<p>The code below uses <code>z.test()</code> to find the 95% confidence interval for the difference in population mean potato yield from fertilised and unfertilised fields. We use <code>$conf</code> at the end of the function to extract only the confidence interval. <code>z.test()</code> by itself will return additional results.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb10-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb10-3" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> potato_fertilised, <span class="at">y =</span> potato_unfertilised,</span>
+<span id="cb10-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb10-4" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="dv">4</span>, <span class="at">sigma.y =</span> <span class="dv">4</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 0.4043094 7.4501215
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>Again, we would interpret this confidence interval by saying that we are 95% confident that the difference between the average yields of potatoes from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[0.4043,\, 7.4501\right]\)</span>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 3: Using the zsum.test() function
+</button>
+<p>Another function contained in the <code>PASWR2</code> package that can be useful is the <code>zsum.test()</code> function. This allows you to calculate the same confidence interval, but rather than inputting the data from the sample itself, you input some summary statistics that you have either calculated or have been given to you as part of the question. <code>zsum.test()</code> is a good function to use if you are not given the data from the samples aas part of a question, but rather some already calculated summary statistics.</p>
+<p>The arguments that <code>zsum.test()</code> can take are,</p>
+<ul>
+<li><code>mean.x =</code>: this is the mean of the first sample. We have already calculated <span class="math inline">\(\bar x\)</span> and saved it as <code>xbar</code>.</li>
+<li><code>mean.y =</code>: this is the mean of the second sample. We have already calculated <span class="math inline">\(\bar y\)</span> and saved it as <code>ybar</code>.</li>
+<li><code>sigma.x =</code>: this is the standard deviation of the underlying normal distribution the first sample has been taken from. We know from the question that this is equal to 4 and we have saved it in the object <code>sigma</code>.</li>
+<li><code>sigma.y =</code>: this is the standard deviation of the underlying normal distribution the second sample has been taken from. We know from the question that this is equal to 4 and we have saved it in the object <code>sigma</code>.</li>
+<li><code>n.x =</code>: this is the size of the first sample. In the question this is <span class="math inline">\(n_X=13\)</span> and this is already saved as <code>nx</code>.</li>
+<li><code>n.y =</code>: this is the size of the second sample. In the question this is <span class="math inline">\(n_Y=8\)</span> and this is already saved as <code>ny</code>.</li>
+<li><code>conf.level =</code>: this is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use <code>0.95</code> for example.</li>
+</ul>
+<p>We can input all of these values as arguments in the <code>zsum.test()</code> function to find the 95% confidence interval for the difference in population mean yield of potatoes from the fertilised and unfertilised fields. Again, we use <code>$conf</code> at the end of the function to extract only the confidence interval.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb12-1" tabindex="-1"></a><span class="fu">zsum.test</span>(<span class="at">mean.x =</span> xbar, <span class="at">mean.y =</span> ybar, <span class="at">sigma.x =</span> sigma, <span class="at">sigma.y =</span> sigma,</span>
+<span id="cb12-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb12-2" tabindex="-1"></a>          <span class="at">n.x =</span> nx, <span class="at">n.y =</span> ny, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 0.4043094 7.4501215
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>This confidence interval tells us that we are 95% confident that the difference between the average yields of potatoes from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[0.4043,\, 7.4501\right]\)</span>.</p>
+</div>
+</div>
+<hr />
+<p>You can find the derivation of this result and some additional exercises in <a href="https://read.kortext.com/reader/pdf/92741/466">Section 8.2.3</a> of <em>Probability and Statistics with R</em>.</p>
+</div>
+<div id="known-unequal" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Variances are known and unequal (8.2.4)<a href="confidence-intervals-for-the-difference-in-population-means.html#known-unequal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the case where the variances of both distributions are known and but are unequal, that is <span class="math inline">\(\sigma_X^2\neq\sigma_Y^2\)</span>, then a <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for the difference in the population means, <span class="math inline">\(\mu_X-\mu_Y\)</span>, is given by <a href="https://read.kortext.com/reader/pdf/92741/471">equation (8.12)</a> in the textbook,</p>
+<div class="webex-code webex-box">
+<p><span class="math display">\[\begin{equation}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\left[\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\sigma_X^2}{n_X}+\frac{\sigma_Y^2}{n_Y}},\,\,\left(\bar x-\bar y\right)+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\sigma_X^2}{n_X}+\frac{\sigma_Y^2}{n_Y}}\,\right]
+\end{equation}\]</span></p>
+</div>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>The farmer from before is also interested in seeing whether the use of the fertiliser improves their yield of lettuces. They again fertilise 13 fields where lettuces are growing and record the yield (in tonnes) from these fields. 8 fields were left unfertilised and the lettuce yield from these was also recorded. These data are in the last column, called <code>lettuce</code>, of the data frame <code>yields</code>.</p>
+<p>Assuming that the lettuce yield from fertilised fields comes from a distribution with standard deviation equal to 3 and the yield from unfertilised fields follows a distribution with standard deviation equal to 1, calculate a 95% confidence interval for the mean difference in the lettuce yield between these two types of field. Notice now that the standard deviations, and hence the variances, of these two groups are not equal.</p>
+<p>Before we can find this confidence interval, we need to complete a couple of steps.</p>
+<ol style="list-style-type: decimal">
+<li>Split the data into two subsets, one for the fertilised fields and one for the unfertilised fields.</li>
+<li>Check that the lettuce yield follows a normal distribution for both groups, so that we can use the result above.</li>
+</ol>
+<p>Let's create the two subsets from the data frame.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb14-1" tabindex="-1"></a>lettuce_fertilised <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="at">x =</span> yields, <span class="at">subset =</span> (fertiliser <span class="sc">==</span> <span class="st">&quot;Used&quot;</span>),</span>
+<span id="cb14-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb14-2" tabindex="-1"></a>                             <span class="at">select =</span> lettuce, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb14-4" tabindex="-1"></a>lettuce_unfertilised <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="at">x =</span> yields, <span class="at">subset =</span> (fertiliser <span class="sc">==</span> <span class="st">&quot;Not used&quot;</span>),</span>
+<span id="cb14-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb14-5" tabindex="-1"></a>                              <span class="at">select =</span> lettuce, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Now we can plot two QQ plots to check whether the lettuce yields appear to follow a normal distribution.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb15-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-3" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> lettuce_fertilised,</span>
+<span id="cb15-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-4" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Yield from fertilised fields&quot;</span>)</span>
+<span id="cb15-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-5" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> lettuce_fertilised)</span>
+<span id="cb15-6"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-7" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> lettuce_unfertilised,</span>
+<span id="cb15-8"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-8" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Yield from unfertilised fields&quot;</span>)</span>
+<span id="cb15-9"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-9" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> lettuce_unfertilised)</span>
+<span id="cb15-10"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-10" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb15-11" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>It appears that the points fall relatively close to the line, so we can assume that both groups follow a normal distribution. To summarise what we know now, we can say that the lettuce yield from fertilised fields follows a <span class="math inline">\(N(\mu_\mbox{f}, 3)\)</span> distribution and the lettuce yield from unfertilised fields follows a <span class="math inline">\(N(\mu_\mbox{uf},1)\)</span> distribution.</p>
+<p>Now we can find the 95% confidence interval for the difference in population mean yields from the two types of field i.e. <span class="math inline">\(\mu_\mbox{f}-\mu_\mbox{uf}\)</span>. Again, there a few different ways in which we can do this in R.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using R as a calculator
+</button>
+<p>We can start by saving all the values that we know from the question as objects in the <strong>Environment</strong> tab. That is, <span class="math inline">\(n_X=13\)</span>, <span class="math inline">\(n_Y=8\)</span>, <span class="math inline">\(\sigma_X=3\)</span> and <span class="math inline">\(\sigma_Y=1\)</span>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb16-1" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb16-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb16-2" tabindex="-1"></a>ny <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb16-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb16-3" tabindex="-1"></a>sigmax <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb16-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb16-4" tabindex="-1"></a>sigmay <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div>
+<p>In order to use the formula for the confidence interval stated above, we still need to find <span class="math inline">\(\bar x\)</span>, <span class="math inline">\(\bar y\)</span> and <span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span>. We can find each of these using the code below.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb17-1" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(lettuce_fertilised)</span>
+<span id="cb17-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb17-2" tabindex="-1"></a>ybar <span class="ot">&lt;-</span> <span class="fu">mean</span>(lettuce_unfertilised)</span>
+<span id="cb17-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb17-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<p>Now we can see in the <strong>Environment</strong> tab that <span class="math inline">\(\bar x=24.43\)</span> tonnes, <span class="math inline">\(\bar y=17.74\)</span> tonnes and <span class="math inline">\(z_{0.975}=1.96\)</span>.</p>
+<p>Calculating the 95% confidence interval is now just a case of subbing in all the values into the formula shown above. We can do this in R as follows.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb18-1" tabindex="-1"></a>(xbar <span class="sc">-</span> ybar) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="sc">*</span>z<span class="sc">*</span><span class="fu">sqrt</span>(sigmax<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>nx <span class="sc">+</span> sigmay<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>ny)</span></code></pre></div>
+<pre><code>[1] 4.913636 8.457450</code></pre>
+<p>We would interpret this confidence interval by saying that we are 95% confident that the difference between the average yields of lettuces from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[4.9136,\, 8.4574\right]\)</span>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the z.test() function
+</button>
+<p>As we have seen in section <a href="confidence-intervals-for-the-difference-in-population-means.html#known-equal">3.1</a>, the function <code>z.test()</code> from the <code>PASWR2</code> package is useful if we have been provided the data and know the variances of the two normal distributions that the group follow.</p>
+<p>In this case, we can use <code>z.test()</code> to calculate a 95% confidence interval for the difference in population mean lettuce yields from fertilised and unfertilised fields as follows.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb20-1" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> lettuce_fertilised, <span class="at">y =</span> lettuce_unfertilised,</span>
+<span id="cb20-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb20-2" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="dv">3</span>, <span class="at">sigma.y =</span> <span class="dv">1</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 4.913636 8.457450
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>Again, we would interpret this confidence interval by saying that we are 95% confident that the difference between the average yields of lettuces from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[4.9136,\, 8.4574\right]\)</span>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 3: Using the zsum.test() function
+</button>
+<p>To save us from having to type out the final calculation for the confidence interval, we can use the function <code>zsum.test()</code> from the <code>PASWR2</code> package.</p>
+<p>We can find the 95% confidence interval for the difference in population mean lettuce yield from the two types of field as follows.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb22-1" tabindex="-1"></a><span class="fu">zsum.test</span>(<span class="at">mean.x =</span> xbar, <span class="at">mean.y =</span> ybar, <span class="at">sigma.x =</span> sigmax, <span class="at">sigma.y =</span> sigmay,</span>
+<span id="cb22-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb22-2" tabindex="-1"></a>          <span class="at">n.x =</span> nx, <span class="at">n.y =</span> ny, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 4.913636 8.457450
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>This function is mostly useful if we are not provided with the original sample data, but rather summary statistics.</p>
+<p>We can again see that the confidence interval is <span class="math inline">\(\left[4.9136,\, 8.4574\right]\)</span>, so we say we are 95% confident that the difference between the average yields of lettuces from fertilised and unfertilised fields lies in this interval.</p>
+</div>
+</div>
+<hr />
+<p>To see some further examples of using this confidence interval, see <a href="https://read.kortext.com/reader/pdf/92741/470">Section 8.2.4</a> of <em>Probability and Statistics with R</em>.</p>
+</div>
+<div id="unknown-equal" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Variances are unknown and assumed equal (8.2.5)<a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-equal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When random samples have been taken from two normal distributions where the variances are unknown but assumed to be equal, a <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for <span class="math inline">\(\mu_X-\mu_Y\)</span> is given by <a href="https://read.kortext.com/reader/pdf/92741/474">equation (8.15)</a> in the textbook,</p>
+<div class="webex-code webex-box">
+<p><span class="math display">\[\begin{equation}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\left[\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{2};\nu_p}\cdot s_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}},\,\,\left(\bar x-\bar y\right)+t_{1-\frac{\alpha}{2};\nu_p}\cdot s_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\,\right]
+\end{equation}\]</span></p>
+</div>
+<ul>
+<li><p><span class="math inline">\(\nu_p\)</span> represents the degrees of freedom for the associated <span class="math inline">\(t\)</span> distribution. The degrees of freedom can be found as <span class="math inline">\(\nu_p=n_X+n_Y-2\)</span>.</p></li>
+<li><p><span class="math inline">\(s_p\)</span> is a pooled estimate of the standard deviation that takes into account the sample sizes, <span class="math inline">\(n_X\)</span> and <span class="math inline">\(n_Y\)</span>, taken from each distribution. An estimate for the pooled <strong>variance</strong> can be found using, <span class="math display">\[s_p^2=\frac{\left(n_X-1\right)s_X^2+\left(n_Y-1\right)s_Y^2}{n_X+n_Y-2}\]</span></p>
+<p>where, <span class="math inline">\(s_X^2=\frac{\sum_{i=1}^{n_X}x_i^2-n_X\bar x^2}{n_X-1}\)</span> and <span class="math inline">\(s_Y^2=\frac{\sum_{i=1}^{n_Y}y_i^2-n_Y\bar y^2}{n_Y-1}\)</span>.</p>
+<p><em>Remember to take the square root of the estimated variance to find the estimate of standard deviation.</em></p></li>
+</ul>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>So far, when calculating the confidence interval for the difference in population mean yield of potatoes, we have been told the standard deviation of the underlying distribution. It might not be the case that we know this value, in which case we would use the formula for the confidence interval stated above.</p>
+<p>The difference between this one and the one stated in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#known-equal">3.1</a> is that the <span class="math inline">\(t\)</span>-distribution is now used, rather than the standard normal, and that a pooled estimate of the standard deviation is used. This is because we do not know a value for the population standard deviation <span class="math inline">\(\sigma\)</span>.</p>
+<p>Assuming that we don't know the standard deviations of the distributions that potato yields follows, but we can assume that they are equal, we can calculate a 95% confidence interval for the difference in mean population potato yield from fertilised and unfertilised fields using the formula above.</p>
+<p>We have already split the potato yields into two subsets and checked that they both follow a normal distribution in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#known-equal">3.1</a>, so we don't need to do this again. If this hadn't already been done, <strong>make sure to check the groups follow a normal distribution</strong>. The confidence interval can be found in R in a few different ways.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using R as a calculator
+</button>
+<p>We can start by saving <span class="math inline">\(n_X=13\)</span> and <span class="math inline">\(n_Y=8\)</span> as objects in the <strong>Environment</strong> tab.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb24-1" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb24-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb24-2" tabindex="-1"></a>ny <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
+<p>Then we can calculate <span class="math inline">\(\bar x\)</span>, <span class="math inline">\(\bar y\)</span> and <span class="math inline">\(t_{1-\frac{\alpha}{2};\nu_p}\)</span>, which is the <span class="math inline">\((1-\frac{\alpha}{2})\)</span><sup>th</sup> quantile from the <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(\nu_p=n_X+n_Y-2\)</span> degrees of freedom. Because we are interested in a 95% confidence interval, <span class="math inline">\(\alpha=0.05\)</span>, so the quantile we are looking for is the <span class="math inline">\(\left(1-\frac{0.05}{2}\right)=0.975\)</span><sup>th</sup> quantile. To find a quantile from the <span class="math inline">\(t\)</span>-distribution, we use the <code>qt()</code> function.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb25-1" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(potato_fertilised)</span>
+<span id="cb25-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb25-2" tabindex="-1"></a>ybar <span class="ot">&lt;-</span> <span class="fu">mean</span>(potato_unfertilised)</span>
+<span id="cb25-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb25-3" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, nx <span class="sc">+</span> ny <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>In order to use the formula stated above, we also need to calculate the estimate for the pooled variance, <span class="math inline">\(s_p^2\)</span>. Before we can do this, we also need to find the sum of squares for both groups, <span class="math inline">\(s_X^2\)</span> and <span class="math inline">\(s_Y^2\)</span>. This can be done using the code below, which first of all calculates <span class="math inline">\(\sum_{i=1}^{n_X}x_i^2\)</span> and <span class="math inline">\(\sum_{i=1}^{n_Y}y_i^2\)</span> and saves them as <code>sum_x2</code> and <code>sum_y2</code> respectively. These values are then used to find <span class="math inline">\(s_X^2\)</span> and <span class="math inline">\(s_Y^2\)</span>, which have been saved as <code>s2x</code> and <code>s2y</code> respectively.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb26-1" tabindex="-1"></a>sum_x2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(potato_fertilised<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb26-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb26-2" tabindex="-1"></a>sum_y2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(potato_unfertilised<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb26-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb26-3" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb26-4" tabindex="-1"></a>s2x <span class="ot">&lt;-</span> (sum_x2 <span class="sc">-</span> nx<span class="sc">*</span>xbar<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(nx <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb26-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb26-5" tabindex="-1"></a>s2y <span class="ot">&lt;-</span> (sum_y2 <span class="sc">-</span> ny<span class="sc">*</span>ybar<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(ny <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>Note that this here we have calculated the variance of both groups 'by hand'. We could do exactly the same thing using the <code>var()</code> function, which calculates the variance of a vector of values.</p>
+<p>Now we can find the estimate for the pooled variance, <span class="math inline">\(s_p^2\)</span>, using the values for the sum of squares for both groups. This has been saved as <code>sp2</code>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb27-1" tabindex="-1"></a>sp2 <span class="ot">&lt;-</span> ((nx <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">*</span>s2x <span class="sc">+</span> (ny <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">*</span>s2y)<span class="sc">/</span>(nx <span class="sc">+</span> ny <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Now we can sub all of the values that have been caluclated into the formula for calculating the confidence interval, as follows.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb28-1" tabindex="-1"></a>(xbar <span class="sc">-</span> ybar) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="sc">*</span>t<span class="sc">*</span><span class="fu">sqrt</span>(sp2)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>nx <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>ny)</span></code></pre></div>
+<pre><code>[1] -0.4794537  8.3338847</code></pre>
+<p>We would interpret this confidence interval by saying that we are 95% confident that the difference between the average yields of potatoes from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[-0.4795,\, 8.3339\right]\)</span>.</p>
+<p>Note that this interval is not strictly positive i.e. it contains the value 0. This tells us that, when we don't know the standard deviation of the underlying distributions, there is not sufficient evidence that the population mean potato yield from fertilised fields is any different from the population mean potato yield from unfertilised fields.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the t.test() function
+</button>
+<p>Another way in which we can calculate this 95% confidence interval is by using the <code>t.test()</code> function. This function is already part of R, so you don't need to load any packages. The only arguments that <code>t.test()</code> needs are,</p>
+<ul>
+<li><code>x =</code>: this is the vector of normally distributed values from the first group.</li>
+<li><code>y =</code>: this is the vector of normally distributed values from the second group.</li>
+<li><code>var.equal =</code>: this takes the value <code>TRUE</code> or <code>FALSE</code>, indicating whether we believe the variances, and hence the standard deviations, of both groups are the same.</li>
+<li><code>conf.level =</code>: this is the confidence interval for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use <code>0.95</code>.</li>
+</ul>
+<p>The code below uses <code>t.test()</code> to find the 95% confidence interval for the difference in population mean potato yield from fertilised and unfertilised fields. <code>$conf</code> is used to extract only the confidence interval as by itself, <code>t.test()</code> will return additional results.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb30-1" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> potato_fertilised, <span class="at">y =</span> potato_unfertilised,</span>
+<span id="cb30-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb30-2" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] -0.4794537  8.3338847
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>We see the same result, that the 95% confidence interval for the difference in potato yield is <span class="math inline">\(\left[-0.4795,\, 8.3339\right]\)</span>. Again, we see that there is not sufficient evidence that the population mean potato yield from fertilised fields is any different from the population mean potato yield from unfertilised fields since this interval contains the value 0.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 3: Using the tsum.test() function
+</button>
+<p>If we had been given summary statistics of the two groups, but did not know the variances of the groups, we can use the function <code>tsum.test()</code>. This is part of the <code>PASWR2</code> package, so make sure it is loaded into your R session.</p>
+<p>The arguments that <code>tsum.test()</code> can take are,</p>
+<ul>
+<li><code>mean.x =</code>: this is the mean of the first sample, <span class="math inline">\(\bar x\)</span>.</li>
+<li><code>mean.y =</code>: this is the mean of the second sample, <span class="math inline">\(\bar y\)</span>.</li>
+<li><code>s.x =</code>: this is the estimate of the standard deviation of the first sample. We have already found the estimated variance, <span class="math inline">\(s_X^2\)</span>, and saved it as <code>s2x</code>, so we just need to take the square root.</li>
+<li><code>s.y =</code>: this is the estimate of the standard deviation of the second sample. We have already found the estimated variance, <span class="math inline">\(s_Y^2\)</span>, and saved it as <code>s2y</code>, so we just need to take the square root.</li>
+<li><code>n.x =</code>: this is the sample size of the first group, <span class="math inline">\(n_X\)</span>.</li>
+<li><code>n.y =</code>: this is the sample size of the second group, <span class="math inline">\(n_Y\)</span>.</li>
+<li><code>var.equal =</code>: this takes the value <code>TRUE</code> or <code>FALSE</code>, indicating whether we believe the variances, and hence the standard deviations, of both groups are the same.</li>
+<li><code>conf.level =</code>: this is the confidence interval for the desired interval.</li>
+</ul>
+<p>We can input all of these values as arguments in the <code>tsum.test()</code> function to find the 95% confidence interval for the difference in population mean yield of potatoes from fertilised and unfertilised fields. Again, <code>$conf</code> is needed to show only the confidence interval.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb32-1" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> xbar, <span class="at">mean.y =</span> ybar, <span class="at">s.x =</span> <span class="fu">sqrt</span>(s2x), <span class="at">s.y =</span> <span class="fu">sqrt</span>(s2y),</span>
+<span id="cb32-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb32-2" tabindex="-1"></a>          <span class="at">n.x =</span> nx, <span class="at">n.y =</span> ny, <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] -0.4794537  8.3338847
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>Once again, we see that this interval contains 0, so there is not sufficient evidence to suggest a difference in population mean potato yield exists between the fertilised and unfertilised fields when the significance level is <span class="math inline">\(\alpha=0.05\)</span>.</p>
+</div>
+</div>
+<hr />
+<p>To see more examples of calculating these confidence intervals, see <a href="https://read.kortext.com/reader/pdf/92741/474">Section 8.2.5</a> of <em>Probability and Statistics with R</em>.</p>
+</div>
+<div id="unknown-unequal" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Variances are unknown and unequal (8.2.6)<a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-unequal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When random samples have been taken from two normal distributions where the variances, <span class="math inline">\(\sigma_X^2\)</span> and <span class="math inline">\(\sigma_Y^2\)</span>, are unknown and they are unequal, a <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for <span class="math inline">\(\mu_X-\mu_Y\)</span> is given by <a href="https://read.kortext.com/reader/pdf/92741/476">equation (8.16)</a> in the textbook,</p>
+<div class="webex-code webex-box">
+<p><span class="math display">\[\begin{equation}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\left[\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{2};\nu}\cdot \sqrt{\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}},\,\,\left(\bar x-\bar y\right)+t_{1-\frac{\alpha}{2};\nu}\cdot\sqrt{\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}}\,\right]
+\end{equation}\]</span></p>
+</div>
+<ul>
+<li><p><span class="math inline">\(\nu\)</span> represents the degrees of freedom for the associated <span class="math inline">\(t\)</span> distribution. The degrees of freedom can be found using, <span class="math display">\[\nu=\frac{\left(\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}\right)^2}{\frac{\left(s_X^2/n_X\right)^2}{n_X-1}+\frac{\left(s_Y^2/n_Y\right)^2}{n_Y-1}}\]</span></p>
+<p>where, <span class="math inline">\(s_X^2=\frac{\sum_{i=1}^{n_X}x_i^2-n_X\bar x^2}{n_X-1}\)</span> and <span class="math inline">\(s_Y^2=\frac{\sum_{i=1}^{n_Y}y_i^2-n_Y\bar y^2}{n_Y-1}\)</span>.</p></li>
+</ul>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>The standard deviations of the distributions that lettuce yields follow may not actually be known (unlike in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#known-unequal">3.2</a>) and it might not be reasonable to assume that both standard deviations are equal (unlike in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-equal">3.3</a>). Assuming this is the case, we can still calculate a 95% confidence interval for the difference in population mean lettuce yield between fertilised and unfertilised fields using the formula stated above.</p>
+<p>In order to use this result, both groups must be normally distributed. We have already checked that this is true in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#known-unequal">3.2</a>, but if we hadn't checked <strong>make sure to check both groups follow a normal distribution</strong>, using QQ plots.</p>
+<p>There a few different ways in which we can calculate the desired 95% confidence interval.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using R as a calculator
+</button>
+<p>We start by saving <span class="math inline">\(n_X=13\)</span> and <span class="math inline">\(n_Y=8\)</span> as objects in the <strong>Environment</strong> tab and calculating the mean of each group.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb34-1" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb34-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb34-2" tabindex="-1"></a>ny <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb34-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb34-3" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb34-4" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(lettuce_fertilised)</span>
+<span id="cb34-5"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb34-5" tabindex="-1"></a>ybar <span class="ot">&lt;-</span> <span class="fu">mean</span>(lettuce_unfertilised)</span></code></pre></div>
+<p>We can see now, in the <strong>Environment</strong> tab, that <span class="math inline">\(\bar x=24.43\)</span> and <span class="math inline">\(\bar y=17.74\)</span>.</p>
+<p>Before we can find the <span class="math inline">\(\left(1-\frac{\alpha}{2}\right)\)</span><sup>th</sup> quantile from the <span class="math inline">\(t\)</span>-distribution, we need to find the associated degrees of freedom <span class="math inline">\(\nu\)</span>. This involves a few steps. First of all, we find <span class="math inline">\(\sum_{i=1}^{n_X}x_i^2\)</span> and <span class="math inline">\(\sum_{i=1}^{n_Y}y_i^2\)</span>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb35-1" tabindex="-1"></a>sum_x2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(lettuce_fertilised<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb35-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb35-2" tabindex="-1"></a>sum_y2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(lettuce_unfertilised<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
+<p>Running the above code will show us that <span class="math inline">\(\sum_{i=1}^{n_X}x_i^2=7851.14\)</span> and <span class="math inline">\(\sum_{i=1}^{n_Y}y_i^2=2532.41\)</span>. We can use these values to find the variance of the two lettuce yield samples, <span class="math inline">\(s_X^2\)</span> and <span class="math inline">\(s_Y^2\)</span>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb36-1" tabindex="-1"></a>s2x <span class="ot">&lt;-</span> (sum_x2 <span class="sc">-</span> nx<span class="sc">*</span>xbar<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(nx <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb36-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb36-2" tabindex="-1"></a>s2y <span class="ot">&lt;-</span> (sum_y2 <span class="sc">-</span> ny<span class="sc">*</span>ybar<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(ny <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>If we had used the <code>var()</code> function we would be left with the same result, that <span class="math inline">\(s_X^2=7.86\)</span> and <span class="math inline">\(s_Y^2=2.05\)</span>. Now we can use these values to find <span class="math inline">\(\nu\)</span> as follows (this value is saved as <code>df</code>) and find the <span class="math inline">\(\left(1-\frac{\alpha}{2}\right)\)</span><sup>th</sup> quantile from the <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(\nu\)</span> degrees of freedom using the function <code>qt()</code>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb37-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> (s2x<span class="sc">/</span>nx <span class="sc">+</span> s2y<span class="sc">/</span>ny)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> ((s2x<span class="sc">/</span>nx)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(nx<span class="dv">-1</span>) <span class="sc">+</span> (s2y<span class="sc">/</span>ny)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(ny <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb37-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb37-2" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb37-3" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, df)</span></code></pre></div>
+<p>Finally, we can sub all of these values into the formula for the confidence interval.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb38-1" tabindex="-1"></a>(xbar <span class="sc">-</span> ybar) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="sc">*</span>t<span class="sc">*</span><span class="fu">sqrt</span>(s2x<span class="sc">/</span>nx <span class="sc">+</span> s2y<span class="sc">/</span>ny)</span></code></pre></div>
+<pre><code>[1] 4.741386 8.629700</code></pre>
+<p>We would interpret this interval by saying that we are 95% confident that the difference between the population mean lettuce yield from fertilised and unfertilised fields lies in the interval <span class="math inline">\(\left[4.7414,\, 8.6297\right]\)</span>. This is true for the scenario where we don't know the variance of each underlying distribution and assume it is different for the two groups.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the t.test() function
+</button>
+<p>We can find the same interval using the <code>t.test()</code> function, introduced in Section <a href="confidence-intervals-for-the-difference-in-population-means.html#unknown-equal">3.3</a>.</p>
+<p>To find the 95% confidence interval for the difference in population mean lettuce yields from fertilised and unfertilised fields, assuming the variances are unequal we would use the code below.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb40-1" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> lettuce_fertilised, <span class="at">y =</span> lettuce_unfertilised,</span>
+<span id="cb40-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb40-2" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 4.741386 8.629700
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>This again tells us that the interval is <span class="math inline">\(\left[4.7414,\, 8.6297\right]\)</span>, so we are 95% confident the true difference lies in this interval.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 3: Using the tsum.test() function
+</button>
+<p>We could also use the summary statistics, already calculated, and the function <code>tsum.test()</code> from the <code>PASWR2</code> package. This would look as follows.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb42-1" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> xbar, <span class="at">mean.y =</span> ybar, <span class="at">s.x =</span> <span class="fu">sqrt</span>(s2x), <span class="at">s.y =</span> <span class="fu">sqrt</span>(s2y),</span>
+<span id="cb42-2"><a href="confidence-intervals-for-the-difference-in-population-means.html#cb42-2" tabindex="-1"></a>          <span class="at">n.x =</span> nx, <span class="at">n.y =</span> ny, <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 4.741386 8.629700
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>We would say that we are 95% confident that the difference in population mean yields of lettuce from the two types of field lies in the interval <span class="math inline">\(\left[4.7414,\, 8.6297\right]\)</span>.</p>
+</div>
+</div>
+<hr />
+<p>See <a href="https://read.kortext.com/reader/pdf/92741/476">Section 8.2.6</a> of <em>Probability and Statistics with R</em> for further examples of finding these confidence intervals.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="confidence-intervals-for-population-means.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals-for-the-mean-difference-from-paired-data-8.2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

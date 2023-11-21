@@ -1,0 +1,20 @@
+---
+title: "S2S Lab 9"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, comment=NA)
+library(binom)
+```
+
+# Welcome!
+
+Welcome to the 9th and 10th S2S labs (we'll use the same lab in both weeks). These labs on **confidence intervals** serve two purposes,
+
+1. A reference for you to find all the formulas for calculating any confidence intervals relating to population means, variances and proportions, as covered in [Chapter 8](https://read.kortext.com/reader/pdf/92741/454) of *Probability and Statistics with R*. You will always have access to this lab in assessments, so make sure you are familiar with where to find these formulas.
+
+2. Introduce some examples (in addition to those in the textbook) of calculating confidence intervals, for several different scenarios.

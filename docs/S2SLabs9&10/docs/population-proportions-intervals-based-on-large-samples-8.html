@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Population Proportions (Intervals Based on Large Samples) (8.4) | S2S Lab 9</title>
+  <meta name="description" content="6 Population Proportions (Intervals Based on Large Samples) (8.4) | S2S Lab 9" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Population Proportions (Intervals Based on Large Samples) (8.4) | S2S Lab 9" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Population Proportions (Intervals Based on Large Samples) (8.4) | S2S Lab 9" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="population-variances-8.html"/>
+<link rel="next" href="population-mean-of-a-poisson-random-variable-8.4.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
+<li class="chapter" data-level="2" data-path="population-means.html"><a href="population-means.html"><i class="fa fa-check"></i><b>2</b> Population Means</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="population-means.html"><a href="population-means.html#variance-is-known-8.2.1"><i class="fa fa-check"></i><b>2.1</b> Variance is known (8.2.1)</a></li>
+<li class="chapter" data-level="2.2" data-path="population-means.html"><a href="population-means.html#variance-is-unknown-8.2.2"><i class="fa fa-check"></i><b>2.2</b> Variance is unknown (8.2.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="difference-in-population-means.html"><a href="difference-in-population-means.html"><i class="fa fa-check"></i><b>3</b> Difference in Population Means</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="difference-in-population-means.html"><a href="difference-in-population-means.html#known-equal"><i class="fa fa-check"></i><b>3.1</b> Variances are known and equal (8.2.3)</a></li>
+<li class="chapter" data-level="3.2" data-path="difference-in-population-means.html"><a href="difference-in-population-means.html#known-unequal"><i class="fa fa-check"></i><b>3.2</b> Variances are known and unequal (8.2.4)</a></li>
+<li class="chapter" data-level="3.3" data-path="difference-in-population-means.html"><a href="difference-in-population-means.html#unknown-equal"><i class="fa fa-check"></i><b>3.3</b> Variances are unknown and assumed equal (8.2.5)</a></li>
+<li class="chapter" data-level="3.4" data-path="difference-in-population-means.html"><a href="difference-in-population-means.html#unknown-unequal"><i class="fa fa-check"></i><b>3.4</b> Variances are unknown and unequal (8.2.6)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="population-mean-difference-from-paired-data-8.2.html"><a href="population-mean-difference-from-paired-data-8.2.html"><i class="fa fa-check"></i><b>4</b> Population Mean Difference from Paired Data (8.2.7)</a></li>
+<li class="chapter" data-level="5" data-path="population-variances-8.html"><a href="population-variances-8.html"><i class="fa fa-check"></i><b>5</b> Population Variances (8.3)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="population-variances-8.html"><a href="population-variances-8.html#sampling-from-a-normal-population-8.3.1"><i class="fa fa-check"></i><b>5.1</b> Sampling from a Normal population (8.3.1)</a></li>
+<li class="chapter" data-level="5.2" data-path="population-variances-8.html"><a href="population-variances-8.html#ratio-of-population-variances-8.3.2"><i class="fa fa-check"></i><b>5.2</b> Ratio of population variances (8.3.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="population-proportions-intervals-based-on-large-samples-8.html"><a href="population-proportions-intervals-based-on-large-samples-8.html"><i class="fa fa-check"></i><b>6</b> Population Proportions (Intervals Based on Large Samples) (8.4)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="population-proportions-intervals-based-on-large-samples-8.html"><a href="population-proportions-intervals-based-on-large-samples-8.html#population-proportions"><i class="fa fa-check"></i><b>6.1</b> Population Proportions</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="population-proportions-intervals-based-on-large-samples-8.html"><a href="population-proportions-intervals-based-on-large-samples-8.html#asymptoticwald-confidence-interval-8.4.1"><i class="fa fa-check"></i><b>6.1.1</b> Asymptotic/Wald Confidence Interval (8.4.1)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="population-proportions-intervals-based-on-large-samples-8.html"><a href="population-proportions-intervals-based-on-large-samples-8.html#scorewilson-confidence-interval-8.4.1.1"><i class="fa fa-check"></i><b>6.1.2</b> Score/Wilson Confidence Interval (8.4.1.1)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="population-proportions-intervals-based-on-large-samples-8.html"><a href="population-proportions-intervals-based-on-large-samples-8.html#difference-in-population-proportions-8.4.2"><i class="fa fa-check"></i><b>6.2</b> Difference in population proportions (8.4.2)</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="population-mean-of-a-poisson-random-variable-8.4.html"><a href="population-mean-of-a-poisson-random-variable-8.4.html"><i class="fa fa-check"></i><b>7</b> Population Mean of a Poisson Random Variable (8.4.3)</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lab 9</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="population-proportions-intervals-based-on-large-samples-8.4" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Population Proportions (Intervals Based on Large Samples) (8.4)<a href="population-proportions-intervals-based-on-large-samples-8.html#population-proportions-intervals-based-on-large-samples-8.4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- # Confidence Intervals Based on Large Samples (8.4) -->
+<!--8.4-->
+<p>When we use maximum likelihood estimation to find an estimator <span class="math inline">\(\hat\theta(\boldsymbol{X})\)</span> of some population parameter <span class="math inline">\(\theta\)</span>, we might be interested in constructing a confidence interval around this estimate to give a plausible range of values within which the true value of <span class="math inline">\(\theta\)</span> lies. In order to do this, we need to make use of the <strong>asymptotic properties</strong> of maximum likelihood estimators. This states that, provided the sample size <span class="math inline">\(n\)</span> is sufficiently large, then,</p>
+<p><span class="math display">\[
+\hat\theta(\boldsymbol{X})\sim N\left(\theta, \sqrt{I_n(\theta)^{-1}}\right)
+\]</span></p>
+<p>In other words, as <span class="math inline">\(n\rightarrow\infty\)</span>, the expected value of the maximum likelihood estimator is equal to the population parameter it is estimating, <span class="math inline">\(\theta\)</span>, and that the standard deviation of the <em>MLE</em> is equal to <span class="math inline">\(\sqrt{I_n(\theta)^{-1}}\)</span>.</p>
+<p>Here, <span class="math inline">\(I_n(\theta)\)</span> is the <strong>Fisher Information</strong> for <span class="math inline">\(\theta\)</span>. This can be found as,</p>
+<p><span class="math display">\[
+I_n(\theta)=-E\left[\frac{\partial^2\ln L(\theta|\boldsymbol{X})}{\partial\theta^2}\right]
+\]</span></p>
+<!--reminder of Fisher information in lectures? Section 7.3.2.1-->
+<p>Knowing the above asymptotic property of maximum likelihood estimators allows us to construct a general <span class="math inline">\((1-\alpha)\cdot100\%\)</span> asymptotic confidence interval for any <em>MLE</em> as,</p>
+<div class="webex-box webex-code">
+<p><span class="math display">\[\begin{equation} \tag{8.37}
+CI_{1-\alpha}(\theta)=\left[\hat\theta(\boldsymbol{x})-z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}},\hat\theta(\boldsymbol{x})+z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}}\right]
+\end{equation}\]</span></p>
+</div>
+<p>This will allow you to construct a confidence interval for the maximum likelihood estimator of <em>any</em> population parameter, however we are going to focus on confidence intervals for the population proportion of success, denoted by <span class="math inline">\(\pi\)</span>.</p>
+<div id="population-proportions" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Population Proportions<a href="population-proportions-intervals-based-on-large-samples-8.html#population-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="asymptoticwald-confidence-interval-8.4.1" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Asymptotic/Wald Confidence Interval (8.4.1)<a href="population-proportions-intervals-based-on-large-samples-8.html#asymptoticwald-confidence-interval-8.4.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have seen in <a href="https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab8/docs/maximum-likelihood-estimation.html#bernoulli-distribution-example-7.18">Lab 8</a> that when working with a Bernoulli distribution (i.e. when <span class="math inline">\(X\sim\mbox{Bernoulli}(\pi)\)</span>), the maximum likelihood estimate of the population proportion of success <span class="math inline">\(\pi\)</span> is equal to <span class="math inline">\(\hat\pi(\boldsymbol{x})=\bar x\)</span>.</p>
+<p>Whilst finding this, we also saw that the second order derivative of the log-likelihood function for <span class="math inline">\(\pi\)</span> with respect to <span class="math inline">\(\theta\)</span> is,</p>
+<p><span class="math display">\[
+\frac{\partial^2\ln L(\pi|\boldsymbol{X})}{\partial\pi^2}=\frac{-\sum_{i=1}^nx_i}{\pi^2}-\frac{n-\sum_{i=1}^nx_i}{(1-\pi)^2}
+\]</span></p>
+<p>We can use the second order derivative to find the <em>Fisher Information</em> as follows.</p>
+<p><span class="math display">\[
+\begin{align}
+I_n(\theta)=-E\left[\frac{\partial^2\ln L(\pi|\boldsymbol{X})}{\partial\pi^2}\right]&amp;=-E\left[\frac{-\sum_{i=1}^nX_i}{\pi^2}-\frac{n-\sum_{i=1}^nX_i}{(1-\pi)^2}\right]\\
+&amp;=E\left[\frac{\sum_{i=1}^nX_i}{\pi^2}\right]+E\left[\frac{n-\sum_{i=1}^nX_i}{(1-\pi)^2}\right]\\
+&amp;=\frac{\sum_{i=1}^nE[X_i]}{\pi^2}+\frac{n-\sum_{i=1}^nE[X_i]}{(1-\pi)^2}\\
+&amp;=\frac{n\pi}{\pi^2}+\frac{n-n\pi}{(1-\pi)^2}\\
+&amp;=\frac{n}{\pi}+\frac{n}{1-\pi}=\frac{n}{\pi(1-\pi)}
+\end{align}
+\]</span></p>
+<p>Therefore we can say, using the asymptotic properties of MLEs, that as <span class="math inline">\(n\rightarrow\infty\)</span>,</p>
+<p><span class="math display">\[
+\hat\pi(\boldsymbol{x})\sim N\left(\pi, \sqrt{\frac{\pi(1-\pi)}{n}}\right)
+\]</span></p>
+<p>If we denote the <em>sample</em> proportion of success by <span class="math inline">\(p\)</span>, then a <span class="math inline">\((1-\alpha)\cdot100\%\)</span> asymptotic confidence interval for the population proportion <span class="math inline">\(\pi\)</span>, commonly referred to as a Wald interval, is given by,</p>
+<div class="webex-box webex-code">
+<p><span class="math display">\[\begin{equation} \tag{8.43}
+CI_{1-\alpha}(\pi)=\left[p-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}},p+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}}\right]
+\end{equation}\]</span></p>
+</div>
+<p>This interval can be used whether we are trying to find the population proportion of success from a series of Bernoulli trials, or from a Binomial distribution.</p>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>The farmer sells a proportion of their potato yield to supermarkets for sale to the public, and the rest of the yield to crisp manufacturers. Within the <code>yields</code> data frame, the column <code>supermarket</code> is a binary variable; a 1 indicates that the yield from that particular field has been sold to supermarkets and a 0 indicates that the field's yield has been sold to manufacturers. Find a 95% Wald interval for the population proportion of yields from potato fields which are sold directly to supermarkets.</p>
+<p>We can think of whether or not a field's yield is sold to supermarkets as being a realisation from a Bernoulli trial with some unknown probability of being sold to supermarkets, <span class="math inline">\(\pi\)</span>. In other words, the 21 values in the <code>supermarket</code> column come from a <span class="math inline">\(\mbox{Bernoulli}(\pi)\)</span> distribution.</p>
+<p>We have already seen that for Bernoulli distributions, the maximum likelihood estimator for <span class="math inline">\(\pi\)</span> is <span class="math inline">\(\hat\pi(\boldsymbol{x})=\bar x\)</span>. We can find this value for the observations in the <code>supermarket</code> column as follows.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb44-1" tabindex="-1"></a><span class="fu">mean</span>(yields<span class="sc">$</span>supermarket)</span></code></pre></div>
+<pre><code>[1] 0.7142857</code></pre>
+<p>Therefore, the maximum likelihood estimate of <span class="math inline">\(\pi\)</span> is 0.7143. We can use this as <span class="math inline">\(p\)</span> in the formula above to construct the 95% Wald interval for <span class="math inline">\(\pi\)</span>. There a couple of ways we could find this interval in R.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using R as a calculator
+</button>
+<p>We already know that there are a total of 21 fields growing potatoes, that is <span class="math inline">\(n=21\)</span>, and that <span class="math inline">\(p=\bar x=0.7143\)</span>. We can save these values in R as follows.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb46-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb46-2"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb46-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">mean</span>(yields<span class="sc">$</span>supermarket)</span></code></pre></div>
+<p>Now we need to find <span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span> which is the <span class="math inline">\((1-\frac{\alpha}{2})\)</span><sup>th</sup> quantile from the standard normal distribution. In our case, because we are interested in a 95% confidence interval, <span class="math inline">\(\alpha=0.05\)</span>, so we are looking for the <span class="math inline">\(\left(1-\frac{0.05}{2}\right)=0.975\)</span><sup>th</sup> quantile. This can be found using the <code>qnorm()</code> function as follows.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb47-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<p>Calculating the 95% Wald interval is now just a case of subbing in all the values into the formula shown above. We can do this in R as follows.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb48-1" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="sc">*</span>z<span class="sc">*</span><span class="fu">sqrt</span>(p<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">/</span>n)</span></code></pre></div>
+<pre><code>[1] 0.5210709 0.9075005</code></pre>
+<p>This interval tells us that we are 95% confident that the true population proportion of potato field yields, <span class="math inline">\(\pi\)</span>, which are sold to supermarkets lies in the interval <span class="math inline">\(\left[0.5211,\, 0.9075\right]\)</span>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the binom.confint() function
+</button>
+<p>There is a function in R which can do this calculation for us automatically. The <code>binom.confint()</code> function is part of the package <code>binom</code>, so make sure to load this package into your R session by using the code <code>library(binom)</code>. <code>binom.confint()</code> can take the following arguments,</p>
+<ul>
+<li><code>x =</code>: this is the number of Bernoulli trials which were successful i.e. the number of trials for which a 1 is observed.</li>
+<li><code>n =</code>: this is the total number of Bernoulli trials included in the sample.</li>
+<li><code>conf.int =</code>: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use <code>0.95</code> for example.</li>
+<li><code>methods =</code>: this is the method used to calculate the confidence interval for <span class="math inline">\(\pi\)</span>. To construct a Wald interval, it should be set to <code>"asymptotic"</code>.</li>
+</ul>
+<p>The code below uses <code>binom.confint()</code> to find a 95% Wald interval for the population proportion of potato field yields which are sold to supermarkets. The actual interval is contained in the returned values <code>lower</code> and <code>upper</code>.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb50-1" tabindex="-1"></a><span class="fu">library</span>(binom)</span>
+<span id="cb50-2"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb50-2" tabindex="-1"></a><span class="fu">binom.confint</span>(<span class="at">x =</span> <span class="fu">sum</span>(yields<span class="sc">$</span>supermarket), <span class="at">n =</span> <span class="dv">21</span>,</span>
+<span id="cb50-3"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb50-3" tabindex="-1"></a>              <span class="at">conf.level =</span> <span class="fl">0.95</span>, <span class="at">methods =</span> <span class="st">&quot;asymptotic&quot;</span>)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">method</th>
+<th align="right">x</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">lower</th>
+<th align="right">upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">asymptotic</td>
+<td align="right">15</td>
+<td align="right">21</td>
+<td align="right">0.7142857</td>
+<td align="right">0.5210709</td>
+<td align="right">0.9075005</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This interval is in agreement with the one found above, and we would say that the true population proportion of potato field yields, <span class="math inline">\(\pi\)</span>, which are sold to supermarkets lies in the interval <span class="math inline">\(\left[0.5211,\, 0.9075\right]\)</span> with 95% confidence.</p>
+</div>
+</div>
+<div id="coverage-probability" class="section level4 unnumbered hasAnchor">
+<h4>Coverage probability<a href="population-proportions-intervals-based-on-large-samples-8.html#coverage-probability" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The coverage probability of a confidence interval is the proportion of all possible confidence intervals for a population parameter which contain the true value for that parameter. In this case, for population proportions of success, the coverage probability is the proportion of confidence intervals constructed around our estimate <span class="math inline">\(\hat\pi(\boldsymbol{x})\)</span> which contain the true value <span class="math inline">\(\pi\)</span>. Ideally, the coverage probability should be equal to <span class="math inline">\((1-\alpha)\)</span>, which is known as the nominal confidence level.</p>
+<p>The plot below shows the coverage probability of 95% confidence intervals for various values of <span class="math inline">\(\pi\)</span> when <span class="math inline">\(X\sim\mbox{Bin}(25, \pi)\)</span>. This shows that there are very few values of <span class="math inline">\(\pi\)</span> for which the confidence interval resulting from (8.43) above has coverage probability of 0.95. For most values of <span class="math inline">\(\pi\)</span>, the coverage probability of the 95% confidence intervals falls below the desired level of 0.95.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:covprob"></span>
+<img src="_main_files/figure-html/covprob-1.png" alt="Coverage probabilities of 95% confidence intervals for various values of $\pi$ when $X\sim\mbox{Bin}(25,\pi)$." width="80%" />
+<p class="caption">
+Figure 6.1: Coverage probabilities of 95% confidence intervals for various values of <span class="math inline">\(\pi\)</span> when <span class="math inline">\(X\sim\mbox{Bin}(25,\pi)\)</span>.
+</p>
+</div>
+<hr />
+<p>See <a href="https://read.kortext.com/reader/pdf/92741/491">Section 8.4.1</a> to see further examples on constructing Wald intervals and for the code to produce Figure <a href="population-proportions-intervals-based-on-large-samples-8.html#fig:covprob">6.1</a>.</p>
+</div>
+</div>
+<div id="scorewilson-confidence-interval-8.4.1.1" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Score/Wilson Confidence Interval (8.4.1.1)<a href="population-proportions-intervals-based-on-large-samples-8.html#scorewilson-confidence-interval-8.4.1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An alternative <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for the population proportion of success <span class="math inline">\(\pi\)</span> is given by the Wilson interval,</p>
+<div class="webex-box webex-code">
+<p><span class="math display">\[\begin{equation} \tag{8.47}
+\begin{split}
+CI_{1-\alpha}(\pi)=\Bigg[&amp;\frac{p+\frac{z^2_{1-\alpha/2}}{2n}-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)},\\
+&amp;\,\,\,\,\,\,\,\,\frac{p+\frac{z^2_{1-\alpha/2}}{2n}+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)}\Bigg]
+\end{split}
+\end{equation}\]</span></p>
+</div>
+<p>Wilson intervals give a confidence interval with coverage probability which is closer to the <span class="math inline">\(1-\alpha\)</span> level compared to Wald intervals.</p>
+<p>Note that if the sample size is large, then the Wilson interval is roughly equivalent to the Wald interval. This is because with large values of <span class="math inline">\(n\)</span>, <span class="math inline">\(\frac{z_{1-\alpha/2}^2}{2n}\)</span>, <span class="math inline">\(\frac{z_{1-\alpha/2}^2}{4n^2}\approx0\)</span> and <span class="math inline">\(\frac{z_{1-\alpha/2}^2}{n}\)</span> are all approximately 0.</p>
+<div class="webex-solution">
+<button>
+Example
+</button>
+<p>We can calculate a 95% Wilson interval for the population proportion of potato field yields which are sold to supermarkets, <span class="math inline">\(\pi\)</span>, in a couple of different ways. Remember, this sample information is stored in the column <code>supermarket</code> from the data frame <code>yields</code>.</p>
+<p>Because the formula for Wilson intervals is quite involved, it is better to use functions in R to find Wilson intervals, rather than using R as a calculator since there are many chances that an error could be made.</p>
+<div class="webex-solution">
+<button>
+Method 1: Using the binom.confint() function
+</button>
+<p>The <code>binom.confint()</code> function from <code>binom</code> package can be used to calculate Wilson intervals. In order to do this, the argument <code>methods = "wilson"</code> needs to be included as follows. The actual interval is contained in the returned values <code>lower</code> and <code>upper.</code></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb51-1" tabindex="-1"></a><span class="fu">binom.confint</span>(<span class="at">x =</span> <span class="fu">sum</span>(yields<span class="sc">$</span>supermarket), <span class="at">n =</span> <span class="dv">21</span>,</span>
+<span id="cb51-2"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb51-2" tabindex="-1"></a>              <span class="at">conf.level =</span> <span class="fl">0.95</span>, <span class="at">methods =</span> <span class="st">&quot;wilson&quot;</span>)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">method</th>
+<th align="right">x</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">lower</th>
+<th align="right">upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">wilson</td>
+<td align="right">15</td>
+<td align="right">21</td>
+<td align="right">0.7142857</td>
+<td align="right">0.5004362</td>
+<td align="right">0.8618614</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Wilson interval tells us that the population proportion of potato field yields, <span class="math inline">\(\pi\)</span>, which are sold to supermarkets lies in the interval <span class="math inline">\(\left[0.5004,\, 0.8619\right]\)</span> with 95% confidence.</p>
+</div>
+<div class="webex-solution">
+<button>
+Method 2: Using the prop.test() function
+</button>
+<p>An alternative function which can be used to calculate Wilson intervals is the <code>prop.test()</code> function. The arguments that <code>prop.test()</code> can take are,</p>
+<ul>
+<li><code>x =</code>: this is the number of Bernoulli trials which were successful i.e. the number of trials for which a 1 is observed.</li>
+<li><code>n =</code>: this is the total number of Bernoulli trials included in the sample.</li>
+<li><code>conf.int =</code>: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use <code>0.95</code> for example.</li>
+<li><code>correct =</code>: this takes the value <code>TRUE</code> or <code>FALSE</code> to indicate whether what is known as a Yates' continuity correction should be applied to the estimate for <span class="math inline">\(p\)</span> in the formula. By default, the value <code>TRUE</code> is used and this correction is applied. You can read more about the Yates' continuity correction in <a href="https://read.kortext.com/reader/pdf/92741/496">Section 8.4.1.1</a> of the textbook.</li>
+</ul>
+<p>The code below calculates a 95% Wilson interval for the population proportion of potato field yields which are sold to supermarkets, <span class="math inline">\(\pi\)</span>. The confidence interval itself can be extracted by including <code>$conf.int</code> at the end of the function.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb52-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">sum</span>(yields<span class="sc">$</span>supermarket), <span class="at">n =</span> <span class="dv">21</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb52-2"><a href="population-proportions-intervals-based-on-large-samples-8.html#cb52-2" tabindex="-1"></a>          <span class="at">correct =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>conf.int</span></code></pre></div>
+<pre><code>[1] 0.5004362 0.8618614
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<p>This interval is in agreement with the one found before and, again, tells us that the population proportion of potato field yields, <span class="math inline">\(\pi\)</span>, which are sold to supermarkets lies in the interval <span class="math inline">\(\left[0.5004,\, 0.8619\right]\)</span> with 95% confidence.</p>
+</div>
+</div>
+<hr />
+<p>See <a href="https://read.kortext.com/reader/pdf/92741/496">Section 8.4.1.1</a> of <em>Probability and Statistics with R</em> for more details on this result.</p>
+<p><strong>NB:</strong> Sections 8.4.1.2, 8.4.1.3 and 8.4.1.4 are <strong>not covered/examinable</strong>.</p>
+</div>
+</div>
+<div id="difference-in-population-proportions-8.4.2" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Difference in population proportions (8.4.2)<a href="population-proportions-intervals-based-on-large-samples-8.html#difference-in-population-proportions-8.4.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For random samples of size <span class="math inline">\(n_X\)</span> and <span class="math inline">\(n_Y\)</span> taken from two normal distributions, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> respectively, then the difference in the population proportions of success, <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> may be of interest.</p>
+<p>A <span class="math inline">\((1-\alpha)\cdot100\%\)</span> confidence interval for the difference in population proportions, <span class="math inline">\(\pi_X-\pi_Y\)</span>, can be calculated based on the difference in sample proportions, <span class="math inline">\(p_X-p_Y\)</span>, as,</p>
+<div class="webex-box webex-code">
+<p><span class="math display">\[\begin{equation} \tag{8.52}
+\begin{split}
+CI_{1-\frac{\alpha}{2}}(\pi_X-\pi_Y)=\Bigg[&amp;(p_X-p_Y)-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}},\\
+&amp;\,\,\,\,\,\,\,\,(p_X-p_Y)+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}}\Bigg]
+\end{split}
+\end{equation}\]</span></p>
+</div>
+<p>If <span class="math inline">\(|p_X-p_Y|&gt;\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)\)</span>, then a continuity correction is generally applied to the above formula. When this condition is satisfied, <span class="math inline">\(\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)\)</span> is subtracted from the lower limit of the confidence interval above, and added to the upper limit.</p>
+<p>The function <code>prop.test()</code> uses this continuity correction automatically whenever the condition is satisfied by the difference in sample proportions.</p>
+<hr />
+<p>See <a href="https://read.kortext.com/reader/pdf/92741/506">Section 8.4.2</a> of <em>Probability and Statistics with R</em> for some examples of using this result.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="population-variances-8.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="population-mean-of-a-poisson-random-variable-8.4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
