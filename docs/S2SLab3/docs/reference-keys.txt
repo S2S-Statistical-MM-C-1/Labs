@@ -1,13 +1,9 @@
+tab:subject-table
 fig:chol-image
 fig:edu-image
-tab:subject-table
 fig:normal-image
 tab:dist-tab
 welcome
-reading
-directory
-read.table
-read.csv
 data
 checking
 dealing-with-na-values
@@ -15,6 +11,10 @@ sorting-data-frames
 subsetting
 summarising-data
 creating-variables
+reading
+directory
+read.table
+read.csv
 functions
 probability-functions
 creating-functions

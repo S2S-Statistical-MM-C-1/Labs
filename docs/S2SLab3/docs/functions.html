@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data.html"/>
+<link rel="prev" href="reading.html"/>
 <link rel="next" href="exercises.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -136,20 +136,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
-<li class="chapter" data-level="2" data-path="reading.html"><a href="reading.html"><i class="fa fa-check"></i><b>2</b> Reading in Data</a>
+<li class="chapter" data-level="2" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>2</b> Working With Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="reading.html"><a href="reading.html#directory"><i class="fa fa-check"></i><b>2.1</b> Setting your working directory</a></li>
-<li class="chapter" data-level="2.2" data-path="reading.html"><a href="reading.html#read.table"><i class="fa fa-check"></i><b>2.2</b> <code>read.table()</code></a></li>
-<li class="chapter" data-level="2.3" data-path="reading.html"><a href="reading.html#read.csv"><i class="fa fa-check"></i><b>2.3</b> <code>read.csv()</code></a></li>
+<li class="chapter" data-level="2.1" data-path="data.html"><a href="data.html#checking"><i class="fa fa-check"></i><b>2.1</b> Checking variable types</a></li>
+<li class="chapter" data-level="2.2" data-path="data.html"><a href="data.html#dealing-with-na-values"><i class="fa fa-check"></i><b>2.2</b> Dealing with <code>NA</code> values</a></li>
+<li class="chapter" data-level="2.3" data-path="data.html"><a href="data.html#sorting-data-frames"><i class="fa fa-check"></i><b>2.3</b> Sorting data frames</a></li>
+<li class="chapter" data-level="2.4" data-path="data.html"><a href="data.html#subsetting"><i class="fa fa-check"></i><b>2.4</b> Subsetting</a></li>
+<li class="chapter" data-level="2.5" data-path="data.html"><a href="data.html#summarising-data"><i class="fa fa-check"></i><b>2.5</b> Summarising data</a></li>
+<li class="chapter" data-level="2.6" data-path="data.html"><a href="data.html#creating-variables"><i class="fa fa-check"></i><b>2.6</b> Creating variables</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Working With Data</a>
+<li class="chapter" data-level="3" data-path="reading.html"><a href="reading.html"><i class="fa fa-check"></i><b>3</b> Reading in Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#checking"><i class="fa fa-check"></i><b>3.1</b> Checking variable types</a></li>
-<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#dealing-with-na-values"><i class="fa fa-check"></i><b>3.2</b> Dealing with <code>NA</code> values</a></li>
-<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#sorting-data-frames"><i class="fa fa-check"></i><b>3.3</b> Sorting data frames</a></li>
-<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#subsetting"><i class="fa fa-check"></i><b>3.4</b> Subsetting</a></li>
-<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#summarising-data"><i class="fa fa-check"></i><b>3.5</b> Summarising data</a></li>
-<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#creating-variables"><i class="fa fa-check"></i><b>3.6</b> Creating variables</a></li>
+<li class="chapter" data-level="3.1" data-path="reading.html"><a href="reading.html#directory"><i class="fa fa-check"></i><b>3.1</b> Setting your working directory</a></li>
+<li class="chapter" data-level="3.2" data-path="reading.html"><a href="reading.html#read.table"><i class="fa fa-check"></i><b>3.2</b> <code>read.table()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="reading.html"><a href="reading.html#read.csv"><i class="fa fa-check"></i><b>3.3</b> <code>read.csv()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
 <ul>
@@ -382,6 +382,18 @@ Chi-square
 </td>
 <td style="text-align:left;background-color: white !important;">
 <code>df =</code>: the degrees of freedom.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: white !important;">
+F
+</td>
+<td style="text-align:left;background-color: white !important;">
+<code>f</code>
+</td>
+<td style="text-align:left;background-color: white !important;">
+<code>df1</code>: the first degrees of freedom.<br />
+<code>df2</code>: the second degrees of freedom.
 </td>
 </tr>
 </tbody>
@@ -651,7 +663,7 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reading.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
