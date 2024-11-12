@@ -2,7 +2,7 @@ eq:like
 eq:loglike
 eq:normallike
 eq:normalloglike
-welcome
+introduction
 maximum-likelihood-estimation
 bernoulli-distribution-example-7.18
 normal-distribution-examples-7.24-7.25
