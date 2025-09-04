@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "S2S Induction Lab"
+  chapters:
+    - index.qmd
+    - 01-remote-desktop.qmd
+    - 02-using-rstudio.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+
+editor: source
+
+execute: 
+  freeze: auto
+
