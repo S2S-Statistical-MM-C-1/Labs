@@ -1,0 +1,17 @@
+{
+  "hash": "dddc4ee8d3b84ff76339c5d22fa8663b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nTask\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n\n<!--\n::: panel-tabset\n## R Code\n\n::: {.cell}\n\n:::\n\n\n## Output\n\n::: {.cell}\n\n:::\n\n:::\n-->\n\nWelcome to the tenth (and final) S2S lab! Today we will be looking at some new confidence intervals for the true population proportion of success when dealing with Bernoulli trials or a Binomial distribution as well as the confidence interval for the difference between two population proportions of success when we have two different groups. Some new functions will be introduced to help calculate each of these confidence intervals.\n\n\n\n\n\n\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
