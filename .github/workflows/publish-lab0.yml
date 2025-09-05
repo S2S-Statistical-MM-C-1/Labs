@@ -1,12 +1,15 @@
-name: Quarto Publish
+name: Quarto Publish Lab0
 
 on:
   push:
-    branches: [ main ]   # Run when you push to main
+    branches: [ main ]
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lab0   # build inside Lab0/
 
     steps:
       - name: Checkout repo
@@ -26,8 +29,9 @@ jobs:
       - name: Render Quarto project
         run: quarto render
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy Lab0 site
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _book
+          publish_dir: Lab0/_book
+          destination_dir: Lab0   # 👈 goes into gh-pages/Lab0
