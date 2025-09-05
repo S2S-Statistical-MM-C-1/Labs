@@ -1,0 +1,762 @@
+---
+title: "Statistical Analysis"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+```{r yields, include = FALSE}
+yields <- read.csv("data/yields_long.csv")
+yields$fertiliser <- factor(x = yields$fertiliser, 
+                            levels = c("Used", "Not used"))
+yields$crop <- factor(x = yields$crop, 
+                      levels = c("potato", "wheat"))
+potato_fertilised <- subset(x = yields,
+                            subset = (fertiliser == "Used" & crop == "potato"),
+                            drop = TRUE)
+potato_unfertilised <- subset(x = yields,
+                              subset = (fertiliser == "Not used" & crop == "potato"),
+                              drop = TRUE)
+wheat_fertilised <- subset(x = yields,
+                           subset = (fertiliser == "Used" & crop == "wheat"),
+                           drop = TRUE)
+wheat_unfertilised <- subset(x = yields,
+                             subset = (fertiliser == "Not used" & crop == "wheat"),
+                             drop = TRUE)
+```
+
+In this lab, we will formally answer the following **aims** in our statistical report.
+
+1.  Is there a difference between the mean yields of potatoes from fields that were fertilised and fields that were unfertilised?
+
+2.  Is there a difference between the mean yields of wheat from fields that were fertilised and fields that were unfertilised?
+
+In order to do this, we need to learn some new methods of calculating **confidence intervals** which will allow us to calculate a 95% confidence interval for the difference between the mean yield in each case.
+
+## Difference in Population Means {#sec-diff}
+
+<!-- # Confidence Intervals for the Difference in Population Means -->
+
+In general, when we have two independent random variables which both follow normal distributions, say $X\sim N(\mu_X,\,\sigma_X)$ and $Y\sim N(\mu_Y,\,\sigma_Y)$, it is often of interest to find a range of values for the difference between the population means, $\mu_X$ and $\mu_Y$. This range of values can be found using a confidence interval for $\mu_X-\mu_Y$, but we have to be aware of the variances of both distributions, as this can change the way the confidence interval is calculated. In order to construct these confidence intervals, random samples have to be drawn from the underlying distributions.
+
+We will use the following notation in the formulae for confidence intervals for the difference in population means,
+
+- $n_X$: the size of the sample drawn from $X\sim N(\mu_X,\,\sigma_X)$.
+- $n_Y$: the size of the sample drawn from $Y\sim N(\mu_Y,\,\sigma_Y)$.
+- $x_1, x_2, \ldots , x_{n_X}$: the sample taken from $X\sim N(\mu_X,\,\sigma_X)$ with sample mean $\bar{x}$ and sample variance $s^2_X$.
+- $y_1, y_2, \ldots , y_{n_Y}$: the sample taken from $Y\sim N(\mu_Y,\,\sigma_Y)$ with sample mean $\bar{y}$ and sample variance $s^2_Y$.
+
+### Variances are known and equal (8.2.3) {#sec-known-equal}
+
+In the case where the population variances of both distributions are known and are equal, that is $\sigma_X^2=\sigma_Y^2=\sigma^2$, then a $(1-\alpha)\cdot100\%$ confidence interval for the difference in the population means, $\mu_X-\mu_Y$, is given by,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.11} \label{eq:known-equal}
+\begin{split}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{2}}\cdot\sigma\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}},\\
+&\,\,\,\,\,\,\,\,\left(\bar x-\bar y\right)+z_{1-\frac{\alpha}{2}}\cdot\sigma\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\,\Bigg]
+\end{split}
+\end{equation} 
+```
+:::
+
+------------------------------------------------------------------------
+
+You can find the derivation of this result and some additional exercises in [Section 8.2.3](https://read.kortext.com/reader/pdf/92741/466){target="_blank"} of *Probability and Statistics with R*.
+
+We saw from the Exploratory Analysis completed in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-1){target="_blank"} that the yields of potatoes from fertilised and unfertilised fields both seem to follow a normal distribution with approximately equal variances. To simplify our analysis at this stage, let's first assume that the population variances are known and are equal to $\sigma^2_\mbox{f}=\sigma^2_\mbox{uf}=4^2$.
+
+That is, we are assuming that the yield of potatoes from fertilised fields follows a $N(\mu_\mbox{f},4^2)$ distribution, and the yield of potatoes from unfertilised fields follows a $N(\mu_\mbox{uf}, 4^2)$ distribution.
+
+Now we are ready to compute a 95% confidence interval for the difference in population mean yields of potatoes from fields that were fertilised and fields that were unfertilised using Equation \eqref{eq:known-equal}. That is, a confidence interval for $\mu_\mbox{f}-\mu_\mbox{uf}$. There a few different ways we could do this in R.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using R as a calculator
+::::
+::::{.example-container}
+In order to use Equation \eqref{eq:known-equal} above, there are a few values we need to find. We have already assumed that $\sigma=4$, and we know that $n_X=130$ and $n_Y=80$. We can save these values in R using the code below.
+
+::: panel-tabset
+## R Code
+```{r}
+sigma <- 4
+nx <- 130
+ny <- 80
+```
+:::
+
+That leaves us to find $\bar x$, $\bar y$ and $z_{1-\frac{\alpha}{2}}$, the $(1-\frac{\alpha}{2})$^th^ quantile from the standard normal distribution. In our case, because we are interested in a 95% confidence interval, $\alpha=0.05$, so we are looking for the $\left(1-\frac{0.05}{2}\right)=0.975$^th^ quantile.
+
+We can find these three values in R using the code below.
+
+::: panel-tabset
+## R Code
+```{r}
+xbar <- mean(potato_fertilised$yield)
+ybar <- mean(potato_unfertilised$yield)
+z <- qnorm(0.975)
+```
+:::
+
+Now we can see in the **Environment** tab that $\bar x=`r round(xbar, 2)`$ tonnes, $\bar y=`r round(ybar, 2)`$ tonnes and $z_{0.975}=`r round(z, 2)`$.
+
+Calculating the 95% confidence interval is now just a case of subbing in all the values into Equation \eqref{eq:known-equal}. We can do this in R as follows.
+
+::: panel-tabset
+## R Code
+```{r, echo=FALSE}
+CI1 <- (xbar - ybar) + c(-1, 1)*z*sigma*sqrt(1/nx + 1/ny)
+```
+
+```{r, eval = FALSE}
+(xbar - ybar) + c(-1, 1)*z*sigma*sqrt(1/nx + 1/ny)
+```
+
+## R Code with Output
+```{r}
+(xbar - ybar) + c(-1, 1)*z*sigma*sqrt(1/nx + 1/ny)
+```
+:::
+
+Using `c(-1, 1)` allows us to find the lower and upper limit of the confidence interval in one easy step. We would interpret this confidence interval by saying that we are 95% confident that the difference between the population mean yields of potatoes from fertilised and unfertilised fields lies in the interval $\left[`r round(CI1[1], 4)`,\, `r round(CI1[2], 4)`\right]$.
+
+Note that this interval is not strictly positive i.e. it contains the value 0. This tells us that there is not sufficient evidence that the population mean potato yield from fertilised fields is any different from the population mean potato yield from unfertilised fields at the $\alpha=0.05$ significance level.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `z.test()` function
+::::
+::::{.example-container}
+Exactly the same result can be reached by using the function `z.test()`. This function runs through all the steps we manually calculated in the section above, so can speed up the process of finding a confidence interval. This function is part of the `PASWR2` package, so we need to load it into the R session. `z.test()` can take the following arguments,
+
+* `x =`: this is a vector containing the sample data taken from the first normal distribution.
+* `y =`: this is a vector containing the sample data taken from the second normal distribution.
+* `sigma.x =`: this is the standard deviation of the first normal distribution.
+* `sigma.y =`: this is the standard deviation of the second normal distribution.
+* `conf.level =`: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use `0.95` for example.
+
+The code below uses `z.test()` to find the 95% confidence interval for the difference in population mean potato yield from fertilised and unfertilised fields. We use `$conf` at the end of the function to extract only the confidence interval. `z.test()` by itself will return additional results.
+
+::: panel-tabset
+## R Code
+```{r, message=FALSE, warning = FALSE, eval = FALSE}
+library(PASWR2)
+
+z.test(x = potato_fertilised$yield, y = potato_unfertilised$yield,
+       sigma.x = 4, sigma.y = 4, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, message=FALSE, echo = FALSE, warning = FALSE}
+library(PASWR2)
+
+z.test(x = potato_fertilised$yield, y = potato_unfertilised$yield,
+       sigma.x = 4, sigma.y = 4, conf.level = 0.95)$conf
+```
+:::
+
+Again, we would interpret this confidence interval by saying that we are 95% confident that the difference between the population mean yields of potatoes from fertilised and unfertilised fields lies in the interval $\left[`r round(CI1[1], 4)`,\, `r round(CI1[2], 4)`\right]$.
+
+We would again say that there is not sufficient evidence that the population mean potato yield from fertilised fields is any different from the population mean potato yield from unfertilised fields since this interval contains the value 0.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 3: Using the `zsum.test()` function
+::::
+::::{.example-container}
+Another function contained in the `PASWR2` package that can be useful is the `zsum.test()` function. This allows you to calculate the same confidence interval, but rather than inputting the data from the sample itself, you input some summary statistics that you have either calculated or have been given to you as part of the question.
+
+`zsum.test()` is a good function to use if you are not given the data from the samples as part of a question, but rather some already calculated summary statistics.
+
+The arguments that `zsum.test()` can take are,
+
+* `mean.x =`: this is the mean of the first sample. We have already calculated $\bar x$ and saved it as `xbar`.
+* `mean.y =`: this is the mean of the second sample. We have already calculated $\bar y$ and saved it as `ybar`.
+* `sigma.x =`: this is the standard deviation of the underlying normal distribution the first sample has been taken from. We know from the question that this is equal to 4 and we have saved it in the object `sigma`.
+* `sigma.y =`: this is the standard deviation of the underlying normal distribution the second sample has been taken from. We know from the question that this is equal to 4 and we have saved it in the object `sigma`.
+* `n.x =`: this is the size of the first sample. In the question this is $n_X=130$ and this is already saved as `nx`.
+* `n.y =`: this is the size of the second sample. In the question this is $n_Y=80$ and this is already saved as `ny`.
+* `conf.level =`: this is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use `0.95` for example.
+
+We can input all of these values as arguments in the `zsum.test()` function to find the 95% confidence interval for the difference in population mean yield of potatoes from the fertilised and unfertilised fields. Again, we use `$conf` at the end of the function to extract only the confidence interval.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+library(PASWR2)  #this line only needs to be run once in each R session
+
+zsum.test(mean.x = xbar, mean.y = ybar, sigma.x = sigma, sigma.y = sigma,
+          n.x = nx, n.y = ny, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+zsum.test(mean.x = xbar, mean.y = ybar, sigma.x = sigma, sigma.y = sigma,
+          n.x = nx, n.y = ny, conf.level = 0.95)$conf
+```
+:::
+
+This confidence interval tells us that we are 95% confident that the difference between the population mean yields of potatoes from fertilised and unfertilised fields lies in the interval $\left[`r round(CI1[1], 4)`,\, `r round(CI1[2], 4)`\right]$. Once again, we see that this interval contains 0, so there is not sufficient evidence to suggest a difference in population mean potato yield exists between the fertilised and unfertilised fields when the significance level is $\alpha=0.05$.
+::::
+:::
+
+### Variances are known and unequal (8.2.4) {#sec-known-unequal}
+
+In the case where the variances of both distributions are known but are unequal, that is $\sigma_X^2\neq\sigma_Y^2$, then a $(1-\alpha)\cdot100\%$ confidence interval for the difference in the population means, $\mu_X-\mu_Y$, is given by,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.12} \label{eq:known-unequal}
+\begin{split}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\sigma_X^2}{n_X}+\frac{\sigma_Y^2}{n_Y}},\\
+&\,\,\,\,\,\,\left(\bar x-\bar y\right)+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\sigma_X^2}{n_X}+\frac{\sigma_Y^2}{n_Y}}\,\Bigg]
+\end{split}
+\end{equation}
+```
+:::
+
+------------------------------------------------------------------------
+
+To see some further examples of using this confidence interval, see [Section 8.2.4](https://read.kortext.com/reader/pdf/92741/470){target="_blank"} of *Probability and Statistics with R*.
+
+From the exploratory analysis completed in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-2){target="_blank"}, the yields of wheat from fertilised and unfertilised fields both approximately follow normal distributions, but with unequal variances. At this stage of the analysis, we're going to assume the population variances are known and are $\sigma_{\mbox{f}}^2=3^2$ for yields from fertilised fields, and $\sigma_{\mbox{uf}}^2=1^2$ for yields from unfertilised fields.
+
+That is, we're assuming the wheat yields from fertilised fields follow a $N(\mu_{\mbox{f}},3^2)$ distribution and the wheat yields from unfertilised fields follow a $N(\mu_{\mbox{uf}}, 1^2)$ distribution.
+
+We can then calculate a 95% confidence interval for the difference in population mean wheat yields from fertilised and unfertilised fields using Equation \eqref{eq:known-unequal} above. This can be done, again, in a few different ways in R.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using R as a calculator
+::::
+::::{.example-container}
+In order to use Equation \eqref{eq:known-unequal}, we can start by saving all the values that we know from the question as objects in the **Environment** tab. That is, $n_X=90$, $n_Y=120$, $\sigma_X=3$ and $\sigma_Y=1$. 
+
+::: panel-tabset
+## R Code
+```{r}
+nx <- 90
+ny <- 120
+sigmax <- 3
+sigmay <- 1
+```
+:::
+
+In order to use the formula for the confidence interval stated above, we still need to find $\bar x$, $\bar y$ and $z_{1-\frac{\alpha}{2}}$. We can find each of these using the code below.
+
+::: panel-tabset
+## R Code
+```{r}
+xbar <- mean(wheat_fertilised$yield)
+ybar <- mean(wheat_unfertilised$yield)
+z <- qnorm(0.975)
+```
+:::
+
+Now we can see in the **Environment** tab that $\bar x=`r round(xbar, 2)`$ tonnes, $\bar y=`r round(ybar, 2)`$ tonnes and $z_{0.975}=`r round(z, 2)`$.
+
+Calculating the 95% confidence interval is now just a case of subbing in all the values into Equation \eqref{eq:known-unequal}. We can do this in R as follows.
+
+```{r, echo=FALSE}
+CI2 <- (xbar - ybar) + c(-1, 1)*z*sqrt(sigmax^2/nx + sigmay^2/ny)
+```
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+(xbar - ybar) + c(-1, 1)*z*sqrt(sigmax^2/nx + sigmay^2/ny)
+```
+
+## R Code with Output
+```{r}
+(xbar - ybar) + c(-1, 1)*z*sqrt(sigmax^2/nx + sigmay^2/ny)
+```
+:::
+
+We would interpret this confidence interval by saying that we are 95% confident that the difference between the population mean yields of wheat from fertilised and unfertilised fields lies in the interval $\left[`r round(CI2[1], 4)`,\, `r round(CI2[2], 4)`\right]$.
+
+Note that this interval is strictly positive which means there is statistically significant evidence of a difference between the population mean yields of wheat from the two types of field at the 5% significance level.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `z.test()` function
+::::
+::::{.example-container}
+As we have seen, the function `z.test()` from the `PASWR2` package is useful if we have been provided the data and know the variances of the two normal distributions that the groups follow.
+
+In this case, we can use `z.test()` to calculate a 95% confidence interval for the difference in population mean wheat yields from fertilised and unfertilised fields as follows.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+library(PASWR2)  #this line only needs to be run once in each R session
+
+z.test(x = wheat_fertilised$yield, y = wheat_unfertilised$yield,
+       sigma.x = 3, sigma.y = 1, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+z.test(x = wheat_fertilised$yield, y = wheat_unfertilised$yield,
+       sigma.x = 3, sigma.y = 1, conf.level = 0.95)$conf
+```
+:::
+
+Again, we would interpret this confidence interval by saying that we are 95% confident that the difference between the population mean yields of wheat from fertilised and unfertilised fields lies in the interval $\left[`r round(CI2[1], 4)`,\, `r round(CI2[2], 4)`\right]$. We also see statistically significant evidence that there is a difference in these two population means at the 5% significance level.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 3: Using the `zsum.test()` function
+::::
+::::{.example-container}
+To save us from having to use R as a calculator to find the confidence interval, we can use the function `zsum.test()` from the `PASWR2` package.
+
+We already have saved in the **Environment** tab that,
+
+- `xbar`$=\bar x=`r round(xbar, 2)`$
+
+- `ybar`$=\bar y=`r round(ybar, 2)`$
+
+- `sigmax`$=\sigma_X=`r sigmax`$
+
+- `sigmay`$=\sigma_Y=`r sigmay`$
+
+- `nx`$=n_X=`r nx`$
+
+- `ny`$=n_Y=`r ny`$
+
+We can then find the 95% confidence interval for the difference in population mean wheat yield from fertilised and unfertilised fields as follows.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+library(PASWR2)  #this line only needs to be run once in each R session
+
+zsum.test(mean.x = xbar, mean.y = ybar, sigma.x = sigmax, sigma.y = sigmay,
+          n.x = nx, n.y = ny, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+zsum.test(mean.x = xbar, mean.y = ybar, sigma.x = sigmax, sigma.y = sigmay,
+          n.x = nx, n.y = ny, conf.level = 0.95)$conf
+```
+:::
+
+This function is mostly useful if we are not provided with the original sample data, but rather summary statistics.
+
+We can again see that the confidence interval is $\left[`r round(CI2[1], 4)`,\, `r round(CI2[2], 4)`\right]$, so we say we are 95% confident that the difference between the population mean yields of wheat from fertilised and unfertilised fields lies in this interval and that there is statistically significant evidence of a difference in these two population means at the 5% significance level.
+::::
+:::
+
+
+### Variances are unknown and assumed equal (8.2.5) {#sec-unknown-equal}
+
+When random samples have been taken from two normal distributions where the variances are unknown but assumed to be equal, a $(1-\alpha)\cdot100\%$ confidence interval for $\mu_X-\mu_Y$ is given by,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.15} \label{eq:unknown-equal}
+\begin{split}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{2};\nu_p}\cdot s_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}},\\
+&\,\,\,\,\,\,\,\left(\bar x-\bar y\right)+t_{1-\frac{\alpha}{2};\nu_p}\cdot s_p\sqrt{\frac{1}{n_X}+\frac{1}{n_Y}}\,\Bigg]
+\end{split}
+\end{equation}
+```
+:::
+
+-   $\nu_p$ represents the degrees of freedom for the associated $t$ distribution. The degrees of freedom can be found as $\nu_p=n_X+n_Y-2$.
+
+-   $s_p$ is a pooled estimate of the standard deviation that takes into account the sample sizes, $n_X$ and $n_Y$, taken from each distribution. An estimate for the pooled **variance** can be found using, $$s_p^2=\frac{\left(n_X-1\right)s_X^2+\left(n_Y-1\right)s_Y^2}{n_X+n_Y-2}$$
+
+    where, $s_X^2=\frac{\sum_{i=1}^{n_X}x_i^2-n_X\bar x^2}{n_X-1}$ and $s_Y^2=\frac{\sum_{i=1}^{n_Y}y_i^2-n_Y\bar y^2}{n_Y-1}$.
+
+    *Remember to take the square root of the estimated variance to find the estimate of standard deviation.*
+
+------------------------------------------------------------------------
+
+To see more examples of calculating these confidence intervals, see [Section 8.2.5](https://read.kortext.com/reader/pdf/92741/474){target="_blank"} of *Probability and Statistics with R*.
+
+So far, when calculating the confidence interval for the difference in population mean yield of potatoes, we have been told the value for $\sigma^2_X=\sigma^2_Y=\sigma^2$, the population variance. It might not be the case that we know this value, in which case we would use Equation \eqref{eq:unknown-equal} stated above.
+
+The difference between this one and Equation \eqref{eq:known-equal} from [Section @sec-known-equal] is that the $t$-distribution is now used rather than the standard normal, and that a pooled estimate of the standard deviation is used. This is because we do not know a value for the population standard deviation $\sigma$.
+
+We don't actually know the standard deviations of the distributions that potato yields follow, but based on our exploratory analysis from [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-1){target="_blank"}, we can assume that they are equal. We also know that potato yields from both fertilised and unfertilised fields approximately follow normal distributions. Therefore, a 95% confidence interval for the difference in mean population potato yields from fertilised and unfertilised fields can be calculated using Equation \eqref{eq:unknown-equal}. The confidence interval can be found in R in a few different ways.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using R as a calculator
+::::
+::::{.example-container}
+We can start by saving $n_X=130$ and $n_Y=80$ as objects in the **Environment** tab.
+
+::: panel-tabset
+## R Code
+```{r}
+nx <- 130
+ny <- 80
+```
+:::
+
+Then we can calculate $\bar x$, $\bar y$ and $t_{1-\frac{\alpha}{2};\nu_p}$, which is the $(1-\frac{\alpha}{2})$^th^ quantile from the $t$-distribution with $\nu_p=n_X+n_Y-2$ degrees of freedom. Because we are interested in a 95% confidence interval, $\alpha=0.05$, so the quantile we are looking for is the $\left(1-\frac{0.05}{2}\right)=0.975$^th^ quantile. To find a quantile from the $t$-distribution, we use the `qt()` function.
+
+::: panel-tabset
+## R Code
+```{r}
+xbar <- mean(potato_fertilised$yield)
+ybar <- mean(potato_unfertilised$yield)
+t <- qt(0.975, nx + ny - 2)
+```
+:::
+
+In order to use Equation \eqref{eq:unknown-equal}, we also need to calculate the estimate for the pooled variance, $s_p^2$. Before we can do this, we need to find the sum of squares for both groups, $s_X^2$ and $s_Y^2$. This can be done using the code below, which first of all calculates $\sum_{i=1}^{n_X}x_i^2$ and $\sum_{i=1}^{n_Y}y_i^2$ and saves them as `sum_x2` and `sum_y2` respectively. These values are then used to find $s_X^2$ and $s_Y^2$, which have been saved as `s2x` and `s2y` respectively.
+
+::: panel-tabset
+## R Code
+```{r}
+sum_x2 <- sum(potato_fertilised$yield^2)
+sum_y2 <- sum(potato_unfertilised$yield^2)
+
+s2x <- (sum_x2 - nx*xbar^2)/(nx - 1)
+s2y <- (sum_y2 - ny*ybar^2)/(ny - 1)
+```
+:::
+
+Note that here we have calculated the variance of both groups 'by hand'. We could do exactly the same thing using the `var()` function, which calculates the variance of a vector of values.
+
+Now we can find the estimate for the pooled variance, $s_p^2$, using the values for the sum of squares for both groups. This has been saved as `sp2`.
+
+::: panel-tabset
+## R Code
+```{r}
+sp2 <- ((nx - 1)*s2x + (ny - 1)*s2y)/(nx + ny - 2)
+```
+:::
+
+Now we can sub all of the values that have been calculated into Equation \eqref{eq:unknown-equal} as follows.
+
+```{r, echo=FALSE}
+CI3 <- (xbar - ybar) + c(-1, 1)*t*sqrt(sp2)*sqrt(1/nx + 1/ny)
+```
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+(xbar - ybar) + c(-1, 1)*t*sqrt(sp2)*sqrt(1/nx + 1/ny)
+```
+
+## R Code with Output
+```{r}
+(xbar - ybar) + c(-1, 1)*t*sqrt(sp2)*sqrt(1/nx + 1/ny)
+```
+:::
+
+We are 95% confident that the difference between the population mean yields of potatoes from fertilised and unfertilised fields lies in the interval $\left[`r round(CI3[1], 4)`,\, `r round(CI3[2], 4)`\right]$ when the population variances are unknown, but assumed equal.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `t.test()` function
+::::
+::::{.example-container}
+Another way in which we can calculate this 95% confidence interval is by using the `t.test()` function. This function is already part of R, so you don't need to load any packages. The only arguments that `t.test()` needs are,
+
+* `x =`: this is the vector of normally distributed values from the first group.
+* `y =`: this is the vector of normally distributed values from the second group.
+* `var.equal =`: this takes the value `TRUE` or `FALSE`, indicating whether we believe the variances, and hence the standard deviations, of both groups are the same.
+* `conf.level =`: this is the confidence interval for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use `0.95`.
+
+The code below uses `t.test()` to find the 95% confidence interval for the difference in population mean potato yield from fertilised and unfertilised fields. `$conf` is used to extract only the confidence interval as by itself, `t.test()` will return additional results.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+t.test(x = potato_fertilised$yield, y = potato_unfertilised$yield,
+       var.equal = TRUE, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+t.test(x = potato_fertilised$yield, y = potato_unfertilised$yield,
+       var.equal = TRUE, conf.level = 0.95)$conf
+```
+:::
+
+We see the same result, that the 95% confidence interval for the difference in population mean potato yields from the two types of field is $\left[`r round(CI3[1], 4)`,\, `r round(CI3[2], 4)`\right]$.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 3: Using the `tsum.test()` function
+::::
+::::{.example-container}
+If we had been given summary statistics of the two groups, but did not know the variances of the groups, we can use the function `tsum.test()`. This is part of the `PASWR2` package, so make sure it is loaded into your R session.
+
+The arguments that `tsum.test()` can take are,
+
+* `mean.x =`: this is the mean of the first sample, $\bar x$.
+* `mean.y =`: this is the mean of the second sample, $\bar y$.
+* `s.x =`: this is the estimate of the standard deviation of the first sample. We have already found the estimated variance, $s_X^2$, and saved it as `s2x`, so we just need to take the square root.
+* `s.y =`: this is the estimate of the standard deviation of the second sample. We have already found the estimated variance, $s_Y^2$, and saved it as `s2y`, so we just need to take the square root.
+* `n.x =`: this is the sample size of the first group, $n_X$.
+* `n.y =`: this is the sample size of the second group, $n_Y$.
+* `var.equal =`: this takes the value `TRUE` or `FALSE`, indicating whether we believe the variances, and hence the standard deviations, of both groups are the same.
+* `conf.level =`: this is the confidence interval for the desired interval.
+
+We can input all of these values as arguments in the `tsum.test()` function to find the 95% confidence interval for the difference in population mean yield of potatoes from fertilised and unfertilised fields. Again, `$conf` is needed to show only the confidence interval.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+library(PASWR2)  #this line only needs to be run once in each R session
+
+tsum.test(mean.x = xbar, mean.y = ybar, s.x = sqrt(s2x), s.y = sqrt(s2y),
+          n.x = nx, n.y = ny, var.equal = TRUE, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+tsum.test(mean.x = xbar, mean.y = ybar, s.x = sqrt(s2x), s.y = sqrt(s2y),
+          n.x = nx, n.y = ny, var.equal = TRUE, conf.level = 0.95)$conf
+```
+:::
+
+Once again, the 95% confidence interval returned to us for the difference between the population mean potato yield from fertilsied and from unfertilised fields is $\left[`r round(CI3[1], 4)`,\, `r round(CI3[2], 4)`\right]$.
+::::
+:::
+
+::: question
+::: question-header
+Task
+:::
+::: {.question-container .webex-check}
+```{r MCQ9, echo=FALSE}
+optsQ1 <- c(answer = "There is not significant evidence to suggest a difference between the population mean potato yields from fertilised and unfertilised fields at the 5% significance level.",
+            "There is significant evidence to suggest a difference between the population mean potato yields from fertilised and unfertilised fields at the 5% significance level.",
+            "The population mean potato yield from fertilised fields is significantly higher than the population mean potato yield from unfertilised fields.",
+            "The population mean potato yield from fertilised fields is significantly lower than the population mean potato yield from unfertilised fields.")
+```
+
+How would you interpret the 95% confidence interval for the difference in population mean potato yields between fertilised and unfertilised fields, when the variances are unknown but assumed equal? `r longmcq(sample(optsQ1))`
+:::
+:::
+
+::: question
+::: question-header
+Task
+:::
+::: question-container
+Open the statistical report you have saved from Lab 8. This should already contain complete **Introduction** and **Exploratory Analysis** sections.
+
+In the **Statistical Analysis** section, add in an interpretation of the 95% confidence interval for the difference in population mean potato yields between fertilised and unfertilised fields. Make sure you state what the assumptions you have made to calculate this confidence interval are, the values in the interval and how this would be interpreted.
+:::
+:::
+
+
+### Variances are unknown and unequal (8.2.6) {#sec-unknown-unequal}
+
+When random samples have been taken from two normal distributions where the variances, $\sigma_X^2$ and $\sigma_Y^2$, are unknown and they are assumed unequal, a $(1-\alpha)\cdot100\%$ confidence interval for $\mu_X-\mu_Y$ is given by,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.16} \label{eq:unknown-unequal}
+\begin{split}
+CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{2};\nu}\cdot \sqrt{\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}},\\
+&\,\,\,\,\,\,\,\left(\bar x-\bar y\right)+t_{1-\frac{\alpha}{2};\nu}\cdot\sqrt{\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}}\,\Bigg]
+\end{split}
+\end{equation}
+```
+:::
+
+-   $\nu$ represents the degrees of freedom for the associated $t$ distribution. The degrees of freedom can be found using, $$\nu=\frac{\left(\frac{s_X^2}{n_X}+\frac{s_Y^2}{n_Y}\right)^2}{\frac{\left(s_X^2/n_X\right)^2}{n_X-1}+\frac{\left(s_Y^2/n_Y\right)^2}{n_Y-1}}$$
+
+    where, $s_X^2=\frac{\sum_{i=1}^{n_X}x_i^2-n_X\bar x^2}{n_X-1}$ and $s_Y^2=\frac{\sum_{i=1}^{n_Y}y_i^2-n_Y\bar y^2}{n_Y-1}$.
+
+------------------------------------------------------------------------
+
+See [Section 8.2.6](https://read.kortext.com/reader/pdf/92741/476){target="_blank"} of *Probability and Statistics with R* for further examples of finding these confidence intervals.
+
+The standard deviations of the distributions that wheat yields follow are not actually known and from the exploratory analysis, it seems that the population variances are likely unequal. Assuming this is the case, we can still calculate a 95% confidence interval for the difference in population mean wheat yield between fertilised and unfertilised fields using Equation \eqref{eq:unknown-unequal} above.
+
+In order to use this result, both groups must be normally distributed. We have already seen that this is the case from the exploratory analysis, but if we hadn't checked **make sure to check both groups follow a normal distribution**, using QQ plots.
+
+There a few different ways in which we can calculate the desired 95% confidence interval.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using R as a calculator
+::::
+::::{.example-container}
+We start by saving $n_X=90$ and $n_Y=120$ as objects in the **Environment** tab and calculating the mean of each group.
+
+::: panel-tabset
+## R Code
+```{r}
+nx <- 90
+ny <- 120
+
+xbar <- mean(wheat_fertilised$yield)
+ybar <- mean(wheat_unfertilised$yield)
+```
+:::
+
+We can see now, in the **Environment** tab, that $\bar x=`r round(xbar, 2)`$ and $\bar y=`r round(ybar, 2)`$.
+
+Before we can find the $\left(1-\frac{\alpha}{2}\right)$^th^ quantile from the $t$-distribution, we need to find the associated degrees of freedom $\nu$. This involves a few steps. First of all, we find $\sum_{i=1}^{n_X}x_i^2$ and $\sum_{i=1}^{n_Y}y_i^2$.
+
+::: panel-tabset
+## R Code
+```{r}
+sum_x2 <- sum(wheat_fertilised$yield^2)
+sum_y2 <- sum(wheat_unfertilised$yield^2)
+```
+:::
+
+Running the above code will show us that $\sum_{i=1}^{n_X}x_i^2=`r round(sum_x2, 2)`$ and $\sum_{i=1}^{n_Y}y_i^2=`r round(sum_y2, 2)`$. We can use these values to find the variance of the two wheat yield samples, $s_X^2$ and $s_Y^2$.
+
+::: panel-tabset
+## R Code
+```{r}
+s2x <- (sum_x2 - nx*xbar^2)/(nx - 1)
+s2y <- (sum_y2 - ny*ybar^2)/(ny - 1)
+```
+:::
+
+If we had used the `var()` function we would be left with the same result, that $s_X^2=`r round(s2x, 2)`$ and $s_Y^2=`r round(s2y, 2)`$. Now we can use these values to find $\nu$ as follows (this value is saved as `df`) and find the $\left(1-\frac{\alpha}{2}\right)$^th^ quantile from the $t$-distribution with $\nu$ degrees of freedom using the function `qt()`.
+
+::: panel-tabset
+## R Code
+```{r}
+df <- (s2x/nx + s2y/ny)^2 / ((s2x/nx)^2/(nx-1) + (s2y/ny)^2/(ny - 1))
+
+t <- qt(0.975, df)
+```
+:::
+
+Finally, we can sub all of these values into the formula for the confidence interval.
+
+```{r, echo=FALSE}
+CI4 <- (xbar - ybar) + c(-1, 1)*t*sqrt(s2x/nx + s2y/ny)
+```
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+(xbar - ybar) + c(-1, 1)*t*sqrt(s2x/nx + s2y/ny)
+```
+
+## R Code with Output
+```{r}
+(xbar - ybar) + c(-1, 1)*t*sqrt(s2x/nx + s2y/ny)
+```
+:::
+
+We would interpret this interval by saying that we are 95% confident that the difference between the population mean wheat yield from fertilised and unfertilised fields lies in the interval $\left[`r round(CI4[1], 4)`,\, `r round(CI4[2], 4)`\right]$. This is true for the scenario where we don't know the variance of each underlying distribution and assume it is different for the two groups.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `t.test()` function
+::::
+::::{.example-container}
+We can find the same interval using the `t.test()` function.
+
+To find the 95% confidence interval for the difference in population mean wheat yields from fertilised and unfertilised fields, assuming the variances are unequal, we would use the code below.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+t.test(x = wheat_fertilised$yield, y = wheat_unfertilised$yield,
+       var.equal = FALSE, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+t.test(x = wheat_fertilised$yield, y = wheat_unfertilised$yield,
+       var.equal = FALSE, conf.level = 0.95)$conf
+```
+:::
+
+This again tells us that the interval is $\left[`r round(CI4[1], 4)`,\, `r round(CI4[2], 4)`\right]$, so we are 95% confident the difference in population mean wheat yields from fertilised and unfertilised fields lies in this interval.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 3: Using the `tsum.test()` function
+::::
+::::{.example-container}
+We could also use the summary statistics, already calculated, and the function `tsum.test()` from the `PASWR2` package. This would look as follows.
+
+::: panel-tabset
+## R Code
+```{r, eval = FALSE}
+library(PASWR2)  #this line only needs to be run once in each R session
+
+tsum.test(mean.x = xbar, mean.y = ybar, s.x = sqrt(s2x), s.y = sqrt(s2y),
+          n.x = nx, n.y = ny, var.equal = FALSE, conf.level = 0.95)$conf
+```
+
+## Output
+```{r, echo = FALSE}
+tsum.test(mean.x = xbar, mean.y = ybar, s.x = sqrt(s2x), s.y = sqrt(s2y),
+          n.x = nx, n.y = ny, var.equal = FALSE, conf.level = 0.95)$conf
+```
+:::
+
+We would say that we are 95% confident that the difference in population mean yields of wheat from the two types of field lies in the interval $\left[`r round(CI4[1], 4)`,\, `r round(CI4[2], 4)`\right]$.
+::::
+:::
+
+::: question
+::: question-header
+Task
+:::
+::: {.question-container .webex-check}
+```{r MCQ2, echo=FALSE}
+optsQ2 <- c(answer = "There is significant evidence to suggest a difference between the population mean wheat yields from fertilised and unfertilised fields at the 5% significance level.",
+            "There is not significant evidence to suggest a difference between the population mean wheat yields from fertilised and unfertilised fields at the 5% significance level.",
+            "The population mean wheat yield from fertilised fields is equal to the population mean wheat yield from unfertilised fields at the 5% significance level.",
+            "The population mean wheat yield from fertilised fields is significantly lower than the population mean wheat yield from unfertilised fields.")
+```
+
+How would you interpret the 95% confidence interval for the difference in population mean wheat yields between fertilised and unfertilised fields, when the variances are unknown and assumed unequal? `r longmcq(sample(optsQ2))`
+:::
+:::
+
+::: question
+::: question-header
+Task
+:::
+::: question-container
+In the **Statistical Analysis** section of your report, add in an interpretation of the 95% confidence interval for the difference in population mean wheat yields between fertilised and unfertilised fields.
+
+Make sure you state what the assumptions you have made to calculate this confidence interval are, the values in the interval and how this would be interpreted.
+:::
+:::
+
+
+
+
+
+

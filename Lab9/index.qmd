@@ -1,0 +1,55 @@
+---
+title: "Welcome!"
+number-sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+# Introduction {#sec-introduction}
+
+Welcome to the ninth S2S lab. Today we will complete the statistical report that we started in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/){target="_blank"} by completing the **Statistical Analysis** and **Conclusion** sections. If you have completed Lab 8, you should have the beginnings of a statistical analysis report saved.
+
+We will take a look at different ways of calculating **confidence intervals** in different scenarios in R, which will allow us to complete the statistical report.
+
+<!-- question callout example
+:::{.question}
+::::{.question-header}
+Question
+::::
+::::{.question-container}
+This is where the question text would go.
+::::
+:::
+-->
+
+<!--
+::: panel-tabset
+## R Script
+```{r, eval = FALSE}
+
+```
+
+## Console
+```{r, echo = FALSE}
+
+```
+:::
+-->
+
+
+
+
+
+
+
+
+
+
