@@ -1,0 +1,200 @@
+---
+title: "S2S Lab 6 Task Solutions"
+output:
+  pdf_document:
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(PASWR2)
+```
+
+# Welcome!
+
+# Sampling Distribution of $\bar X$
+
+```{r saamples, echo=FALSE}
+m <- 10000
+
+means_unif_2 <- numeric(m)
+means_expo_2 <- numeric(m)
+
+for(i in 1:m){
+  means_unif_2[i] <- mean(runif(n = 2, min = -11, max = 41))
+}
+
+for(i in 1:m){
+  means_expo_2[i] <- mean(rexp(n = 2, rate = 1/15))
+}
+
+means_2 <- data.frame(mean = c(means_unif_2, means_expo_2),
+                      distribution = rep(c("Uniform", "Exponential"), each = m))
+
+means_2$distribution <- factor(x = means_2$distribution,
+                               levels = c("Uniform", "Exponential"))
+
+means_unif_10 <- numeric(m)
+means_expo_10 <- numeric(m)
+
+for(i in 1:m){
+  means_unif_10[i] <- mean(runif(n = 10, min = -11, max = 41))
+}
+
+for(i in 1:m){
+  means_expo_10[i] <- mean(rexp(n = 10, rate = 1/15))
+}
+
+means_unif_40 <- numeric(m)
+means_expo_40 <- numeric(m)
+
+for(i in 1:m){
+  means_unif_40[i] <- mean(runif(n = 40, min = -11, max = 41))
+}
+
+for(i in 1:m){
+  means_expo_40[i] <- mean(rexp(n = 40, rate = 1/15))
+}
+```
+
+## Central Limit Theorem
+
+**If we were to take samples of size $n=2$ from the $\mbox{Unif}(-11,\, 41)$ distribution, what distribution would $\bar X$ follow, according to the Central Limit Theorem?**
+
+<!--
+* $N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)$
+* $N\Big(-11,\,\textstyle\frac{41}{\sqrt{2}}\Big)$
+* $N\Big(15,\,15\Big)$
+* $\mbox{Unif}\Big(-11,\,41\Big)$
+-->
+
+If $X\sim\mbox{Unif}(-11,\, 41)$, then we can show that,
+
+* $E[X]=15=\mu$
+* $sd(X)\approx 15=\sigma$
+
+We can then use these values to show that, according to the Central Limit Theorem,
+
+$$
+\bar X\sim N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)
+$$
+
+**If we were to take samples of size $n=2$ from the $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distribution, what distribution would $\bar X$ follow, according to the Central Limit Theorem?**
+
+<!--
+* $N\Big(\textstyle\frac{1}{15},\,\textstyle\frac{15}{\sqrt{2}}\Big)$
+* $N\Big(15,\,15\Big)$
+* $N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)$
+* $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$
+-->
+
+If $X\sim \mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$, then we can show that,
+
+* $E[X]=15=\mu$
+* $sd(X)=15=\sigma$
+
+We can then use these values to show that, according to the Central Limit Theorem,
+
+$$
+\bar X\sim N\Big(15,\,\textstyle\frac{15}{\sqrt{2}}\Big)
+$$
+
+**Do you think the sampling distribution of $\bar X$, when samples of size $n=2$ are taken from the $\mbox{Unif}(-11,\,41)$ distribution, is approximately normal?**
+
+* Yes
+
+**What about the sampling distribution of $\bar X$ when samples of size $n=2$ are taken from the $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distribution - is it approximately normal?**
+
+* No
+
+\newpage
+**Complete the code below to draw 10,000 samples of size $n=100$ from the $\mbox{Unif}(-11,\,41)$ distribution, and another 10,000 samples of size $n=100$ from the $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distribution.**
+
+```{r samp-ans1}
+means_unif_100 <- numeric(m)
+means_expo_100 <- numeric(m)
+
+for(i in 1:m){
+  means_unif_100[i] <- mean(runif(n = 100, min = -11, max = 41))
+}
+
+for(i in 1:m){
+  means_expo_100[i] <- mean(rexp(n = 100, rate = 1/15))
+}
+```
+
+```{r samples2, echo=FALSE}
+means <- data.frame(mean = c(means_unif_2, means_expo_2,
+                             means_unif_10, means_expo_10,
+                             means_unif_40, means_expo_40,
+                             means_unif_100, means_expo_100),
+                    distribution = rep(rep(c("Uniform", "Exponential"), each = m),
+                                       times = 4),
+                    size = rep(c("n = 2", "n = 10", "n = 40", "n = 100"), each = 2*m))
+
+means$distribution <- factor(means$distribution, levels = c("Uniform", "Exponential"))
+
+means$size <- factor(means$size, levels = c("n = 2", "n = 10", "n = 40", "n = 100"))
+```
+
+**Complete the code below to plot the sampling distribution of $\bar X$ for the samples of size $n=100$ taken from the $\mbox{Unif}(-11,\, 41)$ and $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distributions. Superimpose the normal distribution that each sampling distribution follows according to the Central Limit Theorem.**
+
+```{r samp-ans2, fig.align='center', out.width='80%'}
+ggplot(data = subset(means, subset = (size == "n = 100"))) +
+  geom_density(aes(x = mean), fill = "skyblue") +
+  facet_grid(distribution ~ .) +
+  coord_cartesian(xlim = c(9, 21)) +
+  labs(title = "Simulated sampling distributions of the sample mean",
+       subtitle = "Sample size n = 100",
+       x = expression(bar(x)), y = "Density") +
+  stat_function(fun = dnorm, args = list(mean = 15, sd = 15/sqrt(100)),
+                geom = "area", col = "black", linetype = 2, fill = "black",
+                alpha = 0.2)
+```
+
+# Sampling distribution for $\bar X-\bar Y$
+
+**Using the statement above about the distribution of $\bar X-\bar Y$, what distribution would you expect the differences in sample means to follow?**
+
+<!--
+* $N\Big(50,\,\sqrt{\textstyle\frac{12}{120}+\textstyle\frac{10}{96}}\Big)$
+* $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{20,000}+\textstyle\frac{10^2}{20,000}}\Big)$
+* $N\Big(90,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$
+* $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$
+-->
+
+We know that $X\sim N(90,\,12)$ and that we want to take samples of size 120 from this distribution. Therefore, we can say that $\mu_X=90$, $\sigma_X=12$ and $n_X=120$.
+
+We also know that $Y\sim N(40,\,10)$ and that we want to take samples of size 96 from this distribution, so $\mu_Y=40$, $\sigma_Y=10$ and $n_Y=96$.
+
+Plugging these values into the given distribution for $\bar X-\bar Y$ tells us that,
+
+$$
+\bar X-\bar Y\sim N\Big(90-40=50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)
+$$
+
+**Complete the code below draw 20,000 samples of size 120 from the $N(90,\, 12)$ distribution and save the mean of each sample in a vector called `meansX`.**
+
+**Let `m` represent the number of samples you want to draw, and `nx` represent the size each sample should be i.e. $n_X$.**
+
+```{r XY-ans1}
+m <- 20000
+nx <- 120
+
+meansX <- numeric(m)
+
+for(i in 1:m){
+  meansX[i] <- mean(rnorm(nx, mean = 90, sd = 12))
+}
+```
+
+**Do you think the kernel density estimate of the distribution of the differences between pairs of sample means is approximately equal to the $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution?**
+
+* Yes
+
+
+
+
+
+

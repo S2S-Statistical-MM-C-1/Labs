@@ -1,0 +1,15 @@
+{
+  "hash": "459848f87e07693bedba28443df1072c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nQuestion\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n\n<!--\n::: panel-tabset\n## R Script\n\n::: {.cell}\n\n:::\n\n\n## Console\n\n::: {.cell}\n\n:::\n\n:::\n-->\n\nWelcome to the sixth S2S lab. This lab expands on the concept of sampling distributions (introduced in [Lab 5](https://moodle.gla.ac.uk/pluginfile.php/9073494/mod_resource/content/3/index.html){target=\"_blank\"}) to look at the scenario of sampling from continuous distributions other than the normal distribution. To help us do this, we introduce an important result in statistics know as the central limit theorem. This section of the lab follows Section [6.5.1.2 Second Case: Sampling Distribution of $\\bar X$ When $X$ Is Not a Normal Random Variable](https://read.kortext.com/reader/pdf/92741/370){target=\"_blank\"} of *Probability and Statistics with R*.\n\nWe will also look at creating a sampling distribution for the difference between two means, when both of the orginal random variables do come from a normal distribution. This second section of the lab is based on Section [6.5.2 Sampling Distribution for $\\bar X - \\bar Y$ When Sampling from Two Independent Normal Populations](https://read.kortext.com/reader/pdf/92741/375){target=\"_blank\"} of *Probability and Statistics with R*.\n\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

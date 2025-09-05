@@ -1,0 +1,51 @@
+---
+title: "Welcome!"
+number-sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+<!-- question callout example
+:::{.question}
+::::{.question-header}
+Question
+::::
+::::{.question-container}
+This is where the question text would go.
+::::
+:::
+-->
+
+<!--
+::: panel-tabset
+## R Script
+```{r, eval = FALSE}
+
+```
+
+## Console
+```{r, echo = FALSE}
+
+```
+:::
+-->
+
+Welcome to the sixth S2S lab. This lab expands on the concept of sampling distributions (introduced in [Lab 5](https://moodle.gla.ac.uk/pluginfile.php/9073494/mod_resource/content/3/index.html){target="_blank"}) to look at the scenario of sampling from continuous distributions other than the normal distribution. To help us do this, we introduce an important result in statistics know as the central limit theorem. This section of the lab follows Section [6.5.1.2 Second Case: Sampling Distribution of $\bar X$ When $X$ Is Not a Normal Random Variable](https://read.kortext.com/reader/pdf/92741/370){target="_blank"} of *Probability and Statistics with R*.
+
+We will also look at creating a sampling distribution for the difference between two means, when both of the orginal random variables do come from a normal distribution. This second section of the lab is based on Section [6.5.2 Sampling Distribution for $\bar X - \bar Y$ When Sampling from Two Independent Normal Populations](https://read.kortext.com/reader/pdf/92741/375){target="_blank"} of *Probability and Statistics with R*.
+
+
+
+
+
+
+
+
