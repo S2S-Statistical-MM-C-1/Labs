@@ -1,0 +1,46 @@
+name: Quarto Publish Lab3
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Lab3/**'         # Only trigger if files in Lab3 change
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lab3   # Make sure your folder is named Lab3 (no spaces)
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # Step 3: Set up R
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      # Step 4: Install required R packages with caching
+      - name: Install R packages (with cache)
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rmarkdown, any::knitr, any::ggplot2, any::webexercises, any::PASWR2, any::kableExtra, any::tidyverse
+          cache: true
+
+      # Step 5: Render the Quarto project
+      - name: Render Quarto project
+        run: quarto render
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy Lab3 site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Lab3/docs      # Quarto output folder
+          destination_dir: Lab3         # Subfolder on gh-pages branch
