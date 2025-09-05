@@ -1,0 +1,302 @@
+# Normal Distribution (Examples 7.24 & 7.25)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+<!--MLE for sigma^2-->
+
+Suppose $\left\{X_1,X_2,\dots,X_n\right\}$ is a random sample from a $N\left(\mu, \sigma\right)$ distribution, where $\mu$ is **known**. Find the maximum likelihood estimator of $\sigma^2$, by hand. The questions below should help you understand the steps required to find the *MLE*.
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+```{r, echo=FALSE}
+opts1 <- sample(c(answer = "$f(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)$",
+                  "$f(x)=\\frac{(\\sigma^2)^\\mu x^{\\mu-1}\\exp(-\\sigma^2x)}{\\Gamma(\\mu)}$",
+                  "$f(x)=\\mu\\exp(-\\mu x)$",
+                  "$f(x)=\\frac{\\mu}{2\\pi\\sigma^2}\\exp\\left(-\\frac{(x-\\mu)^2}{\\sigma^2}\\right)$"))
+```
+
+:::: {.webex-check}
+**What is the probability density function (pdf) of a random variable $X\sim{N}\left(\mu,\sigma\right)$**
+`r longmcq(opts1)`
+::::
+
+`r hide("Solution")`
+The pdf of a random variable $X\sim{N}\left(\mu,\sigma\right)$ is given by,
+
+$$
+f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),\,\,\,\,\,\,\,\,\,\,\,-\infty<x<\infty.
+$$
+See the [Probability Formula Sheet](https://gla-my.sharepoint.com/:b:/g/personal/mitchum_bock_glasgow_ac_uk/EYMw7JaKJPhJqtx7U2y8014BpMoLnJ1iyb-ELxDb8hvGYg?e=BQm80L){target="_blank"}.
+
+`r unhide()`
+::::
+:::
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+```{r, echo=FALSE}
+opts2 <- sample(c(answer = "$L(\\sigma^2|\\mathbb{x})=\\prod_{i=1}^n\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(x_i-\\mu)^2}{2\\sigma^2}\\right)$",
+                  "$L(\\sigma^2|\\mathbb{x})=\\prod_{i=1}^n\\frac{(\\sigma^2)^\\mu x_i^{\\mu-1}\\exp(-\\sigma^2x_i)}{\\Gamma(\\mu)}$",
+                  "$L(\\sigma^2|\\mathbb{x})=\\prod_{i=1}^n\\mu\\exp(-\\mu x_i)$",
+                  "$L(\\sigma^2|\\mathbb{x})=\\prod_{i=1}^n\\frac{\\mu}{2\\pi\\sigma^2}\\exp\\left(-\\frac{(x_i-\\mu)^2}{\\sigma^2}\\right)$"))
+```
+::::{.webex-check}
+**What is the likelihood function of a random sample of $n$, normally distributed random variables with mean $\mu$ and standard deviation $\sigma$?**
+`r longmcq(opts2)`
+::::
+
+`r hide("Solution")`
+The likelihood of $n$ random variables is given by the product of the $n$ probability density functions. In this case, the likelihood function of $n$ normally distributed random variables is given by,
+
+$$
+\begin{align}
+L(\sigma^2|\mathbb{x})&=\prod_{i=1}^nf(x_i)\\
+&=\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)
+\end{align}
+$$ {#eq-normallike}
+`r unhide()`
+::::
+:::
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+```{r, echo=FALSE}
+opts3 <- sample(c(answer = "$\\ln L(\\sigma^2|\\mathbb{x})=-\\frac{n}{2}\\ln(2\\pi)-\\frac{n}{2}\\ln(\\sigma^2)-\\frac{\\sum_{i=1}^n(x_i-\\mu)^2}{2\\sigma^2}$",
+                  "$\\ln L(\\sigma^2|\\mathbb{x})=-\\frac{n}{2}\\ln(2\\pi)-\\frac{n}{2}\\ln(\\sigma^2)-\\exp\\left(\\frac{\\sum_{i=1}^n(x_i-\\mu)^2}{2\\sigma^2}\\right)$",
+                  "$\\ln L(\\sigma^2|\\mathbb{x})=\\prod_{i=1}^n\\ln\\left[(2\\pi\\sigma^2)^{-\\frac{1}{2}}\\right]+\\sum_{i=1}^n\\left(-\\frac{(x_i-\\mu)^2}{2\\sigma^2}\\right)$",
+                  "$\\ln L(\\sigma^2|\\mathbb{x})=\\ln\\left[\\sum_{i=1}^n\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\right]+\\ln\\left[\\sum_{i=1}^n\\exp\\left(-\\frac{(x_i-\\mu)^2}{2\\sigma^2}\\right)\\right]$"))
+```
+::::{.webex-check}
+**By taking the natural logarithm of the likelihood function, what is the log-likelihood function of $n$, normally distributed random variables with mean $\mu$ and standard deviation $\sigma$?**
+
+*You will need to work this out by hand and simplify the logarithm of the likelihood function.*
+`r longmcq(opts3)`
+::::
+
+`r hide("Solution")`
+The log-likelihood can be found as follows,
+
+$$
+\begin{align}
+\ln L(\sigma^2|\mathbb{x})&=\ln\left[\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&=\ln\left[\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\right]+\ln\left[\prod_{i=1}^n\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&=\sum_{i=1}^n\ln\left[(2\pi\sigma^2)^{-\frac{1}{2}}\right]+\sum_{i=1}^n\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\\
+&=-\frac{1}{2}\sum_{i=1}^n\ln[2\pi]-\frac{1}{2}\sum_{i=1}^n\ln[\sigma^2]-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}\\
+&=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2} 
+\end{align}
+$$ {#eq-normalloglike}
+
+This is the function for which we want to find the value that maximizes it, as this will be the maximum likelihood estimator (MLE).
+`r unhide()`
+::::
+:::
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+```{r, echo=FALSE}
+opts4 <- sample(c(answer = "Differentiate $\\ln L(\\sigma^2|\\mathbb{x})$ with respect to $\\sigma^2$ and set equal to 0.",
+                  "Differentiate $\\ln L(\\sigma^2|\\mathbb{x})$ with respect to $\\mu$ and set equal to 0.",
+                  "Differentiate $L(\\sigma^2|\\mathbb{x})$ with respect to $\\sigma^2$ and set equal to 0.",
+                  "Differentiate $L(\\sigma^2|\\mathbb{x})$ with respect to $\\mu$ and set equal to 0."))
+```
+::::{.webex-check}
+**What is the next step required to find the value of $\sigma^2$ that maximises $\ln L(\sigma^2|\mathbb{x})$?**
+`r longmcq(opts4)`
+::::
+
+`r hide("Solution")`
+The first order derivative of the log-likelihood function ([ -@eq-normalloglike]) is given by,
+
+$$
+\begin{align}
+\frac{\partial\ln L(\sigma^2|\mathbb{x})}{\partial\sigma^2}&=-\frac{n}{2\sigma^2}+\frac{\sum_{i=1}^n(x_i-\mu)^2}{2(\sigma^2)^2}=0
+\end{align}
+$$
+
+The solution to this equation is given by $\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$ (try and show this yourself). 
+`r unhide()`
+::::
+:::
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+```{r, echo=FALSE}
+opts5 <- sample(c(answer = "Take the second order derivative of the log-likelihood function and ensure it is negative at $\\widehat{\\sigma^2}$.",
+                  "Take the second order derivative of the log-likelihood function and ensure it is positive at $\\widehat{\\sigma^2}$.",
+                  "Take the second order derivative of the likelihood function and ensure it is negative at $\\widehat{\\sigma^2}$.",
+                  "Take the second order derivative of the likelihood function and ensure it is positive at $\\widehat{\\sigma^2}$."))
+```
+::::{.webex-check}
+**What is the final step required to ensure that a maximum has been found?**
+`r longmcq(opts5)`
+::::
+`r hide("Solution")`
+The second order derivative of the log-likelihood function is,
+
+$$
+\begin{align}
+\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}=\frac{n}{2(\sigma^2)^2}-\frac{\sum_{i=1}^n(x_i-\mu)^2}{(\sigma^2)^3}
+\end{align}
+$$
+
+Then, to ensure that a maximum of the log-likelihood function has been found, we need to show that $\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}<0$ when $\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$.
+
+That is, we want to check that when we sub in $\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$,
+
+$$
+\begin{align}
+\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}=\frac{n}{2(\sigma^2)^2}-\frac{\sum_{i=1}^n(x_i-\mu)^2}{(\sigma^2)^3}&<0\\
+\frac{n\sigma^2}{2}-\sum_{i=1}^n(x_i-\mu)^2&<0\\
+\frac{n}{2}\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}-\sum_{i=1}^n(x_i-\mu)^2&<0\\
+-\frac{1}{2}\sum_{i=1}^n(x_i-\mu)^2&<0
+\end{align}
+$$
+
+which is true since $\sum_{i=1}^n(x_i-\mu)^2>0$.
+
+Therefore, the **maximum likelihood estimate** of $\sigma^2$ is $\widehat{\sigma^2}(\mathbb{x})=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$.
+`r unhide()`
+
+::::
+:::
+
+
+**Simulating a sample and it's corresponding MLE**
+
+We can draw 1000 random samples from a $N(4, 1)$ distribution, to verify that our maximum likelihood estimator $\widehat{\sigma^2}(\mathbb{x})=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$ gives a reasonably close estimate to the true parameter $\sigma^2=1$.
+
+To start with, draw and save the samples in the vector `x` using the code below. Here, the function `set.seed()` has been used so that the random numbers selected when `rnorm()` is used are always the same, no matter how many times the code is run. It doesn't matter what value is used inside `set.seed()`, as long as it is always the same value each time the code is run, the random values will remain the same.  If you use the value `123` as in this code, you will get the same results as shown below.
+
+::: panel-tabset
+## R Code
+```{r}
+set.seed(123)
+n <- 1000
+mu <- 4
+sigma <- 1
+x <- rnorm(n = n, mean = mu, sd = sigma)
+```
+:::
+
+In the quiz questions above, we saw that the log-likelihood function is given by,
+
+$$
+\ln L(\sigma^2|\mathbb{x})=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}
+$$
+
+Write a function in R called `loglike_sigma2` which will take the values in `x` and a given value for $\sigma^2$, and return the value of $\ln L(\sigma^2|\mathbb{x})$ using the code:
+
+::: panel-tabset
+## R code
+```{r}
+loglike_sigma2 <- function(sigma2){
+  -n/2*log(2*pi) - n/2*log(sigma2) - (sum((x-mu)^2))/(2*sigma2)
+}
+```
+:::
+
+Calculate the value of the maximum likelihood estimator (MLE), $\widehat{\sigma^2}=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}$, based on the simulated data stored in `x` using:
+
+::: panel-tabset
+## R Code
+```{r}
+mle_sigma2 <- sum((x-mu)^2)/n
+```
+:::
+
+This tells us that $\widehat{\sigma^2}=`r round(mle_sigma2, 3)`$, based on this observed sample.
+
+Use `ggplot2` to show a plot of the log-likelihood function ([ -@eq-normalloglike]) and add a vertical line at the maximum likelihood estimate $\widehat{\sigma^2}=`r round(mle_sigma2, 3)`$ using:
+
+::: panel-tabset
+## R code
+```{r, eval = FALSE}
+ggplot(data.frame(x = c(0.5, 2.45)), aes(x = x)) +
+  stat_function(fun = loglike_sigma2, n = 200) +
+  labs(x = expression(sigma^2),
+       y = "log-likelihood") +
+  geom_vline(xintercept = mle_sigma2, lty = "dashed")
+```
+
+## Plots
+```{r, echo=FALSE}
+ggplot(data.frame(x = c(0.5, 2.45)), aes(x = x)) +
+  stat_function(fun = loglike_sigma2, n = 200) +
+  labs(x = expression(sigma^2),
+       y = "log-likelihood") +
+  geom_vline(xintercept = mle_sigma2, lty = "dashed")
+```
+:::
+
+The reason that this estimate is not **exactly** equal to $\sigma^2=1$, which we used to draw the random sample, is because the maximum likelihood estimator is dependent on the sample observed. It gives us an *estimate* of the true population parameter, based on the sample. As we can see in the plot, this estimate is relatively close to the true population parameter $\sigma^2=1$.
+
+After having defined the function `loglike_sigma2`, we could use the function `optimize()` to find the maximum likelihood estimate. When the code below is run, we see again that the value that maximizes this function is $\widehat{\sigma^2}=`r round(mle_sigma2, 3)`$ which is in agreement with what we found 'by hand'.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+optimize(f = loglike_sigma2, interval = c(0.5, 2.5), maximum = TRUE)
+```
+
+## Output
+```{r, echo=FALSE}
+optimize(f = loglike_sigma2, interval = c(0.5, 2.5), maximum = TRUE)
+```
+:::
+
+We could also use the `nlm()` function to find the value that maximizes the log-likelihood function, but remember this actually only finds *minimum* values of a given function, so we first have to define the negative of the log-likelihood function, `negloglike_sigma2`.
+
+::: panel-tabset
+## R Code
+```{r}
+negloglike_sigma2 <- function(sigma2){
+  (-1)*loglike_sigma2(sigma2)
+}
+```
+
+```{r, eval=FALSE, warning=FALSE}
+nlm(f = negloglike_sigma2, p = 0.5)$estimate
+```
+
+## Output
+```{r, echo=FALSE, warning=FALSE}
+nlm(f = negloglike_sigma2, p = 0.5)$estimate
+```
+:::
+
+This again shows us that the value that maximizes of the log-likelihood function ([ -@eq-normalloglike]) is $\widehat{\sigma^2}=`r round(mle_sigma2, 3)`$, based on our observed sample.
+
+---
+
+You can find more examples of finding maximum likelihood estimators, both 'by hand' and using R in [Section 7.3.2 Likelihood and Maximum Likelihood Estimators](https://read.kortext.com/reader/pdf/92741/419){target="_blank"} of *Probability and Statistics with R*.
+
+
+
+
+
+
+
+
