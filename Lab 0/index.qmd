@@ -15,7 +15,7 @@ library(tidyverse)
 
 # R and RStudio
 
-Welcome to Level 2 Statistics! Today you will be introduced to R and RStudio and learn how to download and install them on to your device.
+Welcome to Level 2 Statistics! Today you will be introduced to R and RStudio and learn how to download and install both of them on to your device.
 
 [R](https://www.r-project.org/) is a programming language that you will use to write code in numerous statistics courses throughout your degree. [RStudio](https://posit.co/download/rstudio-desktop/) is an accompaniment to R, known as an Integrated Development Environment (IDE). RStudio essentially makes all features of the R programming language easier to use and it is the software you will interact with, rather than R directly.
 
