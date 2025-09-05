@@ -1,0 +1,202 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "S2S Lab 1",
+    "section": "",
+    "text": "Welcome to the first S2S lab! The contents of these labs are based on the textbook Probability and Statistics with R by Ugarte, Militino and Arnholt. Reference will be made to this textbook throughout the labs and it’s a great place to find further details and examples of the sort of things we’ll be looking at.\n\n\n\n\n\n\n\n\n\nOver the course of the semester, we will have 10 lab slots - one every week on a Wednesday. The labs offer an opportunity to practise using RStudio yourself and follow along with the code being demonstrated. After all lab sessions have occurred each week, a complete version of that week’s lab, showing solutions to all the tasks as well as separate solutions to the Further Exercises, will be made available on the S2S Moodle page.\nThe first three weeks of labs will follow Chapter 1 What Is R? of Probability and Statistics with R and provide an introduction to the basics of using R to work with data. You can use this chapter to find extra details of what’s covered in the first three labs but everything that is examinable will be covered in the labs themselves.\nThere are two pieces of assessment associated with these labs; an R assessment and a Lab Report. More details of these will be provided closer to the time.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome!</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html",
+    "href": "01-vectors.html",
+    "title": "2  Vectors",
+    "section": "",
+    "text": "2.1 Addition\nWe can also use R to add vectors together. Let’s try it out by running the following code.\nThe output shown above should appear in the console at the bottom left of the RStudio window.\nHere, R has ‘recycled’ the element of the vector x until it is the same length as the vector y, and elementwise addition has then been completed. This essentially means R has completed \\(3+2\\) to calculate the first element, \\(3+4\\) to find the second and \\(3+1\\) to find the third.\nWhat happens if we try to add together two vectors of unequal length, but they both have more than one element? We can try this out by creating a new, longer vector \\(z=\\begin{bmatrix}3&3&5&8&2\\end{bmatrix}^\\intercal\\) and then adding this to y.\nWe now see a warning message telling us that the length of vector z is not a multiple of the length of vector y - in other words, they have a different number of elements. We still see a result however (5, 7, 6, 10, 6) so the vectors have been added together.\nThis time, R recycles each element of y in turn until it is the same length as z and then completes the elementwise addition. y has been extended by adding its first two elements on to the end so that it has five entries like z, meaning R has completed the calculation \\(\\begin{bmatrix}2&4&1&2&4\\end{bmatrix}^\\intercal+\\begin{bmatrix}3&3&5&8&2\\end{bmatrix}^\\intercal\\).\nSection 1.3 Vectors of Probability and Statistics with R explains in detail how R adds two vectors together.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-addition",
+    "href": "01-vectors.html#sec-addition",
+    "title": "2  Vectors",
+    "section": "",
+    "text": "R CodeOutput\n\n\n\nx + y\n\n\n\n\n\n[1] 5 7 4\n\n\n\n\n\n\n\n\n\nR CodeOutput\n\n\n\nz &lt;- c(3, 3, 5, 8, 2)\n\ny + z\n\n\n\n\n\nWarning in y + z: longer object length is not a multiple of shorter object\nlength\n\n\n[1]  5  7  6 10  6\n\n\n\n\n\n\n\n\n\nTask\n\n\nCreate and save the vector \\(a=\\begin{bmatrix}2&2&-1\\end{bmatrix}^\\intercal\\) and scalar \\(b=2\\). Add these together and save the result as a new vector called c and print the contents of c in the console.\n\n\nSolution\n\n\nR CodeOutput\n\n\n\na &lt;- c(2, 2, -1)\nb &lt;- 2\n\nc &lt;- a + b\nc\n\n\n\n\n\n[1] 4 4 1",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-logi",
+    "href": "01-vectors.html#sec-logi",
+    "title": "2  Vectors",
+    "section": "2.2 Logical operators",
+    "text": "2.2 Logical operators\nVectors can contain logical values (TRUE/FALSE) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.\n\nR CodeOutput\n\n\n\nw &lt;- (x &lt; y)\nw\n\n\n\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n\nHere, R has again recycled the element from x to make it the same length as y, then it returns a vector telling us for which elements the statement x &lt; y is true. For example, the first element of x is 3 which is greater than 2, so x &lt; y is FALSE.\nOther logical operators that we can use with vectors include:\n\n\n\nOperator\nFunction\n\n\n\n\n&gt;\ngreater than\n\n\n&lt;\nless than\n\n\n&lt;=\nless than or equal to\n\n\n&gt;=\ngreater than or equal to\n\n\n==\nexact equality\n\n\n!=\nexact inequality\n\n\n\nLet’s explore how these operators behave with two new numerical vectors.\n\nR Code\n\n\n\ns &lt;- c(2, 4, 1)\nt &lt;- c(2, 3, 4)\n\n\n\n\n\n\nTask\n\n\nWrite some code to show:\n\nwhich elements of s and t are equal to each other\nwhich elements of s are less than the corresponding element in t\nwhich elements of s and t are unequal\n\n\n\nSolution\n\nWhen using logical operators with vectors, R will compare the vectors elementwise meaning the first elements of each vector will be compared to each other, then the second elements and so on.\nEquality:\n\nR CodeOutput\n\n\n\ns == t\n\n\n\n\n\n[1]  TRUE FALSE FALSE\n\n\n\n\n\nThis tells us that the first element of s is equal to the first element of t (they are both the value 2), whereas the second elements of s and t are not equal and neither are the third elements.\nLess than:\n\nR CodeOutput\n\n\n\ns &lt; t\n\n\n\n\n\n[1] FALSE FALSE  TRUE\n\n\n\n\n\nThe first element of s is not less than the first elements of t (that is 2 &lt; 2 is not a true statement) so this returns FALSE. The statement s &lt; t is TRUE for the third elements because the third element of s is 1 and for t it is 4 which equates to the statement 1 &lt; 4.\nInequality:\n\nR CodeOutput\n\n\n\ns != t\n\n\n\n\n\n[1] FALSE  TRUE  TRUE\n\n\n\n\n\nThis return the opposite of s == t. The first elements of s and t are both 2 so they are equal meaning != will return FALSE. Since the second elements are 4 and 3 respectively, these are unequal so != returns TRUE.\nTry using some of the other operators listed above to see if they return the vectors you expect.\n\n\n\nWhat if we wanted to compare specific elements of the vectors? We can achieve this by ‘indexing’ the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets ([ ]).\nFor example, s[3] would extract the third element from s, that is the number 1.\nThe following code can be used to check whether the second element of s is the same as the third element of t.\n\nR CodeOutput\n\n\n\ns[2] == t[3]\n\n\n\n\n\n[1] TRUE\n\n\n\n\n\n\n\nTask\n\n\nCreate the vectors \\(u=\\begin{bmatrix} 4 & 4 & 1 \\end{bmatrix}^\\intercal\\) and \\(v=\\begin{bmatrix} 1 & 0 & 5 \\end{bmatrix}^\\intercal\\). Write code to check:\n\nwhether the first elements of u+v and x+y (defined in the previous section) are the same.\nif the third element of u+v is the same as the second element of x+y.\n\n\n\nSolution\n\n\nR Code\n\n\n\nu &lt;- c(4, 4, 1)\nv &lt;- c(1, 0, 5)\n\n\n\n\nEquality of the first elements:\n\nR CodeOutput\n\n\n\n(u + v)[1] == (x + y)[1]\n\n\n\n\n\n[1] TRUE\n\n\n\n\n\nHere we have wrapped both u+v and x+y in brackets first so that we can then index the resulting vector. Alternatively, you could save u+v and x+y as new vectors, called something different, using the &lt;- operator.\nu+v is equal to \\(\\begin{bmatrix} 5 & 4 & 6 \\end{bmatrix}^\\intercal\\) so its first element is 5. x+y is equal to \\(\\begin{bmatrix} 5 & 7 & 4 \\end{bmatrix}^\\intercal\\) so its first element is also 5. It makes sense then that a TRUE statement is returned when checking the equality of the first elements of these two vectors.\nEquality of the third and second elements:\n\nR CodeOutput\n\n\n\n(u + v)[3] == (x + y)[2]\n\n\n\n\n\n[1] FALSE\n\n\n\n\n\nSimilarly, we can see that the third entry of u+v is 6 and the second entry of x+y is 7. Since these are clearly not equal we would expect R to return a FALSE statement when checking their equality, which we can see above.\n\n\n\n\nLook at Section 1.3 Vectors of Probability and Statistics with R for more information on logical operators and vectors.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-types",
+    "href": "01-vectors.html#sec-types",
+    "title": "2  Vectors",
+    "section": "2.3 Other types of vectors",
+    "text": "2.3 Other types of vectors\nSo far we have looked at numeric vectors and logical vectors. R can also store vectors with other types of elements, for example a character vector can be used to store strings of text.\nThe code below shows how to create a character vector;\n\nR Code\n\n\n\nanimals &lt;- c(\"dog\", \"sheep\", \"cow\", \"horse\")\n\n\n\n\nVectors containing complex numbers can also be created as follows;\n\nR Code\n\n\n\ncomplex &lt;- c(2+1i, 0+0i, 3+2i)\n\n\n\n\nThe function typof() is going to be useful for checking how R has stored the elements of a particular vector. To check the type of vector animals is, we can run the code;\n\nR CodeOutput\n\n\n\ntypeof(animals)\n\n\n\n\n\n[1] \"character\"\n\n\n\n\n\nThis tells us that R has stored animals as a character vector, meaning each element is stored as a string of text.\n\n\nTask\n\n\nWhat type of vector is w? logicalnumericcomplexcharacter\n\n\nSolution\n\n\nR CodeOutput\n\n\n\ntypeof(w)\n\n\n\n\n\n[1] \"logical\"\n\n\n\n\n\nUsing typeof(), we can see that w is stored by R as a logical vector.\n\n\n\nWhat happens if we try to combine two vectors which are of different types in R? Let’s run some code and see.\n\nR CodeOutput\n\n\n\nc(w, y)\n\n\n\n\n\n[1] 0 1 0 2 4 1\n\n\n\n\n\nHere, w is a logical vector and y is a numeric vector. R has returned the vector \\(\\begin{bmatrix} 0&1&0&2&4&1 \\end{bmatrix}^\\intercal\\), rather than \\(\\begin{bmatrix} \\mbox{FALSE} & \\mbox{TRUE} & \\mbox{FALSE} & 2 & 4 & 1 \\end{bmatrix}^\\intercal\\) as might be expected. So what’s happened?\nWhen R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most ‘complex’ type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.\nThe entries TRUE and FALSE within the vector w therefore need to be presented numerically. A FALSE statement will take the value 0 and a TRUE statement will take the value 1.\nLet’s look at combining a numeric vector with a complex vector. Remember that y is a numeric vector and complex is a vector containing complex numbers.\n\nR CodeOutput\n\n\n\nc(y, complex)\n\n\n\n\n\n[1] 2+0i 4+0i 1+0i 2+1i 0+0i 3+2i\n\n\n\n\n\nNow all elements are presented as a complex number. That is because R considers complex vectors to be more complex than numeric vectors.\n\n\nTask\n\n\nCreate a new vector, called combined, which is a combination of the logical vector w and the character vector animals. What type of vector is this?\n\n\nSolution\n\n\nR CodeOutput\n\n\n\ncombined &lt;- c(w, animals)\ncombined\n\n\n\n\n\n[1] \"FALSE\" \"TRUE\"  \"FALSE\" \"dog\"   \"sheep\" \"cow\"   \"horse\"\n\n\n\n\n\n\nR CodeOutput\n\n\n\ntypeof(combined)\n\n\n\n\n\n[1] \"character\"\n\n\n\n\n\nThe resulting vector is \\(\\begin{bmatrix} \\mbox{``FALSE\"} & \\mbox{``TRUE\"} & \\mbox{``FALSE\"} & \\mbox{``dog\"} & \\mbox{``sheep\"} & \\mbox{``cow\"} & \\mbox{``horse\"} \\end{bmatrix}^\\intercal\\) which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).\n\n\n\nIt is possible to coerce vectors of one type to be another type. This can be done using one of the functions\n\nas.logical()\nas.numeric()\nas.complex()\nas.character()\n\nFor example, if we wanted to change the logical vector w to be a numeric vector we could use the following code.\n\nR CodeOutput\n\n\n\nas.numeric(w)\n\n\n\n\n\n[1] 0 1 0\n\n\n\n\n\nWe again see that TRUE statements have been given the value 1 and FALSE statements have been given the value 0.\nIt is important to ensure that this coercion makes sense to do! It doesn’t make much sense to represent the vector animals as a numerical vector, and in fact if we tried to R would show us a warning message.\n\nR CodeOutput\n\n\n\nas.numeric(animals)\n\n\n\n\n\nWarning: NAs introduced by coercion\n\n\n[1] NA NA NA NA\n\n\n\n\n\nR has still changed the vector to be numeric, but since “dog”, for example, doesn’t have a numerical value it has been represented with NA (without any quotation marks) which is R’s symbol for “Not Available”, which we think of as a missing value. This tells us that each element of the now numeric vector doesn’t have a value. R also has the symbol NaN (“Not a Number”) to represent an impossible value (e.g. result of dividing by zero).\n\nTo read more about the types of vectors R can handle, see Section 1.3 Vectors of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-index",
+    "href": "01-vectors.html#sec-index",
+    "title": "2  Vectors",
+    "section": "2.4 Indexing vectors",
+    "text": "2.4 Indexing vectors\nWe have seen briefly how to index vectors using square brackets [ ] but we can now look at indexing in more detail. Specific elements can be extracted using positive indices or can be omitted from a vector using negative indices.\nLet’s again look at the vector z (remember \\(z=\\begin{bmatrix}3&3&5&8&2 \\end{bmatrix}^\\intercal\\)) and extract the first two elements.\n\nR CodeOutput\n\n\n\nz[c(1, 2)]\n\n\n\n\n\n[1] 3 3\n\n\n\n\n\nIn order to extract these two elements, we need to provide a vector (using c()) giving the positions of the elements we want within the square brackets, [ ].\nIf we wanted to remove the third entry from z we can use the following code.\n\nR CodeOutput\n\n\n\nz[-3]\n\n\n\n\n\n[1] 3 3 8 2\n\n\n\n\n\nNote that it is not possible to use both positive and negative indices at the same time, so we couldn’t remove the first entry of a vector at the same time as extracting the second and third entries for example.\n\n\nTask\n\n\nComplete the code that would remove the third and fourth elements from the vector animals.\n\nR Code\n\n\n\nanimals[  ]\n\n\n\n\n\n\nSolution\n\nThere are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.\n\nR CodeOutput\n\n\n\nanimals[-c(3, 4)]\n\n\n\n\n\n[1] \"dog\"   \"sheep\"\n\n\n\n\n\n\nR CodeOutput\n\n\n\nanimals[c(-3, -4)]\n\n\n\n\n\n[1] \"dog\"   \"sheep\"\n\n\n\n\n\nAlternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.\n\nR CodeOutput\n\n\n\nanimals[c(1, 2)]\n\n\n\n\n\n[1] \"dog\"   \"sheep\"\n\n\n\n\n\n\n\n\n\n\nTask\n\n\nThis task has three steps, so you should write three lines of code.\n\nCreate the vector \\(\\begin{bmatrix} 1&1&0&1 \\end{bmatrix}^\\intercal\\) and call it binary\nChange binary to be a logical vector and save this as a new vector called logical\nExtract the first and third elements of this vector logical.\n\n\n\nSolution\n\n\nR CodeOutput\n\n\n\nbinary &lt;- c(1, 1, 0, 1)\nlogical &lt;- as.logical(binary)\n\nlogical[c(1, 3)]\n\n\n\n\n\n[1]  TRUE FALSE\n\n\n\n\n\nIn the above code we have chosen to extract the first and third elements. Alternatively, we could remove the second and fourth elements instead.\n\nR CodeOutput\n\n\n\nlogical[-c(2, 4)]\n\n\n\n\n\n[1]  TRUE FALSE\n\n\n\n\n\n\n\n\n\nSection 1.3.2 Vector Indexing of Proability and Statistics with R contains further details of indexing vectors.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-seq",
+    "href": "01-vectors.html#sec-seq",
+    "title": "2  Vectors",
+    "section": "2.5 Sequences",
+    "text": "2.5 Sequences\nSo far we have manually entered the elements of all the vectors we have created. If a vector is simply a sequence of numbers (following some pattern), R has some nice functions which will speed up how we create these vectors.\nThe operator : can be used, e.g 2:8, to generate a sequence of integers from the number on the left hand side (2), up to the number on the right hand side (8).\nThe following code generates a sequence of integers from 2 up to 8.\n\nR CodeOutput\n\n\n\n2:8\n\n\n\n\n\n[1] 2 3 4 5 6 7 8\n\n\n\n\n\nThis can be useful if we want to extract (or omit) a sequence of elements from a vector which are all next to each other. Let’s start by creating quite a long vector (the object letters in R is a vector of all 26 lowercase letters of the English alphabet). If we then want to extract the first five letters of the alphabet, we can use the code 1:5 within our indexing. The following code shows how this is done.\n\nR CodeOutput\n\n\n\nlongvector &lt;- letters\nlongvector[1:5]\n\n\n\n\n\n[1] \"a\" \"b\" \"c\" \"d\" \"e\"\n\n\n\n\n\nWhat if we want to generate a non-consecutive sequence of numbers? What about a sequence of non-integer values?\nWe can do this using the function seq() in R. A function is a piece of code that tells R to complete some predetermined steps which will depend on the values provided to some ‘arguments’ within the brackets ( ). The arguments that the function seq() can be provided with are:\n\nfrom =: this is the starting value of our sequence (it can be an integer or a non-integer).\nto =: this is the final value of our sequence (it can be an integer or a non-integer).\nby =: this is the size of the jump between consecutive numbers in our sequence.\nlength.out =: this is the total number of values we want to be included in our sequence.\n\nHopefully you can see that if we specify each of to =, by = and length.out = then they might not necessarily all match up. Therefore we actually only need to specify two of to =, by = or length.out = within the seq() function.\nLet’s look at some examples of using seq().\n\nR CodeOutput\n\n\n\nseq(from = 2, to = 4, by = 0.2)\n\n\n\n\n\n [1] 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 3.8 4.0\n\n\n\n\n\n\nR CodeOutput\n\n\n\nseq(from = 3, to = 5, length.out = 9)\n\n\n\n\n\n[1] 3.00 3.25 3.50 3.75 4.00 4.25 4.50 4.75 5.00\n\n\n\n\n\n\nR CodeOutput\n\n\n\nseq(from = 4, by = 0.5, length.out = 7)\n\n\n\n\n\n[1] 4.0 4.5 5.0 5.5 6.0 6.5 7.0\n\n\n\n\n\n\n\nTask\n\n\nWrite some code to create the sequence 4.10, 4.15, 4.20, 4.25, 4.30, 4.35, 4.40 using the function seq()\n\n\nSolution\n\nThere are three different ways we could generate this sequence using the seq() function.\n\nR CodeOutput\n\n\n\nseq(from = 4.10, to = 4.40, by = 0.05)\n\n\n\n\n\n[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40\n\n\n\n\n\n\nR CodeOutput\n\n\n\nseq(from = 4.10, to = 4.40, length.out = 7)\n\n\n\n\n\n[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40\n\n\n\n\n\n\nR CodeOutput\n\n\n\nseq(from = 4.10, by = 0.05, length.out = 7)\n\n\n\n\n\n[1] 4.10 4.15 4.20 4.25 4.30 4.35 4.40\n\n\n\n\n\n\n\n\n\nYou can see additional examples of using the seq() function in Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-repeat",
+    "href": "01-vectors.html#sec-repeat",
+    "title": "2  Vectors",
+    "section": "2.6 Repeating constants",
+    "text": "2.6 Repeating constants\nAnother function in R that’s going to be useful is the rep() function. This allows us to create a vector which consists of repeated elements, or repeated sequences of elements. The arguments that rep() can be provided with are:\n\nx =: this is the value (or sequence) that we want to be repeated.\ntimes =: this is the number of times the value should be repeated - if x is a sequence then the full sequence will be repeated this many times.\neach =: if x is a sequence then this is the number of times the first element of the sequence should be repeated before moving on to repeating the second element and so on.\nlength.out =: this is the total number of elements we want to be included in the vector of repeated values.\n\nIf we specify all of times =, each = and length.out =, they might not necessarily be in agreement with each other. Therefore, only one of times =, each = or length.out = needs to be specified.\nLet’s look at some examples of using rep().\n\nR CodeOutput\n\n\n\nrep(x = 2, times = 6)\n\n\n\n\n\n[1] 2 2 2 2 2 2\n\n\n\n\n\n\nR CodeOutput\n\n\n\nrep(x = 1:3, each = 2)\n\n\n\n\n\n[1] 1 1 2 2 3 3\n\n\n\n\n\n\nR CodeOutput\n\n\n\nrep(x = 1:4, times = 1:4)\n\n\n\n\n\n [1] 1 2 2 3 3 3 4 4 4 4\n\n\n\n\n\n\nR CodeOutput\n\n\n\nrep(x = c(TRUE, FALSE), length.out = 8)\n\n\n\n\n\n[1]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE\n\n\n\n\n\n\n\nTask\n\n\nWrite some code to create each of the following repeating sequences using rep():\n\n3, 4, 5, 3, 4, 5, 3, 4, 5\n2, 2, 4, 4, 6, 6\nblue, blue, blue, red, red\n\n\n\nSolution\n\n\nR CodeOutput\n\n\n\nrep(3:5, times = 3)\n\n\n\n\n\n[1] 3 4 5 3 4 5 3 4 5\n\n\n\n\n\n\nR CodeOutput\n\n\n\nrep(c(2, 4, 6), each = 2)\n\n\n\n\n\n[1] 2 2 4 4 6 6\n\n\n\n\n\n\nR CodeOutput\n\n\n\nrep(c(\"blue\", \"red\"), times=c(3, 2))\n\n\n\n\n\n[1] \"blue\" \"blue\" \"blue\" \"red\"  \"red\" \n\n\n\n\n\n\n\n\n\n\nTask\n\n\nWrite some code to generate the sequence 2, 3, 3, 4, 5, 5, 6, 7, 7 using both the seq() and rep() functions.\n\n\nHint\n\nFirst of all, notice that the sequence of numbers you want to repeat is 2, 3, 4, 5, 6, 7. Therefore this sequence should be generated using seq(), or the from:to operator, and then fed into the rep() function as the x = argument.\nThen have a think about how many times each of these elements should be repeated. 2 should be repeated once, 3 should be repeated twice, 4 should be repeated once and so on. To do this, the times = argument within rep() should be given the repeating sequence 1, 2, 1, 2, 1, 2.\n\n\n\nSolution\n\n\nR CodeOutput\n\n\n\nrep(x = 2:7, \n    times = rep(x = c(1, 2), times = 3))\n\n\n\n\n\n[1] 2 3 3 4 5 5 6 7 7\n\n\n\n\n\n\n\n\n\nYou can see additional examples of using the rep() function in Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-filter",
+    "href": "01-vectors.html#sec-filter",
+    "title": "2  Vectors",
+    "section": "2.7 Filtering vectors",
+    "text": "2.7 Filtering vectors\nWe can combine what we have already learned in terms of logical operators (Section 2.2) and indexing vectors (Section 2.4) in order to extract elements which satisfy certain conditions.\nFor example, if we create the vector \\(\\begin{bmatrix}2 & 2 & 3 & 6 \\end{bmatrix}^\\intercal\\), then we can extract the elements of this vector which are greater than or equal to 3 in one easy step.\n\nR CodeOutput\n\n\n\nvect &lt;- c(2, 2, 3, 6)\n\nvect[vect &gt;= 3]\n\n\n\n\n\n[1] 3 6\n\n\n\n\n\nThis works because R will initially run the logical operator vect &gt;= 3 which will return the following logical vector.\n\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\nUsing this logical vector to index inside the square brackets returns exactly the same result as above.\n\nR CodeOutput\n\n\n\nvect[c(FALSE, FALSE, TRUE, TRUE)]\n\n\n\n\n\n[1] 3 6\n\n\n\n\n\n\n\nTask\n\n\nWrite some code to extract the elements of the vector z which are greater than 5.\n\n\nSolution\n\n\nR CodeOutput\n\n\n\nz[z &gt; 5]\n\n\n\n\n\n[1] 8\n\n\n\n\n\n\n\n\nA function within R which can be used to give the same results as logical operators within the square brackets is the subset() function. This returns the elements of a specified vector which satisfy a given logical expression. The arguments that subset() can be provided with are:\n\nx =: this is the vector we want to extract elements from.\nsubset =: this is the logical expression used to select the elements to keep.\n\nWe can use subset() to extract the elements of the vector vect which are greater than or equal to 3, exactly as we did before.\n\nR CodeOutput\n\n\n\nsubset(x = vect, subset = (vect &gt;= 3))\n\n\n\n\n\n[1] 3 6\n\n\n\n\n\n\n\nTask\n\n\nExtract the elements of the vector z which are greater than 5 using the subset() function.\n\n\nSolution\n\n\nR CodeOutput\n\n\n\nsubset(x = z, subset = (z &gt; 5))\n\n\n\n\n\n[1] 8\n\n\n\n\n\n\n\n\n\nSection 1.3.4 Filtering Vectors of Probability and Statistics with R gives further examples on how to filter vectors.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "01-vectors.html#sec-help",
+    "href": "01-vectors.html#sec-help",
+    "title": "2  Vectors",
+    "section": "2.8 Getting help",
+    "text": "2.8 Getting help\nIf you are ever unsure of the arguments required in a particular function in R, or even what that function does, there are ways to find out. R contains extensive help files on any function that can be used. To access these, simply put a ? in front of the function name, or use the function help().\nFor example, if we were unsure what the function rep() is used for, then we can run either of the following lines of code.\n\nR Code\n\n\n\n?rep\n\nhelp(rep)\n\n\n\n\nThis tells us in the Help tab that the first argument for the rep() function is called x = and a short description of what should be provided to this argument is given. It also describes the other arguments times =, length.out = and each =.\nThe order that arguments appear in in the help file is important because you don’t actually need to use the names of the arguments when using a function. Instead, you can just provide the values for each argument, and as long as they are in the same order as they appear in in the help file, R will know which value corresponds to which argument. This is known as using positional arguments.\nSometimes you might see a value associated with a specific argument in the help file, for example x = 5. This is the “default” value for that argument and it means that if you don’t specify a different value for the argument, then R will use the default value when executing the function. We’ll see more about default values as we encounter more complex functions in future labs.\n\nFor more information on accessing the online and inbuilt help in RStudio, see Section 1.5 Getting Help in Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "02-exercises.html",
+    "href": "02-exercises.html",
+    "title": "3  Further Exercises",
+    "section": "",
+    "text": "Exercise 1\nThe code below creates the vectors a and b. a randomly takes the value 1 or 2 and b randomly takes the value 2 or 4 (this is done using the sample() function which you can learn more about using the help() function).\nCreate a new vector c which is:\nCreate another vector d, which uses a single logical operator to compare a and b, and returns the value:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "02-exercises.html#exercise-1",
+    "href": "02-exercises.html#exercise-1",
+    "title": "3  Further Exercises",
+    "section": "",
+    "text": "R Code\n\n\n\na &lt;- sample(c(1, 2), 1)\nb &lt;- sample(c(2, 4), 1)\n\n\n\n\n\n\nTRUE if both a and b are equal.\nFALSE if a and b are different.\n\n\n\nFALSE when a is 1 and b is 2.\nTRUE when a is 2 and b is 2.\nFALSE when a is 1 and b is 4.\nFALSE when a is 2 and b is 4.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "02-exercises.html#exercise-2",
+    "href": "02-exercises.html#exercise-2",
+    "title": "3  Further Exercises",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\\[\n\\boldsymbol{P}=\\begin{bmatrix}3\\\\54\\\\1\\\\6\\\\0\\end{bmatrix},\\,\\,\\,\\,\\,\\,\\,\\,\\,\n\\boldsymbol{Q}=\\begin{bmatrix}18\\\\-1\\end{bmatrix}\n\\]\nCreate the vectors \\(\\boldsymbol{P}\\) and \\(\\boldsymbol{Q}\\) in R.\nWrite code to complete the calculation \\(\\boldsymbol{P}+2\\times\\boldsymbol{Q}\\) and save the result as a new vector called R.\nExtract the 2nd and 5th elements of R. Can you predict what these values will be before running your code?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "02-exercises.html#exercise-3",
+    "href": "02-exercises.html#exercise-3",
+    "title": "3  Further Exercises",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nCreate the sequence TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE using the rep() function and save the result as a vector called logical. Change logical to a numeric vector called numeric.\nNext, create the vector \\(\\begin{bmatrix}5.50,5.25,5.00,4.75,4.50,4.25,4.00,3.75,3.50\\end{bmatrix}^\\intercal\\) using the seq() function and call it sequence.\nFinally add together numeric and sequence and use the subset() function to keep only the elements which are greater than 5.50.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html",
+    "href": "03-summary.html",
+    "title": "4  Summary of Functions",
+    "section": "",
+    "text": "Vectors\nc()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html#other-types-of-vectors",
+    "href": "03-summary.html#other-types-of-vectors",
+    "title": "4  Summary of Functions",
+    "section": "Other types of vectors",
+    "text": "Other types of vectors\n\ntypeof()\n\n\nas.logical()\n\n\nas.numeric()\n\n\nas.complex()\n\n\nas.character()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html#sequences",
+    "href": "03-summary.html#sequences",
+    "title": "4  Summary of Functions",
+    "section": "Sequences",
+    "text": "Sequences\n\nseq(from = , to = , by = , length.out = )",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html#repeating-constants",
+    "href": "03-summary.html#repeating-constants",
+    "title": "4  Summary of Functions",
+    "section": "Repeating constants",
+    "text": "Repeating constants\n\nrep(x = , times = , each = , length.out = )",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html#filtering-vectors",
+    "href": "03-summary.html#filtering-vectors",
+    "title": "4  Summary of Functions",
+    "section": "Filtering vectors",
+    "text": "Filtering vectors\n\nsubset(x = , subset = )",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-summary.html#getting-help",
+    "href": "03-summary.html#getting-help",
+    "title": "4  Summary of Functions",
+    "section": "Getting help",
+    "text": "Getting help\n\nhelp()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  }
+]
