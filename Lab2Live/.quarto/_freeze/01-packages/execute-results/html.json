@@ -1,0 +1,15 @@
+{
+  "hash": "2a9e96bc8cb66a6a8dff22105ad7fc69",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n\n## Packages {#sec-packages}\n\nPackages are really important in R. They are collections of functions and/or data sets which you will only have access to when the specific package is **installed** and **loaded** into your RStudio session.\n\nBefore loading in a package to R, it must first be installed onto your device. You only need to install packages once and then they will always be ready to load into your current RStudio session. To install a package, we use the function `install.packages(\"PackageName\")`, where `\"PackageName\"` is the case sensitive name of the package.\n\nThe textbook [*Probability and Statistics with R*](https://read.kortext.com/reader/pdf/92741){target=\"_blank\"} uses the `PASWR2` package throughout. To install this package, run the following code.\n\n::: panel-tabset\n## R Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"PASWR2\")\n```\n:::\n\n:::\n\nNow that we have a package installed, we need to load it in to the current RStudio session in order to use any of the functions or access any of the data it contains. To load a package, we use the function `library(PackageName)`. Note that this time we do not need to wrap `PackageName` in quotation marks.\n\nTo load in the `PASWR2` package, run the following code.\n\n::: panel-tabset\n## R Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(PASWR2)\n```\n:::\n\n:::\n\n------------------------------------------------------------------------\n\nFor more information on installing and loading packages, see [Section 1.8 Packages](https://read.kortext.com/reader/pdf/92741/19){target=\"_blank\"} in *Probability and Statistics with R*.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
