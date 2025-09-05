@@ -1,0 +1,27 @@
+# Population Mean Difference from Paired Data (8.2.7)
+
+<!-- # Confidence Intervals for the Population Mean Difference from Paired Data (8.2.7) -->
+
+Sometimes the distributions that two samples come from are not independent, maybe because samples are taken from the same subjects at different points in time (e.g. test scores for a group of students before and after a revision lecture). When this is the case, the data is called **paired data**.
+
+The observations in a paired sample of size $n_D$ have values $\left((x_1, y_1), (x_2, y_2),\dots , (x_{n_D}, y_{n_D}) \right)$, the difference between the measurements taken on the same subject is often of interest. These differences, calculated as $D=(d_1=x_1-y_1, d_2=x_2-y_2,\dots ,d_{n_D}=x_{n_D}-y_{n_D})$, can be used to find a confidence interval for the mean difference.
+
+Assuming a paired sample size of $n_D$, a $(1-\alpha)\cdot100\%$ confidence interval for the difference in two dependent population means, $\mu_X-\mu_Y$ is give by,
+
+::: {.webex-code .webex-box}
+```{=tex}
+\begin{equation} \tag{8.21}
+CI_{1-\alpha}(\mu_D=\mu_X-\mu_Y)=\left[\bar d-t_{1-\frac{\alpha}{2};n_D-1}\cdot\frac{s_D}{\sqrt{n_D}},\,\,\bar d+t_{1-\frac{\alpha}{2};n_D-1}\cdot\frac{s_D}{\sqrt{n_D}}\right]
+\end{equation}
+```
+:::
+
+-   $\bar d$ is the mean of the sample differences $d_1, d_2, \dots, d_{n_D}$.
+
+-   $s_D$ is the standard deviation of the sampled differences. The **variance** of the sampled differences can be found using, $$s_D^2=\frac{\sum_{i=1}^{n_D}d_i^2-n\bar d^2}{n_D-1}$$
+
+    *Remember to take the square root of the variance to find the standard deviation.*
+
+------------------------------------------------------------------------
+
+You can find some worked examples of using this result in [Section 8.2.7](https://read.kortext.com/reader/pdf/92741/480){target="_blank"} of *Probability and Statistics with R*.

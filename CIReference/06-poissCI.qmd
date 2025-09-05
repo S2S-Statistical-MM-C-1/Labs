@@ -1,0 +1,17 @@
+# Population Mean of a Poisson Random Variable (8.4.3)
+
+<!-- # Confidence Interval for the Population Mean of a Poisson Random Variable (8.4.3) -->
+
+Using a sample $\boldsymbol x$ taken from $X\sim\mbox{Pois}(\lambda)$, a $(1-\alpha)\cdot100\%$ confidence interval for the mean of the distribution $\lambda$ can be found as,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.57}
+CI_{1-\frac{\alpha}{2}}(\lambda)=\left[\bar x-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\bar x}{n}}, \bar x+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{\bar x}{n}} \right]
+\end{equation}
+```
+:::
+
+------------------------------------------------------------------------
+
+See [Section 8.4.3](https://read.kortext.com/reader/pdf/92741/508){target="_blank"} of *Probability and Statistics with R* for examples of using this result and its derivation.
