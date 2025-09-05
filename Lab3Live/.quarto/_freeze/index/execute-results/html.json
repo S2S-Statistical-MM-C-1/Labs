@@ -1,0 +1,15 @@
+{
+  "hash": "13d594d5b1c71055ab24caeca836aee0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n```{=html}\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nQuestion\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n```\n\n````{=html}\n\n<!--\n::: panel-tabset\n## R Code\n::: {.cell}\n\n:::\n\n## Output\n::: {.cell}\n\n:::\n:::\n-->\n````\n\n\nWelcome to the third S2S lab. This lab builds on what we already know about data frames and will teach you how to save data files of different types in RStudio and then manipulate them in several ways, such as creating new variables, working with a subset of a larger data frame or merging together data from different sources. Working with data is a key skill throughout statistics and it will often be saved as a data frame, so it is important to know all the things that can be done with them.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
