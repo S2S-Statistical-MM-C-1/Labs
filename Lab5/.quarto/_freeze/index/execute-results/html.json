@@ -1,0 +1,15 @@
+{
+  "hash": "a3b76b6a29f4bffb739aeffa5a26631e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nQuestion\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n\n<!--\n::: panel-tabset\n## R Script\n\n::: {.cell}\n\n:::\n\n\n## Console\n\n::: {.cell}\n\n:::\n\n:::\n-->\n\nWelcome to the the fifth S2S lab. This lab moves away from teaching specific coding practise and starts to use what we have learned in previous labs to start exploring some ideas in statistics. Specifically, this lab will introduce the concept of sampling distributions - what they are, how they're constructed and how we can use R to help us in creating them.\n\nThe sampling distribution is also covered in [Chapter 6 Sampling and Sampling Distributions](https://read.kortext.com/reader/pdf/92741/351){target=\"_blank\"} of *Probability and Statistics with R*, specifically [Section 6.4 Sampling Distribution of $\\bar X$](https://read.kortext.com/reader/pdf/92741/359){target=\"_blank\"} of textbook runs through a similar example that the majority of this lab uses.\n\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

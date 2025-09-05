@@ -1,0 +1,15 @@
+{
+  "hash": "3a4274c33a7b9cdde0065144f4b11b0f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Summary of Functions\n\n## [Sampling with replacement](01-samplingdist.qmd#sec-with) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nexpand.grid()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nfractions()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nnames()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nsum()\n```\n:::\n\n\n\n## [Sampling without replacement](01-samplingdist.qmd#sec-without) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsrs(popvalues = , n = )\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
