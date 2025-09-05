@@ -21,7 +21,7 @@ Welcome to Level 2 Statistics! Today you will be introduced to R and RStudio and
 
 It is best for you to install R and RStudio on your own device and use this throughout your courses.
 
-If you do not already have R and RStudio downloaded on your device, follow the steps outlined below in [@sec-downloadR] and [@sec-downloadRS] before moving on to [Section @sec-UseR] which will detail how to use RStudio.
+If you do not already have R and RStudio downloaded on your device, follow the steps outlined below in [@sec-downloadR] and [@sec-downloadRS] before moving on to [Section @sec-UseR] which will explain how to use RStudio.
 
 ## Installing R {#sec-downloadR}
 
