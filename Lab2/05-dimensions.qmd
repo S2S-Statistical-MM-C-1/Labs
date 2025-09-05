@@ -1,0 +1,66 @@
+# Dimensions of matrices {#sec-dim}
+
+```{r births, echo = FALSE}
+data <- c(5033, 4899, 4683, 6852, 6548, 6553, 2402, 2337, 2260, 1493, 1488, 1417)
+
+births <- matrix(data = data, nrow = 4, byrow = TRUE)
+
+cities <- c("Edinburgh", "Glasgow", "Aberdeen", "Dundee")
+years <- c("2017", "2018", "2019")
+
+dimnames(births) <- list(cities, years)
+```
+
+<!-- avoid dimension reduction with drop=FALSE -->
+
+When extracting an entire row or column using `[ ]`, the object that R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).
+
+For example, the code below returns the value `NULL` when using the `dim()` function. `dim()` should return the dimensions of an array, but since the extracted row for births in Edinburgh is a vector, there are no dimensions to return.
+
+::: panel-tabset
+## R Code
+
+```{r mat9.1, eval = FALSE}
+dim(births["Edinburgh", ])
+```
+
+## Output
+
+```{r mat9.2, echo = FALSE}
+dim(births["Edinburgh", ])
+```
+:::
+
+If we want to know how many elements are in a vector, we use the function `length()`.
+
+::: panel-tabset
+## R Code
+
+```{r mat9.1.1, eval = FALSE}
+length(births["Edinburgh", ])
+```
+
+## Output
+
+```{r mat9.1.2, echo = FALSE}
+length(births["Edinburgh", ])
+```
+:::
+
+We can force the output from subseting a matrix/array to be a matrix/array by including a third argument, `drop = FALSE`, within the square brackets to keep the returned row as a matrix/array.
+
+::: panel-tabset
+## R Code
+
+```{r mat10.1, eval = FALSE}
+dim(births["Edinburgh", , drop = FALSE])
+```
+
+## Output
+
+```{r mat10.2, echo = FALSE}
+dim(births["Edinburgh", , drop = FALSE])
+```
+:::
+
+Now we can see that the row is seen as a 1 $\times$ 3 matrix by R.
