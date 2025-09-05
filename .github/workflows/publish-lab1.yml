@@ -3,6 +3,8 @@ name: Quarto Publish Lab1
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'Lab1/**'         # Only trigger if files in Lab1 change
 
 jobs:
   build-deploy:
