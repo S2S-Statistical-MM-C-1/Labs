@@ -1,0 +1,87 @@
+# Summary of Functions
+
+## [Barplots](01-qualitative.qmd#sec-bars) {.unnumbered}
+
+```{r, eval = FALSE}
+barplot(height = ,
+        legend.text = ,
+        beside = FALSE,
+        col = ,
+        main = ,
+        xlab = ,
+        ylab = ,
+        ylim = )
+```
+
+## [Dot Charts](01-qualitative.qmd#sec-dots) {.unnumbered}
+
+```{r, eval = FALSE}
+dotchart(x = ,
+         bg = ,
+         main = ,
+         xlab = ,
+         ylab = )
+```
+
+## [Pie Charts](01-qualitative.qmd#sec-pies) {.unnumbered}
+
+```{r, eval = FALSE}
+pie(x = ,
+    radius = ,
+    col = ,
+    main = )
+```
+
+## [Stem and Leaf Plots](02-quantitative.qmd#sec-stem) {.unnumbered}
+
+```{r, eval = FALSE}
+stem(x = , scale = 1)
+```
+
+## [Histograms](02-quantitative.qmd#sec-hist) {.unnumbered}
+
+```{r, eval = FALSE}
+hist(x = ,
+     breaks = ,
+     freq = TRUE,
+     right = TRUE,
+     include.lowest = TRUE,
+     col = ,
+     main = ,
+     xlab = ,
+     ylab = ,
+     ylim = )
+```
+
+## [Kernel Density Estimators](02-quantitative.qmd#sec-kernel) {.unnumbered}
+
+```{r, eval = FALSE}
+density(x)
+```
+
+```{r, eval = FALSE}
+lines(col = , lwd = )
+```
+
+```{r, eval = FALSE}
+plot(col = ,
+     lwd = ,
+     main = ,
+     xlab = ,
+     ylab = ,)
+```
+
+## [QQ Plots](03-compare.qmd#sec-qq) {.unnumbered}
+
+```{r, eval = FALSE}
+qqnorm(y = , main = )
+```
+
+```{r, eval = FALSE}
+qqline(y = )
+```
+
+
+
+
+
