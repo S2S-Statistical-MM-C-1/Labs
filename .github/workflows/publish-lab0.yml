@@ -1,0 +1,42 @@
+name: Quarto Publish Lab0
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lab0   # Make sure your folder is named Lab0 (no spaces)
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # Step 3: Set up R
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      # Step 4: Install only the required R packages
+      - name: Install R packages
+        run: |
+          install.packages(c("rmarkdown", "knitr", "ggplot2"))
+
+      # Step 5: Render the Quarto project
+      - name: Render Quarto project
+        run: quarto render
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy Lab0 site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Lab0/_book      # Quarto output folder
+          destination_dir: Lab0         # Subfolder on gh-pages branch
