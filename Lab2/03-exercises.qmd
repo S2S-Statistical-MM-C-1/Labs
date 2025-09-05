@@ -44,7 +44,7 @@ What is the mean improvement time for swimmers who were on a high fat diet?
 Mercedes has decided to keep track of different aspects of their life. Below are their notes recording their daily steps, some of their expenses and their most recent exam results.
 
 ```{r notes-image, echo=FALSE}
-include_graphics("Images/notes.png")
+include_graphics("Images/Notes.png")
 ```
 
 Create three separate data frames, one for each of these notes, that stores the information shown above. Call them `steps`, `expenses` and `grades` respectively.
