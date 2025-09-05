@@ -3,11 +3,11 @@
 ## [Packages](01-packages.qmd#sec-packages) {.unnumbered}
 
 ```{r, eval=FALSE}
-install.packages("package_name")
+install.packages("")
 ```
 
 ```{r, eval=FALSE}
-library(package_name)
+library()
 ```
 
 ## [Arrays](02-data.qmd#sec-arrays) {.unnumbered}
