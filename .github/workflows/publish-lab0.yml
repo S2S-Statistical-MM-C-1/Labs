@@ -26,8 +26,7 @@ jobs:
 
       # Step 4: Install only the required R packages
       - name: Install R packages
-        run: |
-          install.packages(c("rmarkdown", "knitr", "ggplot2"))
+        run: Rscript -e 'install.packages(c("rmarkdown","knitr","ggplot2"))'
 
       # Step 5: Render the Quarto project
       - name: Render Quarto project
