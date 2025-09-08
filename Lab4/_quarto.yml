@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Lab 4"
+  chapters:
+    - index.qmd
+    - 01-qualitative.qmd
+    - 02-quantitative.qmd
+    - 03-compare.qmd
+    - 04-exercises.qmd
+    - 05-summary.qmd
+  appendices: 
+    - 06-ggplot.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+
+editor: source
+

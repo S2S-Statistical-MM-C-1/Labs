@@ -1,0 +1,191 @@
+---
+title: "Further Exercises"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+## Exercise 1 {-}
+The data set `VIT2005` from the `PASWR2` package stores information relating to 218 different apartments in Vitoria, Spain. For a full list of the variables included and the information they represent, use the code `help(VIT2005)`.
+
+You can load `VIT2005` into your **Environment** tab using the following code.
+
+::: panel-tabset
+## R Code
+```{r ex1, eval = FALSE}
+library(PASWR2)
+data("VIT2005")
+```
+:::
+
+a. The variable `out` details how much of an apartment is exposed to the elements. It has levels `"E25"`, `"E50"`, `"E75"` and `"E100"` corresponding to 25%, 50%, 75% and 100% exposure respectively.
+
+   Create a frequency table, a pie chart and a barplot in base R which show the number of apartments from `VIT2005` within each category of the `out` variable.
+   
+   *You may wish to relabel and reorder the categories of* `out` *first of all.*
+
+b. The variable `area` is a numeric variable detailing the size (in square metres) of each apartment.
+
+   i. Create a new categorical variable, called `size`, indicating whether an apartment is considered `"Small"`, `"Medium"` or `"Large"`. Apartments smaller than 100m^2^ should be labelled as `"Small"`, those between 100m^2^ and 150m^2^ should be labelled as `"Medium"` and any apartments larger than 150m^2^ should be labelled as `"Large"`.
+   
+       *The function* `cut()` *will be useful for this.*
+
+   ii. Using this new categorical variable `size`, create a barplot in base R to investigate whether the proportion of apartments in each level of exposure is different for small, medium and large apartments.
+   
+       Make sure that apartment size is placed along the x-axis, there is a different bar for each level of exposure and that the y-axis shows proportion, not frequency.
+  
+c. `totalprice` gives the market price (in Euros) for each apartment.
+
+   i. Create a histogram in base R showing the shape of the distribution of apartment prices. Superimpose a kernel density estimate of the distribution on the histogram.
+   
+   ii. Investigate whether the distribution of apartment price is normal using a QQ plot. Do you think this is a normal distribution?
+   
+d. Use three histograms, created using base R, to compare the distributions of apartment prices for small, medium and large apartments. Make sure you are using the same `breaks =` and range along the y-axes in all plots so that the distributions can be easily compared.
+
+   What differences are there between these distributions?
+
+   *Remember to subset the data first so that the first plot is only for prices of small apartments etc.*
+
+## Exercise 2 {-}
+<!--http://www.stat.berkeley.edu/users/statlabs/data/babies.data-->
+
+The file "*babies.csv*" contains data on the birth weight of babies born to different mothers and whether each mother currently smokes or does not smoke (a full list of the variables included in this data set can be found [here](https://www.stat.berkeley.edu/users/statlabs/labs.html#babies){target="_blank"}).
+
+Download the data from Moodle and load the data set into your **Environment** tab using the code below and use `babies` to recreate the following two plots using base R.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+babies <- read.csv(file = "babies.csv")
+```
+:::
+
+```{r, echo=FALSE}
+babies <- read.csv(file = "Data/babies.csv")
+```
+
+```{r, echo=FALSE}
+babies$smoke <- factor(x = babies$smoke, levels = c(1, 0), labels = c("Yes", "No"))
+babies$parity <- factor(x = babies$parity, labels = c("Firstborn", "Not Firstborn"))
+table <- table(babies$parity, babies$smoke)
+```
+
+::: panel-tabset
+## Plots
+```{r, echo=FALSE}
+barplot(height = table,
+        legend.text = TRUE,
+        beside = TRUE,
+        args.legend = list(x = "topright",
+                           inset = c(-0.06, 0),
+                           xpd = TRUE),
+        col = c("coral", "lightblue2"),
+        main = "Babies Born to Mothers who Smoke/Do Not Smoke",
+        xlab = "Does the mother smoke?",
+        ylab = "Frequency")
+```
+:::
+
+```{r, echo=FALSE}
+bwt_smoke <- subset(x = babies,
+                subset = (smoke == "Yes"),
+                select = bwt)
+bwt_smoke_dens <- density(x = bwt_smoke$bwt)
+
+bwt_nosmoke <- subset(x = babies,
+                      subset = (smoke == "No"),
+                      select = bwt)
+bwt_nosmoke_dens <- density(x = bwt_nosmoke$bwt)
+```
+
+::: panel-tabset
+## Plots
+```{r, echo=FALSE}
+par(mfrow = c(2, 1))
+
+hist(x = bwt_smoke$bwt,
+     breaks = seq(from = 50, to = 180, by = 5),
+     freq = FALSE,
+     col = "coral",
+     main = "Birth Weight of Children Born to Mothers who Smoke",
+     xlab = "Birth Weight of Baby (ounces)",
+     ylab = "Density")
+lines(bwt_smoke_dens, lwd = 2)
+
+hist(x = bwt_nosmoke$bwt,
+     breaks = seq(from = 50, to = 180, by = 5),
+     freq = FALSE,
+     col = "lightblue2",
+     main = "Birth Weight of Children Born to Mothers who Do Not Smoke",
+     xlab = "Birth Weight of Baby (ounces)",
+     ylab = "Density")
+lines(bwt_nosmoke_dens, lwd = 2)
+
+par(mfrow = c(1, 1))
+```
+:::
+
+
+## Exercise 3 {-}
+<!--http://www.stat.berkeley.edu/users/statlabs/data/babies.data-->
+
+**Note** This exercise asks you to use the `ggplot2` package to create plots. Use it as additional practice only once you have looked at @sec-ggplot of the lab.
+
+The file "*babies.csv*" contains data on the birth weight of babies born to different mothers and whether each mother currently smokes or does not smoke (a full list of the variables included in this data set can be found [here](https://www.stat.berkeley.edu/users/statlabs/labs.html#babies){target="_blank"}).
+
+Download the data from Moodle and load the data set into your **Environment** tab using the code below and use `babies` to recreate the following two plots using `ggplot2`.
+
+::: panel-tabset
+## R Code
+```{r ex2, eval=FALSE}
+babies <- read.csv(file = "babies.csv")
+```
+:::
+
+```{r ex3, echo=FALSE}
+babies <- read.csv(file = "Data/babies.csv")
+```
+
+```{r ex4, echo=FALSE}
+babies$smoke <- factor(x = babies$smoke, labels = c("No", "Yes"))
+babies$smoke <- factor(x = babies$smoke, levels = c("Yes", "No"))
+babies$parity <- factor(x = babies$parity, labels = c("Yes", "No"))
+```
+
+::: panel-tabset
+## Plots
+```{r ex-plot1, echo=FALSE, fig.align='center'}
+ggplot(data = babies) +
+  geom_bar(aes(x = smoke, fill = parity), position = "dodge") +
+  labs(title = "Babies Born to Mothers who Smoke/Do Not Smoke",
+       x = "Does the mother smoke?", y = "Frequency") +
+  guides(fill = guide_legend("Is the child the first born?"))
+```
+:::
+
+```{r ex5, echo=FALSE}
+babies$smoke <- factor(x = babies$smoke, labels = c("Mother Does Smoke", "Mother Does Not Smoke"))
+```
+
+::: panel-tabset
+## Plots
+```{r ex-plot2, echo=FALSE}
+ggplot(data = babies) +
+  geom_histogram(aes(x = bwt, y = after_stat(density), fill = smoke), binwidth = 5) +
+  geom_density(aes(x = bwt, linetype = smoke)) +
+  facet_grid(smoke ~ .)+
+  labs(title = "Birth Weight of Children Born to Mothers Who Smoke/Do Not Smoke",
+       x = "Birth Weight of Baby (ounces)", y = "Density") +
+  guides(fill = "none", linetype = "none")
+```
+:::
+
+
+

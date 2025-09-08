@@ -1,0 +1,101 @@
+# Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)
+
+<!-- # Confidence Intervals Based on Large Samples (8.4) -->
+
+<!--8.4-->
+
+When we use maximum likelihood estimation to find an estimator $\hat\theta(\boldsymbol{X})$ of some population parameter $\theta$, we might be interested in constructing a confidence interval around this estimate to give a plausible range of values within which the true value of $\theta$ lies. In order to do this, we need to make use of the **asymptotic properties** of maximum likelihood estimators. This states that, provided the sample size $n$ is sufficiently large, then,
+
+$$
+\hat\theta(\boldsymbol{X})\sim N\left(\theta, \sqrt{I_n(\theta)^{-1}}\right)
+$$
+
+In other words, as $n\rightarrow\infty$, the expected value of the maximum likelihood estimator is equal to the population parameter it is estimating, $\theta$, and that the standard deviation of the *MLE* is equal to $\sqrt{I_n(\theta)^{-1}}$.
+
+Here, $I_n(\theta)$ is the **Fisher Information** for $\theta$. This can be found as,
+
+$$
+I_n(\theta)=-E\left[\frac{\partial^2\ln L(\theta|\boldsymbol{X})}{\partial\theta^2}\right]
+$$
+
+<!--reminder of Fisher information in lectures? Section 7.3.2.1-->
+
+Knowing the above asymptotic property of maximum likelihood estimators allows us to construct a general $(1-\alpha)\cdot100\%$ asymptotic confidence interval for any *MLE* as,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.37}
+CI_{1-\alpha}(\theta)=\left[\hat\theta(\boldsymbol{x})-z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}},\hat\theta(\boldsymbol{x})+z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}}\right]
+\end{equation}
+```
+:::
+
+This will allow you to construct a confidence interval for the maximum likelihood estimator of *any* population parameter, however we are going to focus on confidence intervals for the population proportion of success, denoted by $\pi$.
+
+## Population Proportions
+
+### Asymptotic/Wald Confidence Interval (8.4.1)
+
+If we denote the *sample* proportion of success by $p$, then a $(1-\alpha)\cdot100\%$ asymptotic confidence interval for the population proportion $\pi$, commonly referred to as a Wald interval, is given by,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.43}
+CI_{1-\alpha}(\pi)=\left[p-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}},p+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}}\right]
+\end{equation}
+```
+:::
+
+------------------------------------------------------------------------
+
+See [Section 8.4.1](https://read.kortext.com/reader/pdf/92741/491){target="_blank"} to see further examples on constructing Wald intervals.
+
+### Score/Wilson Confidence Interval (8.4.1.1)
+
+An alternative $(1-\alpha)\cdot100\%$ confidence interval for the population proportion of success $\pi$ is given by the Wilson interval,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.47}
+\begin{split}
+CI_{1-\alpha}(\pi)=\Bigg[&\frac{p+\frac{z^2_{1-\alpha/2}}{2n}-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)},\\
+&\,\,\,\,\,\,\,\,\frac{p+\frac{z^2_{1-\alpha/2}}{2n}+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)}\Bigg]
+\end{split}
+\end{equation}
+```
+:::
+
+Wilson intervals give a confidence interval with coverage probability which is closer to the $1-\alpha$ level compared to Wald intervals.
+
+Note that if the sample size is large, then the Wilson interval is roughly equivalent to the Wald interval. This is because with large values of $n$, $\frac{z_{1-\alpha/2}^2}{2n}$, $\frac{z_{1-\alpha/2}^2}{4n^2}$ and $\frac{z_{1-\alpha/2}^2}{n}$ are all approximately 0.
+
+------------------------------------------------------------------------
+
+See [Section 8.4.1.1](https://read.kortext.com/reader/pdf/92741/496){target="_blank"} of *Probability and Statistics with R* for more details on this result.
+
+**NB:** Sections 8.4.1.2, 8.4.1.3 and 8.4.1.4 are **not covered/examinable**.
+
+## Difference in population proportions (8.4.2)
+
+For random samples of size $n_X$ and $n_Y$ taken from two normal distributions, $X$ and $Y$ respectively, then the difference in the population proportions of success, $\pi_X$ and $\pi_Y$ may be of interest.
+
+A $(1-\alpha)\cdot100\%$ confidence interval for the difference in population proportions, $\pi_X-\pi_Y$, can be calculated based on the difference in sample proportions, $p_X-p_Y$, as,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.52}
+\begin{split}
+CI_{1-\frac{\alpha}{2}}(\pi_X-\pi_Y)=\Bigg[&(p_X-p_Y)-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}},\\
+&\,\,\,\,\,\,\,\,(p_X-p_Y)+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}}\Bigg] 
+\end{split}
+\end{equation}
+```
+:::
+
+If $|p_X-p_Y|>\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)$, then a continuity correction is generally applied to the above formula. When this condition is satisfied, $\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)$ is subtracted from the lower limit of the confidence interval above, and added to the upper limit.
+
+The function `prop.test()` uses this continuity correction automatically whenever the condition is satisfied by the difference in sample proportions.
+
+------------------------------------------------------------------------
+
+See [Section 8.4.2](https://read.kortext.com/reader/pdf/92741/506){target="_blank"} of *Probability and Statistics with R* for some examples of using this result.

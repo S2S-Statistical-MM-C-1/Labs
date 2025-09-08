@@ -1,0 +1,15 @@
+{
+  "hash": "a7b6cc2fcd932e7a97b9ce33e79af7dd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nQuestion\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n\n<!--\n::: panel-tabset\n## R Script\n\n::: {.cell}\n\n:::\n\n\n## Console\n\n::: {.cell}\n\n:::\n\n:::\n-->\nWelcome to the fourth S2S lab. This lab will teach you how to plot data sets in R, specifically following [Sections 2.3](https://read.kortext.com/reader/pdf/92741/98){target=\"_blank\"} and [2.4](https://read.kortext.com/reader/pdf/92741/104){target=\"_blank\"} of *Probability and Statistics with R*. You will learn some of the appropriate ways to display different types of data and how to create these graphs and plots with your own code.\n\nThere are two ways plots or graphs are commonly created in R, and that is either using base R functions (ones which are automatically built into the R software) or using a specific package for creating graphs called `ggplot2`. This lab focuses on producing plots in base R, but `ggplot2` is introduced in @sec-ggplot.\n\nBy the end of this lab you will be able to create your own plots of data from scratch, and replicate detailed graphs as well.\n\n\n\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

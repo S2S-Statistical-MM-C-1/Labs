@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Lab 5"
+  chapters:
+    - index.qmd
+    - 01-samplingdist.qmd
+    - 02-exercises.qmd
+    - 03-summary.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+
+editor: source
+

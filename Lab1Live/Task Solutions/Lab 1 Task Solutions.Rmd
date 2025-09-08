@@ -1,0 +1,218 @@
+---
+title: "S2S Lab 1 Task Solutions"
+output:
+  pdf_document:
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Welcome to S2S Labs
+
+## Mentimeter
+
+# Vectors
+
+```{r, echo=FALSE}
+x <- 3
+y <- c(2, 4, 1)
+```
+
+## Addition
+
+```{r, echo=FALSE}
+z <- c(3, 3, 5, 8, 2)
+```
+
+**Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $b=2$, then add these together and save the result as a new vector called `c` and print the contents of `c` in the console.**
+
+```{r vect-ans1, comment=NA}
+a <- c(2, 2, -1)
+b <- 2
+
+c <- a + b
+c
+```
+
+## Logical operators
+
+```{r, echo=FALSE}
+w <- (x < y)
+```
+
+```{r, echo=FALSE}
+s <- c(2, 4, 1)
+t <- c(2, 3, 4)
+```
+
+**Write some code to show:**
+
+* **which elements of `s` and `t` are equal to each other**
+* **which elements of `s` are less than the corresponding element in `t`**
+* **which elements of `s` and `t` are unequal**
+
+When using logical operators with vectors, R will compare the vectors elementwise meaning the first elements of each vector will be compared to each other, then the second elements and so on.
+
+**Equality**:
+```{r vect-ans2.1}
+s == t
+```
+This tells us that the first element of `s` is equal to the first element of `t` (they are both the value 2), whereas the second elements of `s` and `t` are not equal and neither are the third elements.
+
+**Less than**:
+```{r vect-ans2.2}
+s < t
+```
+The first element of `s` is not less than the first elements of `t` (that is 2 < 2 is not a true statement) so this returns `FALSE`. The statement `s < t` is `TRUE` for the third elements because the third element of `s` is 1 and for `t` it is 4 which equates to the statement 1 < 4.
+
+
+**Inequality**:
+```{r vect-ans2.3}
+s != t
+```
+This return the opposite of `s == t`. The first elements of `s` and `t` are both 2 so they are equal meaning `!=` will return `FALSE`. Since the second elements are 4 and 3 respectively, these are unequal so `!=` returns `TRUE`.
+
+Try using some of the other operators listed above to see if they return the vectors you expect.
+
+
+**Create the vectors $u=\begin{bmatrix} 4 & 4 & 1 \end{bmatrix}^\intercal$ and $v=\begin{bmatrix} 1 & 0 & 5 \end{bmatrix}^\intercal$. Write code to check:**
+
+* **whether the first elements of `u+v` and `x+y` (defined in the previous section) are the same.**
+* **if the third element of `u+v` is the same as the second element of `x+y`.**
+
+```{r vect-ans3.1}
+u <- c(4, 4, 1)
+v <- c(1, 0, 5)
+```
+
+**Equality of the first elements:**
+```{r vect-ans3.2}
+(u + v)[1] == (x + y)[1]
+```
+
+Here we have wrapped both `u+v` and `x+y` in brackets first so that we can then index the resulting vector. Alternatively, you could save `u+v` and `x+y` as new vectors, called something different, using the `<-` operator.
+
+`u+v` is equal to $\begin{bmatrix} 5 & 4 & 6 \end{bmatrix}^\intercal$ so its first element is `r (u+v)[1]`.
+`x+y` is equal to $\begin{bmatrix} 5 & 7 & 4 \end{bmatrix}^\intercal$ so its first element is also `r (x+y)[1]`. It makes sense then that a `TRUE` statement is returned when checking the equality of the first elements of these two vectors.
+
+**Equality of the third and second elements:**
+```{r vect-ans3.3}
+(u + v)[3] == (x + y)[2]
+```
+
+Similarly, we can see that the third entry of `u+v` is `r (u+v)[3]` and the second entry of `x+y` is `r (x+y)[2]`. Since these are clearly not equal we would expect R to return a `FALSE` statement when checking their equality, which we can see above.
+
+## Other types of vectors
+
+```{r, echo=FALSE}
+animals <- c("dog", "sheep", "cow", "horse")
+```
+
+**What type of vector is `w`?**
+
+```{r vect-ans4}
+typeof(w)
+```
+
+Using `typeof()`, we can see that `w` is stored by R as a logical vector.
+
+
+**Create a new vector, called `combined`, which is a combination of the logical vector `w` and the character vector `animals`. What type of vector is this?**
+
+```{r vect-ans5, echo=c(1, 3)}
+combined <- c(w, animals)
+combined
+typeof(combined)
+```
+
+The resulting vector is $\begin{bmatrix} ``\mbox{FALSE"} & ``\mbox{TRUE"} & ``\mbox{FALSE"} & ``\mbox{dog"} & ``\mbox{sheep"} & ``\mbox{cow"} & ``\mbox{horse"} \end{bmatrix}^\intercal$ which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).
+
+## Indexing vectors
+
+**Write some code that would remove the third and fourth elements from the vector `animals`.**
+
+There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.
+
+```{r vect-ans6.1}
+animals[-c(3, 4)]
+
+animals[c(-3, -4)]
+```
+
+Alternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.
+
+```{r vect-ans6.2}
+animals[c(1, 2)]
+```
+
+
+**This task has three steps, so you should write three lines of code.**
+
+* **Create the vector $\begin{bmatrix} 1&1&0&1 \end{bmatrix}^\intercal$ and call it `binary`**
+* **Change `binary` to be a logical vector and save this as a new vector called `logical`**
+* **Extract the first and third elements of this vector `logical`.**
+
+```{r vect-ans7.1}
+binary <- c(1, 1, 0, 1)
+logical <- as.logical(binary)
+
+logical[c(1, 3)]
+```
+In the above code we have chosen to extract the first and third elements. Alternatively, we could remove the second and fourth elements instead.
+
+```{r vect-ans7.2}
+logical[-c(2, 4)]
+```
+
+## Sequences
+
+**Write some code to create the sequence 4.10, 4.15, 4.20, 4.25, 4.30, 4.35, 4.40 using the function `seq()`**
+
+There are three different ways we could generate this sequence using the `seq()` function.
+
+```{r vect-ans8}
+seq(from = 4.10, to = 4.40, by = 0.05)
+seq(from = 4.10, to = 4.40, length.out = 7)
+seq(from = 4.10, by = 0.05, length.out = 7)
+```
+
+## Repeating constants
+
+**Write some code to create each of the following repeating sequences using `rep()`:**
+
+* **`r rep(3:5, times=3)`**
+* **`r rep(c(2, 4, 6), each=2)`**
+* **`r rep(c("blue", "red"), times=c(3, 2))`**
+
+```{r vect-ans9, eval=TRUE}
+rep(3:5, times = 3)
+rep(c(2, 4, 6), each = 2)
+rep(c("blue", "red"), times=c(3, 2))
+```
+
+
+**Write some code to generate the sequence 2, 3, 3, 4, 5, 5, 6, 7, 7 using both the `seq()` and `rep()` functions.**
+
+```{r vect-ans10}
+rep(x = 2:7, 
+    times = rep(x = c(1, 2), times = 3))
+```
+
+
+## Filtering vectors
+
+**Write some code to extract the elements of the vector `z` which are greater than 5.**
+
+```{r vect-ans11}
+z[z > 5]
+```
+
+**Extract the elements of the vector `z` which are greater than 5 using the `subset()` function.**
+
+```{r vect-ans12}
+subset(x = z, subset = (z > 5))
+```
+
+## Getting help

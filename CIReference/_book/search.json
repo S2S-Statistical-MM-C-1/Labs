@@ -1,0 +1,172 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "S2S Confidence Intervals",
+    "section": "",
+    "text": "1 Welcome!\nOn this webpage you will find all the formulas for calculating any confidence intervals relating to population means, variances and proportions, as covered in Chapter 8 of Probability and Statistics with R.\nYou will always have access to this lab in assessments, so make sure you are familiar with where to find these formulas.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome!</span>"
+    ]
+  },
+  {
+    "objectID": "01-popmeansCI.html",
+    "href": "01-popmeansCI.html",
+    "title": "2  Population Means (8.2.1 - 8.2.2)",
+    "section": "",
+    "text": "2.1 Variance is known (8.2.1)\nWhen the variance of the underlying normal distribution is known, then a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the population mean, \\(\\mu\\), is given by,\nSee Section 8.2.1 of Probability and Statistics with R for some examples of using this result.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Population Means (8.2.1 - 8.2.2)</span>"
+    ]
+  },
+  {
+    "objectID": "01-popmeansCI.html#variance-is-known-8.2.1",
+    "href": "01-popmeansCI.html#variance-is-known-8.2.1",
+    "title": "2  Population Means (8.2.1 - 8.2.2)",
+    "section": "",
+    "text": "\\[\\begin{equation} \\tag{8.5}\nCI_{1-\\alpha}(\\mu)=\\left[\\bar x-z_{1-\\frac{\\alpha}{2}}\\cdot\\frac{\\sigma}{\\sqrt{n}},\\,\\,\\bar x+z_{1-\\frac{\\alpha}{2}}\\cdot\\frac{\\sigma}{\\sqrt{n}}\\right]\n\\end{equation}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Population Means (8.2.1 - 8.2.2)</span>"
+    ]
+  },
+  {
+    "objectID": "01-popmeansCI.html#variance-is-unknown-8.2.2",
+    "href": "01-popmeansCI.html#variance-is-unknown-8.2.2",
+    "title": "2  Population Means (8.2.1 - 8.2.2)",
+    "section": "2.2 Variance is unknown (8.2.2)",
+    "text": "2.2 Variance is unknown (8.2.2)\nIf the variance of the normal distribution that the random sample is taken from is unknown, then a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the population mean, \\(\\mu\\), is given by,\n\n\\[\\begin{equation} \\tag{8.10}\nCI_{1-\\alpha}(\\mu)=\\left[\\bar x-t_{1-\\frac{\\alpha}{2};n-1}\\cdot\\frac{s}{\\sqrt{n}},\\,\\,\\bar x+t_{1-\\frac{\\alpha}{2};n-1}\\cdot\\frac{s}{\\sqrt{n}}\\right]\n\\end{equation}\\]\n\n\n\\(s\\) is the sample standard deviation. The sample variance can be found using, \\[s^2=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})^2}{n-1}=\\frac{\\sum_{i=1}^nx_i^2-n\\bar x^2}{n-1}\\]\nRemember to take the square root of the sample variance to find the sample standard deviation.\n\n\nSee Section 8.2.2 of Probability and Statistics with R for the derivation of this result and some examples of using it in practise.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Population Means (8.2.1 - 8.2.2)</span>"
+    ]
+  },
+  {
+    "objectID": "02-diffmeansCI.html",
+    "href": "02-diffmeansCI.html",
+    "title": "3  Difference in Population Means (8.2.3 - 8.2.6)",
+    "section": "",
+    "text": "3.1 Variances are known and equal (8.2.3)\nIn the case where the variances of both distributions are known and are equal, that is \\(\\sigma_X^2=\\sigma_Y^2=\\sigma^2\\), then a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the difference in the population means, \\(\\mu_X-\\mu_Y\\), is given by,\nYou can find the derivation of this result and some additional exercises in Section 8.2.3 of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Difference in Population Means (8.2.3 - 8.2.6)</span>"
+    ]
+  },
+  {
+    "objectID": "02-diffmeansCI.html#known-equal",
+    "href": "02-diffmeansCI.html#known-equal",
+    "title": "3  Difference in Population Means (8.2.3 - 8.2.6)",
+    "section": "",
+    "text": "\\[\\begin{equation} \\tag{8.11}\n\\begin{split}\nCI_{1-\\alpha}(\\mu_X-\\mu_Y)=\\Bigg[&\\left(\\bar x-\\bar y\\right)-z_{1-\\frac{\\alpha}{2}}\\cdot\\sigma\\sqrt{\\frac{1}{n_X}+\\frac{1}{n_Y}},\\\\\n&\\,\\,\\,\\,\\,\\,\\,\\,\\left(\\bar x-\\bar y\\right)+z_{1-\\frac{\\alpha}{2}}\\cdot\\sigma\\sqrt{\\frac{1}{n_X}+\\frac{1}{n_Y}}\\,\\Bigg]\n\\end{split}\n\\end{equation}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Difference in Population Means (8.2.3 - 8.2.6)</span>"
+    ]
+  },
+  {
+    "objectID": "02-diffmeansCI.html#known-unequal",
+    "href": "02-diffmeansCI.html#known-unequal",
+    "title": "3  Difference in Population Means (8.2.3 - 8.2.6)",
+    "section": "3.2 Variances are known and unequal (8.2.4)",
+    "text": "3.2 Variances are known and unequal (8.2.4)\nIn the case where the variances of both distributions are known and but are unequal, that is \\(\\sigma_X^2\\neq\\sigma_Y^2\\), then a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the difference in the population means, \\(\\mu_X-\\mu_Y\\), is given by,\n\n\\[\\begin{equation} \\tag{8.12}\n\\begin{split}\nCI_{1-\\alpha}(\\mu_X-\\mu_Y)=\\Bigg[&\\left(\\bar x-\\bar y\\right)-z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{\\sigma_X^2}{n_X}+\\frac{\\sigma_Y^2}{n_Y}},\\\\\n&\\,\\,\\,\\,\\,\\,\\left(\\bar x-\\bar y\\right)+z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{\\sigma_X^2}{n_X}+\\frac{\\sigma_Y^2}{n_Y}}\\,\\Bigg]\n\\end{split}\n\\end{equation}\\]\n\n\nTo see some further examples of using this confidence interval, see Section 8.2.4 of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Difference in Population Means (8.2.3 - 8.2.6)</span>"
+    ]
+  },
+  {
+    "objectID": "02-diffmeansCI.html#unknown-equal",
+    "href": "02-diffmeansCI.html#unknown-equal",
+    "title": "3  Difference in Population Means (8.2.3 - 8.2.6)",
+    "section": "3.3 Variances are unknown and assumed equal (8.2.5)",
+    "text": "3.3 Variances are unknown and assumed equal (8.2.5)\nWhen random samples have been taken from two normal distributions where the variances are unknown but assumed to be equal, a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for \\(\\mu_X-\\mu_Y\\) is given by,\n\n\\[\\begin{equation} \\tag{8.15}\n\\begin{split}\nCI_{1-\\alpha}(\\mu_X-\\mu_Y)=\\Bigg[&\\left(\\bar x-\\bar y\\right)-t_{1-\\frac{\\alpha}{2};\\nu_p}\\cdot s_p\\sqrt{\\frac{1}{n_X}+\\frac{1}{n_Y}},\\\\\n&\\,\\,\\,\\,\\,\\,\\,\\left(\\bar x-\\bar y\\right)+t_{1-\\frac{\\alpha}{2};\\nu_p}\\cdot s_p\\sqrt{\\frac{1}{n_X}+\\frac{1}{n_Y}}\\,\\Bigg]\n\\end{split}\n\\end{equation}\\]\n\n\n\\(\\nu_p\\) represents the degrees of freedom for the associated \\(t\\) distribution. The degrees of freedom can be found as \\(\\nu_p=n_X+n_Y-2\\).\n\\(s_p\\) is a pooled estimate of the standard deviation that takes into account the sample sizes, \\(n_X\\) and \\(n_Y\\), taken from each distribution. An estimate for the pooled variance can be found using, \\[s_p^2=\\frac{\\left(n_X-1\\right)s_X^2+\\left(n_Y-1\\right)s_Y^2}{n_X+n_Y-2}\\]\nwhere, \\(s_X^2=\\frac{\\sum_{i=1}^{n_X}x_i^2-n_X\\bar x^2}{n_X-1}\\) and \\(s_Y^2=\\frac{\\sum_{i=1}^{n_Y}y_i^2-n_Y\\bar y^2}{n_Y-1}\\).\nRemember to take the square root of the estimated variance to find the estimate of standard deviation.\n\n\nTo see more examples of calculating these confidence intervals, see Section 8.2.5 of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Difference in Population Means (8.2.3 - 8.2.6)</span>"
+    ]
+  },
+  {
+    "objectID": "02-diffmeansCI.html#unknown-unequal",
+    "href": "02-diffmeansCI.html#unknown-unequal",
+    "title": "3  Difference in Population Means (8.2.3 - 8.2.6)",
+    "section": "3.4 Variances are unknown and unequal (8.2.6)",
+    "text": "3.4 Variances are unknown and unequal (8.2.6)\nWhen random samples have been taken from two normal distributions where the variances, \\(\\sigma_X^2\\) and \\(\\sigma_Y^2\\), are unknown and they are unequal, a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for \\(\\mu_X-\\mu_Y\\) is given by,\n\n\\[\\begin{equation} \\tag{8.16}\n\\begin{split}\nCI_{1-\\alpha}(\\mu_X-\\mu_Y)=\\Bigg[&\\left(\\bar x-\\bar y\\right)-t_{1-\\frac{\\alpha}{2};\\nu}\\cdot \\sqrt{\\frac{s_X^2}{n_X}+\\frac{s_Y^2}{n_Y}},\\\\\n&\\,\\,\\,\\,\\,\\,\\,\\left(\\bar x-\\bar y\\right)+t_{1-\\frac{\\alpha}{2};\\nu}\\cdot\\sqrt{\\frac{s_X^2}{n_X}+\\frac{s_Y^2}{n_Y}}\\,\\Bigg]\n\\end{split}\n\\end{equation}\\]\n\n\n\\(\\nu\\) represents the degrees of freedom for the associated \\(t\\) distribution. The degrees of freedom can be found using, \\[\\nu=\\frac{\\left(\\frac{s_X^2}{n_X}+\\frac{s_Y^2}{n_Y}\\right)^2}{\\frac{\\left(s_X^2/n_X\\right)^2}{n_X-1}+\\frac{\\left(s_Y^2/n_Y\\right)^2}{n_Y-1}}\\]\nwhere, \\(s_X^2=\\frac{\\sum_{i=1}^{n_X}x_i^2-n_X\\bar x^2}{n_X-1}\\) and \\(s_Y^2=\\frac{\\sum_{i=1}^{n_Y}y_i^2-n_Y\\bar y^2}{n_Y-1}\\).\n\n\nSee Section 8.2.6 of Probability and Statistics with R for further examples of finding these confidence intervals.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Difference in Population Means (8.2.3 - 8.2.6)</span>"
+    ]
+  },
+  {
+    "objectID": "03-pairedCI.html",
+    "href": "03-pairedCI.html",
+    "title": "4  Population Mean Difference from Paired Data (8.2.7)",
+    "section": "",
+    "text": "Sometimes the distributions that two samples come from are not independent, maybe because samples are taken from the same subjects at different points in time (e.g. test scores for a group of students before and after a revision lecture). When this is the case, the data is called paired data.\nThe observations in a paired sample of size \\(n_D\\) have values \\(\\left((x_1, y_1), (x_2, y_2),\\dots , (x_{n_D}, y_{n_D}) \\right)\\), the difference between the measurements taken on the same subject is often of interest. These differences, calculated as \\(D=(d_1=x_1-y_1, d_2=x_2-y_2,\\dots ,d_{n_D}=x_{n_D}-y_{n_D})\\), can be used to find a confidence interval for the mean difference.\nAssuming a paired sample size of \\(n_D\\), a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the difference in two dependent population means, \\(\\mu_X-\\mu_Y\\) is give by,\n\n\\[\\begin{equation} \\tag{8.21}\nCI_{1-\\alpha}(\\mu_D=\\mu_X-\\mu_Y)=\\left[\\bar d-t_{1-\\frac{\\alpha}{2};n_D-1}\\cdot\\frac{s_D}{\\sqrt{n_D}},\\,\\,\\bar d+t_{1-\\frac{\\alpha}{2};n_D-1}\\cdot\\frac{s_D}{\\sqrt{n_D}}\\right]\n\\end{equation}\\]\n\n\n\\(\\bar d\\) is the mean of the sample differences \\(d_1, d_2, \\dots, d_{n_D}\\).\n\\(s_D\\) is the standard deviation of the sampled differences. The variance of the sampled differences can be found using, \\[s_D^2=\\frac{\\sum_{i=1}^{n_D}d_i^2-n\\bar d^2}{n_D-1}\\]\nRemember to take the square root of the variance to find the standard deviation.\n\n\nYou can find some worked examples of using this result in Section 8.2.7 of Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Population Mean Difference from Paired Data (8.2.7)</span>"
+    ]
+  },
+  {
+    "objectID": "04-popvarCI.html",
+    "href": "04-popvarCI.html",
+    "title": "5  Population Variances (8.3.1 - 8.3.2)",
+    "section": "",
+    "text": "5.1 Sampling from a Normal population (8.3.1)\nSuppose a sample of size \\(n\\) is taken from a normal population, \\(N(\\mu, \\sigma)\\). A \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the population variance, \\(\\sigma^2\\), is given by,\nNote that this confidence interval is not centred around the point estimate for the population variance, which is the sample variance, \\(s^2\\). This is because the \\(\\chi^2\\) distribution is not symmetric.\nTo find the corresponding quantiles from a \\(\\chi^2\\) distribution with \\(n-1\\) degrees of freedom, \\(\\chi^2_{1-\\frac{\\alpha}{2};n-1}\\) and \\(\\chi^2_{\\frac{\\alpha}{2};n-1}\\), the function qchisq() can be used (see the Probability functions section of Lab 3 for more details).\nSee Section 8.3.1 of Probability and Statistics with R to see the derivation of this result and some examples of using it in practise.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Population Variances (8.3.1 - 8.3.2)</span>"
+    ]
+  },
+  {
+    "objectID": "04-popvarCI.html#sampling-from-a-normal-population-8.3.1",
+    "href": "04-popvarCI.html#sampling-from-a-normal-population-8.3.1",
+    "title": "5  Population Variances (8.3.1 - 8.3.2)",
+    "section": "",
+    "text": "\\[\\begin{equation} \\tag{8.26}\nCI_{1-\\alpha}(\\sigma^2)=\\left[\\frac{(n-1)s^2}{\\chi^2_{1-\\frac{\\alpha}{2};n-1}},\\frac{(n-1)s^2}{\\chi^2_{\\frac{\\alpha}{2};n-1}}\\right]\n\\end{equation}\\]\n\n\n\\(s^2\\) is the sample variance, which can be found using, \\[s^2=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})^2}{n-1}=\\frac{\\sum_{i=1}^nx_i^2-n\\bar x^2}{n-1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Population Variances (8.3.1 - 8.3.2)</span>"
+    ]
+  },
+  {
+    "objectID": "04-popvarCI.html#ratio-of-population-variances-8.3.2",
+    "href": "04-popvarCI.html#ratio-of-population-variances-8.3.2",
+    "title": "5  Population Variances (8.3.1 - 8.3.2)",
+    "section": "5.2 Ratio of population variances (8.3.2)",
+    "text": "5.2 Ratio of population variances (8.3.2)\nWhen two samples of size \\(n_X\\) and \\(n_Y\\) are taken from independent normal distributions, \\(N(\\mu_X,\\sigma_X)\\) and \\(N(\\mu_Y,\\sigma_Y)\\), we might be interested in determining whether the variances of each distribution are equal. We do this by estimating the ratio of the two population variances, \\(\\frac{\\sigma_X^2}{\\sigma_Y^2}\\), and constructing a confidence interval around the estimated ratio. If this interval contains the value 1, this is evidence that the two population variances are equal.\nA \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the ratio of population variances, \\(\\frac{\\sigma_X^2}{\\sigma_Y^2}\\), is given by,\n\n\\[\\begin{equation} \\tag{8.31}\nCI_{1-\\alpha}\\left(\\frac{\\sigma_X^2}{\\sigma_Y^2}\\right)=\\left[f_{\\frac{\\alpha}{2};n_Y-1,n_X-1}\\cdot\\frac{s_X^2}{s_Y^2},f_{1-\\frac{\\alpha}{2};n_Y-1,n_X-1}\\cdot\\frac{s_X^2}{s_Y^2}\\right]\n\\end{equation}\\]\n\n\n\\(s_X^2\\) is the sample variance for the first sample, which can be found using, \\[s_X^2=\\frac{\\sum_{i=1}^{n_X}(x_i-\\bar{x})^2}{n_X-1}=\\frac{\\sum_{i=1}^{n_X}x_i^2-n\\bar x^2}{n_X-1}\\]\n\\(s_Y^2\\) is the sample variance for the second sample, which can be found using, \\[s_Y^2=\\frac{\\sum_{i=1}^{n_Y}(y_i-\\bar{y})^2}{n_Y-1}=\\frac{\\sum_{i=1}^{n_Y}y_i^2-n\\bar y^2}{n_Y-1}\\]\n\nTypically, the sample which has the largest sample variance will be used as the first group. That is, choose which sample is \\(X\\) and which is \\(Y\\) so that \\(s_X^2&gt;s_Y^2\\).\nTo find the corresponding quantiles from an \\(F\\) distribution with \\(n_Y-1\\) and \\(n_X-1\\) degrees of freedom, \\(f_{\\frac{\\alpha}{2};n_Y-1;n_X-1}\\) and \\(f_{1-\\frac{\\alpha}{2};n_Y-1;n_X-1}\\), the function qf() can be used (see the Probability functions section of Lab 3 for more details).\n\nSee Section 8.3.2 of Probability and Statistics with R to follow examples of using this result.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Population Variances (8.3.1 - 8.3.2)</span>"
+    ]
+  },
+  {
+    "objectID": "05-poppropCI.html",
+    "href": "05-poppropCI.html",
+    "title": "6  Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)",
+    "section": "",
+    "text": "6.1 Population Proportions",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)</span>"
+    ]
+  },
+  {
+    "objectID": "05-poppropCI.html#population-proportions",
+    "href": "05-poppropCI.html#population-proportions",
+    "title": "6  Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)",
+    "section": "",
+    "text": "6.1.1 Asymptotic/Wald Confidence Interval (8.4.1)\nIf we denote the sample proportion of success by \\(p\\), then a \\((1-\\alpha)\\cdot100\\%\\) asymptotic confidence interval for the population proportion \\(\\pi\\), commonly referred to as a Wald interval, is given by,\n\n\\[\\begin{equation} \\tag{8.43}\nCI_{1-\\alpha}(\\pi)=\\left[p-z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p(1-p)}{n}},p+z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p(1-p)}{n}}\\right]\n\\end{equation}\\]\n\n\nSee Section 8.4.1 to see further examples on constructing Wald intervals.\n\n\n6.1.2 Score/Wilson Confidence Interval (8.4.1.1)\nAn alternative \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the population proportion of success \\(\\pi\\) is given by the Wilson interval,\n\n\\[\\begin{equation} \\tag{8.47}\n\\begin{split}\nCI_{1-\\alpha}(\\pi)=\\Bigg[&\\frac{p+\\frac{z^2_{1-\\alpha/2}}{2n}-z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p(1-p)}{n}+\\frac{z^2_{1-\\alpha/2}}{4n^2}}}{\\left(1+\\frac{z^2_{1-\\alpha/2}}{n}\\right)},\\\\\n&\\,\\,\\,\\,\\,\\,\\,\\,\\frac{p+\\frac{z^2_{1-\\alpha/2}}{2n}+z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p(1-p)}{n}+\\frac{z^2_{1-\\alpha/2}}{4n^2}}}{\\left(1+\\frac{z^2_{1-\\alpha/2}}{n}\\right)}\\Bigg]\n\\end{split}\n\\end{equation}\\]\n\nWilson intervals give a confidence interval with coverage probability which is closer to the \\(1-\\alpha\\) level compared to Wald intervals.\nNote that if the sample size is large, then the Wilson interval is roughly equivalent to the Wald interval. This is because with large values of \\(n\\), \\(\\frac{z_{1-\\alpha/2}^2}{2n}\\), \\(\\frac{z_{1-\\alpha/2}^2}{4n^2}\\) and \\(\\frac{z_{1-\\alpha/2}^2}{n}\\) are all approximately 0.\n\nSee Section 8.4.1.1 of Probability and Statistics with R for more details on this result.\nNB: Sections 8.4.1.2, 8.4.1.3 and 8.4.1.4 are not covered/examinable.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)</span>"
+    ]
+  },
+  {
+    "objectID": "05-poppropCI.html#difference-in-population-proportions-8.4.2",
+    "href": "05-poppropCI.html#difference-in-population-proportions-8.4.2",
+    "title": "6  Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)",
+    "section": "6.2 Difference in population proportions (8.4.2)",
+    "text": "6.2 Difference in population proportions (8.4.2)\nFor random samples of size \\(n_X\\) and \\(n_Y\\) taken from two normal distributions, \\(X\\) and \\(Y\\) respectively, then the difference in the population proportions of success, \\(\\pi_X\\) and \\(\\pi_Y\\) may be of interest.\nA \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the difference in population proportions, \\(\\pi_X-\\pi_Y\\), can be calculated based on the difference in sample proportions, \\(p_X-p_Y\\), as,\n\n\\[\\begin{equation} \\tag{8.52}\n\\begin{split}\nCI_{1-\\frac{\\alpha}{2}}(\\pi_X-\\pi_Y)=\\Bigg[&(p_X-p_Y)-z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p_X(1-p_X)}{n_X}+\\frac{p_Y(1-p_Y)}{n_Y}},\\\\\n&\\,\\,\\,\\,\\,\\,\\,\\,(p_X-p_Y)+z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{p_X(1-p_X)}{n_X}+\\frac{p_Y(1-p_Y)}{n_Y}}\\Bigg]\n\\end{split}\n\\end{equation}\\]\n\nIf \\(|p_X-p_Y|&gt;\\frac{1}{2}\\left(\\frac{1}{n_X}+\\frac{1}{n_Y}\\right)\\), then a continuity correction is generally applied to the above formula. When this condition is satisfied, \\(\\frac{1}{2}\\left(\\frac{1}{n_X}+\\frac{1}{n_Y}\\right)\\) is subtracted from the lower limit of the confidence interval above, and added to the upper limit.\nThe function prop.test() uses this continuity correction automatically whenever the condition is satisfied by the difference in sample proportions.\n\nSee Section 8.4.2 of Probability and Statistics with R for some examples of using this result.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Population Proportions (Intervals Based on Large Samples) (8.4.1 - 8.4.2)</span>"
+    ]
+  },
+  {
+    "objectID": "06-poissCI.html",
+    "href": "06-poissCI.html",
+    "title": "7  Population Mean of a Poisson Random Variable (8.4.3)",
+    "section": "",
+    "text": "Using a sample \\(\\boldsymbol x\\) taken from \\(X\\sim\\mbox{Pois}(\\lambda)\\), a \\((1-\\alpha)\\cdot100\\%\\) confidence interval for the mean of the distribution \\(\\lambda\\) can be found as,\n\n\\[\\begin{equation} \\tag{8.57}\nCI_{1-\\frac{\\alpha}{2}}(\\lambda)=\\left[\\bar x-z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{\\bar x}{n}}, \\bar x+z_{1-\\frac{\\alpha}{2}}\\cdot\\sqrt{\\frac{\\bar x}{n}} \\right]\n\\end{equation}\\]\n\n\nSee Section 8.4.3 of Probability and Statistics with R for examples of using this result and its derivation.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Population Mean of a Poisson Random Variable (8.4.3)</span>"
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "hash": "181b41a73d59bb20274c2704fa393cff",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n```{=html}\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nTask\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n```\n\n````{=html}\n<!--\n::: panel-tabset\n## R Code\n\n::: {.cell}\n\n:::\n\n## Output\n\n::: {.cell}\n\n:::\n:::\n-->\n````\n\n\nWelcome to the second S2S lab. This lab starts by describing what R packages are and provides an introduction to the different 'data structures' that can be used in R. We will also start to work with some real data!\n\nIt's really important to know how R handles different types of data because there are many ways that you will be working with data throughout all your statistics courses. Being able to understand and use them all is a really good foundational skill to have.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

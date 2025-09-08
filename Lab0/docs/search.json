@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "S2S Induction Lab",
+    "section": "",
+    "text": "1 R and RStudio\nWelcome to Level 2 Statistics! Today you will be introduced to R and RStudio and learn how to download and install both of them on to your device.\nR is a programming language that you will use to write code in numerous statistics courses throughout your degree. RStudio is an accompaniment to R, known as an Integrated Development Environment (IDE). RStudio essentially makes all features of the R programming language easier to use and it is the software you will interact with, rather than R directly.\nIt is best for you to install R and RStudio on your own device and use this throughout your courses.\nIf you do not already have R and RStudio downloaded on your device, follow the steps outlined below in Section 1.1 and Section 1.2 before moving on to Section 3 which will explain how to use RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-downloadR",
+    "href": "index.html#sec-downloadR",
+    "title": "S2S Induction Lab",
+    "section": "1.1 Installing R",
+    "text": "1.1 Installing R\n\n\n\n\nR logo\n\n\nThe first step is to install R onto your device. This can be done for free from CRAN (the Comprehensive R Archive Network). R is available for Windows, Mac OS, Linux and some other less common operating systems.\n\nIf you are using a Windows device, follow this link and click ‘Download R-4.3.1 for Windows’ to download the installer for the latest version of R. Once this is complete, run the installer and accept all default settings.\nIf you are using a Mac, follow this link and select the .pkg file from the left of the screen to download the installer for the latest version of R. Once this download is complete, open the file and complete the onscreen steps to finish installing R.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-downloadRS",
+    "href": "index.html#sec-downloadRS",
+    "title": "S2S Induction Lab",
+    "section": "1.2 Installing RStudio",
+    "text": "1.2 Installing RStudio\n\n\n\n\nRStudio logo\n\n\nNow that R is installed on your device, you are ready to download and install RStudio.\nTo do this, follow the link to RStudio and click on the link ‘Download RStudio…’. This should automatically detect what system your device is using but make sure to double check it says either for Windows or for MacOS - whichever is correct!\nThis file may take a while to download, but once it has launch the installer and follow the steps to complete the installation.\nYou are now ready to use RStudio. Make sure you launch the RStudio app to work within, rather than R.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "01-remote-desktop.html",
+    "href": "01-remote-desktop.html",
+    "title": "2  Accessing RStudio Virtually",
+    "section": "",
+    "text": "If you are unable to download and install RStudio on to your own device, don’t worry! It is possible to access RStudio on the University’s Virtual Desktop, called Glasgow Anywhere Desktop.\nTo do this, follow this link and select the ‘Connect to Glasgow Anywhere Desktop via your web browser’. You will need to log in using your student email and password and then select the ‘Student Desktop’. This will open a Windows desktop in your browser - the same one you would see on a PC in the computer labs.\n\n\n\n\n\nGlasgow Anywhere Student Desktop\n\n\n\n\nSearch for the RStudio app within this desktop and launch it. You will then be able to use RStudio in the same way as if it was installed on your own device.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Accessing RStudio Virtually</span>"
+    ]
+  },
+  {
+    "objectID": "02-using-rstudio.html",
+    "href": "02-using-rstudio.html",
+    "title": "3  Using RStudio",
+    "section": "",
+    "text": "3.1 Practise code\nOpen the RStudio app and create a new text file (called an “R script”) by:\nThis will open a new pane in the RStudio window which is where you will write all of your code. RStudio is arranged with four panes, the default layout of which you can see below.\nTo test that your RStudio is working as expected, copy and paste the following code to the R Script you have just created. You can then ‘run’ this code to see the result.\n(112/8)*0.5\nYou should see the value 7 pasted in the console pane.\nIt is also good to know that you can use “packages” in R. To install the package ggplot2 on to your device, copy and paste the code below into your R script, then make sure to run these two lines.\ninstall.packages(\"ggplot2\")\nlibrary(ggplot2)\nThe ggplot2 package is used to create graphs and plots in R Studio. Again, copy and paste the code below then run it to see an example of a plot you can create in R. You don’t need to understand any of this code at the moment, it will all be explained in your courses!\nggplot(data = mtcars) +\n  geom_boxplot(aes(x = as.factor(cyl), y = mpg), fill = \"slateblue\", alpha = 0.2) +\n  xlab(\"cyl\")\nNow you should see the following plot in the plots tab.\nTo save an R script with any code you have written, simply click the  icon at the top left of the source pane and choose where to save the file (make sure this is somewhere you can find it again!). R scripts are saved as .r files.\nTo open a previously saved R script, either click on the .r file in the folder you’ve saved it to, or within RStudio go to File &gt; Open File... and choose the .r file from there.\nNow that you have RStudio installed and know everything works as expected, you can run the following code to play a game of Wordle in the console pane!\ninstall.packages(\"wordler\")\nlibrary(wordler)\n\nplay_wordler()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using RStudio</span>"
+    ]
+  }
+]

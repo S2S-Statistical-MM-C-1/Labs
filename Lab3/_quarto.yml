@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Lab 3"
+  chapters:
+    - index.qmd
+    - 01-reading.qmd
+    - 02-data.qmd
+    - 03-exercises.qmd
+  appendices: 
+    - 04-cut.qmd
+    - 05-merge.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+
+editor: source
+

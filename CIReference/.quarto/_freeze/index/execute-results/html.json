@@ -1,0 +1,15 @@
+{
+  "hash": "e93767f3d87f167a0afe96ce594025d5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n# Welcome!\n\nOn this webpage you will find all the formulas for calculating any **confidence intervals** relating to population means, variances and proportions, as covered in [Chapter 8](https://read.kortext.com/reader/pdf/92741/454){target=\"_blank\"} of *Probability and Statistics with R*.\n\nYou will always have access to this lab in assessments, so make sure you are familiar with where to find these formulas.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "e6a1e6dd2ccafb9998d6937bdbdfeb12",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Dimensions of matrices {#sec-dim}\n\n\n::: {.cell}\n\n:::\n\n\n<!-- avoid dimension reduction with drop=FALSE -->\n\nWhen extracting an entire row or column using `[ ]`, the object that R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).\n\nFor example, the code below returns the value `NULL` when using the `dim()` function. `dim()` should return the dimensions of an array, but since the extracted row for births in Edinburgh is a vector, there are no dimensions to return.\n\n::: panel-tabset\n## R Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndim(births[\"Edinburgh\", ])\n```\n:::\n\n\n## Output\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\nNULL\n```\n\n\n:::\n:::\n\n:::\n\nIf we want to know how many elements are in a vector, we use the function `length()`.\n\n::: panel-tabset\n## R Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlength(births[\"Edinburgh\", ])\n```\n:::\n\n\n## Output\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 3\n```\n\n\n:::\n:::\n\n:::\n\nWe can force the output from subseting a matrix/array to be a matrix/array by including a third argument, `drop = FALSE`, within the square brackets to keep the returned row as a matrix/array.\n\n::: panel-tabset\n## R Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndim(births[\"Edinburgh\", , drop = FALSE])\n```\n:::\n\n\n## Output\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 1 3\n```\n\n\n:::\n:::\n\n:::\n\nNow we can see that the row is seen as a 1 $\\times$ 3 matrix by R.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

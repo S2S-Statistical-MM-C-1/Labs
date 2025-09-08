@@ -1,0 +1,43 @@
+# Population Means (8.2.1 - 8.2.2)
+
+<!-- # Confidence Intervals for Population Means -->
+
+When we take a random sample of size $n$ from a normal population with unknown mean, say $X\sim N(\mu, \sigma)$, it is often of interest to use the sample $x_1, x_2, \ldots , x_n$ with sample mean $\bar{x}$ to estimate the value of the population mean $\mu$. Confidence intervals can be used to find a range of plausible values that $\mu$ could be, based on the random sample.
+
+It is important to pay close attention to the **variance** of the underlying distribution and ask, do we know what it is? The answer to this question will change the way in which the confidence interval is calculated.
+
+## Variance is known (8.2.1)
+
+When the variance of the underlying normal distribution is known, then a $(1-\alpha)\cdot100\%$ confidence interval for the population mean, $\mu$, is given by,
+
+::: {.webex-code .webex-box}
+```{=tex}
+\begin{equation} \tag{8.5}
+CI_{1-\alpha}(\mu)=\left[\bar x-z_{1-\frac{\alpha}{2}}\cdot\frac{\sigma}{\sqrt{n}},\,\,\bar x+z_{1-\frac{\alpha}{2}}\cdot\frac{\sigma}{\sqrt{n}}\right]
+\end{equation}
+```
+:::
+
+------------------------------------------------------------------------
+
+See [Section 8.2.1](https://read.kortext.com/reader/pdf/92741/454){target="_blank"} of *Probability and Statistics with R* for some examples of using this result.
+
+## Variance is unknown (8.2.2)
+
+If the variance of the normal distribution that the random sample is taken from is unknown, then a $(1-\alpha)\cdot100\%$ confidence interval for the population mean, $\mu$, is given by,
+
+::: {.webex-code .webex-box}
+```{=tex}
+\begin{equation} \tag{8.10}
+CI_{1-\alpha}(\mu)=\left[\bar x-t_{1-\frac{\alpha}{2};n-1}\cdot\frac{s}{\sqrt{n}},\,\,\bar x+t_{1-\frac{\alpha}{2};n-1}\cdot\frac{s}{\sqrt{n}}\right]
+\end{equation}
+```
+:::
+
+-   $s$ is the sample standard deviation. The sample **variance** can be found using, $$s^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}=\frac{\sum_{i=1}^nx_i^2-n\bar x^2}{n-1}$$
+
+    *Remember to take the square root of the sample variance to find the sample standard deviation.*
+
+------------------------------------------------------------------------
+
+See [Section 8.2.2](https://read.kortext.com/reader/pdf/92741/464){target="_blank"} of *Probability and Statistics with R* for the derivation of this result and some examples of using it in practise.

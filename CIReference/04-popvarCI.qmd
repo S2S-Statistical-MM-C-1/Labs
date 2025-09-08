@@ -1,0 +1,57 @@
+# Population Variances (8.3.1 - 8.3.2)
+
+<!-- # Confidence Intervals for Population Variances (8.3) -->
+
+<!--8.3-->
+
+Confidence intervals relating to the population variances require that the distribution a sample is taken from is a normal distribution. It is therefore always important to *check that the sample data reasonably follow a normal distribution*. If this is not the case, then any confidence intervals calculated using the formulae stated below will be inaccurate.
+
+There are ways to calculate confidence intervals relating to population variances when this assumption of normally distributed data is not valid, however these are not covered in S2S.
+
+## Sampling from a Normal population (8.3.1)
+
+Suppose a sample of size $n$ is taken from a normal population, $N(\mu, \sigma)$. A $(1-\alpha)\cdot100\%$ confidence interval for the population variance, $\sigma^2$, is given by,
+
+::: {.webex-box .webex-code}
+```{=tex}
+\begin{equation} \tag{8.26}
+CI_{1-\alpha}(\sigma^2)=\left[\frac{(n-1)s^2}{\chi^2_{1-\frac{\alpha}{2};n-1}},\frac{(n-1)s^2}{\chi^2_{\frac{\alpha}{2};n-1}}\right]
+\end{equation}
+```
+:::
+
+-   $s^2$ is the sample variance, which can be found using, $$s^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}=\frac{\sum_{i=1}^nx_i^2-n\bar x^2}{n-1}$$
+
+Note that this confidence interval is not centred around the point estimate for the population variance, which is the sample variance, $s^2$. This is because the $\chi^2$ distribution is not symmetric.
+
+To find the corresponding quantiles from a $\chi^2$ distribution with $n-1$ degrees of freedom, $\chi^2_{1-\frac{\alpha}{2};n-1}$ and $\chi^2_{\frac{\alpha}{2};n-1}$, the function `qchisq()` can be used (see the [Probability functions](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab3/docs/functions.html#probability-functions) section of Lab 3 for more details).
+
+------------------------------------------------------------------------
+
+See [Section 8.3.1](https://read.kortext.com/reader/pdf/92741/482){target="_blank"} of *Probability and Statistics with R* to see the derivation of this result and some examples of using it in practise.
+
+## Ratio of population variances (8.3.2)
+
+When two samples of size $n_X$ and $n_Y$ are taken from independent normal distributions, $N(\mu_X,\sigma_X)$ and $N(\mu_Y,\sigma_Y)$, we might be interested in determining whether the variances of each distribution are equal. We do this by estimating the ratio of the two population variances, $\frac{\sigma_X^2}{\sigma_Y^2}$, and constructing a confidence interval around the estimated ratio. If this interval contains the value 1, this is evidence that the two population variances are equal.
+
+A $(1-\alpha)\cdot100\%$ confidence interval for the ratio of population variances, $\frac{\sigma_X^2}{\sigma_Y^2}$, is given by,
+
+::: {.webex-code .webex-box}
+```{=tex}
+\begin{equation} \tag{8.31}
+CI_{1-\alpha}\left(\frac{\sigma_X^2}{\sigma_Y^2}\right)=\left[f_{\frac{\alpha}{2};n_Y-1,n_X-1}\cdot\frac{s_X^2}{s_Y^2},f_{1-\frac{\alpha}{2};n_Y-1,n_X-1}\cdot\frac{s_X^2}{s_Y^2}\right]
+\end{equation}
+```
+:::
+
+-   $s_X^2$ is the sample variance for the first sample, which can be found using, $$s_X^2=\frac{\sum_{i=1}^{n_X}(x_i-\bar{x})^2}{n_X-1}=\frac{\sum_{i=1}^{n_X}x_i^2-n\bar x^2}{n_X-1}$$
+
+-   $s_Y^2$ is the sample variance for the second sample, which can be found using, $$s_Y^2=\frac{\sum_{i=1}^{n_Y}(y_i-\bar{y})^2}{n_Y-1}=\frac{\sum_{i=1}^{n_Y}y_i^2-n\bar y^2}{n_Y-1}$$
+
+Typically, the sample which has the largest sample variance will be used as the first group. That is, choose which sample is $X$ and which is $Y$ so that $s_X^2>s_Y^2$.
+
+To find the corresponding quantiles from an $F$ distribution with $n_Y-1$ and $n_X-1$ degrees of freedom, $f_{\frac{\alpha}{2};n_Y-1;n_X-1}$ and $f_{1-\frac{\alpha}{2};n_Y-1;n_X-1}$, the function `qf()` can be used (see the [Probability functions](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab3/docs/functions.html#probability-functions) section of Lab 3 for more details).
+
+------------------------------------------------------------------------
+
+See [Section 8.3.2](https://read.kortext.com/reader/pdf/92741/487){target="_blank"} of *Probability and Statistics with R* to follow examples of using this result.

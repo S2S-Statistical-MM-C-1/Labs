@@ -1,0 +1,63 @@
+---
+title: "Summary of Functions"
+---
+
+## [Vectors](01-vectors.qmd#sec-vectors) {.unnumbered}
+
+```{r, eval = FALSE}
+c()
+```
+
+## [Other types of vectors](01-vectors.qmd#sec-types) {.unnumbered}
+
+```{r, eval = FALSE}
+typeof()
+```
+
+```{r, eval = FALSE}
+as.logical()
+```
+
+```{r, eval = FALSE}
+as.numeric()
+```
+
+```{r, eval = FALSE}
+as.complex()
+```
+
+```{r, eval = FALSE}
+as.character()
+```
+
+## [Sequences](01-vectors.qmd#sec-seq) {.unnumbered}
+
+```{r, eval = FALSE}
+seq(from = , to = , by = , length.out = )
+```
+
+## [Repeating constants](01-vectors.qmd#sec-repeat) {.unnumbered}
+
+```{r, eval = FALSE}
+rep(x = , times = , each = , length.out = )
+```
+
+## [Filtering vectors](01-vectors.qmd#sec-filter) {.unnumbered}
+
+```{r, eval = FALSE}
+subset(x = , subset = )
+```
+
+## [Getting help](01-vectors.qmd#sec-help) {.unnumbered}
+
+```{r, eval = FALSE}
+help()
+```
+
+
+
+
+
+
+
+

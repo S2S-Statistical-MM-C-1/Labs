@@ -1,0 +1,49 @@
+---
+title: "R and RStudio"
+number-sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+# R and RStudio
+
+Welcome to Level 2 Statistics! Today you will be introduced to R and RStudio and learn how to download and install both of them on to your device.
+
+[R](https://www.r-project.org/) is a programming language that you will use to write code in numerous statistics courses throughout your degree. [RStudio](https://posit.co/download/rstudio-desktop/) is an accompaniment to R, known as an Integrated Development Environment (IDE). RStudio essentially makes all features of the R programming language easier to use and it is the software you will interact with, rather than R directly.
+
+It is best for you to install R and RStudio on your own device and use this throughout your courses.
+
+If you do not already have R and RStudio downloaded on your device, follow the steps outlined below in [@sec-downloadR] and [@sec-downloadRS] before moving on to [Section @sec-UseR] which will explain how to use RStudio.
+
+## Installing R {#sec-downloadR}
+
+<!-- should there be screenshots of the process? Could make the page messy -->
+
+[![R logo](Images/Rlogo.svg){width="40%"}](https://www.r-project.org/)
+
+The first step is to install R onto your device. This can be done for free from [CRAN](https://cran.r-project.org/) (the **C**omprehensive **R** **A**rchive **N**etwork). R is available for Windows, Mac OS, Linux and some other less common operating systems.
+
+-   If you are using a **Windows** device, follow [this link](https://cran.r-project.org/bin/windows/base/) and click *'Download R-4.3.1 for Windows'* to download the installer for the latest version of R. Once this is complete, run the installer and accept all default settings.
+-   If you are using a **Mac**, follow [this link](https://cran.r-project.org/bin/macosx/) and select the .pkg file from the left of the screen to download the installer for the latest version of R. Once this download is complete, open the file and complete the onscreen steps to finish installing R.
+
+## Installing RStudio {#sec-downloadRS}
+
+<!-- include screenshots of which links to click? -->
+
+[![RStudio logo](Images/RStudio.svg){width="40%"}](https://posit.co/download/rstudio-desktop/)
+
+Now that R is installed on your device, you are ready to download and install RStudio.
+
+To do this, follow the link to [RStudio](https://posit.co/download/rstudio-desktop/) and click on the link *'Download RStudio...'*. This should automatically detect what system your device is using but make sure to double check it says either for Windows or for MacOS - whichever is correct!
+
+This file may take a while to download, but once it has launch the installer and follow the steps to complete the installation.
+
+You are now ready to use RStudio. Make sure you launch the **RStudio app** to work within, rather than R.

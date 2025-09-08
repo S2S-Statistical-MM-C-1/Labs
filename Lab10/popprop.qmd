@@ -1,0 +1,407 @@
+# Population Proportions (Intervals Based on Large Samples) (8.4)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+<!-- # Confidence Intervals Based on Large Samples (8.4) -->
+
+<!--8.4-->
+
+When we use maximum likelihood estimation to find an estimator $\hat\theta(\boldsymbol{X})$ of some population parameter $\theta$, we might be interested in constructing a confidence interval around this estimate to give a plausible range of values within which the true value of $\theta$ lies. In order to do this, we need to make use of the **asymptotic properties** of maximum likelihood estimators. This states that, provided the sample size $n$ is sufficiently large, then,
+
+$$
+\hat\theta(\boldsymbol{X})\sim N\left(\theta, \sqrt{I_n(\theta)^{-1}}\right)
+$$
+
+In other words, as $n\rightarrow\infty$, the expected value of the maximum likelihood estimator is equal to the population parameter it is estimating, $\theta$, and that the standard deviation of the *MLE* is equal to $\sqrt{I_n(\theta)^{-1}}$.
+
+Here, $I_n(\theta)$ is the **Fisher Information** for $\theta$. This can be found as,
+
+$$
+I_n(\theta)=-E\left[\frac{\partial^2\ln L(\theta|\boldsymbol{X})}{\partial\theta^2}\right]
+$$
+
+<!--reminder of Fisher information in lectures? Section 7.3.2.1-->
+
+Knowing the above asymptotic property of maximum likelihood estimators allows us to construct a general $(1-\alpha)\cdot100\%$ asymptotic confidence interval for any *MLE* as,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.37} \label{eq:MLECI}
+CI_{1-\alpha}(\theta)=\left[\hat\theta(\boldsymbol{x})-z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}},\quad\hat\theta(\boldsymbol{x})+z_{1-\frac{\alpha}{2}}\cdot\sqrt{I_n\big(\hat\theta(\boldsymbol{x})\big)^{-1}}\right]
+\end{equation}
+```
+:::
+
+This will allow you to construct a confidence interval for the maximum likelihood estimator of *any* population parameter, however we are going to focus on confidence intervals for the population proportion of success, denoted by $\pi$.
+
+## Population Proportions
+
+### Asymptotic/Wald Confidence Interval (8.4.1)
+
+When working with a Bernoulli distribution (i.e. $X\sim\mbox{Bernoulli}(\pi)$), it can be shown that maximum likelihood estimate of the population proportion of success $\pi$ is equal to $\hat\pi(\mathbf{x})=\bar x$ and that the *Fisher Information* is equal to $I_n(\theta)=\frac{n}{\pi(1-\pi)}$. This is a good exercise to try and show yourself.
+
+Therefore, using the asymptotic properties of MLEs, as $n\rightarrow\infty$,
+
+$$
+\hat\pi(\mathbf{x})\sim N\left(\pi, \sqrt{\frac{\pi(1-\pi)}{n}}\right).
+$$
+
+If we denote the *sample* proportion of success by $p$, then using the asymptotic distribution above with Equation \eqref{eq:MLECI}, a $(1-\alpha)\cdot100\%$ asymptotic confidence interval for the population proportion $\pi$, commonly referred to as a Wald interval, is given by,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.43} \label{eq:waldCI}
+CI_{1-\alpha}(\pi)=\left[p-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}},\quad p+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}}\right]
+\end{equation}
+```
+:::
+
+<!-- example -->
+We can use Equation \eqref{eq:waldCI} to find a 95% confidence interval for the population proportion of statistics students at the University of Glasgow who are on Santa's naughty list. Data has been gathered from Santa's workshop and are stored in the file *stats_list.csv* on [Moodle](){target="_blank"}. These data show for 310 independent Level 1 and Level 2 statistics student, whether each student is on the naughty list (1) or not (0).
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+Download and save the *stats_list.csv* file from [Moodle](){target="_blank"}, set your working directory in RStudio to point to where you have saved this file. Finally read the data into your RStudio session as an object called `stats_list`.
+
+`r hide("Solution")`
+We can read the file into R using the code below.
+
+```{r, echo=FALSE}
+stats_list <- read.csv("Data/stats_list.csv")
+```
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+stats_list <- read.csv("stats_list.csv")
+```
+:::
+
+Notice that this data frame has 2 columns;
+
+- `naughty` which is a binary variable showing for each student whether they are on the naughty list (1) or not(0).
+
+- `level` which states the level each student is studying at (i.e. Level 1 or Level 2)
+
+`r unhide()`
+::::
+:::
+
+The sample proportion $p$ of statistics students who are on Santa's naughty list can be found using the `mean()` function.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+mean(stats_list$naughty)
+```
+
+## Ouptut
+```{r, echo=FALSE}
+mean(stats_list$naughty)
+```
+:::
+
+We can then calculate the desired 95% Wald interval for $\pi$ in a couple of different ways in R.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using R as a calculator
+::::
+::::{.example-container}
+We already know that there are a total of 310 different students in the data frame, that is $n=310$, and that $p=\bar x=`r round(mean(stats_list$naughty), 4)`$. We can save these values in R as follows.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+n <- 310
+p <- mean(stats_list$naughty)
+```
+
+## Output
+```{r, echo=FALSE}
+n <- 310
+p <- mean(stats_list$naughty)
+```
+:::
+
+Now we need to find $z_{1-\frac{\alpha}{2}}$ which is the $(1-\frac{\alpha}{2})$^th^ quantile from the standard normal distribution. In our case, because we are interested in a 95% confidence interval, $\alpha=0.05$, so we are looking for the $\left(1-\frac{0.05}{2}\right)=0.975$^th^ quantile. This can be found using the `qnorm()` function as follows.
+
+::: panel-tabset
+## R Code
+```{r}
+z <- qnorm(0.975)
+```
+:::
+
+Calculating the 95% Wald interval is now just a case of subbing in all the values into the formula shown above. We can do this in R as follows.
+
+```{r, echo=FALSE}
+CI5 <- p + c(-1, 1)*z*sqrt(p*(1 - p)/n)
+```
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+p + c(-1, 1)*z*sqrt(p*(1 - p)/n)
+```
+
+## Output
+```{r, echo=FALSE}
+p + c(-1, 1)*z*sqrt(p*(1 - p)/n)
+```
+:::
+
+This interval tells us that we are 95% confident that the true population proportion of statistics students at the University of Glasgow, $\pi$, which are on Santa's naughty list lies in the interval $\left[`r round(CI5[1], 4)`,\, `r round(CI5[2], 4)`\right]$.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `binom.confit()` function
+::::
+::::{.example-container}
+There is a function in R which can calculate this interval for us automatically. The `binom.confint()` function is part of the package `binom`, so make sure to load this package into your R session by using the code `library(binom)`. `binom.confint()` can take the following arguments,
+
+* `x =`: this is the number of Bernoulli trials which were successful i.e. the number of trials for which a 1 is observed. This can be found from a vector of 0s and 1s using the `sum()` function.
+* `n =`: this is the total number of Bernoulli trials included in the sample.
+* `conf.int =`: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use `0.95` for example.
+* `methods =`: this is the method used to calculate the confidence interval for $\pi$. To construct a Wald interval, it should be set to `"asymptotic"`.
+
+The code below uses `binom.confint()` to find a 95% Wald interval for the population proportion of statistics students at the University of Glasgow on Santa's naughty list. The actual interval is contained in the returned values `lower` and `upper`.
+
+::: panel-tabset
+## R Code
+```{r}
+library(binom)
+```
+
+```{r, eval=FALSE}
+binom.confint(x = sum(stats_list$naughty), n = 310,
+              conf.level = 0.95, methods = "asymptotic")
+```
+
+## Ouptut
+```{r, echo=FALSE}
+binom.confint(x = sum(stats_list$naughty), n = 310,
+              conf.level = 0.95, methods = "asymptotic")
+```
+:::
+
+This interval is in agreement with the one found above, and we would say that the true population proportion of statistics students at the University of Glasgow, $\pi$, who are on Santa's naughty list lies in the interval $\left[`r round(CI5[1], 4)`,\, `r round(CI5[2], 4)`\right]$ with 95% confidence.
+
+::::
+:::
+
+------------------------------------------------------------------------
+
+See [Section 8.4.1](https://read.kortext.com/reader/pdf/92741/491){target="_blank"} to see further examples on constructing Wald intervals.
+
+
+### Score/Wilson Confidence Interval (8.4.1.1)
+
+An alternative $(1-\alpha)\cdot100\%$ confidence interval for the population proportion of success $\pi$ is given by the Wilson interval,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.47}
+\begin{split}
+CI_{1-\alpha}(\pi)=\Bigg[&\frac{p+\frac{z^2_{1-\alpha/2}}{2n}-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)},\\
+&\,\,\,\,\,\,\,\,\frac{p+\frac{z^2_{1-\alpha/2}}{2n}+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p(1-p)}{n}+\frac{z^2_{1-\alpha/2}}{4n^2}}}{\left(1+\frac{z^2_{1-\alpha/2}}{n}\right)}\Bigg]
+\end{split}
+\end{equation}
+```
+:::
+
+Wilson intervals give a confidence interval with coverage probability which is closer to the $1-\alpha$ level compared to Wald intervals.
+
+Note that if the sample size is large, then the Wilson interval is roughly equivalent to the Wald interval. This is because with large values of $n$, $\frac{z_{1-\alpha/2}^2}{2n}$, $\frac{z_{1-\alpha/2}^2}{4n^2}$ and $\frac{z_{1-\alpha/2}^2}{n}$ are all approximately 0.
+
+<!--example-->
+We can calculate a 95% Wilson interval for the population proportion of statistics students at the University of Glasgow who are on Santa's naughty list, $\pi$, in a couple of different ways. Remember, this sample information is stored in the column `naughty` from the data frame `stats_list`.
+
+Because the formula for Wilson intervals is quite involved, it is better to use functions in R to find Wilson intervals, rather than using R as a calculator since there are many chances that an error could be made.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using the `binom.confit()` function
+::::
+::::{.example-container}
+The `binom.confint()` function from `binom` package can be used to calculate Wilson intervals. In order to do this, the argument `methods = "wilson"` needs to be included as follows. The actual interval is contained in the returned values `lower` and `upper.`
+
+```{r, echo=FALSE}
+CI6 <- binom.confint(x = sum(stats_list$naughty), n = 310,
+                     conf.level = 0.95, methods = "wilson")[c(5, 6)]
+```
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+binom.confint(x = sum(stats_list$naughty), n = 310,
+              conf.level = 0.95, methods = "wilson")
+```
+
+## Output
+```{r, echo=FALSE}
+binom.confint(x = sum(stats_list$naughty), n = 310,
+              conf.level = 0.95, methods = "wilson")
+```
+:::
+
+The Wilson interval tells us that the population proportion of statistics students from the University of Glasgow, $\pi$, who are on Santa's naughty list lies in the interval $\left[`r round(CI6[,1], 4)`,\, `r round(CI6[,2], 4)`\right]$ with 95% confidence.
+
+Notice that the Wilson interval is **not** symmetric about the sample proportion $p=`r round(p, 4)`$.
+::::
+:::
+
+:::{.example}
+::::{.example-header}
+Method 2: Using the `prop.test()` function
+::::
+::::{.example-container}
+An alternative function which can be used to calculate Wilson intervals is the `prop.test()` function. The arguments that `prop.test()` can take are,
+
+* `x =`: this is the number of Bernoulli trials which were successful i.e. the number of trials for which a 1 is observed. This can be found using the `sum()` function.
+* `n =`: this is the total number of Bernoulli trials included in the sample.
+* `conf.int =`: the is the confidence level for the desired interval. It needs to be put in as a decimal, so for a 95% confidence interval, we would use `0.95` for example.
+* `correct =`: this takes the value `TRUE` or `FALSE` to indicate whether what is known as a Yates' continuity correction should be applied to the estimate for $p$ in the formula. By default, the value `TRUE` is used and this correction is applied. We will be setting this argument to `FALSE` below. You can read more about the Yates' continuity correction in [Section 8.4.1.1](https://read.kortext.com/reader/pdf/92741/496) of the textbook.
+
+The code below calculates a 95% Wilson interval for the population proportion of statistics students at the University of Glasgow who are on Santa's naughty list, $\pi$. The confidence interval itself can be extracted by including `$conf.int` at the end of the function.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+prop.test(x = sum(stats_list$naughty), n = 310, conf.level = 0.95,
+          correct = FALSE)$conf.int
+```
+
+## Ouput
+```{r, echo=FALSE}
+prop.test(x = sum(stats_list$naughty), n = 310, conf.level = 0.95,
+          correct = FALSE)$conf.int
+```
+:::
+
+This interval is in agreement with the one found before and, again, tells us that the population proportion of statistics students at the University of Glasgow, $\pi$, who are on Santa's naughty list lies in the interval $\left[`r round(CI6[,1], 4)`,\, `r round(CI6[,2], 4)`\right]$ with 95% confidence.
+
+::::
+:::
+
+
+------------------------------------------------------------------------
+
+See [Section 8.4.1.1](https://read.kortext.com/reader/pdf/92741/496){target="_blank"} of *Probability and Statistics with R* for more details on this result.
+
+**NB:** Sections 8.4.1.2, 8.4.1.3 and 8.4.1.4 are **not covered/examinable**.
+
+## Difference in population proportions (8.4.2)
+
+For random samples of size $n_X$ and $n_Y$ taken from two normal distributions, $X$ and $Y$ respectively, then the difference in the population proportions of success, $\pi_X$ and $\pi_Y$ may be of interest.
+
+A $(1-\alpha)\cdot100\%$ confidence interval for the difference in population proportions, $\pi_X-\pi_Y$, can be calculated based on the difference in sample proportions, $p_X-p_Y$, as,
+
+::: {.webex-highlight}
+```{=tex}
+\begin{equation} \tag{8.52} \label{eq:propdiffCI}
+\begin{split}
+CI_{1-\frac{\alpha}{2}}(\pi_X-\pi_Y)=\Bigg[&(p_X-p_Y)-z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}},\\
+&\,\,\,\,\,\,\,\,(p_X-p_Y)+z_{1-\frac{\alpha}{2}}\cdot\sqrt{\frac{p_X(1-p_X)}{n_X}+\frac{p_Y(1-p_Y)}{n_Y}}\Bigg] 
+\end{split}
+\end{equation}
+```
+:::
+
+If $|p_X-p_Y|>\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)$, then a continuity correction is generally applied to the above formula. When this condition is satisfied, $\frac{1}{2}\left(\frac{1}{n_X}+\frac{1}{n_Y}\right)$ is subtracted from the lower limit of the confidence interval above, and added to the upper limit.
+
+The function `prop.test()` uses this continuity correction automatically whenever the condition is satisfied by the difference in sample proportions.
+
+We are able to use Equation \eqref{eq:propdiffCI} to calculate a 95% confidence interval for the difference between population proportions of Level 1 and Level 2 statistics students at the University of Glasgow who are on Santa's naughty list. That is $\pi_1-\pi_2$ where $\pi_1$ is the population proportion of Level 1 statistics students at the University of Glasgow who are on Santa's naughty list and $\pi_2$ is the population proportion of Level 2 students on the list. In the dataframe `stats_list`, 184 students are from Level 1 and 126 students are from Level 2.
+
+We will only consider using the function `prop.test()` can be used to find this 95% confidence interval.
+
+:::{.example}
+::::{.example-header}
+Method 1: Using the `prop.test()` function
+::::
+::::{.example-container}
+We need to be careful about how we provide the relevant sample proportions of success $p_1$ and $p_2$ to the `x =` argument. Because we are testing for a difference between two population proportions, we want to provide as the `x =` argument a matrix which contains in the first column a count of the number of successes (i.e. the number of students on the naughty list) in each group, and in the second column a count of the number of failures (i.e. the number of students *not* on the naughty list).
+
+This matrix, `stats_list_counts` can be set up using the code below which makes use of several functions we've seen before, notable the `sum()`, `subset()` and `matrix()` functions. Try to break down the code and run functions individually to see what's going on.
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+level1_naughty <- sum(subset(x = stats_list,
+                             subset = level == "Level 1")$naughty)
+level1_notnaughty <- 184 - level1_naughty
+
+level2_naughty <- sum(subset(x = stats_list,
+                             subset = level == "Level 2")$naughty)
+level2_notnaughty <- 126 - level2_naughty
+
+stats_list_counts <- matrix(data = c(level1_naughty, level1_notnaughty,
+                                     level2_naughty, level2_notnaughty),
+                            nrow = 2, byrow = TRUE)
+stats_list_counts
+```
+
+## Output
+```{r, echo=FALSE}
+level1_naughty <- sum(subset(x = stats_list,
+                             subset = level == "Level 1")$naughty)
+level1_notnaughty <- 184 - level1_naughty
+
+level2_naughty <- sum(subset(x = stats_list,
+                             subset = level == "Level 2")$naughty)
+level2_notnaughty <- 126 - level2_naughty
+
+stats_list_counts <- matrix(data = c(level1_naughty, level1_notnaughty,
+                                     level2_naughty, level2_notnaughty),
+                            nrow = 2, byrow = TRUE)
+stats_list_counts
+```
+:::
+
+Note that we could have used the `table()` function to create a table with these same values in it, which could also be provided as the `x =` argument in the `prop.test()` function. The reason we're not using `table()` here is because the the first column in the resulting table would give a count of the number of Level 1 and Level 2 students who are **not** on the naughty list and the resulting confidence interval would be for the difference in population proportions of Level 1 and Level 2 statistics students who are **not** on Santa's naughty list.
+
+Now the matrix `stats_list_counts` can be used within `prop.test()` to calculate a 95% confidence interval for the difference in population proportions of Level 1 and Level 2 statistics students at the University of Glasgow who are on Santa's naughty list. Because the matrix contains information on the sample sizes, we don't need to include the `n =` argument in `prop.test()` in this case. We will also set `correct = TRUE` to use the continuity correct because $|p_1-p_2|>\frac{1}{2}\left(\frac{1}{n_1}+\frac{1}{n_2}\right)$.
+
+```{r, echo=FALSE}
+CI7 <- prop.test(x = stats_list_counts, conf.level = 0.95, correct = TRUE)$conf.int
+```
+
+
+::: panel-tabset
+## R Code
+```{r, eval=FALSE}
+prop.test(x = stats_list_counts, 
+          conf.level = 0.95, correct = TRUE)$conf.int
+```
+
+## Output
+```{r, echo=FALSE}
+prop.test(x = stats_list_counts, 
+          conf.level = 0.95, correct = TRUE)$conf.int
+```
+:::
+
+Now we can see that the difference in the population proportions of Level 1 and Level 2 statistics students at the University of Glasgow who are on Santa's naughty list lies in the interval $[`r round(CI7[1], 4)`, `r round(CI7[2], 4)`]$ with confidence 95%. Note that this interval contains the value 0, so there is not statically significant evidence that the population proportions are different.
+
+::::
+:::
+
+
+------------------------------------------------------------------------
+
+See [Section 8.4.2](https://read.kortext.com/reader/pdf/92741/506){target="_blank"} of *Probability and Statistics with R* for further examples of using this result.
+

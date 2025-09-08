@@ -1,0 +1,60 @@
+---
+title: "Conclusion"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(tidyverse)
+```
+
+To finish our statistical report we need to add a conclusion which should use the confidence intervals we found in [Sections @sec-unknown-equal] and [-@sec-unknown-unequal] to answer the aims of our analysis. We need to make sure that this section rounds out the whole report by comparing our initial impressions of the data from the **Exploratory Analysis** to the formal findings from the **Statistical Analysis**.
+
+::: question
+::: question-header
+Task
+:::
+::: {.question-container .webex-check}
+```{r MCQ3, echo=FALSE}
+optsQ3.1 <- c("Yes", answer = "No")
+
+optsQ3.2 <- c(answer = "Yes", "No")
+```
+
+For each of our aims, what do your findings suggest?
+
+1. Is there a difference between the mean yields of potatoes from fields that were fertilised and fields that were unfertilised?  `r longmcq(optsQ3.1)`
+
+2. Is there a difference between the mean yields of wheat from fields that were fertilised and fields that were unfertilised?  `r longmcq(optsQ3.2)`
+:::
+:::
+
+::: question
+::: question-header
+Task
+:::
+::: question-container
+In the **Conclusion** section of your report, add a paragraph which compares your initial **Exploratory Analysis** to your formal **Statistical Analysis**. Make sure to include a sentence which clearly answers each of your aims.
+:::
+:::
+
+We also want to include a discussion of the limitations of our analysis. This could talk about things like not having enough data, having to make relatively unrealistic assumptions, or mention any potential variables that could have been measured and would've been informative in your analysis.
+
+If you know of any further statistical methods that could be applied to your dataset to help investigate the aims, but that have not been applied in the report, you can mention them here.
+
+
+
+
+
+
+
+
+
+
+
+
+

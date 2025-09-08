@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Lab 6"
+  chapters:
+    - index.qmd
+    - 01-clt.qmd
+    - 02-X-Y.qmd
+    - 03-exercises.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+    
+
+
+editor: source
+

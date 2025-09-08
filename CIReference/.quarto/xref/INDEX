@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "69ccb31f"
+  },
+  "01-popmeansCI.qmd": {
+    "01-popmeansCI.html": "05f89d24"
+  },
+  "02-diffmeansCI.qmd": {
+    "02-diffmeansCI.html": "2928039e"
+  },
+  "03-pairedCI.qmd": {
+    "03-pairedCI.html": "2009508d"
+  },
+  "04-popvarCI.qmd": {
+    "04-popvarCI.html": "31db4ed1"
+  },
+  "05-poppropCI.qmd": {
+    "05-poppropCI.html": "d37b565a"
+  },
+  "06-poissCI.qmd": {
+    "06-poissCI.html": "afb89c0a"
+  }
+}

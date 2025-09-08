@@ -1,0 +1,15 @@
+{
+  "hash": "4634a0dbf1ac5cbcf67497f8b07da648",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome!\"\nnumber-sections: true\n---\n\n\n\n\n# Introduction {#sec-introduction}\n\nWelcome to the ninth S2S lab. Today we will complete the statistical report that we started in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/){target=\"_blank\"} by completing the **Statistical Analysis** and **Conclusion** sections. If you have completed Lab 8, you should have the beginnings of a statistical analysis report saved.\n\nWe will take a look at different ways of calculating **confidence intervals** in different scenarios in R, which will allow us to complete the statistical report.\n\n<!-- question callout example\n:::{.question}\n::::{.question-header}\nQuestion\n::::\n::::{.question-container}\nThis is where the question text would go.\n::::\n:::\n-->\n\n<!--\n::: panel-tabset\n## R Script\n\n::: {.cell}\n\n:::\n\n\n## Console\n\n::: {.cell}\n\n:::\n\n:::\n-->\n\n\n\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

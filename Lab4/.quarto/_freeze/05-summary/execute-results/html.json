@@ -1,0 +1,15 @@
+{
+  "hash": "54b262702ddb9fca1a2babc36c0a3073",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Summary of Functions\n\n## [Barplots](01-qualitative.qmd#sec-bars) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nbarplot(height = ,\n        legend.text = ,\n        beside = FALSE,\n        col = ,\n        main = ,\n        xlab = ,\n        ylab = ,\n        ylim = )\n```\n:::\n\n\n## [Dot Charts](01-qualitative.qmd#sec-dots) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndotchart(x = ,\n         bg = ,\n         main = ,\n         xlab = ,\n         ylab = )\n```\n:::\n\n\n## [Pie Charts](01-qualitative.qmd#sec-pies) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\npie(x = ,\n    radius = ,\n    col = ,\n    main = )\n```\n:::\n\n\n## [Stem and Leaf Plots](02-quantitative.qmd#sec-stem) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nstem(x = , scale = 1)\n```\n:::\n\n\n## [Histograms](02-quantitative.qmd#sec-hist) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(x = ,\n     breaks = ,\n     freq = TRUE,\n     right = TRUE,\n     include.lowest = TRUE,\n     col = ,\n     main = ,\n     xlab = ,\n     ylab = ,\n     ylim = )\n```\n:::\n\n\n## [Kernel Density Estimators](02-quantitative.qmd#sec-kernel) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndensity(x)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nlines(col = , lwd = )\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(col = ,\n     lwd = ,\n     main = ,\n     xlab = ,\n     ylab = ,)\n```\n:::\n\n\n## [QQ Plots](03-compare.qmd#sec-qq) {.unnumbered}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nqqnorm(y = , main = )\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nqqline(y = )\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,16 @@
+---
+title: "Welcome!"
+number-sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+```
+
+# Welcome!
+
+On this webpage you will find all the formulas for calculating any **confidence intervals** relating to population means, variances and proportions, as covered in [Chapter 8](https://read.kortext.com/reader/pdf/92741/454){target="_blank"} of *Probability and Statistics with R*.
+
+You will always have access to this lab in assessments, so make sure you are familiar with where to find these formulas.

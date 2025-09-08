@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Confidence Intervals"
+  chapters:
+    - index.qmd
+    - 01-popmeansCI.qmd
+    - 02-diffmeansCI.qmd
+    - 03-pairedCI.qmd
+    - 04-popvarCI.qmd
+    - 05-poppropCI.qmd
+    - 06-poissCI.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+
+editor: visual
+
