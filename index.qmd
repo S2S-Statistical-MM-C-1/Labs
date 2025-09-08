@@ -8,3 +8,4 @@ format: html
 This site contains the content for each lab. Click a link below to view the lab material.
 
 - [Lab 0](Lab0/docs/index.html)
+- [Lab 1](Lab1/docs/index.html)
