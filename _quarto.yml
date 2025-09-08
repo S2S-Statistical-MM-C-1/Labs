@@ -12,7 +12,6 @@ format:
     theme: [cosmo, custom.scss]
     css: 
     - styles.css
-    - include/webex.css
     toc: true
     include-after-body: include/webex.js
     embed-resources: true
