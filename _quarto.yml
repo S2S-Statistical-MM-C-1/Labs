@@ -4,6 +4,8 @@ project:
 
 book:
   title: "S2S Labs"
+  chapters: 
+    - index.qmd
   
 format:
   html:
