@@ -1,0 +1,10 @@
+---
+title: "S2S Labs"
+format: html
+---
+
+# Welcome to S2S Labs!
+
+This site contains the content for each lab. Click a link below to view the lab material.
+
+- [Lab 0](Lab0/docs/index.html)
