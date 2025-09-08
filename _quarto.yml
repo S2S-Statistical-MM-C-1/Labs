@@ -1,0 +1,18 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "S2S Labs"
+  
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: 
+    - styles.css
+    - include/webex.css
+    toc: true
+    include-after-body: include/webex.js
+    embed-resources: true
+
+editor: source
