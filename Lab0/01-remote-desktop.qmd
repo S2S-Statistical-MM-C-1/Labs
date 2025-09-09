@@ -14,7 +14,7 @@ library(tidyverse)
 
 If you are unable to download and install RStudio on to your own device, don't worry! It is possible to access RStudio on the University's Virtual Desktop, called **Glasgow Anywhere Desktop**.
 
-To do this, follow this [link](https://www.gla.ac.uk/myglasgow/anywhere/desktop/) and select the '*Connect to Glasgow Anywhere Desktop via your web browser*'. You will need to log in using your student email and password and then select the '*Student Desktop*'. This will open a Windows desktop in your browser - the same one you would see on a PC in the computer labs.
+To do this, follow this [link](https://www.gla.ac.uk/myglasgow/anywhere/desktop/){target="_blank"} and select the '*Connect to Glasgow Anywhere Desktop via your web browser*'. You will need to log in using your student email and password and then select the '*Student Desktop*'. This will open a Windows desktop in your browser - the same one you would see on a PC in the computer labs.
 
 ```{r VDI-image, echo=FALSE, fig.cap="Glasgow Anywhere Student Desktop", fig.align="center", out.width='80%'}
 include_graphics("Images/VirtualDesktop.png")

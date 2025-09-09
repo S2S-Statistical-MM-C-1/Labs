@@ -35,34 +35,46 @@ include_graphics("Images/RStudioWindow.png")
 
 To test that your RStudio is working as expected, copy and paste the following code to the R Script you have just created. You can then 'run' this code to see the result.
 
+::: panel-tabset
+## R Code
 ```{r, eval=FALSE}
 (112/8)*0.5
 ```
+:::
 
 You should see the value 7 pasted in the console pane.
 
 It is also good to know that you can use "packages" in R. To install the package `ggplot2` on to your device, copy and paste the code below into your R script, then make sure to run these two lines.
 
+::: panel-tabset
+## R Code
 ```{r, eval=FALSE}
 install.packages("ggplot2")
 library(ggplot2)
 ```
+:::
 
 The `ggplot2` package is used to create graphs and plots in R Studio. Again, copy and paste the code below then run it to see an example of a plot you can create in R. You don't need to understand any of this code at the moment, it will all be explained in your courses!
 
+::: panel-tabset
+## R Code
 ```{r, eval=FALSE}
 ggplot(data = mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg), fill = "slateblue", alpha = 0.2) +
   xlab("cyl")
 ```
+:::
 
 Now you should see the following plot in the plots tab.
 
+::: panel-tabset
+## Plots
 ```{r, echo=FALSE}
 ggplot(data = mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg), fill = "slateblue", alpha = 0.2) +
   xlab("cyl")
 ```
+:::
 
 To save an R script with any code you have written, simply click the ![](Images/Save.png){width="3%"} icon at the top left of the source pane and choose where to save the file (make sure this is somewhere you can find it again!). R scripts are saved as .r files.
 
@@ -70,9 +82,12 @@ To open a previously saved R script, either click on the .r file in the folder y
 
 Now that you have RStudio installed and know everything works as expected, you can run the following code to play a game of Wordle in the console pane!
 
+::: panel-tabset
+## R Code
 ```{r, eval=FALSE}
 install.packages("wordler")
 library(wordler)
 
 play_wordler()
 ```
+:::
