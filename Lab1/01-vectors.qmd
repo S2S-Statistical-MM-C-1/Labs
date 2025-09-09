@@ -368,8 +368,10 @@ This tells us that R has stored `animals` as a character vector, meaning each el
 Task
 :::
 
-::: {.question-container .webex-check}
+::: {.question-container}
+:::: {.webex-check}
 What type of vector is `w`? `r mcq(c(answer="logical", "numeric", "complex", "character"))`
+::::
 
 `r hide("Solution")`
 
@@ -471,7 +473,7 @@ typeof(combined)
 ```
 :::
 
-The resulting vector is $\begin{bmatrix} \mbox{``FALSE"} & \mbox{``TRUE"} & \mbox{``FALSE"} & \mbox{``dog"} & \mbox{``sheep"} & \mbox{``cow"} & \mbox{``horse"} \end{bmatrix}^\intercal$ which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element). `r unhide()`
+The resulting vector is `"FALSE" "TRUE" "FALSE" "dog" "sheep" "cow" "horse"` which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element). `r unhide()`
 :::
 :::
 
@@ -570,12 +572,14 @@ Task
 ::: {.question-container .webex-check}
 Complete the code that would remove the third and fourth elements from the vector `animals`.
 
+:::: {.webex-check}
 ::: panel-tabset 
 ## R Code
 ::: webex-code
 `animals[` `r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)` `]`
 :::
 :::
+::::
 
 `r hide("Solution")` There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.
 
