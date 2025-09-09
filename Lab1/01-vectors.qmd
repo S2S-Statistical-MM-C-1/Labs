@@ -569,7 +569,7 @@ Note that it is not possible to use both positive and negative indices at the sa
 Task
 :::
 
-::: {.question-container .webex-check}
+::: {.question-container}
 Complete the code that would remove the third and fourth elements from the vector `animals`.
 
 :::: {.webex-check}
