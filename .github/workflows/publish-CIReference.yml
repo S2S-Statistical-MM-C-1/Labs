@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'CIReference/**'         # Only trigger if files in CIReference change
+  workflow_dispatch:      # Manual trigger button in Actions tab
 
 jobs:
   build-deploy:

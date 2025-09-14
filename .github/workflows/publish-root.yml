@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.qmd'
       - '.github/workflows/publish-root.yml'
+  workflow_dispatch:      # Manual trigger button in Actions tab
 
 jobs:
   build-deploy:

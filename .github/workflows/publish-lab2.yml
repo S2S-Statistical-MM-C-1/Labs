@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'Lab2/**'         # Only trigger if files in Lab2 change
+  workflow_dispatch:      # Manual trigger button in Actions tab
 
 jobs:
   build-deploy:
