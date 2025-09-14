@@ -1,1 +1,0 @@
-{"options":{"chapters":true},"entries":[{"order":{"number":2,"section":[2,3,0,0,0,0,0]},"key":"fig-edu-image","caption":"Screenshot of edu.csv file"},{"order":{"number":1,"section":[2,2,0,0,0,0,0]},"key":"fig-chol-image","caption":"Screenshot of chol.txt file"}],"headings":["directory","read.table","read.csv"]}
