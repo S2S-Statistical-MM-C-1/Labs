@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "S2S Induction Lab",
+    "title": "Level 2 Statistics",
     "section": "",
     "text": "1 R and RStudio\nWelcome to Level 2 Statistics! Today you will be introduced to R and RStudio and learn how to download and install both of them on to your device.\nR is a programming language that you will use to write code in numerous statistics courses throughout your degree. RStudio is an accompaniment to R, known as an Integrated Development Environment (IDE). RStudio essentially makes all features of the R programming language easier to use and it is the software you will interact with, rather than R directly.\nIt is best for you to install R and RStudio on your own device and use this throughout your courses.\nIf you do not already have R and RStudio downloaded on your device, follow the steps outlined below in Section 1.1 and Section 1.2 before moving on to Section 3 which will explain how to use RStudio.",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#sec-downloadR",
     "href": "index.html#sec-downloadR",
-    "title": "S2S Induction Lab",
+    "title": "Level 2 Statistics",
     "section": "1.1 Installing R",
     "text": "1.1 Installing R\n\n\n\n\nR logo\n\n\nThe first step is to install R onto your device. This can be done for free from CRAN (the Comprehensive R Archive Network). R is available for Windows, Mac OS, Linux and some other less common operating systems.\n\nIf you are using a Windows device, follow this link and click ‘Download R-4.5.1 for Windows’ to download the installer for the latest version of R. Once this is complete, run the installer and accept all default settings.\nIf you are using a Mac, follow this link and select the .pkg file from the left of the screen to download the installer for the latest version of R. Once this download is complete, open the file and complete the onscreen steps to finish installing R.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#sec-downloadRS",
     "href": "index.html#sec-downloadRS",
-    "title": "S2S Induction Lab",
+    "title": "Level 2 Statistics",
     "section": "1.2 Installing RStudio",
     "text": "1.2 Installing RStudio\n\n\n\n\nRStudio logo\n\n\nNow that R is installed on your device, you are ready to download and install RStudio.\nTo do this, follow the link to RStudio and click on the link ‘Download RStudio…’. This should automatically detect what system your device is using but make sure to double check it says either for Windows or for MacOS - whichever is correct!\nThis file may take a while to download, but once it has launch the installer and follow the steps to complete the installation.\nYou are now ready to use RStudio. Make sure you launch the RStudio app to work within, rather than R.",
     "crumbs": [
