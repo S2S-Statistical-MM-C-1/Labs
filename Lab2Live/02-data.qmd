@@ -22,7 +22,7 @@ Some of the common data structures we will become familiar with are;
 -   [**matrices**](02-data.qmd#sec-mat)
 -   [**factors**](02-data.qmd#sec-fact)
 -   [**data frames**](02-data.qmd#sec-df)
--   [**lists**](06-lists.qmd)
+-   [**lists**](/06-lists.html)
 
 ------------------------------------------------------------------------
 
