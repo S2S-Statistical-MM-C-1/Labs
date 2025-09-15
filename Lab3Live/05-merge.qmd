@@ -138,4 +138,4 @@ primary
 
 ---
 
-For more information on merging data set, see [Section 1.11.4 Merging Data Frames](https://read.kortext.com/reader/pdf/92741/56){target="_blank"} of *Probability and Statistics with R*.
+For more information on merging data set, see **Section 1.11.4 Merging Data Frames** of *Probability and Statistics with R*.

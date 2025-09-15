@@ -12,7 +12,7 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-In [Lab 2](https://moodle.gla.ac.uk/pluginfile.php/9073095/mod_resource/content/2/index.html){target="_blank"}, we saw how to read data frames into our **Environment** tab from a pre-installed and loaded R package. In reality, the data you are using won't always come from an R package and will likely be stored elsewhere. In this lab we will learn how to read data into R from different locations.
+In [Lab 2](../Lab2/){target="_blank"}, we saw how to read data frames into our **Environment** tab from a pre-installed and loaded R package. In reality, the data you are using won't always come from an R package and will likely be stored elsewhere. In this lab we will learn how to read data into R from different locations.
 
 ## Setting your working directory {#directory}
 
@@ -20,7 +20,7 @@ Before we can start reading in any data sets, we need to know about working dire
 
 From now on, we recommend that you create a folder for each S2S lab on your own device, where you can save the R script of code you write, as well as any files containing data that you use in the lab. For example, create a folder called "**S2S Lab 3**" for this lab, somewhere where you can find it again (if you are using a lab PC, then save these folders in your **M: Drive** - this ensures you can access them again from any PC across the university).
 
-Now you can download the data files on [Moodle](https://moodle.gla.ac.uk/mod/folder/view.php?id=4850758){target="_blank"} and save them in this folder (make sure to keep them named as they are).
+Now you can download the data files on **Moodle** and save them in this folder (make sure to keep them named as they are).
 
 Once you have a folder created, you can tell R to automatically look within that folder whenever you want to open or load in specific files. To do this, within RStudio, click on:
 
@@ -32,7 +32,7 @@ This will open a pop-up window where you can navigate to the folder you just cre
 
 ---
 
-To learn more about how to set a working directory within RStudio, refer to [Section 1.7 RStudio](https://read.kortext.com/reader/pdf/92741/16){target="_blank"} of *Probability and Statistics with R*.
+To learn more about how to set a working directory within RStudio, refer to **Section 1.7 RStudio** of *Probability and Statistics with R*.
 
 
 ## `read.table()`
@@ -141,7 +141,7 @@ education <- read.csv(file = "Data/edu.csv", na.strings = "*", fileEncoding = 'U
 
 ---
 
-The use of the functions `read.table()` and `read.csv()` is detailed in [Section 1.10.1 Using `read.table()`](https://read.kortext.com/reader/pdf/92741/40){target="_blank"} of *Probability and Statistics with R*.
+The use of the functions `read.table()` and `read.csv()` is detailed in **Section 1.10.1 Using `read.table()`** of *Probability and Statistics with R*.
 
-There are several other file types that data can be stored in, and numerous ways to read data sets into R. If you are curious about other ways to do this, refer to [1.10 Reading and Saving Data in R](https://read.kortext.com/reader/pdf/92741/39){target="_blank"} in *Probability and Statistics with R*.
+There are several other file types that data can be stored in, and numerous ways to read data sets into R. If you are curious about other ways to do this, refer to **1.10 Reading and Saving Data in R** in *Probability and Statistics with R*.
 

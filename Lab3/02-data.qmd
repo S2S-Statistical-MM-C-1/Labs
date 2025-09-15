@@ -19,7 +19,7 @@ education <- read.csv(file = "Data/edu.csv", na.strings = "*", fileEncoding = 'U
 
 ## Checking variable types {#sec-checking}
 
-Once a data frame has been read into R, it is always a good idea to examine its contents using the `str()` function to see the **structure** of the data object. We have already seen the `str()` function in [Lab 2](https://moodle.gla.ac.uk/pluginfile.php/9073095/mod_resource/content/2/02-data.html#sec-df){target="_blank"} but as a reminder, it shows us the type of vector each column in a data frame is saved as.
+Once a data frame has been read into R, it is always a good idea to examine its contents using the `str()` function to see the **structure** of the data object. We have already seen the `str()` function in [Lab 2](../Lab2/02-data.html#sec-df){target="_blank"} but as a reminder, it shows us the type of vector each column in a data frame is saved as.
 
 Running the following code tells us that the four variables `ldl`, `hdl`, `trig` and `age` are all integer vectors and that `id`, `gender` and `smoke` are character vectors.
 
@@ -37,7 +37,7 @@ str(chol)
 
 Because `gender` only takes the values `"female"` or `"male"` in this case, and `smoke` is categorised into three levels, `"no"`, `"ex-smoker"` and `"current"`, it makes sense to treat both these variables as factors instead of character vectors.
 
-We can use what we learned in [Lab 2](https://moodle.gla.ac.uk/pluginfile.php/9073095/mod_resource/content/2/02-data.html#sec-fact){target="_blank"} to change these variables into factors. 
+We can use what we learned in [Lab 2](../Lab2/02-data.html#sec-fact){target="_blank"} to change these variables into factors. 
 
 ::: panel-tabset
 ## R Code
@@ -65,12 +65,14 @@ str(chol)
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 ```{r data-ans1, echo=FALSE}
 opts1 <- c("character", "logical", "numeric", answer="integer", "factor")
 ```
 What type of variable is `schools` saved as in the `education` data frame?
 `r mcq(opts1)`
+::::
 
 `r hide("Solution")`
 Using the `str()` function shows us that `schools` is saved as an integer variable.
@@ -94,11 +96,12 @@ str(education)
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
 ```{r, echo=FALSE}
 opts <- c("`data.frame`", answer="`factor`", "`matrix`")
 ```
 
+::::{.webex-check}
 Complete the code to change the variables `year` and `level` in `education` to be factor variables.
 
 ::: panel-tabset
@@ -120,6 +123,7 @@ Complete the code to change the variables `year` and `level` in `education` to b
 </ul>
 :::
 :::
+::::
 
 `r hide("Solution")`
 
@@ -139,7 +143,7 @@ education$level <- factor(x = education$level,
 
 ---
 
-Refer to [Section 1.11 Working with Data](https://read.kortext.com/reader/pdf/92741/47){target="_blank"} of *Probability and Statistics with R* to learn more about checking the setup of a data set.
+Refer to **Section 1.11 Working with Data** of *Probability and Statistics with R* to learn more about checking the setup of a data set.
 
 
 ## Dealing with `NA` values
@@ -212,13 +216,15 @@ Here, using `na.omit()` and `complete.cases()` have returned the same output.
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
 ```{r data-ans4, echo=FALSE}
 opts2 <- c("none", "8 only", "8 and 15", answer="8 and 16", "16 only")
 ```
 
+::::{.webex-check}
 Which rows in `education` have missing values?
 `r mcq(opts2)`
+::::
 
 `r hide("Solution")`
 Using `complete.cases()` shows us that rows 8 and 16 of `education` are incomplete and therefore contain `NA` values.
@@ -242,7 +248,8 @@ complete.cases(education)
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Write code to remove all rows in `education` which contain `NA` values.
 
 ::: panel-tabset
@@ -251,6 +258,7 @@ Write code to remove all rows in `education` which contain `NA` values.
 `r fitb(c("education[complete.cases(education), ]", "na.omit(education)", "education[!is.na(education$teachers), ]"))`
 :::
 :::
+::::
 
 `r hide("Solution")`
 Incomplete observations can be removed from `education` using any of the following lines of code.
@@ -300,7 +308,7 @@ Note that we use `!` in front of `is.na()` so that the logical vector returned h
 
 ---
 
-You can look at further examples of dealing with missing data in [Section 1.11.1 Dealing with `NA` Values](https://read.kortext.com/reader/pdf/92741/51){target="_blank"} of *Probability and Statistics with R*.
+You can look at further examples of dealing with missing data in **Section 1.11.1 Dealing with `NA` Values** of *Probability and Statistics with R*.
 
 
 ## Sorting data frames
@@ -327,9 +335,11 @@ Note that if we wanted to view these ages in decreasing order, we would add the 
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the largest value for `pupils` from the `education` data frame?
 `r fitb(c("400312", "400,312"))`
+::::
 
 `r hide("Solution")`
 ::: panel-tabset
@@ -420,14 +430,14 @@ education[order(education$pupils, decreasing = TRUE), ]
 
 ---
 
-Look at [Section 1.11.3 Sorting a Data Frame by One or More of Its Columns](https://read.kortext.com/reader/pdf/92741/55){target="_blank"} of *Probability and Statistics with R* to learn more about sorting and ordering data sets.
+Look at **Section 1.11.3 Sorting a Data Frame by One or More of Its Columns** of *Probability and Statistics with R* to learn more about sorting and ordering data sets.
 
 
 ## Subsetting
 
 When we want to only view particular elements of a data frame, this is known as subsetting the data. This is useful if you're dealing with extremely large data sets and only want to analyse female subjects, or subjects who are all from the same country for example. Subsetting the data means that you would extract only these subjects that you are actually interested in.
 
-A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in [Lab 1](https://moodle.gla.ac.uk/pluginfile.php/9072880/mod_resource/content/5/01-vectors.html#filter){target="_blank"}). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
+A useful function for extracting elements of a data frame is the function `subset()` (which we first saw in [Lab 1](../Lab1/01-vectors.html#sec-filter){target="_blank"}). This allows us to extract the elements of a data frame which meet particular conditions. The arguments that `subset()` takes are:
 
 * `x =`: this is the data frame that we want to extract particular elements from.
 * `subset =`: this is a logical statement which determines the elements to keep in the subsetted data frame.
@@ -525,7 +535,7 @@ subset(x = education,
 
 ---
 
-You can read more about subsetting data frames in [Section 1.12 Using Logical Operators with Data Frames](https://read.kortext.com/reader/pdf/92741/58){target="_blank"} in *Probability and Statistics with R*.
+You can read more about subsetting data frames in **Section 1.12 Using Logical Operators with Data Frames** in *Probability and Statistics with R*.
 
 
 ## Summarising data
@@ -659,9 +669,11 @@ Now we can see that the mean HDL for females who are non-smokers is 57.20. <!-- 
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the mean total number of teachers in primary schools across all years?
 `r fitb(c("25055", "25056", "25055.5", "25055.50", "25055.500", "25055.5000"))`
+::::
 
 `r hide("Solution")`
 In order to find this value we want to use the function `tapply()`. `teachers` is the column we want to calculate the `mean` for, but make sure to split this by the different levels in the `level` column.
@@ -687,7 +699,7 @@ tapply(X = education$teachers, INDEX = list(education$level),
 
 ---
 
-To read more on creating tables and summarising data in R, see Sections [1.13 Tables](https://read.kortext.com/reader/pdf/92741/62){target="_blank"} and [1.14 Summarizing Functions](https://read.kortext.com/reader/pdf/92741/66){target="_blank"} in *Probability and Statistics with R*.
+To read more on creating tables and summarising data in R, see Sections **1.13 Tables** and **1.14 Summarizing Functions** in *Probability and Statistics with R*.
 
 
 ## Creating variables
@@ -814,9 +826,9 @@ Note that `tail()` is a function very similar to `head()`, but rather than showi
 
 ---
 
-Sections [1.11.2 Creating New Variables in a Data Frame](https://read.kortext.com/reader/pdf/92741/54){target="_blank"} and [1.13 Tables](https://read.kortext.com/reader/pdf/92741/62){target="_blank"} of *Probability and Statistics with R* describe how to create new variables.
+Sections **1.11.2 Creating New Variables in a Data Frame** and **1.13 Tables** of *Probability and Statistics with R* describe how to create new variables.
 
-See @sec-cut to learn how to create a new variable in a data frame by breaking an exisiting variable into different levels.
+See @sec-cut to learn how to create a new variable in a data frame by breaking an existing variable into different levels.
 
 
 
