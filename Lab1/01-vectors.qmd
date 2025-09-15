@@ -30,7 +30,7 @@ You should notice that two '`Values`' appear in the **Environment** tab, `x` and
 
 ------------------------------------------------------------------------
 
-Note that you can find further details and examples of creating your own vectors in [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6){target="_blank"} of *Probability and Statistics with R*.
+Note that you can find further details and examples of creating your own vectors in **Section 1.3 Vectors** of *Probability and Statistics with R*.
 
 ## Addition {#sec-addition}
 
@@ -117,7 +117,7 @@ c
 
 ------------------------------------------------------------------------
 
-[Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6){target="_blank"} of *Probability and Statistics with R* explains in detail how R adds two vectors together.
+**Section 1.3 Vectors** of *Probability and Statistics with R* explains in detail how R adds two vectors together.
 
 ## Logical operators {#sec-logi}
 
@@ -319,7 +319,7 @@ Similarly, we can see that the third entry of `u+v` is `r (u+v)[3]` and the seco
 
 ------------------------------------------------------------------------
 
-Look at [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6){target="_blank"} of *Probability and Statistics with R* for more information on logical operators and vectors.
+Look at **Section 1.3 Vectors** of *Probability and Statistics with R* for more information on logical operators and vectors.
 
 ## Other types of vectors {#sec-types}
 
@@ -522,7 +522,7 @@ R has still changed the vector to be numeric, but since "dog", for example, does
 
 ------------------------------------------------------------------------
 
-To read more about the types of vectors R can handle, see [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6){target="_blank"} of *Probability and Statistics with R*.
+To read more about the types of vectors R can handle, see **Section 1.3 Vectors** of *Probability and Statistics with R*.
 
 ## Indexing vectors {#sec-index}
 
@@ -687,7 +687,7 @@ logical[-c(2, 4)]
 
 ------------------------------------------------------------------------
 
-[Section 1.3.2 Vector Indexing](https://read.kortext.com/reader/pdf/92741/10){target="_blank"} of *Proability and Statistics with R* contains further details of indexing vectors.
+**Section 1.3.2 Vector Indexing** of *Probability and Statistics with R* contains further details of indexing vectors.
 
 ## Sequences {#sec-seq}
 
@@ -842,7 +842,7 @@ seq(from = 4.10, by = 0.05, length.out = 7)
 
 ------------------------------------------------------------------------
 
-You can see additional examples of using the `seq()` function in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11){target="_blank"} of *Probability and Statistics with R*.
+You can see additional examples of using the `seq()` function in **Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants** of *Probability and Statistics with R*.
 
 ## Repeating constants {#sec-repeat}
 
@@ -1009,7 +1009,7 @@ rep(x = 2:7,
 
 ------------------------------------------------------------------------
 
-You can see additional examples of using the `rep()` function in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11){target="_blank"} of *Probability and Statistics with R*.
+You can see additional examples of using the `rep()` function in **Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants** of *Probability and Statistics with R*.
 
 ## Filtering vectors {#sec-filter}
 
@@ -1136,7 +1136,7 @@ subset(x = z, subset = (z > 5))
 
 ------------------------------------------------------------------------
 
-[Section 1.3.4 Filtering Vectors](https://read.kortext.com/reader/pdf/92741/12){target="_blank"} of *Probability and Statistics with R* gives further examples on how to filter vectors.
+**Section 1.3.4 Filtering Vectors** of *Probability and Statistics with R* gives further examples on how to filter vectors.
 
 ## Getting help {#sec-help}
 
@@ -1163,4 +1163,4 @@ Sometimes you might see a value associated with a specific argument in the help 
 
 ------------------------------------------------------------------------
 
-For more information on accessing the online and inbuilt help in RStudio, see [Section 1.5 Getting Help](https://read.kortext.com/reader/pdf/92741/14){target="_blank"} in *Probability and Statistics with R*.
+For more information on accessing the online and inbuilt help in RStudio, see **Section 1.5 Getting Help** in *Probability and Statistics with R*.
