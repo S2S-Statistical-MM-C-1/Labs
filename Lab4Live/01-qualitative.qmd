@@ -12,16 +12,14 @@ library(tidyverse)
 
 Qualitative data is the term used when a variable has different categories or groups or levels. This could be things such as students' grades, the genders of patients in an experiment or which treatment subjects have been given. There are several ways that qualitative data can be summarised and presented.
 
----
-
-Details on summarising univariate qualitative data and creating suitable graphical displays are also covered in [Section 2.3 Displaying Qualitative Data](https://read.kortext.com/reader/pdf/92741/98){target="_blank"} in *Probability and Statistics with R*.
+Details on summarising univariate qualitative data and creating suitable graphical displays are also covered in **Section 2.3 Displaying Qualitative Data** in *Probability and Statistics with R*.
 
 
 ## Tables {#sec-tables}
 
 Frequency tables summarise qualitative data by showing the different groups/categories in a variable and the corresponding frequency with which they occur - that is, how many observations fall into each category.
 
-Frequency tables can be created in R using the `table()` function. We have already seen `table()` used in [Lab 3](https://moodle.gla.ac.uk/pluginfile.php/9073238/mod_resource/content/2/02-data.html#summarising-data){target="_blank"}, but let's revisit it with an example.
+Frequency tables can be created in R using the `table()` function. We have already seen `table()` used in [Lab 3](../Lab3/02-data.html#summarising-data){target="_blank"}, but let's revisit it with an example.
 
 The data set `EPIDURAL` from the package `PASWR2` contains information on 85 patients from a study used to determine whether administering epidural anesthesia (a pain relief administered in the back) to pregnant women in labour is better whilst they are in the traditional sitting position, or when they are in a "hamstring stretch" position. This contains several variables relating to each patient and the treatment they receive (to see more about what each of these variables describes, run the code `help("EPIDURAL")`).
 
@@ -200,7 +198,7 @@ prop.table(table(TITANIC3$survived))
 
 ---
 
-See [Section 2.3.1 Tables](https://read.kortext.com/reader/pdf/92741/98){target="_blank"} of *Probability and Statistics with R* to read more about presenting qualitative data in frequency and proportion tables.
+See **Section 2.3.1 Tables** of *Probability and Statistics with R* to read more about presenting qualitative data in frequency and proportion tables.
 
 
 ## Barplots {#sec-bars}
@@ -326,7 +324,7 @@ barplot(height = table(TITANIC3$pclass),
 
 ---
 
-You can see further examples of creating barplots in R in [Section 2.3.2 Barplots](https://read.kortext.com/reader/pdf/92741/100){target="_blank"} of *Probability and Statistics with R*.
+You can see further examples of creating barplots in R in **Section 2.3.2 Barplots** of *Probability and Statistics with R*.
 
 
 
@@ -365,7 +363,7 @@ dotchart(x = epi_freq,
 
 ---
 
-See [Section 2.3.3 Dot Charts](https://read.kortext.com/reader/pdf/92741/100){target="_blank"} of *Probability and Statistics with R* to learn more about constructing these plots.
+See **Section 2.3.3 Dot Charts** of *Probability and Statistics with R* to learn more about constructing these plots.
 
 
 ## Pie Charts {#sec-pies}
@@ -454,7 +452,7 @@ pie(x = table(TITANIC3$pclass),
 
 ---
 
-[Section 2.3.4 Pie Charts](https://read.kortext.com/reader/pdf/92741/103){target="_blank"} of *Probability and Statistics with R* gives additional examples of constructing pie charts.
+**Section 2.3.4 Pie Charts** of *Probability and Statistics with R* gives additional examples of constructing pie charts.
 
 
 ## Bivariate Data {#sec-bi}
@@ -757,7 +755,7 @@ barplot(height = t(surv_prop),
 
 ---
 
-To learn more about presenting bivariate qualitative data, see Sections [2.7.1 Two-Way Contingency Tables](https://read.kortext.com/reader/pdf/92741/134){target="_blank"} and [2.7.2 Graphical Representations of Two-Way Contingency Tables](https://read.kortext.com/reader/pdf/92741/136){target="_blank"} of *Probability and Statistics with R*.
+To learn more about presenting bivariate qualitative data, see Sections **2.7.1 Two-Way Contingency Tables** and **2.7.2 Graphical Representations of Two-Way Contingency Tables** of *Probability and Statistics with R*.
 
 
 

@@ -164,7 +164,8 @@ ggplot(data = EPIDURAL) +
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Complete the code below to create the barplot showing the number of passengers who survived and did not survive in each class from the `TITANIC3` data set beneath.
 
 ::: panel-tabset
@@ -194,6 +195,7 @@ ggplot(data = TITANIC3) +
   guides(fill = guide_legend("Did the passenger survive?"))
 ```
 :::
+::::
 
 `r hide("Solution")`
 ::: panel-tabset
@@ -297,6 +299,7 @@ ggplot(data = EPIDURAL) +
 Task
 ::::
 ::::{.question-container .webex-check}
+::::{.webex-check}
 Complete the code to create a histogram, using `ggplot2`, showing the ages of all passengers on the Titanic.
 
 ::: panel-tabset
@@ -322,6 +325,7 @@ ggplot(data = TITANIC3) +
        x = "Age", y = "Frequency")
 ```
 :::
+::::
 
 `r hide("Solution")`
 ::: panel-tabset
@@ -428,7 +432,8 @@ We can see from the plots above that both distributions are right skewed, howeve
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Complete the code below to create the following histogram and density plots which show the distribution of passenger age for each class of passengers on board the Titanic.
 
 ::: panel-tabset
@@ -470,6 +475,7 @@ ggplot(data = TITANIC3) +
   guides(fill = "none")
 ```
 :::
+::::
 
 `r hide("Solution")`
 ::: panel-tabset
@@ -503,7 +509,7 @@ ggplot(data = TITANIC3) +
 
 ---
 
-`ggplot2` can be used to create many different types of plots and graphs, not just those detailed above. For further examples of constructing barplots, histograms and kernel density estimates in `ggplot2`, as well as an introduction to the other plots it can be used to create, see [Section 2.9.5 Graphics with `ggplot2`](https://read.kortext.com/reader/pdf/92741/169){target="_blank"} of *Probability and Statistics with R*.
+`ggplot2` can be used to create many different types of plots and graphs, not just those detailed above. For further examples of constructing barplots, histograms and kernel density estimates in `ggplot2`, as well as an introduction to the other plots it can be used to create, see **Section 2.9.5 Graphics with `ggplot2`** of *Probability and Statistics with R*.
 
 
 

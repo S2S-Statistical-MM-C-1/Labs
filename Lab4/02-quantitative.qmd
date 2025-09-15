@@ -64,7 +64,7 @@ How would you describe the shape of the distribution of patients' weights?
 
 ---
 
-See [Section 2.4.1 Stem-and-Leaf Plots](https://read.kortext.com/reader/pdf/92741/104){target="_blank"} of *Probability and Statistics with R* for additional examples.
+See **Section 2.4.1 Stem-and-Leaf Plots** of *Probability and Statistics with R* for additional examples.
 
 <!--
 ## Strip Charts {#strip}
@@ -271,7 +271,8 @@ hist(x = EPIDURAL$kg,
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What single value would you provide to the `breaks =` argument to create the density histogram of passenger ages on the Titanic shown below?
 
 ```{r quant-ans3.1, echo=FALSE, fig.align="center"}
@@ -296,7 +297,9 @@ hist(x = TITANIC3$age,
 </ul>
 :::
 :::
+::::
 
+::::{.webex-check}
 If you instead wanted to provide the argument `breaks =` with a sequence generated using the `seq()` function, how would you do this?
 
 ```{r quant-ans3.2, echo=FALSE}
@@ -330,6 +333,7 @@ opts2 <- c("from = 0, to = 80, by = 10", "from = 0, by = 10, to = 80",
 </ul>
 :::
 :::
+::::
 
 `r hide("Solution")`
 Both chunks of code below will produce the same histogram shown above.
@@ -366,7 +370,7 @@ hist(x = TITANIC3$age,
 
 ---
 
-There are several different ways that the breaks used to construct the intervals for a histogram can be constructed. You can read more about these methods in [Section 2.4.3.1 Histograms](https://read.kortext.com/reader/pdf/92741/107){target="_blank"} from *Probability and Statistics with R*.
+There are several different ways that the breaks used to construct the intervals for a histogram can be constructed. You can read more about these methods in **Section 2.4.3.1 Histograms** from *Probability and Statistics with R*.
 
 
 ## Kernel Density Estimators {#sec-kernel}
@@ -462,7 +466,7 @@ plot(age_dens, col = "gray32", lwd = 2,
 
 ---
 
-To read more about how kernel density estimates are constructed, see [Section 2.4.3.2 Kernel Density Estimators](https://read.kortext.com/reader/pdf/92741/114){target="_blank"} in *Probability and Statistics with R*.
+To read more about how kernel density estimates are constructed, see **Section 2.4.3.2 Kernel Density Estimators** in *Probability and Statistics with R*.
 
 
 

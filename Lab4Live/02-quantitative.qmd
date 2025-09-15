@@ -64,7 +64,7 @@ How would you describe the shape of the distribution of patients' weights?
 
 ---
 
-See [Section 2.4.1 Stem-and-Leaf Plots](https://read.kortext.com/reader/pdf/92741/104){target="_blank"} of *Probability and Statistics with R* for additional examples.
+See **Section 2.4.1 Stem-and-Leaf Plots** of *Probability and Statistics with R* for additional examples.
 
 <!--
 ## Strip Charts {#strip}
@@ -368,7 +368,7 @@ hist(x = TITANIC3$age,
 
 ---
 
-There are several different ways that the breaks used to construct the intervals for a histogram can be constructed. You can read more about these methods in [Section 2.4.3.1 Histograms](https://read.kortext.com/reader/pdf/92741/107){target="_blank"} from *Probability and Statistics with R*.
+There are several different ways that the breaks used to construct the intervals for a histogram can be constructed. You can read more about these methods in **Section 2.4.3.1 Histograms** from *Probability and Statistics with R*.
 
 
 ## Kernel Density Estimators
@@ -466,7 +466,7 @@ plot(age_dens, col = "gray32", lwd = 2,
 
 ---
 
-To read more about how kernel density estimates are constructed, see [Section 2.4.3.2 Kernel Density Estimators](https://read.kortext.com/reader/pdf/92741/114){target="_blank"} in *Probability and Statistics with R*.
+To read more about how kernel density estimates are constructed, see **Section 2.4.3.2 Kernel Density Estimators** in *Probability and Statistics with R*.
 
 
 

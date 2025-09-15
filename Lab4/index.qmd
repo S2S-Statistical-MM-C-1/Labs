@@ -37,7 +37,7 @@ This is where the question text would go.
 ```
 :::
 -->
-Welcome to the fourth S2S lab. This lab will teach you how to plot data sets in R, specifically following [Sections 2.3](https://read.kortext.com/reader/pdf/92741/98){target="_blank"} and [2.4](https://read.kortext.com/reader/pdf/92741/104){target="_blank"} of *Probability and Statistics with R*. You will learn some of the appropriate ways to display different types of data and how to create these graphs and plots with your own code.
+Welcome to the fourth S2S lab. This lab will teach you how to plot data sets in R, specifically following **Sections 2.3 and 2.4** of [*Probability and Statistics with R*](https://www-taylorfrancis-com.ezproxy1.lib.gla.ac.uk/reader/read-online/59b6523e-f921-4599-8d9e-20af1058199a/book/epub?context=ubx){target="_blank"}. You will learn some of the appropriate ways to display different types of data and how to create these graphs and plots with your own code.
 
 There are two ways plots or graphs are commonly created in R, and that is either using base R functions (ones which are automatically built into the R software) or using a specific package for creating graphs called `ggplot2`. This lab focuses on producing plots in base R, but `ggplot2` is introduced in @sec-ggplot.
 

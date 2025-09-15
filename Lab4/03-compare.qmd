@@ -161,7 +161,7 @@ Again we can see that both distributions are right-skewed, but that the skew for
 
 ---
 
-Further examples of comparing the distributions of two samples are given in [Section 2.7.3 Comparing Samples](https://read.kortext.com/reader/pdf/92741/138){target="_blank"} of *Probability and Statistics with R*.
+Further examples of comparing the distributions of two samples are given in **Section 2.7.3 Comparing Samples** of *Probability and Statistics with R*.
 
 
 ## QQ Plots {#sec-qq}
@@ -256,7 +256,7 @@ Do you think that the ages of passengers who survived the sinking of the Titanic
 
 ---
 
-You can read more about how normal QQ plots are constructed in [Section 4.3.7 Normal (Gaussian) Distribution](https://read.kortext.com/reader/pdf/92741/296){target="_blank"} in *Probability and Statistics with R* (specifically [pages 301-306](https://read.kortext.com/reader/pdf/92741/301){target="_blank"}).
+You can read more about how normal QQ plots are constructed in **Section 4.3.7 Normal (Gaussian) Distribution** in *Probability and Statistics with R* (specifically pages 301-306).
 
 <!-- below introduces qqplot() which compares two separate groups of data, not compares one distribution with the normal distribution -->
 <!--
