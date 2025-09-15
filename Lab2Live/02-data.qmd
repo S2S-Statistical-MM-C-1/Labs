@@ -13,11 +13,11 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-R uses various different types of 'data structures' which are really just ways to store information of varying types. A lot of the data structures R uses are defined in terms of vectors, so it is important you are familiar with constructing and manipulating vectors in R (see [S2S Lab 1](https://moodle.gla.ac.uk/pluginfile.php/9072880/mod_resource/content/3/index.html){target="_blank"}).
+R uses various different types of 'data structures' which are really just ways to store information of varying types. A lot of the data structures R uses are defined in terms of vectors, so it is important you are familiar with constructing and manipulating vectors in R (see [S2S Lab 1](../Lab1/){target="_blank"}).
 
 Some of the common data structures we will become familiar with are;
 
--   [**vectors**](https://moodle.gla.ac.uk/pluginfile.php/9072880/mod_resource/content/3/01-vectors.html){target="_blank"} (covered in [Lab 1](https://moodle.gla.ac.uk/pluginfile.php/9072880/mod_resource/content/3/index.html){target="_blank"})
+-   [**vectors**](../Lab1/01-vectors.html){target="_blank"} (covered in [Lab 1](../Lab1/){target="_blank"})
 -   [**arrays**](02-data.qmd#sec-arrays)
 -   [**matrices**](02-data.qmd#sec-mat)
 -   [**factors**](02-data.qmd#sec-fact)
@@ -26,7 +26,7 @@ Some of the common data structures we will become familiar with are;
 
 ------------------------------------------------------------------------
 
-Each of the data structures presented here are covered using additional examples in [Section 1.9 R Data Structures](https://read.kortext.com/reader/pdf/92741/21){target="_blank"} of *Probability and Statistics with R*.
+Each of the data structures presented here are covered using additional examples in **Section 1.9 R Data Structures** of *Probability and Statistics with R*.
 
 ## Arrays {#sec-arrays}
 
@@ -71,7 +71,7 @@ The values from `vect` are entered into `A1` going down the columns first, then 
 
 ------------------------------------------------------------------------
 
-You can learn more about creating arrays in [Section 1.9.1 Arrays and Matrices](https://read.kortext.com/reader/pdf/92741/21){target="_blank"} of *Probability and Statistics with R*.
+You can learn more about creating arrays in **Section 1.9.1 Arrays and Matrices** of *Probability and Statistics with R*.
 
 ## Matrices {#sec-mat}
 
@@ -583,7 +583,7 @@ $$
 
 ------------------------------------------------------------------------
 
-There are additional details and examples of using matrices in R in Sections [1.9.1 Arrays and Matrices](https://read.kortext.com/reader/pdf/92741/21){target="_blank"} and [1.9.2 Vector and Matrix Operations](https://read.kortext.com/reader/pdf/92741/27){target="_blank"} of *Probability and Statistics with R*.
+There are additional details and examples of using matrices in R in Sections **1.9.1 Arrays and Matrices** and **1.9.2 Vector and Matrix Operations** of *Probability and Statistics with R*.
 
 ## Factors {#sec-fact}
 
@@ -738,7 +738,7 @@ survey
 
 ------------------------------------------------------------------------
 
-Creating factors in R is covered in [Section 1.9.3 Factors](https://read.kortext.com/reader/pdf/92741/28){target="_blank"} of *Probability and Statistics with R*.
+Creating factors in R is covered in **Section 1.9.3 Factors** of *Probability and Statistics with R*.
 
 ## Data frames {#sec-df}
 
@@ -1072,4 +1072,4 @@ data("WAIT")
 
 ------------------------------------------------------------------------
 
-All of this information is covered with further examples in [Section 1.9.5 Data Frames](https://read.kortext.com/reader/pdf/92741/31){target="_blank"} of *Probability and Statistics with R*.
+All of this information is covered with further examples in **Section 1.9.5 Data Frames** of *Probability and Statistics with R*.

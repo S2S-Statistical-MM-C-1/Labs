@@ -142,4 +142,4 @@ names(titanic)
 
 ------------------------------------------------------------------------
 
-You can see other examples of how lists can be used in [Section 1.9.4 Lists](https://read.kortext.com/reader/pdf/92741/29){target="_blank"} of *Probability and Statistics with R*.
+You can see other examples of how lists can be used in **Section 1.9.4 Lists** of *Probability and Statistics with R*.
