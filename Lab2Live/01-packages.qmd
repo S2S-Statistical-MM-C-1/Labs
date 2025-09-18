@@ -14,7 +14,7 @@ Packages are really important in R. They are collections of functions and/or dat
 
 Before loading in a package to R, it must first be installed onto your device. You only need to install packages once and then they will always be ready to load into your current RStudio session. To install a package, we use the function `install.packages("PackageName")`, where `"PackageName"` is the case sensitive name of the package.
 
-The textbook [*Probability and Statistics with R*](https://www-taylorfrancis-com.ezproxy1.lib.gla.ac.uk/reader/read-online/59b6523e-f921-4599-8d9e-20af1058199a/book/epub?context=ubx){target="_blank"} uses the `PASWR2` package throughout. To install this package, run the following code.
+The textbook [*Probability and Statistics with R*](https://read.kortext.com/reader/pdf/92741/A){target="_blank"} uses the `PASWR2` package throughout. To install this package, run the following code.
 
 ::: panel-tabset
 ## R Code
