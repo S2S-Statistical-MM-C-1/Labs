@@ -10,9 +10,6 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Lab1   # Make sure your folder is named Lab1 (no spaces)
 
     steps:
       # Step 1: Checkout the repository
@@ -34,9 +31,9 @@ jobs:
           extra-packages: any::rmarkdown, any::knitr, any::ggplot2, any::webexercises, any::PASWR2, any::kableExtra, any::tidyverse
           cache: true
 
-      # Step 5: Render the Quarto project
+      # Step 5: Render the Quarto project in Lab1
       - name: Render Quarto project
-        run: quarto render
+        run: quarto render Lab1
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy Lab1 site
@@ -44,4 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: Lab1/docs       # Quarto output folder
-          destination_dir: Lab1         # Subfolder on gh-pages branch
+          destination_dir: Lab1        # Subfolder on gh-pages branch
