@@ -47,7 +47,7 @@ Throughout the lab, there will be some interactive questions. We will use Mentim
 To access the Mentimeter for Lab 1, click on the logo above to head to [menti.com](https://www.menti.com/){target="_blank"}.
 
 
-## Following the labs
+## Following the labs {-}
 
 The labs will introduce you to concepts and practises of coding within RStudio. During the lab session, all examples of code will be explained and run from the front. You'll be able to see these being run in RStudio, but can also check the output directly in the lab page.
 
@@ -60,7 +60,7 @@ Some example code will appear here.
 
 ## Output
 
-```{r welcome2}
+```{r welcome2, echo = FALSE}
 paste("The output of the code will appear here.")
 ```
 
