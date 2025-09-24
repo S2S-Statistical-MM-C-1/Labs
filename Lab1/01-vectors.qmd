@@ -448,7 +448,7 @@ Create the character vector `colours` by copying and running the code below.
 ::: panel-tabset
 ## R Code
 
-```{r vect11.1.1, eval = FALSE}
+```{r vect11.1.1}
 colours <- c("red", "orange", "green", "blue")
 ```
 
