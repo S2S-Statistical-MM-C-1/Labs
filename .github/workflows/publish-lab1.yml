@@ -33,7 +33,7 @@ jobs:
 
       # Step 5: Render the Quarto project in Lab1
       - name: Render Quarto project
-        run: quarto render Lab1
+        run: quarto render Lab1 --output-dir Lab1/docs
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy Lab1 site
