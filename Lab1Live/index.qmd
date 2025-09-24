@@ -45,3 +45,36 @@ There are two pieces of assessment associated with these labs; an R assessment a
 Throughout the lab, there will be some interactive questions. We will use Mentimeter to gather the class' answers. The solutions to all these questions will be available in the complete version of the lab, released later.
 
 To access the Mentimeter for Lab 1, click on the logo above to head to [menti.com](https://www.menti.com/){target="_blank"}.
+
+
+## Following the labs
+
+The labs will introduce you to concepts and practises of coding within RStudio. During the lab session, all examples of code will be explained and run from the front. You'll be able to see these being run in RStudio, but can also check the output directly in the lab page.
+
+::: panel-tabset
+## R Code
+
+```{r welcome1, eval = FALSE}
+Some example code will appear here.
+```
+
+## Output
+
+```{r welcome2}
+paste("The output of the code will appear here.")
+```
+
+:::
+
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+Tasks are then your opportunity to practise writing and running your own code. If you see a box like this, try and answer the question using RStudio. You might also be asked to input your solution to Mentimeter.
+::::
+:::
+
+
+
