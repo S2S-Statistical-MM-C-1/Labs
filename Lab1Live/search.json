@@ -13,8 +13,8 @@
     "objectID": "index.html#following-the-labs",
     "href": "index.html#following-the-labs",
     "title": "S2S Lab 1",
-    "section": "0.1 Following the labs",
-    "text": "0.1 Following the labs\nThe labs will introduce you to concepts and practises of coding within RStudio. During the lab session, all examples of code will be explained and run from the front. You’ll be able to see these being run in RStudio, but can also check the output directly in the lab page.\n\nR CodeOutput\n\n\n\nSome example code will appear here.\n\n\n\n\npaste(\"The output of the code will appear here.\")\n\n[1] \"The output of the code will appear here.\"\n\n\n\n\n\n\n\nTask\n\n\nTasks are then your opportunity to practise writing and running your own code. If you see a box like this, try and answer the question using RStudio. You might also be asked to input your solution to Mentimeter.",
+    "section": "Following the labs",
+    "text": "Following the labs\nThe labs will introduce you to concepts and practises of coding within RStudio. During the lab session, all examples of code will be explained and run from the front. You’ll be able to see these being run in RStudio, but can also check the output directly in the lab page.\n\nR CodeOutput\n\n\n\nSome example code will appear here.\n\n\n\n\n\n[1] \"The output of the code will appear here.\"\n\n\n\n\n\n\n\nTask\n\n\nTasks are then your opportunity to practise writing and running your own code. If you see a box like this, try and answer the question using RStudio. You might also be asked to input your solution to Mentimeter.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome!</span>"
     ]
