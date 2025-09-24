@@ -43,5 +43,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Lab1/docs      # Quarto output folder
+          publish_dir: Lab1/docs       # Quarto output folder
           destination_dir: Lab1         # Subfolder on gh-pages branch
