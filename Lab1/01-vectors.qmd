@@ -1181,3 +1181,5 @@ Sometimes you might see a value associated with a specific argument in the help 
 ------------------------------------------------------------------------
 
 For more information on accessing the online and inbuilt help in RStudio, see **Section 1.5 Getting Help** in *Probability and Statistics with R*.
+
+
