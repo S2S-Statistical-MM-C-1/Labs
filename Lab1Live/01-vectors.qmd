@@ -86,7 +86,7 @@ Task
 :::
 
 ::: question-container
-Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $b=2$. Add these together and save the result as a new vector called `c` and print the contents of `c` in the console.
+Create and save the vector $m=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $n=2$. Add these together and save the result as a new vector called `o` and print the contents of `o` in the console.
 
 ````{=html}
 <!--
@@ -154,7 +154,15 @@ Other logical operators that we can use with vectors include:
 |   `==`   | exact equality           |
 |   `!=`   | exact inequality         |
 
-Let's explore how these operators behave with two new numerical vectors.
+
+
+::: question
+::: question-header
+Task
+:::
+
+::: question-container
+Let's explore how these operators behave with two new numerical vectors. Copy and run the code below to create the vectors `s` and `t`.
 
 ::: panel-tabset
 ## R Code
@@ -165,17 +173,10 @@ t <- c(2, 3, 4)
 ```
 :::
 
-::: question
-::: question-header
-Task
-:::
-
-::: question-container
 Write some code to show:
 
--   which elements of `s` and `t` are equal to each other
--   which elements of `s` are less than the corresponding element in `t`
--   which elements of `s` and `t` are unequal
+-   which elements of `s` and `t` are equal to each other. Call this vector `p`.
+-   which elements of `s` are less than the corresponding element in `t`. Call this vector `q`.
 
 ````{=html}
 <!--
@@ -243,21 +244,21 @@ Try using some of the other operators listed above to see if they return the vec
 
 What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (`[ ]`).
 
-For example, `s[3]` would extract the third element from `s`, that is the number `r s[3]`.
+For example, `w[3]` would extract the third element from `w`, that is the value `r w[3]`.
 
-The following code can be used to check whether the second element of `s` is the same as the third element of `t`.
+The following code can be used to check whether the first element of `w` is the same as the third element.
 
 ::: panel-tabset
 ## R Code
 
 ```{r vect6.1, eval = FALSE}
-s[2] == t[3]
+w[1] == w[3]
 ```
 
 ## Output
 
 ```{r vect6.2, echo = FALSE}
-s[2] == t[3]
+w[1] == w[3]
 ```
 :::
 
@@ -269,8 +270,8 @@ Task
 ::: question-container
 Create the vectors $u=\begin{bmatrix} 4 & 4 & 1 \end{bmatrix}^\intercal$ and $v=\begin{bmatrix} 1 & 0 & 5 \end{bmatrix}^\intercal$. Write code to check:
 
--   whether the first elements of `u+v` and `x+y` (defined in the previous section) are the same.
--   if the third element of `u+v` is the same as the second element of `x+y`.
+-   whether the first element of `u+v` is less than the first element of `s+t` (defined in the previous task).
+-   if the second element of `u+v` is the same as the first element of `s+t`.
 
 ````{=html}
 <!--
@@ -375,7 +376,7 @@ Task
 :::
 
 ::: question-container
-What type of vector is `w`? <!--
+What type of vector is `p`? <!--
 `r mcq(c(answer="logical", "numeric", "complex", "character"))`
 
 
@@ -446,7 +447,17 @@ Task
 :::
 
 ::: question-container
-Create a new vector, called `combined`, which is a combination of the logical vector `w` and the character vector `animals`. What type of vector is this?
+Create the character vector `colours` by copying and running the code below.
+
+::: panel-tabset
+## R Code
+
+```{r vect11.1.1, eval = FALSE}
+colours <- c("red", "orange", "green", "blue")
+```
+:::
+
+Create a new vector, called `combined`, which is a combination of the logical vector `p` and the character vector `colours`. What type of vector is this?
 
 ````{=html}
 <!--
@@ -529,7 +540,9 @@ as.numeric(animals)
 ```
 :::
 
-R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quotation marks) which is R's symbol for "Not Available", which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value. R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero).
+R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quotation marks). This is R's symbol for "Not Available" which we think of as a missing value. This tells us that each element within the now numeric vector doesn't have a value.
+
+R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero).
 
 ------------------------------------------------------------------------
 
@@ -581,7 +594,7 @@ Task
 :::
 
 ::: question-container
-Write some code that would remove the third and fourth elements from the vector `animals`.
+Write some code that would remove the third and fourth elements from the vector `colours`.
 
 ````{=html}
 <!--
@@ -1089,7 +1102,7 @@ Task
 :::
 
 ::: question-container
-Write some code to extract the elements of the vector `z` which are greater than 5.
+Write some code to extract the elements of the vector `u` which are greater than 3.
 
 ````{=html}
 <!--
@@ -1142,7 +1155,7 @@ Task
 :::
 
 ::: question-container
-Extract the elements of the vector `z` which are greater than 5 using the `subset()` function.
+Extract the elements of the vector `u` which are greater than 3 using the `subset()` function.
 
 ````{=html}
 <!--
@@ -1190,7 +1203,7 @@ help(rep)
 
 This tells us in the **Help** tab that the first argument for the `rep()` function is called `x =` and a short description of what should be provided to this argument is given. It also describes the other arguments `times =`, `length.out =` and `each =`.
 
-The order that arguments appear in in the help file is important because you don't actually need to use the names of the arguments when using a function. Instead, you can just provide the values for each argument, and as long as they are in the same order as they appear in in the help file, R will know which value corresponds to which argument. This is known as using positional arguments.
+The order that arguments are in within the help file is important because you don't actually need to use the names of the arguments when using a function. Instead, you can just provide the values for each argument, and as long as they are in the same order as they appear in within the help file, R will know which value corresponds to which argument. This is known as using **positional arguments**.
 
 Sometimes you might see a value associated with a specific argument in the help file, for example `x = 5`. This is the "default" value for that argument and it means that if you don't specify a different value for the argument, then R will use the default value when executing the function. We'll see more about default values as we encounter more complex functions in future labs.
 
