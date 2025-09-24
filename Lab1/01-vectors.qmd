@@ -84,7 +84,7 @@ Task
 ::::
 
 :::: question-container
-Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $b=2$. Add these together and save the result as a new vector called `c` and print the contents of `c` in the console.
+Create and save the vector $m=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $n=2$. Add these together and save the result as a new vector called `o` and print the contents of `o` in the console.
 
 `r hide("Solution")` 
 
@@ -92,21 +92,21 @@ Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and 
 ## R Code
 
 ```{r vect-ans1.1, comment=NA, eval = FALSE}
-a <- c(2, 2, -1)
-b <- 2
+m <- c(2, 2, -1)
+n <- 2
 
-c <- a + b
-c
+o <- m + n
+o
 ```
 
 ## Output
 
 ```{r vect-ans1.2, comment=NA, echo = FALSE}
-a <- c(2, 2, -1)
-b <- 2
+m <- c(2, 2, -1)
+n <- 2
 
-c <- a + b
-c
+o <- m + n
+o
 ```
 :::
 
@@ -152,7 +152,14 @@ Other logical operators that we can use with vectors include:
 |   `==`   | exact equality           |
 |   `!=`   | exact inequality         |
 
-Let's explore how these operators behave with two new numerical vectors.
+
+::: question
+::: question-header
+Task
+:::
+
+::: question-container
+Let's explore how these operators behave with two new numerical vectors. Copy and run the code below to create the vectors `s` and `t`.
 
 ::: panel-tabset
 ## R Code
@@ -163,17 +170,10 @@ t <- c(2, 3, 4)
 ```
 :::
 
-::: question
-::: question-header
-Task
-:::
-
-::: question-container
 Write some code to show:
 
--   which elements of `s` and `t` are equal to each other
--   which elements of `s` are less than the corresponding element in `t`
--   which elements of `s` and `t` are unequal
+-   which elements of `s` and `t` are equal to each other. Call this vector `p`.
+-   which elements of `s` are less than the corresponding element in `t`. Call this vector `q`
 
 `r hide("Solution")` When using logical operators with vectors, R will compare the vectors elementwise meaning the first elements of each vector will be compared to each other, then the second elements and so on.
 
@@ -183,13 +183,15 @@ Write some code to show:
 ## R Code
 
 ```{r vect-ans2.1.1, eval = FALSE}
-s == t
+p <- s == t
+p
 ```
 
 ## Output
 
 ```{r vect-ans2.1.2, echo = FALSE}
-s == t
+p <- s == t
+p
 ```
 :::
 
@@ -201,19 +203,21 @@ This tells us that the first element of `s` is equal to the first element of `t`
 ## R Code
 
 ```{r vect-ans2.2.1, eval = FALSE}
-s < t
+q <- s < t
+q
 ```
 
 ## Output
 
 ```{r vect-ans2.2.2, echo = FALSE}
-s < t
+q <- s < t
+q
 ```
 :::
 
 The first element of `s` is not less than the first elements of `t` (that is 2 \< 2 is not a true statement) so this returns `FALSE`. The statement `s < t` is `TRUE` for the third elements because the third element of `s` is 1 and for `t` it is 4 which equates to the statement 1 \< 4.
 
-**Inequality**:
+<!--**Inequality**:
 
 ::: panel-tabset
 ## R Code
@@ -229,7 +233,7 @@ s != t
 ```
 :::
 
-This return the opposite of `s == t`. The first elements of `s` and `t` are both 2 so they are equal meaning `!=` will return `FALSE`. Since the second elements are 4 and 3 respectively, these are unequal so `!=` returns `TRUE`.
+This return the opposite of `s == t`. The first elements of `s` and `t` are both 2 so they are equal meaning `!=` will return `FALSE`. Since the second elements are 4 and 3 respectively, these are unequal so `!=` returns `TRUE`.-->
 
 Try using some of the other operators listed above to see if they return the vectors you expect. `r unhide()`
 :::
@@ -237,21 +241,21 @@ Try using some of the other operators listed above to see if they return the vec
 
 What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (`[ ]`).
 
-For example, `s[3]` would extract the third element from `s`, that is the number `r s[3]`.
+For example, `w[3]` would extract the third element from `w`, that is the number `r w[3]`.
 
-The following code can be used to check whether the second element of `s` is the same as the third element of `t`.
+The following code can be used to check whether the second element of `w` is the same as the third element of `t`.
 
 ::: panel-tabset
 ## R Code
 
 ```{r vect6.1, eval = FALSE}
-s[2] == t[3]
+w[2] == w[3]
 ```
 
 ## Output
 
 ```{r vect6.2, echo = FALSE}
-s[2] == t[3]
+w[2] == w[3]
 ```
 :::
 
@@ -263,8 +267,8 @@ Task
 ::: question-container
 Create the vectors $u=\begin{bmatrix} 4 & 4 & 1 \end{bmatrix}^\intercal$ and $v=\begin{bmatrix} 1 & 0 & 5 \end{bmatrix}^\intercal$. Write code to check:
 
--   whether the first elements of `u+v` and `x+y` (defined in the previous section) are the same.
--   if the third element of `u+v` is the same as the second element of `x+y`.
+-   whether the first element of `u+v` is less than the first element of `s+t` (defined in the previous task).
+-   if the second element of `u+v` is the same as the first element of `s+t`.
 
 `r hide("Solution")`
 
@@ -277,43 +281,43 @@ v <- c(1, 0, 5)
 ```
 :::
 
-**Equality of the first elements:**
+**Comparing the first elements of `u+v` and `s+t`:**
 
 ::: panel-tabset
 ## R Code
 
 ```{r vect-ans3.2.1, eval = FALSE}
-(u + v)[1] == (x + y)[1]
+(u + v)[1] < (s + t)[1]
 ```
 
 ## Output
 
 ```{r vect-ans3.2.2, echo = FALSE}
-(u + v)[1] == (x + y)[1]
+(u + v)[1] < (s + t)[1]
 ```
 :::
 
-Here we have wrapped both `u+v` and `x+y` in brackets first so that we can then index the resulting vector. Alternatively, you could save `u+v` and `x+y` as new vectors, called something different, using the `<-` operator.
+Here we have wrapped both `u+v` and `s+t` in brackets first so that we can then index the resulting vector. Alternatively, you could save `u+v` and `s+t` as new vectors, called something different, using the `<-` operator.
 
-`u+v` is equal to $\begin{bmatrix} 5 & 4 & 6 \end{bmatrix}^\intercal$ so its first element is `r (u+v)[1]`. `x+y` is equal to $\begin{bmatrix} 5 & 7 & 4 \end{bmatrix}^\intercal$ so its first element is also `r (x+y)[1]`. It makes sense then that a `TRUE` statement is returned when checking the equality of the first elements of these two vectors.
+`u+v` is equal to $\begin{bmatrix} 5 & 4 & 6 \end{bmatrix}^\intercal$ so its first element is `r (u+v)[1]`. `s+t` is equal to $\begin{bmatrix} 4 & 7 & 5 \end{bmatrix}^\intercal$ so its first element is `r (s+t)[1]`. It makes sense then that a `FALSE` statement is returned when checking whether the first element of `u+v` is less than the first elements of `s+t`.
 
-**Equality of the third and second elements:**
+**Equality of the second and first elements:**
 
 ::: panel-tabset
 ## R Code
 
 ```{r vect-ans3.3.1, eval = FALSE}
-(u + v)[3] == (x + y)[2]
+(u + v)[2] == (s + t)[1]
 ```
 
 ## Output
 
 ```{r vect-ans3.3.2, echo = FALSE}
-(u + v)[3] == (x + y)[2]
+(u + v)[2] == (s + t)[1]
 ```
 :::
 
-Similarly, we can see that the third entry of `u+v` is `r (u+v)[3]` and the second entry of `x+y` is `r (x+y)[2]`. Since these are clearly not equal we would expect R to return a `FALSE` statement when checking their equality, which we can see above. `r unhide()`
+Similarly, we can see that the second entry of `u+v` is `r (u+v)[2]` and the first entry of `s+t` is `r (s+t)[1]`. Since these are equal we expect R to return a `TRUE` statement when checking their equality, which we can see above. `r unhide()`
 :::
 :::
 
@@ -370,7 +374,7 @@ Task
 
 ::: {.question-container}
 :::: {.webex-check}
-What type of vector is `w`? `r mcq(c(answer="logical", "numeric", "complex", "character"))`
+What type of vector is `p`? `r mcq(c(answer="logical", "numeric", "complex", "character"))`
 ::::
 
 `r hide("Solution")`
@@ -379,17 +383,17 @@ What type of vector is `w`? `r mcq(c(answer="logical", "numeric", "complex", "ch
 ## R Code
 
 ```{r vect-ans4.1, eval = FALSE}
-typeof(w)
+typeof(p)
 ```
 
 ## Output
 
 ```{r vect-ans4.2, echo = FALSE}
-typeof(w)
+typeof(p)
 ```
 :::
 
-Using `typeof()`, we can see that `w` is stored by R as a logical vector. `r unhide()`
+Using `typeof()`, we can see that `p` is stored by R as a logical vector. `r unhide()`
 :::
 :::
 
@@ -439,7 +443,18 @@ Task
 :::
 
 ::: question-container
-Create a new vector, called `combined`, which is a combination of the logical vector `w` and the character vector `animals`. What type of vector is this?
+Create the character vector `colours` by copying and running the code below.
+
+::: panel-tabset
+## R Code
+
+```{r vect11.1.1, eval = FALSE}
+colours <- c("red", "orange", "green", "blue")
+```
+
+:::
+
+Create a new vector, called `combined`, which is a combination of the logical vector `p` and the character vector `colours`. What type of vector is this?
 
 `r hide("Solution")`
 
@@ -447,14 +462,14 @@ Create a new vector, called `combined`, which is a combination of the logical ve
 ## R Code
 
 ```{r vect-ans5.1.1, eval = FALSE}
-combined <- c(w, animals)
+combined <- c(p, colours)
 combined
 ```
 
 ## Output
 
 ```{r vect-ans5.1.2, echo = FALSE}
-combined <- c(w, animals)
+combined <- c(p, colours)
 combined
 ```
 :::
@@ -473,7 +488,7 @@ typeof(combined)
 ```
 :::
 
-The resulting vector is `"FALSE" "TRUE" "FALSE" "dog" "sheep" "cow" "horse"` which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element). `r unhide()`
+The resulting vector is `"TRUE" "FALSE" "TRUE" "red" "orange" "green" "blue"` which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element). `r unhide()`
 :::
 :::
 
@@ -518,7 +533,9 @@ as.numeric(animals)
 ```
 :::
 
-R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quotation marks) which is R's symbol for "Not Available", which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value. R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero).
+R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quotation marks). This is R's symbol for "Not Available" which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value.
+
+R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero).
 
 ------------------------------------------------------------------------
 
@@ -570,13 +587,13 @@ Task
 :::
 
 ::: {.question-container}
-Complete the code that would remove the third and fourth elements from the vector `animals`.
+Complete the code that would remove the third and fourth elements from the vector `colours`.
 
 :::: {.webex-check}
 ::: panel-tabset 
 ## R Code
 ::: webex-code
-`animals[` `r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)` `]`
+`colours[` `r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)` `]`
 :::
 :::
 ::::
@@ -587,13 +604,13 @@ Complete the code that would remove the third and fourth elements from the vecto
 ## R Code
 
 ```{r vect-ans6.1.1, eval = FALSE}
-animals[-c(3, 4)]
+colours[-c(3, 4)]
 ```
 
 ## Output
 
 ```{r vect-ans6.1.2, echo = FALSE}
-animals[-c(3, 4)]
+colours[-c(3, 4)]
 ```
 :::
 
@@ -601,29 +618,29 @@ animals[-c(3, 4)]
 ## R Code
 
 ```{r vect-ans6.2.1, eval = FALSE}
-animals[c(-3, -4)]
+colours[c(-3, -4)]
 ```
 
 ## Output
 
 ```{r vect-ans6.2.2, echo = FALSE}
-animals[c(-3, -4)]
+colours[c(-3, -4)]
 ```
 :::
 
-Alternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.
+Alternatively, because `colours` has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.
 
 ::: panel-tabset
 ## R Code
 
 ```{r vect-ans6.3.1, eval = FALSE}
-animals[c(1, 2)]
+colours[c(1, 2)]
 ```
 
 ## Output
 
 ```{r vect-ans6.3.2, echo = FALSE}
-animals[c(1, 2)]
+colours[c(1, 2)]
 ```
 :::
 
@@ -1063,7 +1080,7 @@ Task
 :::
 
 ::: question-container
-Write some code to extract the elements of the vector `z` which are greater than 5.
+Write some code to extract the elements of the vector `u` which are greater than 3.
 
 `r hide("Solution")`
 
@@ -1071,13 +1088,13 @@ Write some code to extract the elements of the vector `z` which are greater than
 ## R Code
 
 ```{r vect-ans11.1, eval = FALSE}
-z[z > 5]
+u[u > 3]
 ```
 
 ## Output
 
 ```{r vect-ans11.2, echo = FALSE}
-z[z > 5]
+u[u > 3]
 ```
 :::
 
@@ -1112,7 +1129,7 @@ Task
 :::
 
 ::: question-container
-Extract the elements of the vector `z` which are greater than 5 using the `subset()` function.
+Extract the elements of the vector `u` which are greater than 3 using the `subset()` function.
 
 `r hide("Solution")`
 
@@ -1120,13 +1137,13 @@ Extract the elements of the vector `z` which are greater than 5 using the `subse
 ## R Code
 
 ```{r vect-ans12.1, eval = FALSE}
-subset(x = z, subset = (z > 5))
+subset(x = u, subset = (u > 3))
 ```
 
 ## Output
 
 ```{r vect-ans12.2, echo = FALSE}
-subset(x = z, subset = (z > 5))
+subset(x = u, subset = (u > 3))
 ```
 :::
 

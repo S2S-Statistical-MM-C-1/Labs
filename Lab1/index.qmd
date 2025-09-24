@@ -37,3 +37,33 @@ Over the course of the semester, we will have 10 lab slots - one every week on a
 The first three weeks of labs will follow **Chapter 1 What Is R?** of *Probability and Statistics with R* and provide an introduction to the basics of using R to work with data. You can use this chapter to find extra details of what's covered in the first three labs but everything that is examinable will be covered in the labs themselves.
 
 There are two pieces of assessment associated with these labs; an R assessment and a Lab Report. More details of these will be provided closer to the time.
+
+## Following the labs {-}
+
+The labs will introduce you to concepts and practises of coding within RStudio. You can copy and paste the example code into RStudio to run it yourself, but can also check the output directly in the lab page.
+
+::: panel-tabset
+## R Code
+
+```{r welcome1, eval = FALSE}
+Some example code will appear here.
+```
+
+## Output
+
+```{r welcome2, echo = FALSE}
+paste("The output of the code will appear here.")
+```
+
+:::
+
+
+:::{.question}
+::::{.question-header}
+Task
+::::
+::::{.question-container}
+Tasks are then your opportunity to practise writing and running your own code. If you see a box like this, try and answer the question using RStudio.
+::::
+:::
+
