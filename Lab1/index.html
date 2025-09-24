@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -4016,8 +4051,14 @@ margin: 1em 0;
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#following-the-labs" id="toc-following-the-labs" class="nav-link active" data-scroll-target="#following-the-labs">Following the labs</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -4064,8 +4105,37 @@ This is where the question text would go.
 <p>Over the course of the semester, we will have 10 lab slots - one every week on a Wednesday. The labs offer an opportunity to practise using RStudio yourself and follow along with the code being demonstrated. After all lab sessions have occurred each week, a complete version of that week’s lab, showing solutions to all the tasks as well as separate solutions to the Further Exercises, will be made available on the S2S Moodle page.</p>
 <p>The first three weeks of labs will follow <strong>Chapter 1 What Is R?</strong> of <em>Probability and Statistics with R</em> and provide an introduction to the basics of using R to work with data. You can use this chapter to find extra details of what’s covered in the first three labs but everything that is examinable will be covered in the labs themselves.</p>
 <p>There are two pieces of assessment associated with these labs; an R assessment and a Lab Report. More details of these will be provided closer to the time.</p>
+<section id="following-the-labs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="following-the-labs">Following the labs</h2>
+<p>The labs will introduce you to concepts and practises of coding within RStudio. You can copy and paste the example code into RStudio to run it yourself, but can also check the output directly in the lab page.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Some example code will appear here.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The output of the code will appear here."</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="question">
+<div class="question-header">
+<p>Task</p>
+</div>
+<div class="question-container">
+<p>Tasks are then your opportunity to practise writing and running your own code. If you see a box like this, try and answer the question using RStudio.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
