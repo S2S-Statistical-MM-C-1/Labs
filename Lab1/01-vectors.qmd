@@ -592,7 +592,7 @@ Complete the code that would remove the third and fourth elements from the vecto
 :::: {.webex-check}
 ::: panel-tabset 
 ## R Code
-::: webex-code
+::: {.webex-code}
 `colours[` `r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)` `]`
 :::
 :::
