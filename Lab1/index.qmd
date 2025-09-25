@@ -28,8 +28,6 @@ This is where the question text would go.
 
 Welcome to the first S2S lab! The contents of these labs are based on the textbook [***Probability and Statistics with R***](https://read.kortext.com/reader/pdf/92741/A){target="_blank"} by Ugarte, Militino and Arnholt. Reference will be made to this textbook throughout the labs and it's a great place to find further details and examples of the sort of things we'll be looking at.
 
-Does this appear???? It does appear, but automatically?
-
 ```{r PASWR2-image, echo=FALSE, fig.align='center', out.width='40%'}
 include_graphics("Images/PASWR2.png")
 ```
