@@ -43,3 +43,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: Lab1/docs      # Quarto output folder
           destination_dir: Lab1         # Subfolder on gh-pages branch
+          
+      # Step 7: Touch .nojekyll at root to force Pages rebuild
+      - name: Update .nojekyll to trigger Pages
+        run: |
+          echo " " > .nojekyll
+          git add .nojekyll
+          git commit -m "Update .nojekyll to force Pages rebuild" || echo "No changes to commit"
+          git push origin gh-pages
