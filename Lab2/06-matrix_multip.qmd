@@ -1,0 +1,123 @@
+# Vector/Matrix multiplication {#sec-multip}
+
+R can be used to complete vector and matrix multiplication. The operator used for this is `%*%`. For example, for the following matrix and vector,
+
+$$
+\boldsymbol{X}=\begin{bmatrix}2&4&-1\\3&2&2\\1&2&-1\end{bmatrix},\,\,\,\,\boldsymbol{y}=\begin{bmatrix}1\\1\\3\end{bmatrix}
+$$
+
+The solution to $\boldsymbol{X}\times\boldsymbol{y}$ can be found using the following code.
+
+::: panel-tabset
+## R Code
+
+```{r mat12.1, eval = FALSE}
+X <- matrix(data = c(2, 4, -1, 3, 2, 2, 1, 2, -1), nrow = 3, byrow = TRUE)
+y <- matrix(data = c(1, 1, 3), nrow = 3, byrow = TRUE)
+
+X%*%y
+```
+
+## Output
+
+```{r mat12.2, echo = FALSE}
+X <- matrix(data = c(2, 4, -1, 3, 2, 2, 1, 2, -1), nrow = 3, byrow = TRUE)
+y <- matrix(data = c(1, 1, 3), nrow = 3, byrow = TRUE)
+
+X%*%y
+```
+:::
+
+If instead we wanted to calculate $\boldsymbol{y}^\intercal\times\boldsymbol{X}$ we would first have to transpose `y`. Matrices can be transposed using the function `t()`.
+
+::: panel-tabset
+## R Code
+
+```{r mat13.1, eval = FALSE}
+t(y)%*%X
+```
+
+## Output
+
+```{r mat13.2, echo = FALSE}
+t(y)%*%X
+```
+:::
+
+R can also be used to solve a system of equations. For example, we have just seen that,
+
+$$
+\begin{aligned}
+(2\times 1)+(4\times 1)+(-1\times 3)&=3\\
+(3\times 1)+(2\times 1)+(2\times 3)&=11\\
+(1\times 1)+(2\times 1)+(-1\times 3)&=0
+\end{aligned}
+$$
+
+But suppose we didn't know the vector $\boldsymbol{y}$, and instead were given the system of equations,
+
+$$
+\begin{aligned}
+2x+4y-z&=3\\
+3x+2y+2z&=11\\
+x+2y-z&=0
+\end{aligned}
+$$
+
+This can also be represented as,
+
+$$
+\boldsymbol{Xy}=\boldsymbol{z},\,\mbox{ where }
+\boldsymbol{X}=\begin{bmatrix}2&4&-1\\3&2&2\\1&2&-1\end{bmatrix},\,\,\,\,\boldsymbol{y}=\begin{bmatrix}x\\y\\z\end{bmatrix},\mbox{ and }\boldsymbol{z}=\begin{bmatrix}3\\11\\0\end{bmatrix}
+$$
+
+We can then use R to solve this system of equations using the `solve()` function. We need to give `solve()` the matrix of coefficients, $\boldsymbol{X}$, and the vector $\boldsymbol{z}$.
+
+::: panel-tabset
+## R Code
+
+```{r mat14.1, eval = FALSE}
+z <- matrix(data = c(3, 11, 0), nrow = 3, byrow = TRUE)
+
+solve(X, z)
+```
+
+## Output
+
+```{r mat14.2, echo = FALSE}
+z <- matrix(data = c(3, 11, 0), nrow = 3, byrow = TRUE)
+
+solve(X, z)
+```
+:::
+
+This then gives the solution $\boldsymbol{y}=\begin{bmatrix}1&1&3\end{bmatrix}^\intercal$, which is what we expected to see.
+
+It is also possible to use the `solve()` function to simply find the inverse of a matrix. This is done by providing it with only one argument - the matrix to be inverted. For example, the code below returns the inverse of the matrix $X$.
+
+::: panel-tabset
+## R Code
+
+```{r mat15.1, eval = FALSE}
+solve(X)
+```
+
+## Output
+
+```{r mat15.2, echo = FALSE}
+solve(X)
+```
+:::
+
+We can see that,
+
+$$
+\boldsymbol{X}^{-1}=\begin{bmatrix}-1.50&0.50&2.50\\1.25&-0.25&-1.75\\1.00&0.00&-2.00\end{bmatrix}
+$$
+
+------------------------------------------------------------------------
+
+There are additional details and examples of using matrices in R in Sections **1.9.1 Arrays and Matrices** and **1.9.2 Vector and Matrix Operations** of *Probability and Statistics with R*.
+
+
+

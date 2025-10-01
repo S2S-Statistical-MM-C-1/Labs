@@ -11,6 +11,26 @@ years <- c("2017", "2018", "2019")
 dimnames(births) <- list(cities, years)
 ```
 
+<!-- dimensions of matrices -->
+
+To check the dimensions of a matrix (or an array), we use the function `dim()`. For matrices, this will return a vector of length 2 where the first value is the number of rows and the second value is the number of columns.
+
+For example we can see that `M1` has 6 rows and 4 columns using the following code.
+
+::: panel-tabset
+## R Code
+
+```{r mat6.1, eval = FALSE}
+dim(M1)
+```
+
+## Output
+
+```{r mat6.2, echo = FALSE}
+dim(M1)
+```
+:::
+
 <!-- avoid dimension reduction with drop=FALSE -->
 
 When extracting an entire row or column using `[ ]`, the object that R returns is a vector rather than a matrix. This means that we can't use some functions that only work for matrices (or arrays).
