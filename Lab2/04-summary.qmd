@@ -22,9 +22,11 @@ array(data = , dim = )
 matrix(data = , nrow = , ncol = , byrow = FALSE)
 ```
 
+<!--
 ```{r, eval=FALSE}
 dim()
 ```
+-->
 
 ## [Naming rows and columns](02-data.qmd#sec-naming-mat) {.unnumbered}
 
@@ -38,6 +40,7 @@ dimnames()
 apply(X = , MARGIN = , FUN = )
 ```
 
+<!--
 ## [Vector/Matrix multiplication](02-data.qmd#sec-mat-mult) {.unnumbered}
 
 ```{r, eval=FALSE}
@@ -47,6 +50,7 @@ t()
 ```{r, eval=FALSE}
 solve()
 ```
+-->
 
 ## [Factors](02-data.qmd#sec-fact) {.unnumbered}
 

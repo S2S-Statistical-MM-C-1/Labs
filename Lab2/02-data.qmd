@@ -137,7 +137,9 @@ Task
 ::: question-container
 Use the `array()` function and the `letters` vector to create a 5 $\times$ 5 matrix containing the letters of the alphabet in column-major order, up to "y".
 
-`r hide("Solution")` ::: panel-tabset \## R Code
+`r hide("Solution")` 
+::: panel-tabset 
+## R Code
 
 ```{r matans1.1, eval = FALSE}
 array(data = letters, dim = c(5, 5))
@@ -208,7 +210,9 @@ Task
 ::: question-container
 Create a 5 $\times$ 5 matrix containing the first 25 letters of the alphabet using `matrix()`. Fill in the elements in row-major order.
 
-`r hide("Solution")` ::: panel-tabset \## R Code
+`r hide("Solution")` 
+::: panel-tabset 
+## R Code
 
 ```{r matans2.1, eval = FALSE}
 matrix(data = letters, nrow = 5, ncol = 5, byrow = TRUE)
@@ -328,15 +332,17 @@ Note that when we use the row/column names, they are in quotation marks because 
 Task
 :::
 
-::: {.question-container .webex-check}
+::: {.question-container}
 Complete the code to show the number of births in Glasgow in all 3 years.
 
+::::{.webex-check}
 ::: panel-tabset
 ## R Code
 
 ::: webex-code
 ` births[``r fitb(c(print(" \"Glasgow\", ", quote=FALSE), print(" \"Glasgow\", c(\"2017\", \"2018\", \"2019\") ", quote=FALSE), print(" \"Glasgow\", 1:3 ", quote=FALSE), print(" \"Glasgow\", c(1, 2, 3) ", quote=FALSE), print(" 2, ", quote=FALSE), print(" 2, c(\"2017\", \"2018\", \"2019\") ", quote=FALSE), print(" 2, 1:3 ", quote=FALSE), print(" 2, c(1, 2, 3) ", quote=FALSE)), ignore_ws=TRUE)``] `
 :::
+::::
 :::
 
 `r hide("Solution")` There are several ways we could extract the data for these years. For example, we can specify that we want the row relating to Glasgow using either `"Glasgow"` or simply `2`.
@@ -403,10 +409,12 @@ apply(X = births, MARGIN = 1, FUN = mean)
 Task
 :::
 
-::: {.question-container .webex-check}
+::: {.question-container}
+:::: {.webex-check}
 What is the standard deviation for the number of births in 2019?
 
 `r fitb(2337.263)` *(Give your answer to three decimal places)*
+::::
 
 `r hide("Solution")` We can calculate the standard deviation in all three years using the `apply()` function. Because we want to find the standard deviation in each column, we need to set `MARGIN = 2`. The `FUN`ction we should use is `sd`. That is;
 
@@ -846,12 +854,13 @@ data("RAT")
 Task
 :::
 
-::: {.question-container .webex-check}
+::: {.question-container}
 ```{r dfans2.1, echo=FALSE}
 opts1 <- c(answer="Wait time for the bus", "Wait time at the doctors", "Wait time in line at the bank", "Wait time in the lunch queue")
 ```
-
+::::{.webex-check}
 The package `PASWR2` contains a data set called `WAIT`. What do the wait times saved in this data set relate to? `r mcq(opts1)`
+::::
 
 `r hide("Solution")` To find out more about what information a data set contains, we can use the `help()` function. Here, running the following code in R tells us that the wait times in `WAIT` are how long a statistician has had to wait for the bus each morning.
 
