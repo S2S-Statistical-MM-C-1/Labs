@@ -11,7 +11,8 @@ book:
     - 03-exercises.qmd
   appendices: 
     - 04-dimensions.qmd
-    - 05-lists.qmd
+    - 05-matrix_multip.qmd
+    - 06-lists.qmd
 
 format:
   html:
