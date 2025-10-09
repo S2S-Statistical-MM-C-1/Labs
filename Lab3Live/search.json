@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "S2S Lab 3",
     "section": "",
-    "text": "Welcome to the third S2S lab. This lab builds on what we already know about data frames and will teach you how to save data files of different types in RStudio and then manipulate them in several ways, such as creating new variables, working with a subset of a larger data frame or merging together data from different sources. Working with data is a key skill throughout statistics and it will often be saved as a data frame, so it is important to know all the things that can be done with them.",
+    "text": "Welcome to the third S2S lab. This lab builds on what we already know about data frames and will teach you how to save data files of different types in RStudio and then manipulate them in several ways, such as creating new variables, working with a subset of a larger data frame or merging together data from different sources. Working with data is a key skill throughout statistics and it will often be saved as a data frame, so it is important to know all the things that can be done with them.\nWe’ll follow along Section 1.11 Working with Data to learn to manipulate data sets.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome!</span>"
     ]
