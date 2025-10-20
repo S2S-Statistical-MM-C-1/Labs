@@ -26,6 +26,26 @@ Use these sampling distributions to find $E[\bar X]$, $\sigma_{\bar X}^2$ and $E
 How do these values compare to those found in Exercise 1?
 
 
+## Exercise 3 {-}
+
+Draw a random sample of 100 values from the $\mbox{Poisson}(3)$ distribution and save these in a vector `x`.
+
+Use the vector `x` to find the probability that the a variable following the $\mbox{Poisson}(3)$ distribution is less than or equal to each value in `x`. That is, find $P(X\leq x)$ when $X\sim\mbox{Poisson}(3)$ for each value in `x`. Save these probabilities in a new vector called `p`.
+
+Create a data frame called `poisson` which has a column called "draw" which is equal to the vector `x` and a second column called 'probability" which is equal to the vector `p`.
+
+
+## Exercise 4 {-}
+
+The volume of a cylinder is calculated as $V_{\mbox{cylinder}}=\pi r^2h$ where $r$ is the radius of the cylinder and $h$ is the height.
+
+a. Write a function called `cyl.vol` which takes the arguments `r` and `h` and returns the volume of cylinder with radius `r` and height `h`.
+
+   Use your function to find the volume of a cylinder with which has radius 2.8cm and height 24cm.
+
+b. Use your function `cyl.vol` to write another function which can be used to calculate the total volume of $n$ cylinders of the same size. This second function should take the arguments `r` for the radius, `h` for the height and `n` for the number of cylinders.
+
+
 
 
 
