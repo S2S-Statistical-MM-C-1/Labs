@@ -40,53 +40,123 @@
     ]
   },
   {
-    "objectID": "02-exercises.html",
-    "href": "02-exercises.html",
-    "title": "3  Further Exercises",
+    "objectID": "02-functions.html",
+    "href": "02-functions.html",
+    "title": "3  Functions",
+    "section": "",
+    "text": "3.1 Probability functions\nWe have already seen and used many R functions. Now we are going to learn about some more statistics specific functions, as well as how to write our own functions which will give us a lot of flexibility with what we can do in R.\nThere are a range of functions we can use which make working with statistical distributions a lot easier. We are able to generate random numbers from a distribution, calculate cumulative probabilities, compute densities and return quantiles with them.\nThe name of the distribution you are using is going to be part of the function name, so to keep things simple, let’s start by looking at the normal distribution. The four functions you can use with the normal distribution are:\nNote that norm in each function name is because we are using the normal distribution. This part of the function names can be changed based on the distribution we want to use. For example rt(), rbinom() and rf() each return random samples from the \\(t\\), binomial and \\(F\\) distributions, respectively, provided suitable arguments are give - remember to use the help() function to see what arguments are needed.\nThe arguments mean = 0 and sd = 1 are the default values, so leaving them out of any of the functions for the normal distribution above means you will be using the \\(N(0,\\,1)\\) distribution. You can change the mean or standard deviation of the distribution by changing the values assigned to the arguments.\nThe values that pnorm(q), qnorm(p) and dnorm(x) return are summarised graphically in Figure 3.1.\nFigure 3.1: Summary of probability functions for the standard normal distribution.\nFor example, we know that the 97.5th quantile of the \\(N(0,\\,1)\\) distribution is roughly 1.96. We can double check this using the following code.\nThe normal distribution is not the only one that we can use the four functions introduced above with. Table 3.1 shows some other distributions that can be used. In order to use a different distribution, simply change the norm part in the function name to the distribution’s R name. Change the arguments mean = and sd = to the relevant arguments for your chosen distribution as well.\nTable 3.1: Distribution names and arguments to use with probability functions.\n\n\n\n\n\n\n\n\n\n\n\nDistribution\nR Name\nArguments\n\n\n\n\nNormal\nnorm\nmean = 0: the mean with default value 0.\nsd = 1: the standard deviation with default value 1.\n\n\nBinomial\nbinom\nsize =: the number of trials.\nprob =: the probability of success for each trial.\n\n\nExponential\nexp\nrate = 1: the value of \\(\\theta\\) with default value 1.\n\n\nGeometric\ngeom\nprob =: the probability of success in each trial.\n\n\nHypergeometric\nhyper\nm =: the number of objects of type I in the population.\nn =: the number of objects not of type I in the population.\nk =: the size of the sample taken from the population.\n\n\nNegative Binomial\nnbinom\nsize =: the number of successful trials you want to observe.\nprob =: the probability of success in each trial.\n\n\nPoisson\npois\nlambda =: the value of \\(\\lambda\\).\n\n\nStudent’s t\nt\ndf =: the degrees of freedom.\n\n\nUniform\nunif\nmin = 0: the lower limit of the distribution with default value 0.\nmax = 1: the upper limit of the distribution with default value 1.\n\n\nChi-square\nchisq\ndf =: the degrees of freedom.\n\n\nF\nf\ndf1: the first degrees of freedom.\ndf2: the second degrees of freedom.\nTo read more, see Section 1.15 Probability Functions in Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "02-functions.html#probability-functions",
+    "href": "02-functions.html#probability-functions",
+    "title": "3  Functions",
+    "section": "",
+    "text": "rnorm(n, mean = 0, sd = 1): this returns a random sample of size n from a \\(N\\sim(0,\\,1)\\) distribution.\npnorm(q, mean = 0, sd = 1): this computes the probability \\(\\mathbb{P}(X\\leq q)\\), where \\(X\\sim N(0,\\,1)\\).\ndnorm(x, mean = 0, sd = 1): this computes the value of the probability density function, \\(f(x)\\).\nqnorm(p, mean = 0, sd = 1): this computes the quantile \\(x\\) such that \\(\\mathbb{P}(X\\leq x)=p\\), where \\(X\\sim N(0,\\,1)\\).\n\n\n\n\n\n\n\nR CodeOutput\n\n\n\nqnorm(0.975)\n\n\n\n\n\n[1] 1.959964\n\n\n\n\n\n\n\nTask\n\n\nChoose the correct function and complete the code for the following scenarios.\n\nYou want to construct a 90% confidence interval so need to know the 95th quantile of the standard normal distribution.\n\n\nR Code\n\n\n\nrnormpnormdnormqnorm(, mean = 0, sd = 1)\n\n\n\n\n\nHow would you find the value of \\(x\\) such that \\(\\mathbb{P}(X\\leq x)=0.45\\), where \\(X\\sim N(100,\\,4^2)\\)?\n\n\nR Code\n\n\n\nrnormpnormdnormqnorm(0.45,)\n\n\n\n\n\nYou want to know the proportion of the \\(N(0,\\,2^2)\\) distribution that lies below -2. That is, \\(\\mathbb{P}(X\\leq -2)\\), where \\(X\\sim N(0,\\,2^2)\\).\n\n\nR Code\n\n\n\nrnormpnormdnormqnorm(, mean = 0, sd =)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "02-functions.html#creating-functions",
+    "href": "02-functions.html#creating-functions",
+    "title": "3  Functions",
+    "section": "3.2 Creating functions",
+    "text": "3.2 Creating functions\nSo far we have used a number of in built functions in R. It is also possible to create your own functions, specifying the required arguments and what it does.\nThe setup for creating your own function using function() is as follows.\n\nR Code\n\n\n\nfname &lt;- function(argument1, argument2, ...){\n  expression\n}\n\n\n\n\n\nfname: this is the name you want to give to your function. It can be anything you choose but try not to use names of functions that already exist.\nargument1: this is the name of the first argument to be given when you use your function. You can add as many arguments as is necessary for your function to work.\nexpression: this is what you want your function to evaluate. You write this out using the argument names you have specified.\n\nFor example, we can write a function, normal(), that:\n\ndraws n random values from a normal distribution with mean m and standard deviation s\norders them from smallest to largest\nfor each random value \\(x\\), returns the probability \\(\\mathbb{P}(X\\leq x)\\) and the value of the probability density function at this value, \\(f(x)\\)\n\n\nR Code\n\n\n\nnormal &lt;- function(n, m = 0, s = 1){\n  x &lt;- rnorm(n = n, mean = m, sd = s)\n  x &lt;- sort(x)\n  prob &lt;- pnorm(q = x, mean = m, sd = s)\n  pdf &lt;- dnorm(x = x, mean = m, sd = s)\n  cbind(x, prob, pdf)\n}\n\n\n\n\nHere we have specified default values of m = 0 and s = 1 in our function. This means that if someone uses the function normal without specifying values for these arguments, then it will automatically use m = 0 and s = 1.\nNote that any vectors we create within the expression for the function are not saved to your Environment tab.\nWe can then use this new function normal() to see this information for 5 random values from the \\(N(200, 40)\\) distribution.\n\nR CodeOutput\n\n\n\nnormal(n = 5, m = 200, s = 40)\n\n\n\n\nnormal(n = 5, m = 200, s = 40)\n\n            x      prob         pdf\n[1,] 194.7766 0.4480522 0.009888883\n[2,] 201.2908 0.5128713 0.009968366\n[3,] 204.4489 0.5442796 0.009912060\n[4,] 234.8700 0.8083276 0.006820707\n[5,] 268.3736 0.9563059 0.002314091\n\n\n\n\n\nThe arguments you use within a function can be either ‘named’ or ‘positional’.\nNamed arguments are ones where you use the name given in the setup of the function. For example, in our function normal(), the argument for the mean is called m. You can change the value of the mean using m = 4 within the normal() function for example.\nPositional arguments are ones where you don’t use the name of the argument given in the setup of the function. For example, we could replicate the above output using the following code where the argument names have not been used.\n\nR CodeOutput\n\n\n\nnormal(5, 200, 40)\n\n\n\n\nnormal(5, 200, 40)\n\n            x      prob         pdf\n[1,] 194.7766 0.4480522 0.009888883\n[2,] 201.2908 0.5128713 0.009968366\n[3,] 204.4489 0.5442796 0.009912060\n[4,] 234.8700 0.8083276 0.006820707\n[5,] 268.3736 0.9563059 0.002314091\n\n\n\n\n\nThe important thing to remember when using positional arguments is that they are in the same order that their names are specified in the setup of the function so R knows how to match up the values correctly. For example, in the normal() function, the mean needs to be the second argument specified and the standard deviation needs to be the third.\n\nFor more information on writing your own functions in R, see Section 1.17 Creating Functions in Probability and Statistics with R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-exercises.html",
+    "href": "03-exercises.html",
+    "title": "4  Further Exercises",
     "section": "",
     "text": "Exercise 1\nUse R code to answer each of the following exercises.\nA university offers 8 different statistics courses to its honours level students. The numbers of students in each course are as follows:\nSuppose you were to randomly sample three of these statistics courses with replacement. What would the sampling distribution of the sample mean number of students enrolled, \\(\\bar X\\), be? What would the sampling distribution of the sample variance in the number of students enrolled, \\(S^2\\), be?\nCan you use your sampling distributions to find \\(E[\\bar X]\\), \\(\\sigma_{\\bar X}^2\\) and \\(E[S^2]\\)?",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Further Exercises</span>"
     ]
   },
   {
-    "objectID": "02-exercises.html#exercise-1",
-    "href": "02-exercises.html#exercise-1",
-    "title": "3  Further Exercises",
+    "objectID": "03-exercises.html#exercise-1",
+    "href": "03-exercises.html#exercise-1",
+    "title": "4  Further Exercises",
     "section": "",
     "text": "There are three course which have 85 students enrolled\nThere are two course which have 112 students enrolled\nThere is one course with 108 students enrolled\nThere is one course with 95 students enrolled\nThere is one course with only 46 students enrolled",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Further Exercises</span>"
     ]
   },
   {
-    "objectID": "02-exercises.html#exercise-2",
-    "href": "02-exercises.html#exercise-2",
-    "title": "3  Further Exercises",
+    "objectID": "03-exercises.html#exercise-2",
+    "href": "03-exercises.html#exercise-2",
+    "title": "4  Further Exercises",
     "section": "Exercise 2",
     "text": "Exercise 2\nNow suppose you want to randomly sample three of the above statistics courses without replacement. Find the sampling distribution of the sample mean number of students, \\(\\bar X\\) and the sampling distribution of the sample variance in the number of students enrolled, \\(S^2\\).\nUse these sampling distributions to find \\(E[\\bar X]\\), \\(\\sigma_{\\bar X}^2\\) and \\(E[S^2]\\).\nHow do these values compare to those found in Exercise 1?",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Further Exercises</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Further Exercises</span>"
     ]
   },
   {
-    "objectID": "03-summary.html",
-    "href": "03-summary.html",
-    "title": "4  Summary of Functions",
+    "objectID": "03-exercises.html#exercise-3",
+    "href": "03-exercises.html#exercise-3",
+    "title": "4  Further Exercises",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nDraw a random sample of 100 values from the \\(\\mbox{Poisson}(3)\\) distribution and save these in a vector x.\nUse the vector x to find the probability that the a variable following the \\(\\mbox{Poisson}(3)\\) distribution is less than or equal to each value in x. That is, find \\(P(X\\leq x)\\) when \\(X\\sim\\mbox{Poisson}(3)\\) for each value in x. Save these probabilities in a new vector called p.\nCreate a data frame called poisson which has a column called “draw” which is equal to the vector x and a second column called ’probability” which is equal to the vector p.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "03-exercises.html#exercise-4",
+    "href": "03-exercises.html#exercise-4",
+    "title": "4  Further Exercises",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nThe volume of a cylinder is calculated as \\(V_{\\mbox{cylinder}}=\\pi r^2h\\) where \\(r\\) is the radius of the cylinder and \\(h\\) is the height.\n\nWrite a function called cyl.vol which takes the arguments r and h and returns the volume of cylinder with radius r and height h.\nUse your function to find the volume of a cylinder with which has radius 2.8cm and height 24cm.\nUse your function cyl.vol to write another function which can be used to calculate the total volume of \\(n\\) cylinders of the same size. This second function should take the arguments r for the radius, h for the height and n for the number of cylinders.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Further Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "04-summary.html",
+    "href": "04-summary.html",
+    "title": "5  Summary of Functions",
     "section": "",
     "text": "Sampling with replacement\nexpand.grid()\nfractions()\nnames()\nsum()",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary of Functions</span>"
     ]
   },
   {
-    "objectID": "03-summary.html#sampling-without-replacement",
-    "href": "03-summary.html#sampling-without-replacement",
-    "title": "4  Summary of Functions",
+    "objectID": "04-summary.html#sampling-without-replacement",
+    "href": "04-summary.html#sampling-without-replacement",
+    "title": "5  Summary of Functions",
     "section": "Sampling without replacement",
     "text": "Sampling without replacement\n\nsrs(popvalues = , n = )",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary of Functions</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "04-summary.html#probability-functions",
+    "href": "04-summary.html#probability-functions",
+    "title": "5  Summary of Functions",
+    "section": "Probability functions",
+    "text": "Probability functions\n\nrnorm(n, mean = 0, sd = 1)\n\n\npnorm(q, mean = 0, sd = 1)\n\n\ndnorm(x, mean = 0, sd = 1)\n\n\nqnorm(p, mean = 0, sd = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary of Functions</span>"
+    ]
+  },
+  {
+    "objectID": "04-summary.html#creating-functions",
+    "href": "04-summary.html#creating-functions",
+    "title": "5  Summary of Functions",
+    "section": "Creating functions",
+    "text": "Creating functions\n\nfname &lt;- function(argument1, argument2, ...){\n  expression\n}",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary of Functions</span>"
     ]
   }
 ]
