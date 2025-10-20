@@ -8,7 +8,7 @@ book:
     - index.qmd
     - 01-samplingdist.qmd
     - 02-functions.qmd
-    - 03.exercises.qmd
+    - 03-exercises.qmd
     - 04-summary.qmd
 
 format:
