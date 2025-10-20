@@ -1,0 +1,57 @@
+# Summary of Functions
+
+## [Sampling with replacement](01-samplingdist.qmd#sec-with) {.unnumbered}
+
+```{r, eval = FALSE}
+expand.grid()
+```
+
+```{r, eval = FALSE}
+fractions()
+```
+
+```{r, eval = FALSE}
+names()
+```
+
+```{r, eval = FALSE}
+sum()
+```
+
+
+## [Sampling without replacement](01-samplingdist.qmd#sec-without) {.unnumbered}
+
+```{r, eval = FALSE}
+srs(popvalues = , n = )
+```
+
+
+## [Probability functions](02-functions.qmd#sec-prob-func) {.unnumbered}
+
+```{r, eval = FALSE}
+rnorm(n, mean = 0, sd = 1)
+```
+
+```{r, eval = FALSE}
+pnorm(q, mean = 0, sd = 1)
+```
+
+```{r, eval = FALSE}
+dnorm(x, mean = 0, sd = 1)
+```
+
+```{r, eval = FALSE}
+qnorm(p, mean = 0, sd = 1)
+```
+
+
+## [Creating functions](02-functions.qmd#sec-create-func) {.unnumbered}
+
+```{r, eval = FALSE}
+fname <- function(argument1, argument2, ...){
+  expression
+}
+```
+
+
+
