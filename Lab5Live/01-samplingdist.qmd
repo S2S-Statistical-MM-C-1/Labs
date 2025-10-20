@@ -33,10 +33,12 @@ kable(data.frame(X = 1:6, prob = rep("$\\frac{1}{6}$", 6)),
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the mean of the random variable $X$?
 
 $\mu_X=$ `r fitb(c("7/2", "3.5", "3.50", "3.500", "3.5000", "3.50000"), width=5)`
+::::
 
 `r hide("Solution")`
 The mean of a random variable in a finite population can be calculated using,
@@ -61,10 +63,12 @@ $$
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the variance of the random variable $X$?
 
 $\sigma^2_X=$ `r fitb(c("35/12", 2.9, 2.91, 2.92, 2.916, 2.917, 2.9167, 2.9166, 2.91667, 2.91666, 2.916667, 2.916666, 2.9166667, 2.9166666), width=5)`
+::::
 
 `r hide("Solution")`
 The variance of a random variable coming from a finite population can be calculate using,
@@ -185,10 +189,12 @@ For example, $\bar X$ is equal to 1.5 on two occasions (if the balls drawn are (
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the mean of the sampling distribution for $\bar X$?
 
 $\mu_{\bar X}=$ `r fitb(c("7/2", "3.5", "3.50", "3.500", "3.5000", "3.50000"), width=5)`
+::::
 
 `r hide("Solution")`
 The mean can be found by finding the expected value of the sampling distribution for $\bar X$. The expected value of a discrete random variable $X$ with $N$ discrete values can be found using,
@@ -249,10 +255,12 @@ provided each $X_i$ is independent.
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the variance of the sampling distribution for $\bar X$?
 
 $\sigma^2_{\bar X}=$ `r fitb(c("35/24", "1.5", "1.46", "1.458", "1.4583", "1.45833", "1.458333", "1.4583333"), width = 5)`
+::::
 
 `r hide("Solution")`
 In order to find the variance of a random variable $X$ with a discrete distribution with $N$ discrete values, we can use the formula,
@@ -332,10 +340,12 @@ Here we can see that $P(S^2=12.5)=\frac{1}{18}$ which we could have calculated f
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the mean of the sampling distribution for $S^2$?
 
 $\mu_{S^2}=$ `r fitb(c("35/12", 2.9, 2.91, 2.92, 2.916, 2.917, 2.9167, 2.9166, 2.91667, 2.91666, 2.916667, 2.916666, 2.9166667, 2.9166666), width=5)`
+::::
 
 `r hide("Solution")`
 In order to find the mean of a variable $X$ with a discrete distribution with $N$ discrete values, we can use,
@@ -468,10 +478,12 @@ This tells us that, when sampling two balls from the bag of six without replacem
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check} 
+::::{.question-container}
+::::{.webex-check}
 What is the mean of the sampling distribution for $\bar X$, when sampling without replacement?
 
 $\mu_{\bar X}=$ `r fitb(c("7/2", "3.5", "3.50", "3.500", "3.5000", "3.50000"), width=5)`
+::::
 
 `r hide("Solution")`
 In order to find the mean of a discrete random variable $X$ with $N$ discrete values, we can use the formula,
@@ -516,10 +528,12 @@ This shows that $\mu_{\bar X}=\frac{7}{2}=3.5$. Note that the expected value of 
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the variance of the sampling distribution for $\bar X$, when sampling without replacement?
 
 $\sigma^2_{\bar X}=$ `r fitb(c("7/6", 1.2, 1.16, 1.17, 1.166, 1.167, 1.1666, 1.1667, 1.16666, 1.16667, 1.166666, 1.166667, 1.1666666, 1.1666667), width=5)`
+::::
 
 `r hide("Solution")`
 The formula used to find the variance of a discrete random variable $X$ with $N$ discrete values is,
@@ -590,10 +604,12 @@ This distribution states that when sampling without replacement, the probability
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 What is the expected value of the sampling distribution for $S^2$, when sampling without replacement?
 
 $E[S^2]=$ `r fitb(c("7/2", "3.5", "3.50", "3.500", "3.5000", "3.50000"), width=5)`
+::::
 
 `r hide("Solution")`
 The formula to use here is,
@@ -667,7 +683,7 @@ The expected value of the sample mean is $\mu_X$, regardless of whether we are s
 
 ---
 
-To follow an example of creating the sampling distribution for the mean and for the variance from a finite population, see Section [6.4 Sampling Distribution of $\bar X$](https://read.kortext.com/reader/pdf/92741/359){target="_blank"} in *Probability and Statistics with R*.
+To follow an example of creating the sampling distribution for the mean and for the variance from a finite population, see Section **6.4 Sampling Distribution of $\bar X$** in *Probability and Statistics with R*.
 
 
 

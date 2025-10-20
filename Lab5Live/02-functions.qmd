@@ -56,7 +56,8 @@ qnorm(0.975)
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 ```{r func-ans1.1, echo=FALSE}
 opts1 <- c("`rnorm`", "`pnorm`", "`dnorm`", answer="`qnorm`")
 opts2 <- c("`rnorm`", "`pnorm`", "`dnorm`", answer="`qnorm`")
@@ -91,9 +92,10 @@ Choose the correct function and complete the code for the following scenarios.
 `r mcq(opts3)``(``r fitb(c(-2, "q=-2"))``, mean = 0, sd =``r fitb(2)``)`
 :::
 :::
+::::
 
-<!--
-`r hide("Solution")`
+
+<!--`r hide("Solution")`
 * You want to construct a 90% confidence interval so need to know the 95^th^ quantile of the standard normal distribution.
 
 ::: panel-tabset
@@ -120,8 +122,8 @@ qnorm(p = 0.45, mean = 100, sd = 4)
 pnorm(q = -2, mean = 0, sd = 2)
 ```
 :::
-`r unhide()`
--->
+`r unhide()`-->
+
 ::::
 :::
 
