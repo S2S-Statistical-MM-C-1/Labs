@@ -1,0 +1,29 @@
+# Summary of Functions
+
+## [Sampling with replacement](01-samplingdist.qmd#sec-with) {.unnumbered}
+
+```{r, eval = FALSE}
+expand.grid()
+```
+
+```{r, eval = FALSE}
+fractions()
+```
+
+```{r, eval = FALSE}
+names()
+```
+
+```{r, eval = FALSE}
+sum()
+```
+
+
+## [Sampling without replacement](01-samplingdist.qmd#sec-without) {.unnumbered}
+
+```{r, eval = FALSE}
+srs(popvalues = , n = )
+```
+
+
+
