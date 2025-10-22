@@ -146,6 +146,7 @@ sampletab_w <- data.frame(combinations1 = combs1, Mean1 = sample_w_means[1:12],
                         Variance2 = sample_w_variances[13:24],
                         combinations3 = combs3, Mean3 = sample_w_means[25:36],
                         Variance3 = sample_w_variances[25:36])
+names(sampletab_w) <- rep(c("$(x_1,\\,x_2)$", "Mean", "Variance"), 3)
 ```
 
 ```{r sampletab-with, echo=FALSE}
@@ -153,8 +154,7 @@ sampletab_w <- data.frame(combinations1 = combs1, Mean1 = sample_w_means[1:12],
 #| label: tbl-sampletab-with
 
 kable(sampletab_w, align = c('c', 'r', 'r', 'c', 'r', 'r', 'c', 'r', 'r'),
-      col.names = c("$(x_1,\\,x_2)$", "Mean", "Variance", "$(x_1,\\,x_2)$", "Mean", "Variance",
-                      "$(x_1,\\,x_2)$", "Mean", "Variance")) %>%
+      table.attr = "style='width:60%;'") %>%
   column_spec(3, border_right = TRUE) %>%
   column_spec(6, border_right = TRUE)
 ```
