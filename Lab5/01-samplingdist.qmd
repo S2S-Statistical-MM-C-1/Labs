@@ -131,7 +131,7 @@ samples_w <- cbind(samples_w, Mean = sample_w_means, Variance = sample_w_varianc
 ```
 :::
 
-The information in the data frame `samples_w` is summarised in Table @tbl-sampletab-with.
+The information in the data frame `samples_w` is summarised in @tbl-sampletab-with.
 
 ```{r sampletab-with-setup, echo=FALSE}
 combs1 <- c("(1, 1)", "(2, 1)", "(3, 1)", "(4, 1)", "(5, 1)", "(6, 1)",
@@ -146,15 +146,15 @@ sampletab_w <- data.frame(combinations1 = combs1, Mean1 = sample_w_means[1:12],
                         Variance2 = sample_w_variances[13:24],
                         combinations3 = combs3, Mean3 = sample_w_means[25:36],
                         Variance3 = sample_w_variances[25:36])
-names(sampletab_w) <- c("\\((x_1,\\,x_2)\\)", "Mean", "Variance", "\\((x_1,\\,x_2)\\)", "Mean", "Variance",
-                      "\\((x_1,\\,x_2)\\)", "Mean", "Variance")
+names(sampletab_w) <- rep(c("$(x_1,\\,x_2)$", "Mean", "Variance"), 3)
 ```
 
 ```{r sampletab-with, echo=FALSE}
 #| tbl-cap: "Mean and variance for every combination of $(x_1, x_2)$ when sampling with replacement, six numbered balls from a bag."
 #| label: tbl-sampletab-with
 
-kable(sampletab_w, align = c('c', 'r', 'r', 'c', 'r', 'r', 'c', 'r', 'r')) %>%
+kable(sampletab_w, align = c('c', 'r', 'r', 'c', 'r', 'r', 'c', 'r', 'r'),
+      table.attr = "style='width:60%;'") %>%
   column_spec(3, border_right = TRUE) %>%
   column_spec(6, border_right = TRUE)
 ```
@@ -184,6 +184,17 @@ samplingdist_mean_w
 :::
 
 For example, $\bar X$ is equal to 1.5 on two occasions (if the balls drawn are (2, 1) or (1, 2)). We can then say that $P\big(\bar X=1.5\big)=\frac{2}{36}=\frac{1}{18}$.
+
+The sampling distribution for $\bar X$ is also given in @tbl-Xbar-dist-with.
+
+```{r Xbar-dist-with, echo=FALSE}
+#| tbl-cap: "Sampling distribution for $\\bar{X}$."
+#| label: tbl-Xbar-dist-with
+
+kable(data.frame(X = seq(1, 6, by = 0.5), prob = round(as.vector(samplingdist_mean_w), 4)),
+      col.names = c("$\\bar x_i$", "$P(\\bar X=\\bar x_i)$"),
+      align = 'c', table.attr = "style='width:60%;'", format = "markdown")
+```
 
 :::{.question}
 ::::{.question-header}
@@ -336,6 +347,17 @@ samplingdist_var_w
 
 Here we can see that $P(S^2=12.5)=\frac{1}{18}$ which we could have calculated from @tbl-sampletab-with since the sample variance is equal to 12.5 for only two outcomes (when the balls drawn are (6, 1) or (1, 6)), so the probability $S^2$ takes the value 12.5 is equal to $\frac{2}{36}=\frac{1}{18}$.
 
+The sampling distribution for $S^2$ is also given in @tbl-S2-dist-with.
+
+```{r S2-dist-with, echo=FALSE}
+#| tbl-cap: "Sampling distribution for $S^2$."
+#| label: tbl-S2-dist-with
+
+kable(data.frame(S2 = c(0, 0.5, 2, 4.5, 8, 12.5), prob = round(as.vector(samplingdist_var_w), 4)),
+      col.names = c("$s_i^2$", "$P(S^2=s_i^2)$"),
+      align = 'c', table.attr = "style='width:60%;'", format = "markdown")
+```
+
 :::{.question}
 ::::{.question-header}
 Task
@@ -445,7 +467,7 @@ combs <- c("(1, 2)", "(1, 3)", "(1, 4)", "(1, 5)", "(1, 6)", "(2, 3)",
             "(4, 5)", "(4, 6)", "(5, 6)")
 samplewotab <- data.frame(combinations = combs, Mean = sample_wo_means,
                         Variance = sample_wo_variances)
-names(samplewotab) <- c("\\((x_1,\\,x_2)\\)", "Mean", "Variance")
+names(samplewotab) <- c("$(x_1,\\,x_2)$", "Mean", "Variance")
 ```
 
 ```{r sampletab-without, echo=FALSE}
@@ -473,6 +495,17 @@ samplingdist_mean_wo
 :::
 
 This tells us that, when sampling two balls from the bag of six without replacement, the probability that the mean of that sample is equal to 3 for example, is $\frac{2}{15}$ i.e. $P(\bar X=3)=\frac{2}{15}$.
+
+The sampling distribution for $\bar X$ is also given in @tbl-Xbar-dist-wo.
+
+```{r Xbar-dist-wo, echo=FALSE}
+#| tbl-cap: "Sampling distribution for $\\bar{X}$."
+#| label: tbl-Xbar-dist-wo
+
+kable(data.frame(X = seq(1.5, 5.5, by = 0.5), prob = round(as.vector(samplingdist_mean_wo), 4)),
+      col.names = c("$\\bar x_i$", "$P(\\bar X=\\bar x_i)$"),
+      align = 'c', table.attr = "style='width:60%;'", format = "markdown")
+```
 
 :::{.question}
 ::::{.question-header}
@@ -600,9 +633,101 @@ samplingdist_var_wo
 
 This distribution states that when sampling without replacement, the probability that the variance of a sample of two balls out of six is equal to 8, for example, is $\frac{2}{15}$ i.e. $P(S^2=8)=\frac{2}{15}$.
 
+The sampling distribution for $S^2$ is also given in @tbl-S2-dist-wo.
+
+```{r S2-dist-wo, echo=FALSE}
+#| tbl-cap: "Sampling distribution for $S^2$."
+#| label: tbl-S2-dist-wo
+
+kable(data.frame(X = c(0.5, 2, 4.5, 8, 12.5), prob = round(as.vector(samplingdist_var_wo), 4)),
+      col.names = c("$s_i^2$", "$P(S^2=s_i^2)$"),
+      align = 'c', table.attr = "style='width:60%;'", format = "markdown")
+```
+
 :::{.question}
 ::::{.question-header}
 Task
+::::
+::::{.question-container}
+::::{.webex-check}
+What is the expected value of the sampling distribution for $S^2$, when sampling without replacement?
+
+$E[S^2]=$ `r fitb(c("7/2", "3.5", "3.50", "3.500", "3.5000", "3.50000"), width=5)`
+::::
+
+`r hide("Solution")`
+The formula to use here is,
+
+$$
+\mu_X=E[X]=\sum_{i=1}^N x_iP(X=x_i)
+$$
+
+The expected value of the sample variance is then,
+
+$$
+\begin{aligned}
+E[S^2]&=0.5\times\frac{1}{3}+2\times\frac{4}{15}+4.5\times\frac{1}{5}+\dots+12.5\times\frac{1}{15}\\
+&=\frac{7}{2}= 3.5
+\end{aligned}
+$$
+
+We can find the same result in R using the following code.
+
+::: panel-tabset
+## R Code
+```{r wo-ans3.1, eval = FALSE}
+vars_wo <- as.numeric(names(samplingdist_var_wo))
+mean_S2_wo <- sum(vars_wo*samplingdist_var_wo)
+mean_S2_wo
+```
+
+## Output
+```{r wo-ans3.2, echo = FALSE}
+vars_wo <- as.numeric(names(samplingdist_var_wo))
+mean_S2_wo <- sum(vars_wo*samplingdist_var_wo)
+mean_S2_wo
+```
+:::
+
+This shows us once again that $E[S^2]=\frac{7}{2}=3.5$.
+
+The relationship between the expected value of the sample variance, when sampling without replacement, and the variance of the random variable $X$ can be summarised with the formula,
+
+$$
+E[S^2]=\frac{N}{N-1}\cdot\sigma_X^2
+$$
+`r unhide()`
+::::
+:::
+
+We can summarise all of the results we've seen so far about the sampling distributions of $\bar X$ and $S^2$, when sampling with or without replacement, in @tbl-summ.
+
+```{r summ-tab-setup, echo=FALSE}
+summ_tab <- data.frame(mean_x = rep(3.5, 2),
+                       var_x = rep(2.9167, 2),
+                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "$=\\mu_X$"), 
+                                  paste(as.numeric(mean_Xbar_wo), "$=\\mu_X$")),
+                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "$=\\frac{\\sigma_X^2}{n}$"),
+                                    paste(round(as.numeric(var_Xbar_wo), 4), "$=\\frac{\\sigma_X^2}{n}\\cdot\\frac{N-n}{N-1}$")),
+                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "$=\\sigma_X^2$"),
+                                paste(round(as.numeric(mean_S2_wo), 1), "$=\\frac{N}{N-1}\\cdot\\sigma_X^2$")))
+rownames(summ_tab) <- c("With replacement", "Without replacement")
+```
+
+```{r summ-tab, echo=FALSE}
+#| tbl-cap: "Summary of properties of the distribution for $X$ and sampling distributions for $\\bar X$ and $S^2$."
+#| label: tbl-summ
+
+kable(summ_tab,
+      col.names = c("$\\mu_X$", "$\\sigma^2_X$", "$E[\\bar X]$", "$\\sigma^2_{\\bar X}$", "$E[S^2]$"),
+align = c('l', 'l', 'l', 'l', 'l', 'l'))
+```
+
+The expected value of the sample mean is $\mu_X$, regardless of whether we are sampling with or without replacement. Both the variance of the sample mean and the expected value of the sample variance change though, depending on whether sampling with or without replacement has been used.
+
+---
+
+To follow an example of creating the sampling distribution for the mean and for the variance from a finite population, see Section **6.4 Sampling Distribution of $\bar X$** in *Probability and Statistics with R*.
 ::::
 ::::{.question-container}
 ::::{.webex-check}

@@ -26,10 +26,6 @@ The name of the distribution you are using is going to be part of the function n
 * `dnorm(x, mean = 0, sd = 1)`: this computes the value of the probability density function, $f(x)$.
 * `qnorm(p, mean = 0, sd = 1)`: this computes the quantile $x$ such that $\mathbb{P}(X\leq x)=p$, where $X\sim N(0,\,1)$.
 
-Note that `norm` in each function name is because we are using the normal distribution. This part of the function names can be changed based on the distribution we want to use.  For example `rt()`, `rbinom()` and `rf()` each return random samples from the $t$, binomial and $F$ distributions, respectively, provided suitable arguments are give - remember to use the `help()` function to see what arguments are needed.
-
-The arguments `mean = 0` and `sd = 1` are the default values, so leaving them out of any of the functions for the normal distribution above means you will be using the $N(0,\,1)$ distribution. You can change the mean or standard deviation of the distribution by changing the values assigned to the arguments.
-
 The values that `pnorm(q)`, `qnorm(p)` and `dnorm(x)` return are summarised graphically in @fig-normal-image.
 
 ```{r normal-image, echo=FALSE, out.width="1200px", fig.pos="H", fig.align="center"}
@@ -52,6 +48,8 @@ qnorm(0.975)
 qnorm(0.975)
 ```
 :::
+
+The arguments `mean = 0` and `sd = 1` are the default values, so leaving them out of any of the functions for the normal distribution above means you will be using the $N(0,\,1)$ distribution. You can change the mean or standard deviation of the distribution by changing the values assigned to the arguments.
 
 :::{.question}
 ::::{.question-header}
@@ -126,6 +124,8 @@ pnorm(q = -2, mean = 0, sd = 2)
 
 ::::
 :::
+
+Note that `norm` in each function name is because we are using the normal distribution. This part of the function names can be changed based on the distribution we want to use.  For example `rt()`, `rbinom()` and `rf()` each return random samples from the $t$, binomial and $F$ distributions, respectively, provided suitable arguments are give - remember to use the `help()` function to see what arguments are needed.
 
 The normal distribution is not the only one that we can use the four functions introduced above with. @tbl-dist-tab shows some other distributions that can be used. In order to use a different distribution, simply change the `norm` part in the function name to the distribution's R name. Change the arguments `mean =` and `sd =` to the relevant arguments for your chosen distribution as well.
 

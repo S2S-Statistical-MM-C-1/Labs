@@ -40,10 +40,9 @@ This is where the question text would go.
 
 Welcome to the the fifth S2S lab. This lab moves away from teaching specific coding practise and starts to use what we have learned in previous labs to start exploring some ideas in statistics. Specifically, this lab will introduce the concept of sampling distributions - what they are, how they're constructed and how we can use R to help us in creating them.
 
-The sampling distribution is also covered in [Chapter 6 Sampling and Sampling Distributions](https://read.kortext.com/reader/pdf/92741/351){target="_blank"} of *Probability and Statistics with R*, specifically [Section 6.4 Sampling Distribution of $\bar X$](https://read.kortext.com/reader/pdf/92741/359){target="_blank"} of textbook runs through a similar example that the majority of this lab uses.
+The sampling distribution is also covered in **Chapter 6 Sampling and Sampling Distributions** of *Probability and Statistics with R*, specifically **Section 6.4 Sampling Distribution of $\bar X$** of textbook runs through a similar example that the majority of this lab uses.
 
-
-
+This lab will also introduce you to using R to access information about statistical distributions and teach you how to define your own functions.
 
 
 
