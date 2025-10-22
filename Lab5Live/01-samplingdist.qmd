@@ -146,15 +146,17 @@ sampletab_w <- data.frame(combinations1 = combs1, Mean1 = sample_w_means[1:12],
                         Variance2 = sample_w_variances[13:24],
                         combinations3 = combs3, Mean3 = sample_w_means[25:36],
                         Variance3 = sample_w_variances[25:36])
-names(sampletab_w) <- c("\\((x_1,\\,x_2)\\)", "Mean", "Variance", "\\((x_1,\\,x_2)\\)", "Mean", "Variance",
-                      "\\((x_1,\\,x_2)\\)", "Mean", "Variance")
+# names(sampletab_w) <- c("\\((x_1,\\,x_2)\\)", "Mean", "Variance", "\\((x_1,\\,x_2)\\)", "Mean", "Variance",
+#                       "\\((x_1,\\,x_2)\\)", "Mean", "Variance")
 ```
 
 ```{r sampletab-with, echo=FALSE}
 #| tbl-cap: "Mean and variance for every combination of $(x_1, x_2)$ when sampling with replacement, six numbered balls from a bag."
 #| label: tbl-sampletab-with
 
-kable(sampletab_w, align = c('c', 'r', 'r', 'c', 'r', 'r', 'c', 'r', 'r')) %>%
+kable(sampletab_w, align = c('c', 'r', 'r', 'c', 'r', 'r', 'c', 'r', 'r'),
+      col.names = c("$(x_1,\\,x_2)$", "Mean", "Variance", "$(x_1,\\,x_2)$", "Mean", "Variance",
+                      "$(x_1,\\,x_2)$", "Mean", "Variance")) %>%
   column_spec(3, border_right = TRUE) %>%
   column_spec(6, border_right = TRUE)
 ```
@@ -705,12 +707,12 @@ We can summarise all of the results we've seen so far about the sampling distrib
 ```{r summ-tab-setup, echo=FALSE}
 summ_tab <- data.frame(mean_x = rep(3.5, 2),
                        var_x = rep(2.9167, 2),
-                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "\(=\mu_X\)"), 
-                                  paste(as.numeric(mean_Xbar_wo), "\(=\mu_X\)")),
-                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "\(=\frac{\sigma_X^2}{n}\)"),
-                                    paste(round(as.numeric(var_Xbar_wo), 4), "\(=\frac{\sigma_X^2}{n}\cdot\frac{N-n}{N-1}\)")),
-                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "\(=\sigma_X^2\)"),
-                                paste(round(as.numeric(mean_S2_wo), 1), "\(=\frac{N}{N-1}\cdot\sigma_X^2\)")))
+                       E_xbar = c(paste0("$", as.numeric(mean_Xbar_w), "=\\mu_X$"), 
+                                  paste0("$", as.numeric(mean_Xbar_wo), "=\\mu_X$")),
+                       var_xbar = c(paste0("$", round(as.numeric(var_Xbar_w), 4), "=\\frac{\\sigma_X^2}{n}$"),
+                                    paste0("$", round(as.numeric(var_Xbar_wo), 4), "=\\frac{\\sigma_X^2}{n}\\cdot\\frac{N-n}{N-1}$")),
+                       E_s2 = c(paste0("$", round(as.numeric(mean_S2_w), 4), "=\\sigma_X^2$"),
+                                paste0("$", round(as.numeric(mean_S2_wo), 1), "=\\frac{N}{N-1}\\cdot\\sigma_X^2$")))
 rownames(summ_tab) <- c("With replacement", "Without replacement")
 ```
 
