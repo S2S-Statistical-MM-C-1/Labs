@@ -146,8 +146,8 @@ sampletab_w <- data.frame(combinations1 = combs1, Mean1 = sample_w_means[1:12],
                         Variance2 = sample_w_variances[13:24],
                         combinations3 = combs3, Mean3 = sample_w_means[25:36],
                         Variance3 = sample_w_variances[25:36])
-names(sampletab_w) <- c("\\((x_1,\\,x_2)\\)", "Mean", "Variance", "\\((x_1,\\,x_2)\\)", "Mean", "Variance",
-                      "\\((x_1,\\,x_2)\\)", "Mean", "Variance")
+names(sampletab_w) <- c("$(x_1,\\,x_2)$", "Mean", "Variance", "$(x_1,\\,x_2)$", "Mean", "Variance",
+                      "$(x_1,\\,x_2)$", "Mean", "Variance")
 ```
 
 ```{r sampletab-with, echo=FALSE}
@@ -185,7 +185,7 @@ samplingdist_mean_w
 
 For example, $\bar X$ is equal to 1.5 on two occasions (if the balls drawn are (2, 1) or (1, 2)). We can then say that $P\big(\bar X=1.5\big)=\frac{2}{36}=\frac{1}{18}$.
 
-The sampling distribution for \(\bar X\) is also given in @tbl-Xbar-dist-with.
+The sampling distribution for $\bar X$ is also given in @tbl-Xbar-dist-with.
 
 ```{r Xbar-dist-with, echo=FALSE}
 #| tbl-cap: "Sampling distribution for $\bar{X}$."
@@ -347,7 +347,7 @@ samplingdist_var_w
 
 Here we can see that $P(S^2=12.5)=\frac{1}{18}$ which we could have calculated from @tbl-sampletab-with since the sample variance is equal to 12.5 for only two outcomes (when the balls drawn are (6, 1) or (1, 6)), so the probability $S^2$ takes the value 12.5 is equal to $\frac{2}{36}=\frac{1}{18}$.
 
-The sampling distribution for \(S^2\) is also given in @tbl-S2-dist-with.
+The sampling distribution for $S^2$ is also given in @tbl-S2-dist-with.
 
 ```{r S2-dist-with, echo=FALSE}
 #| tbl-cap: "Sampling distribution for $S^2$."
@@ -496,7 +496,7 @@ samplingdist_mean_wo
 
 This tells us that, when sampling two balls from the bag of six without replacement, the probability that the mean of that sample is equal to 3 for example, is $\frac{2}{15}$ i.e. $P(\bar X=3)=\frac{2}{15}$.
 
-The sampling distribution for \(\bar X\) is also given in @tbl-Xbar-dist-wo.
+The sampling distribution for $\bar X$ is also given in @tbl-Xbar-dist-wo.
 
 ```{r Xbar-dist-wo, echo=FALSE}
 #| tbl-cap: "Sampling distribution for $\bar{X}$."
@@ -633,7 +633,7 @@ samplingdist_var_wo
 
 This distribution states that when sampling without replacement, the probability that the variance of a sample of two balls out of six is equal to 8, for example, is $\frac{2}{15}$ i.e. $P(S^2=8)=\frac{2}{15}$.
 
-The sampling distribution for \(S^2\) is also given in @tbl-S2-dist-wo.
+The sampling distribution for $S^2$ is also given in @tbl-S2-dist-wo.
 
 ```{r S2-dist-wo, echo=FALSE}
 #| tbl-cap: "Sampling distribution for $S^2$."
@@ -705,12 +705,12 @@ We can summarise all of the results we've seen so far about the sampling distrib
 ```{r summ-tab-setup, echo=FALSE}
 summ_tab <- data.frame(mean_x = rep(3.5, 2),
                        var_x = rep(2.9167, 2),
-                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "\(=\mu_X\)"), 
-                                  paste(as.numeric(mean_Xbar_wo), "\(=\mu_X\)")),
-                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "\(=\frac{\sigma_X^2}{n}\)"),
-                                    paste(round(as.numeric(var_Xbar_wo), 4), "\(=\frac{\sigma_X^2}{n}\cdot\frac{N-n}{N-1}\)")),
-                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "\(=\sigma_X^2\)"),
-                                paste(round(as.numeric(mean_S2_wo), 1), "\(=\frac{N}{N-1}\cdot\sigma_X^2\)")))
+                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "$=\mu_X$"), 
+                                  paste(as.numeric(mean_Xbar_wo), "$=\mu_X$")),
+                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "$=\frac{\sigma_X^2}{n}$"),
+                                    paste(round(as.numeric(var_Xbar_wo), 4), "$=\frac{\sigma_X^2}{n}\cdot\frac{N-n}{N-1}$")),
+                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "$=\sigma_X^2$"),
+                                paste(round(as.numeric(mean_S2_wo), 1), "$=\frac{N}{N-1}\cdot\sigma_X^2$")))
 rownames(summ_tab) <- c("With replacement", "Without replacement")
 ```
 
