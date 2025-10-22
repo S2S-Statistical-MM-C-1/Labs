@@ -705,12 +705,12 @@ We can summarise all of the results we've seen so far about the sampling distrib
 ```{r summ-tab-setup, echo=FALSE}
 summ_tab <- data.frame(mean_x = rep(3.5, 2),
                        var_x = rep(2.9167, 2),
-                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "$=\mu_X$"), 
-                                  paste(as.numeric(mean_Xbar_wo), "$=\mu_X$")),
-                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "$=\frac{\sigma_X^2}{n}$"),
-                                    paste(round(as.numeric(var_Xbar_wo), 4), "$=\frac{\sigma_X^2}{n}\cdot\frac{N-n}{N-1}$")),
-                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "$=\sigma_X^2$"),
-                                paste(round(as.numeric(mean_S2_wo), 1), "$=\frac{N}{N-1}\cdot\sigma_X^2$")))
+                       E_xbar = c(paste(as.numeric(mean_Xbar_w), "\\(=\\mu_X\\)"), 
+                                  paste(as.numeric(mean_Xbar_wo), "\\(=\\mu_X\\)")),
+                       var_xbar = c(paste(round(as.numeric(var_Xbar_w), 4), "\\(=\\frac{\\sigma_X^2}{n}\\)"),
+                                    paste(round(as.numeric(var_Xbar_wo), 4), "\\(=\\frac{\\sigma_X^2}{n}\\cdot\\frac{N-n}{N-1}\\)")),
+                       E_s2 = c(paste(round(as.numeric(mean_S2_w), 4), "\\(=\\sigma_X^2\\)"),
+                                paste(round(as.numeric(mean_S2_wo), 1), "\\(=\\frac{N}{N-1}\\cdot\\sigma_X^2\\)")))
 rownames(summ_tab) <- c("With replacement", "Without replacement")
 ```
 
