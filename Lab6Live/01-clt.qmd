@@ -445,7 +445,7 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 <ul style="margin-top:-1.2em; margin-left:-0.8em;">     
 `r mcq(c("geom_dens", answer="geom_density", "density"))``(aes(x = mean),`
 </ul>
-<ul style="margin-top:-1em; margin-left:8em;">
+<ul style="margin-top:-1em; margin-left:7em;">
 `fill = "skyblue") +`
 </ul>
 <ul style="margin-top:-0.8em; margin-left:-1em;">
