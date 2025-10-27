@@ -445,7 +445,7 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 <ul style="margin-top:-1.2em; margin-left:-0.8em;">     
 `r mcq(c("geom_dens", answer="geom_density", "density"))``(aes(x = mean),`
 </ul>
-<ul style="margin-top:-1.2em; margin-left:4em;">
+<ul style="margin-top:-1em; margin-left:8em;">
 `fill = "skyblue") +`
 </ul>
 <ul style="margin-top:-0.8em; margin-left:-1em;">
@@ -457,7 +457,11 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 </ul>
 <ul style="margin-top:-1em; margin-left:2em;">
 `subtitle = "Sample size n = 100",`
+</ul>
+<ul style="margin-top:-1em; margin-left:2em;">
 `x = expression(bar(x)),`
+</ul>
+<ul style="margin-top:-1em; margin-left:2em;">
 `y = "Density") +`
 </ul>
 <ul style="margin-top:-1.2em; margin-left:-1em;">
@@ -465,10 +469,20 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 </ul>
 <ul style="margin-top:-1.2em; margin-left:6.4em;">
 `args = list(mean = ``r fitb(15)``, sd = ``r fitb(c("15/sqrt(100)", "1.5"), width = 10)``),`
+</ul>
+<ul style="margin-top:-1em; margin-left:6.4em;">
 `geom = ``r fitb("\"area\"")``,`
+</ul>
+<ul style="margin-top:-1em; margin-left:6.4em;">
 `col = "black",`
+</ul>
+<ul style="margin-top:-1.2em; margin-left:6.4em;">
 `linetype = 2,`
+</ul>
+<ul style="margin-top:-1.2em; margin-left:6.4em;">
 `fill = "black",`
+</ul>
+<ul style="margin-top:-1.2em; margin-left:6.4em;">
 `alpha = 0.2)`
 </ul>
 :::
