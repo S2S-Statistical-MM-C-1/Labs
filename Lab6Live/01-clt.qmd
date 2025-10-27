@@ -111,7 +111,7 @@ means_expo_2 <- numeric(m)
 
 To draw the samples from each distribution and calculate the mean, a for loop is used. For the Uniform distribution, `runif()` is used to draw a random sample of size $n=2$ from the $\mbox{Unif}(-11,\, 41)$ distribution, and then the function `mean()` is used to calculate the mean of these two values. The for loop stores this mean as one of the values in the vector `means_unif_2`, and repeats until 10,000 random samples have been drawn and used to calculate a mean.
 
-The same process is used to draw the samples from the Exponential distribution, except the function `rexp()` is used to draw the random samples (for more details on R's probability functions see [Lab 5: Section 3](../Labs/Lab5/02-functions.html#sec-prob-func){target="_blank"}).
+The same process is used to draw the samples from the Exponential distribution, except the function `rexp()` is used to draw the random samples (for more details on R's probability functions see [Lab 5: Section 3](../Lab5/02-functions.html#sec-prob-func){target="_blank"}).
 
 ::: panel-tabset
 ## R Code
@@ -153,7 +153,7 @@ head(means_2)
 ```
 :::
 
-Now, we are ready to plot the two sampling distributions of $\bar X$ from the $\mbox{Unif}(-11,\, 41)$ and $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distributions. This can be done using the `ggplot2` package (see [Lab 4: Appendix A](../Labs/Lab4/06-ggplot.html){target="_blank"}) using the following code.
+Now, we are ready to plot the two sampling distributions of $\bar X$ from the $\mbox{Unif}(-11,\, 41)$ and $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distributions. This can be done using the `ggplot2` package (see [Lab 4: Appendix A](../Lab4/06-ggplot.html){target="_blank"}) using the following code.
 
 ::: panel-tabset
 ## R Code
