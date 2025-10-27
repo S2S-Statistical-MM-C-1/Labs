@@ -31,7 +31,8 @@ Specifically, we will;
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Using the statement above about the distribution of $\bar X-\bar Y$, what distribution would you expect the differences in sample means to follow?
 
 ```{r mcq-opts3, echo=FALSE}
@@ -42,6 +43,7 @@ opts3 <- sample(c(answer = "$N\\Big(50,\\,\\sqrt{\\textstyle\\frac{12^2}{120}+\\
 ```
 
 `r longmcq(opts3)`
+::::
 
 `r hide("Solution")`
 We know that $X\sim N(90,\,12)$ and that we want to take samples of size 120 from this distribution. Therefore, we can say that $\mu_X=90$, $\sigma_X=12$ and $n_X=120$.
@@ -61,7 +63,8 @@ $$
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Complete the code below draw 20,000 samples of size 120 from the $N(90,\, 12)$ distribution and save the mean of each sample in a vector called `meansX`.
 
 Let `m` represent the number of samples you want to draw, and `nx` represent the size each sample should be i.e. $n_X$
@@ -90,6 +93,7 @@ Let `m` represent the number of samples you want to draw, and `nx` represent the
 
 :::
 :::
+::::
 `r hide("Solution")`
 ::: panel-tabset
 ## R Code
@@ -141,12 +145,18 @@ We know that $\bar X-\bar Y$ follows the $N\Big(50,\,\sqrt{\textstyle\frac{12^2}
 ## R Code
 ```{r XY3.1, eval = FALSE}
 ggplot(data = XY) +
-  geom_density(aes(x = diff), fill = "cadetblue3") +
-  stat_function(fun = dnorm, args = list(mean = 50,
+  geom_density(aes(x = diff), 
+               fill = "cadetblue3") +
+  stat_function(fun = dnorm, 
+                args = list(mean = 50,
                 sd = sqrt(12^2/120 + 10^2/96)),
-                geom = "area", col = "black", linetype = 2,
-                fill = "black", alpha = 0.2) +
-  labs(x = expression(bar(X)-bar(Y)), y = "Density")
+                geom = "area", 
+                col = "black", 
+                linetype = 2,
+                fill = "black", 
+                alpha = 0.2) +
+  labs(x = expression(bar(X)-bar(Y)), 
+       y = "Density")
 ```
 
 ## Plots
@@ -163,10 +173,12 @@ ggplot(data = XY) +
 ::::{.question-header}
 Task
 ::::
-::::{.question-container .webex-check}
+::::{.question-container}
+::::{.webex-check}
 Do you think the kernel density estimate of the distribution of the differences between pairs of sample means is approximately equal to the $N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)$ distribution?
 
 `r mcq(c(answer="Yes", "No", "Can't say"))`
+::::
 ::::
 :::
 
@@ -207,7 +219,7 @@ Notice how close the empirical probability we calculated from our samples is to 
 
 ---
 
-You can follow a similar example of using R to create a sample sampling distribution for $\bar X-\bar Y$ in Section [6.5.2 Sampling Distribution for $\bar X-\bar Y$ When Sampling from Two Independent Normal Populations](https://read.kortext.com/reader/pdf/92741/375){target="_blank"} in *Probability and Statistics with R*.
+You can follow a similar example of using R to create a sample sampling distribution for $\bar X-\bar Y$ in Section **6.5.2 Sampling Distribution for $\bar X-\bar Y$ When Sampling from Two Independent Normal Populations** in *Probability and Statistics with R*.
 
 
 

@@ -11,7 +11,7 @@ For each different sample size, you should,
 * Plot the kernel density estimate of the sampling distribution for $\bar X$.
 * Superimpose the distribution that the Central Limit Theorem states the sampling distribution for $\bar X$ should follow above the kernel density estimate - use the mean and standard deviation of $X$ to find which distribution this should be.
 
-***Hint*** You can draw a random sample from the Binomial distribution using the function `rbinom()`. Use the `help()` function to find out which arguments need to be provided to `rbinom()`.
+***Hint***  You can draw a random sample from the Binomial distribution using the function `rbinom()`. Use the `help()` function to find out which arguments need to be provided to `rbinom()`.
 
 ## Exercise 2 {-}
 
