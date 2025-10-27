@@ -14,7 +14,7 @@ Suppose we were to take multiple random samples, each of the same size, from a d
 
 ## Central Limit Theorem
 
-An important result regarding the sampling distribution of $\bar X$ is that, provided the sample size is *sufficiently large*, the sampling distribution of $\bar X$ will follow a normal distribution. For this to be true, the random variable $X$ **does not need to follow a normal distribution** itself (like in [Section 6.5.1.1](https://read.kortext.com/reader/pdf/92741/368){target="_blank"} of *Probability and Statistics with R*). This result is know as the **Central Limit Theorem**.
+An important result regarding the sampling distribution of $\bar X$ is that, provided the sample size is *sufficiently large*, the sampling distribution of $\bar X$ will follow a normal distribution. For this to be true, the random variable $X$ **does not need to follow a normal distribution** itself (like in **Section 6.5.1.1** of *Probability and Statistics with R*). This result is know as the **Central Limit Theorem**.
 
 Formally, for a random variable $X$ which follows *any* distribution with known mean, $\mu$, and standard deviation, $\sigma$, then
 
@@ -111,7 +111,7 @@ means_expo_2 <- numeric(m)
 
 To draw the samples from each distribution and calculate the mean, a for loop is used. For the Uniform distribution, `runif()` is used to draw a random sample of size $n=2$ from the $\mbox{Unif}(-11,\, 41)$ distribution, and then the function `mean()` is used to calculate the mean of these two values. The for loop stores this mean as one of the values in the vector `means_unif_2`, and repeats until 10,000 random samples have been drawn and used to calculate a mean.
 
-The same process is used to draw the samples from the Exponential distribution, except the function `rexp()` is used to draw the random samples (for more details on R's probability functions and flow control, see [Lab 3: Section 4](https://moodle.gla.ac.uk/pluginfile.php/9073238/mod_resource/content/2/03-functions.html){target="_blank"} and [Lab 3: Appendix C](https://moodle.gla.ac.uk/pluginfile.php/9073238/mod_resource/content/2/07-flow.html){target="_blank"} respectively).
+The same process is used to draw the samples from the Exponential distribution, except the function `rexp()` is used to draw the random samples (for more details on R's probability functions see [Lab 5: Section 3](../Labs/Lab5/02-functions.qmd#sec-prob-func){target="_blank"}).
 
 ::: panel-tabset
 ## R Code
@@ -153,21 +153,27 @@ head(means_2)
 ```
 :::
 
-Now, we are ready to plot the two sampling distributions of $\bar X$ from the $\mbox{Unif}(-11,\, 41)$ and $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distributions. This can be done using the `ggplot2` package (see [Lab 4: Appendix A](https://moodle.gla.ac.uk/pluginfile.php/9073320/mod_resource/content/2/05-ggplot.html){target="_blank"}) using the following code.
+Now, we are ready to plot the two sampling distributions of $\bar X$ from the $\mbox{Unif}(-11,\, 41)$ and $\mbox{Expo}\Big(\textstyle\frac{1}{15}\Big)$ distributions. This can be done using the `ggplot2` package (see [Lab 4: Appendix A](../Labs/Lab4/06-ggplot.qmd){target="_blank"}) using the following code.
 
 ::: panel-tabset
 ## R Code
 ```{r samp4.1.1, eval = FALSE}
 ggplot(data = means_2) +
-  geom_density(aes(x = mean), fill = "skyblue") +
+  geom_density(aes(x = mean), 
+               fill = "skyblue") +
   facet_grid(distribution ~ .) +
   coord_cartesian(xlim = c(-11, 41)) +
   labs(title = "Simulated sampling distributions of the sample mean",
        subtitle = "Sample size n = 2",
-       x = expression(bar(x)), y = "Density") +
-  stat_function(fun = dnorm, args = list(mean = 15, sd = 15/sqrt(2)),
-                col = "black", linetype = 2, fill = "black",
-                alpha = 0.2, geom = "area")
+       x = expression(bar(x)), 
+       y = "Density") +
+  stat_function(fun = dnorm, 
+                args = list(mean = 15, sd = 15/sqrt(2)),
+                col = "black", 
+                linetype = 2, 
+                fill = "black",
+                alpha = 0.2, 
+                geom = "area")
 ```
 
 ## Plots
@@ -355,15 +361,21 @@ We can then plot the two sampling distributions of $\bar X$ from the $\mbox{Unif
 ## R Code
 ```{r samp8.1, eval = FALSE}
 ggplot(data = subset(means, subset = (size == "n = 10"))) +
-  geom_density(aes(x = mean), fill = "skyblue") +
+  geom_density(aes(x = mean), 
+               fill = "skyblue") +
   facet_grid(distribution ~ .) +
   coord_cartesian(xlim = c(-1, 31)) +
   labs(title = "Simulated sampling distributions of the sample mean",
        subtitle = "Sample size n = 10",
-       x = expression(bar(x)), y = "Density") +
-  stat_function(fun = dnorm, args = list(mean = 15, sd = 15/sqrt(10)),
-                geom = "area", col = "black", linetype = 2,
-                fill = "black", alpha = 0.2)
+       x = expression(bar(x)), 
+       y = "Density") +
+  stat_function(fun = dnorm, 
+                args = list(mean = 15, sd = 15/sqrt(10)),
+                geom = "area", 
+                col = "black", 
+                linetype = 2,
+                fill = "black", 
+                alpha = 0.2)
 ```
 
 ## Plots
@@ -386,15 +398,21 @@ We can also show the sampling distributions of $\bar X$ from the Uniform and Exp
 ## R Code
 ```{r samp9.1, eval = FALSE}
 ggplot(data = subset(means, subset = (size == "n = 40"))) +
-  geom_density(aes(x = mean), fill = "skyblue") +
+  geom_density(aes(x = mean), 
+               fill = "skyblue") +
   facet_grid(distribution ~ .) +
   coord_cartesian(xlim = c(6, 24)) +
   labs(title = "Simulated sampling distributions of the sample mean",
        subtitle = "Sample size n = 40",
-       x = expression(bar(x)), y = "Density") +
-  stat_function(fun = dnorm, args = list(mean = 15, sd = 15/sqrt(40)),
-                geom = "area", col = "black", linetype = 2,
-                fill = "black", alpha = 0.2)
+       x = expression(bar(x)), 
+       y = "Density") +
+  stat_function(fun = dnorm, 
+                args = list(mean = 15, sd = 15/sqrt(40)),
+                geom = "area", 
+                col = "black", 
+                linetype = 2,
+                fill = "black", 
+                alpha = 0.2)
 ```
 
 ## Plots
@@ -425,7 +443,10 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 `ggplot(data = subset(means, subset = (size == "n = 100"))) +`
      
 <ul style="margin-top:-1.2em; margin-left:-0.8em;">     
-`r mcq(c("geom_dens", answer="geom_density", "density"))``(aes(x = mean), fill = "skyblue") +`
+`r mcq(c("geom_dens", answer="geom_density", "density"))``(aes(x = mean),`
+</ul>
+<ul style="margin-top:-1.2em; margin-left:4em;">
+`fill = "skyblue") +`
 </ul>
 <ul style="margin-top:-0.8em; margin-left:-1em;">
 `facet_grid(``r fitb("distribution ~ .")``) +`
@@ -436,14 +457,19 @@ Complete the code below to plot the sampling distribution of $\bar X$ for the sa
 </ul>
 <ul style="margin-top:-1em; margin-left:2em;">
 `subtitle = "Sample size n = 100",`
-`x = expression(bar(x)), y = "Density") +`
+`x = expression(bar(x)),`
+`y = "Density") +`
 </ul>
 <ul style="margin-top:-1.2em; margin-left:-1em;">
-`stat_function(fun = dnorm, args = list(mean = ``r fitb(15)``, sd = ``r fitb(c("15/sqrt(100)", "1.5"), width = 10)``),`
+`stat_function(fun = dnorm,` 
 </ul>
 <ul style="margin-top:-1.2em; margin-left:6.4em;">
-`geom = ``r fitb("\"area\"")``, col = "black", linetype = 2,`
-`fill = "black", alpha = 0.2)`
+`args = list(mean = ``r fitb(15)``, sd = ``r fitb(c("15/sqrt(100)", "1.5"), width = 10)``),`
+`geom = ``r fitb("\"area\"")``,`
+`col = "black",`
+`linetype = 2,`
+`fill = "black",`
+`alpha = 0.2)`
 </ul>
 :::
 ## Plots
@@ -499,7 +525,7 @@ ggplot(data = subset(means, subset = (size == "n = 100"))) +
 
 ---
 
-Section [6.5.1.2 Second Case: Sampling Distribution of $\bar X$ When $X$ Is Not a Normal Random Variable](https://read.kortext.com/reader/pdf/92741/370){target="_blank"} of *Probability and Statistics with R* details a similar example of finding the distribution of $\bar X$ through sampling.
+Section **6.5.1.2 Second Case: Sampling Distribution of $\bar X$ When $X$ Is Not a Normal Random Variable** of *Probability and Statistics with R* details a similar example of finding the distribution of $\bar X$ through sampling.
 
 
 
