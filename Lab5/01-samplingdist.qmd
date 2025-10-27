@@ -756,14 +756,14 @@ We can find the same result in R using the following code.
 
 ::: panel-tabset
 ## R Code
-```{r wo-ans3.1, eval = FALSE}
+```{r wo-ans4.1, eval = FALSE}
 vars_wo <- as.numeric(names(samplingdist_var_wo))
 mean_S2_wo <- sum(vars_wo*samplingdist_var_wo)
 mean_S2_wo
 ```
 
 ## Output
-```{r wo-ans3.2, echo = FALSE}
+```{r wo-ans4.2, echo = FALSE}
 vars_wo <- as.numeric(names(samplingdist_var_wo))
 mean_S2_wo <- sum(vars_wo*samplingdist_var_wo)
 mean_S2_wo
