@@ -13,7 +13,7 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-Welcome to the eighth S2S lab. This lab will begin by introducing the structure that a formal statistical report should follow. This will partly include plotting techniques introduced in [Lab 4](https://moodle.gla.ac.uk/pluginfile.php/9073320/mod_resource/content/6/index.html){target="_blank"} which will be revisited in order to explore a new data set visually.
+Welcome to the eighth S2S lab. This lab will begin by introducing the structure that a formal statistical report should follow. This will partly include plotting techniques introduced in [Lab 4](../Lab4/){target="_blank"} which will be revisited in order to explore a new data set visually.
 
 We will also look at good styles of report writing and discuss what should be included in a statistical report.
 

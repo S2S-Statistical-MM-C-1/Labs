@@ -15,7 +15,7 @@ library(tidyverse)
 
 When writing a formal statistical report, there is a typical structure that helps ensure all relevant information is included in a sensible way. By using the following sections, your report will flow well and detail your analysis in full.
 
-A template for a general statistical report, using the following structure, is included at the top of the Lab section on [Moodle](https://moodle.gla.ac.uk/course/view.php?id=43654&section=9){target="_blank"} which you can always use for reference.
+A template for a general statistical report, using the following structure, is included at the top of the Lab section on **Moodle** which you can always use for reference.
 
 ::: webex-highlight
 1.  [**Introduction**](02-intro.qmd): this is where you should write a short description of the problem and provide context such as the data and variables collected. The aims of the analysis should also be clearly stated here.
@@ -29,12 +29,12 @@ A template for a general statistical report, using the following structure, is i
 
 In this lab we will focus on sections (1) and (2) of the report. Sections (3) and (4) will be discussed in Lab 9.
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
 
 ::: question-container
-For this lab, we want to start to produce a statistical report detailing the analysis we will work through. A template for a general statistical report is provided on [Moodle](https://moodle.gla.ac.uk/course/view.php?id=43654&section=9#module-4463040){target="_blank"}. Download this template and save it somewhere you are able to access it. We will add to the template throughout this lab.
+For this lab, we want to start to produce a statistical report detailing the analysis we will work through. A template for a general statistical report is provided on **Moodle**. Download this template and save it somewhere you are able to access it. We will add to the template throughout this lab.
 :::
-:::
+:::::

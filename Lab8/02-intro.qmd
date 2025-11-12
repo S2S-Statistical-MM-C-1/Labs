@@ -13,7 +13,7 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-Every statistical analysis needs a problem to answer. For this lab, we will focus on the example given by the data set *yields.csv* on [Moodle](https://moodle.gla.ac.uk/mod/folder/view.php?id=4944039){target="_blank"}.
+Every statistical analysis needs a problem to answer. For this lab, we will focus on the example given by the data set *yields.csv* on **Moodle**.
 
 ## Background to the problem
 

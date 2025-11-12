@@ -17,7 +17,7 @@ library(tidyverse)
 
 The observed yields can be found in the file *yields.csv*.
 
-To read *yields.csv* into R, you will first need to download it from [Moodle](https://moodle.gla.ac.uk/mod/folder/view.php?id=4944039){target="_blank"} and save it somewhere accessible. Then, set your working directory in R to point to wherever you have saved this file. For a reminder on setting your working directory, see [Lab 3 Section 2.1](https://moodle.gla.ac.uk/pluginfile.php/9073238/mod_resource/content/4/01-reading.html#directory){target="_blank"}.
+To read *yields.csv* into R, you will first need to download it from **Moodle** and save it somewhere accessible. Then, set your working directory in R to point to wherever you have saved this file. For a reminder on setting your working directory, see [Lab 3 Section 2.1](../Lab3/01-reading.html#directory){target="_blank"}.
 
 To load the data frame into the **Environment** tab and call it `yields`, we can use the code below.
 
@@ -273,7 +273,7 @@ Add a sentence to your report which states what the sample proportion of field's
 
 ## Exploratory plots
 
-In order to informally answer the [aims](02-intro.qmd#sec-aims) of our analysis, it is also a good idea to produce some appropriate plots that will graphically summarise the information contained in the data. For a reminder of how to create various plots in R, see [Lab 4](https://moodle.gla.ac.uk/pluginfile.php/9073320/mod_resource/content/6/index.html){target="_blank"}.
+In order to informally answer the [aims](02-intro.qmd#sec-aims) of our analysis, it is also a good idea to produce some appropriate plots that will graphically summarise the information contained in the data. For a reminder of how to create various plots in R, see [Lab 4](../Lab4/){target="_blank"}.
 
 ### Aim 1
 
