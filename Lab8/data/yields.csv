@@ -1,22 +1,421 @@
-"fertiliser","potato","lettuce","supermarket"
-"Used",36.6260092418867,27.8284531089725,1
-"Used",37.0523682789637,24.8338765399321,0
-"Not used",33.609881002097,19.0427434871761,1
-"Used",42.9337930067621,24.4276905989624,0
-"Not used",29.8289805060005,18.0184068307138,1
-"Used",42.0821385184745,23.416757922369,1
-"Used",41.8544036791856,23.1090835974641,1
-"Not used",37.176046041195,15.569040119253,1
-"Used",46.2071489608836,27.3077348106764,0
-"Used",42.876722550171,22.1604132106144,1
-"Not used",39.9930248766948,16.6768563047364,1
-"Not used",30.7254376434479,18.4797144184352,0
-"Used",29.860808793825,18.5456943362361,0
-"Used",32.2488176183296,22.9611982330911,1
-"Used",32.4281652654909,25.6036277656739,1
-"Not used",32.7450546009824,19.9589065993386,0
-"Used",39.1806768060633,28.0858863373117,1
-"Used",33.6727484180697,21.9172876665659,1
-"Used",32.8593635918741,27.3536894813266,1
-"Not used",30.3142748008432,16.6475312927667,1
-"Not used",35.6561395967076,17.5387010097617,1
+"fertiliser","crop","yield"
+"Used","potato",41.171
+"Used","potato",34.423
+"Used","potato",38.761
+"Used","potato",36.662
+"Used","potato",42.636
+"Used","potato",37.052
+"Not used","potato",38.377
+"Used","potato",37.812
+"Used","potato",39.584
+"Used","potato",35.952
+"Used","potato",37.61
+"Used","potato",37.114
+"Not used","potato",41.844
+"Used","potato",40.919
+"Not used","potato",32.331
+"Used","potato",40.112
+"Not used","potato",40.952
+"Used","potato",41.241
+"Used","potato",42.877
+"Used","potato",40.845
+"Used","potato",42.677
+"Not used","potato",36.498
+"Used","potato",33.707
+"Used","potato",36.547
+"Used","potato",40.531
+"Not used","potato",39.343
+"Used","potato",40.734
+"Not used","potato",37.267
+"Used","potato",41.997
+"Used","potato",42.192
+"Used","potato",41.127
+"Not used","potato",38.09
+"Not used","potato",35.451
+"Not used","potato",39.003
+"Not used","potato",32.302
+"Used","potato",45.084
+"Used","potato",36.797
+"Used","potato",41.138
+"Used","potato",43.417
+"Not used","potato",38.251
+"Not used","potato",37.224
+"Not used","potato",37.069
+"Not used","potato",38.82
+"Not used","potato",28.23
+"Used","potato",36.137
+"Not used","potato",36.049
+"Used","potato",38.076
+"Used","potato",40.705
+"Used","potato",44.086
+"Not used","potato",44.56
+"Used","potato",34.832
+"Used","potato",39.57
+"Used","potato",36.373
+"Used","potato",42.082
+"Not used","potato",36.938
+"Used","potato",42.474
+"Used","potato",43.159
+"Not used","potato",39.342
+"Used","potato",40.355
+"Not used","potato",45.2
+"Used","potato",34.556
+"Not used","potato",41.642
+"Not used","potato",40.177
+"Not used","potato",32.014
+"Not used","potato",40.297
+"Used","potato",37.155
+"Not used","potato",36.85
+"Used","potato",32.859
+"Used","potato",37.425
+"Used","potato",44.105
+"Not used","potato",38.73
+"Used","potato",41.752
+"Not used","potato",41.919
+"Not used","potato",43.593
+"Not used","potato",49.888
+"Used","potato",36.853
+"Used","potato",38.752
+"Used","potato",38.686
+"Not used","potato",35.657
+"Not used","potato",34.661
+"Not used","potato",31.339
+"Not used","potato",45.404
+"Used","potato",32.428
+"Not used","potato",40.415
+"Used","potato",40.699
+"Not used","potato",34.588
+"Used","potato",39.661
+"Not used","potato",38.811
+"Not used","potato",35.919
+"Used","potato",41.812
+"Used","potato",42.638
+"Used","potato",41.664
+"Not used","potato",41.699
+"Not used","potato",36.68
+"Not used","potato",35.538
+"Used","potato",37.175
+"Used","potato",35.246
+"Not used","potato",41.796
+"Used","potato",31.549
+"Used","potato",37.329
+"Used","potato",34.725
+"Used","potato",38.222
+"Used","potato",37.271
+"Used","potato",41.553
+"Used","potato",36.759
+"Used","potato",36.666
+"Used","potato",38.632
+"Used","potato",40.785
+"Not used","potato",39.663
+"Used","potato",42.895
+"Used","potato",39.181
+"Used","potato",36.223
+"Not used","potato",42.849
+"Not used","potato",29.385
+"Not used","potato",38.96
+"Not used","potato",42.258
+"Used","potato",34.618
+"Not used","potato",31.606
+"Not used","potato",45.805
+"Used","potato",43.171
+"Not used","potato",33.648
+"Used","potato",33.829
+"Not used","potato",37.397
+"Used","potato",32.249
+"Not used","potato",37.668
+"Used","potato",26.965
+"Used","potato",35.87
+"Used","potato",36.745
+"Used","potato",45.949
+"Used","potato",38.548
+"Not used","potato",44.574
+"Not used","potato",37.912
+"Used","potato",34.314
+"Used","potato",38.621
+"Not used","potato",40.689
+"Used","potato",46.836
+"Used","potato",39.148
+"Used","potato",41.176
+"Used","potato",40.416
+"Not used","potato",32.847
+"Not used","potato",39.211
+"Not used","potato",46.51
+"Used","potato",31.76
+"Used","potato",42.635
+"Not used","potato",38.86
+"Used","potato",46.242
+"Used","potato",37.615
+"Used","potato",37.475
+"Used","potato",40.284
+"Used","potato",39.074
+"Used","potato",43.472
+"Not used","potato",35.688
+"Used","potato",36.22
+"Not used","potato",39.267
+"Used","potato",45.996
+"Not used","potato",31.995
+"Used","potato",36.089
+"Used","potato",33.42
+"Used","potato",33.55
+"Not used","potato",46.356
+"Not used","potato",35.512
+"Used","potato",38.84
+"Used","potato",43.993
+"Used","potato",40.161
+"Used","potato",34.428
+"Used","potato",39.656
+"Used","potato",38.221
+"Not used","potato",38.794
+"Used","potato",38.526
+"Not used","potato",38.416
+"Used","potato",41.854
+"Not used","potato",33.97
+"Used","potato",33.59
+"Used","potato",33.971
+"Not used","potato",35.835
+"Not used","potato",45.897
+"Used","potato",36.746
+"Used","potato",44.448
+"Not used","potato",36.778
+"Used","potato",43.121
+"Not used","potato",41.248
+"Used","potato",46.207
+"Used","potato",31.728
+"Used","potato",44.729
+"Used","potato",39.081
+"Not used","potato",42.142
+"Used","potato",42.934
+"Used","potato",36.626
+"Used","potato",35.175
+"Not used","potato",40.383
+"Not used","potato",41.106
+"Used","potato",36.437
+"Used","potato",41.084
+"Not used","potato",37.431
+"Not used","potato",38.184
+"Used","potato",29.861
+"Not used","potato",36.059
+"Used","potato",43.41
+"Not used","potato",40.68
+"Used","potato",44.016
+"Used","potato",39.296
+"Used","potato",36.419
+"Used","potato",33.673
+"Used","potato",29.276
+"Not used","potato",40.012
+"Used","potato",43.286
+"Used","potato",38.192
+"Not used","potato",41.419
+"Used","potato",39.274
+"Used","potato",33.237
+"Used","wheat",22.248
+"Used","wheat",27.964
+"Used","wheat",16.919
+"Used","wheat",23.426
+"Used","wheat",27.171
+"Not used","wheat",18.124
+"Not used","wheat",16.954
+"Not used","wheat",19.57
+"Not used","wheat",20.614
+"Used","wheat",26.772
+"Used","wheat",22.626
+"Not used","wheat",19.642
+"Not used","wheat",16.323
+"Used","wheat",21.275
+"Not used","wheat",16.747
+"Not used","wheat",20.123
+"Used","wheat",25.446
+"Used","wheat",28.176
+"Not used","wheat",19.484
+"Used","wheat",22.501
+"Used","wheat",23.933
+"Used","wheat",25.716
+"Not used","wheat",17.914
+"Not used","wheat",18.444
+"Not used","wheat",18.324
+"Not used","wheat",17.95
+"Not used","wheat",19.039
+"Used","wheat",20.659
+"Not used","wheat",16.593
+"Used","wheat",19.793
+"Not used","wheat",19.859
+"Used","wheat",26.357
+"Not used","wheat",18.842
+"Not used","wheat",20.161
+"Not used","wheat",18.748
+"Not used","wheat",18.733
+"Not used","wheat",17.612
+"Not used","wheat",15.886
+"Not used","wheat",18.018
+"Used","wheat",22.935
+"Used","wheat",27.85
+"Not used","wheat",17.964
+"Not used","wheat",19.061
+"Used","wheat",23.874
+"Not used","wheat",18.285
+"Used","wheat",21.405
+"Not used","wheat",16.934
+"Not used","wheat",17.601
+"Used","wheat",31.906
+"Used","wheat",23.357
+"Used","wheat",29.512
+"Not used","wheat",16.945
+"Used","wheat",22.837
+"Used","wheat",23.633
+"Not used","wheat",17.486
+"Used","wheat",23.85
+"Used","wheat",23.708
+"Used","wheat",23.939
+"Not used","wheat",16.691
+"Used","wheat",24.687
+"Used","wheat",22.826
+"Used","wheat",25.447
+"Not used","wheat",17.24
+"Not used","wheat",18.631
+"Not used","wheat",18.677
+"Used","wheat",22.642
+"Not used","wheat",18.327
+"Not used","wheat",17.999
+"Not used","wheat",17.517
+"Used","wheat",20.572
+"Used","wheat",24.628
+"Used","wheat",19.878
+"Used","wheat",22.314
+"Not used","wheat",18.485
+"Not used","wheat",17.898
+"Not used","wheat",19.512
+"Used","wheat",26.334
+"Not used","wheat",19.159
+"Not used","wheat",17.604
+"Not used","wheat",15.965
+"Not used","wheat",18.933
+"Not used","wheat",19.944
+"Used","wheat",25.58
+"Used","wheat",25.311
+"Used","wheat",23.572
+"Used","wheat",21.496
+"Not used","wheat",16.985
+"Not used","wheat",20.275
+"Not used","wheat",19.441
+"Not used","wheat",17.413
+"Not used","wheat",16.715
+"Not used","wheat",18.367
+"Not used","wheat",18.258
+"Used","wheat",22.505
+"Used","wheat",24.572
+"Not used","wheat",17.725
+"Used","wheat",19.03
+"Not used","wheat",18.96
+"Not used","wheat",18.289
+"Not used","wheat",18.576
+"Used","wheat",20.481
+"Not used","wheat",16.264
+"Not used","wheat",16.461
+"Not used","wheat",17.515
+"Used","wheat",20.403
+"Used","wheat",26.763
+"Not used","wheat",17.667
+"Not used","wheat",17.837
+"Not used","wheat",16.791
+"Used","wheat",20.399
+"Used","wheat",26.736
+"Used","wheat",23.6
+"Used","wheat",25.921
+"Not used","wheat",18.638
+"Not used","wheat",18.515
+"Not used","wheat",17.994
+"Not used","wheat",16.902
+"Not used","wheat",16.753
+"Not used","wheat",18.524
+"Not used","wheat",18.54
+"Used","wheat",26.865
+"Used","wheat",20.894
+"Not used","wheat",16.909
+"Not used","wheat",16.348
+"Not used","wheat",18.514
+"Not used","wheat",17.725
+"Used","wheat",13.911
+"Not used","wheat",19.805
+"Not used","wheat",16.716
+"Not used","wheat",16.727
+"Used","wheat",28.331
+"Not used","wheat",16.628
+"Not used","wheat",18.211
+"Not used","wheat",18.163
+"Not used","wheat",18.046
+"Not used","wheat",18.375
+"Not used","wheat",17.903
+"Used","wheat",23.122
+"Used","wheat",25.455
+"Not used","wheat",17.988
+"Used","wheat",21.319
+"Not used","wheat",17.295
+"Used","wheat",20.3
+"Used","wheat",30.3
+"Not used","wheat",18.449
+"Not used","wheat",17.262
+"Not used","wheat",17.086
+"Not used","wheat",19.609
+"Used","wheat",23.602
+"Used","wheat",24.267
+"Used","wheat",25.119
+"Not used","wheat",17.346
+"Not used","wheat",20.263
+"Not used","wheat",17.199
+"Used","wheat",23.744
+"Not used","wheat",15.948
+"Not used","wheat",16.692
+"Not used","wheat",18.583
+"Not used","wheat",18.736
+"Not used","wheat",17.2
+"Not used","wheat",17.656
+"Used","wheat",25.502
+"Used","wheat",27.35
+"Not used","wheat",17.55
+"Used","wheat",21.217
+"Used","wheat",21.248
+"Not used","wheat",17.919
+"Not used","wheat",16.658
+"Used","wheat",21.109
+"Not used","wheat",17.658
+"Not used","wheat",16.734
+"Not used","wheat",17.594
+"Used","wheat",26.253
+"Not used","wheat",18.051
+"Not used","wheat",18.54
+"Not used","wheat",17.338
+"Used","wheat",24.174
+"Not used","wheat",19.746
+"Not used","wheat",17.507
+"Used","wheat",22.614
+"Not used","wheat",18.523
+"Not used","wheat",19.176
+"Not used","wheat",18.423
+"Used","wheat",26.913
+"Not used","wheat",16.991
+"Used","wheat",21.911
+"Used","wheat",24.208
+"Used","wheat",22.341
+"Used","wheat",21.94
+"Not used","wheat",18.59
+"Used","wheat",22.429
+"Used","wheat",24.601
+"Used","wheat",24.383
+"Used","wheat",27.192
+"Not used","wheat",17.371
+"Not used","wheat",19.165
+"Not used","wheat",18.016
+"Used","wheat",25.409
+"Used","wheat",21.998
+"Used","wheat",23.748
+"Not used","wheat",17.904
+"Used","wheat",22.245
+"Not used","wheat",16.535
+"Not used","wheat",16.312
+"Used","wheat",23.519
+"Used","wheat",27.251
+"Used","wheat",21.502
+"Not used","wheat",18.135
+"Used","wheat",26.956
+"Used","wheat",21.385

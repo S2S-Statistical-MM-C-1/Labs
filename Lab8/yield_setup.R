@@ -16,5 +16,5 @@ yields <- data.frame(fertiliser = rep(c("Used", "Not used", "Used", "Not used"),
 yields <- yields[c(sample(1:210), sample(211:420)), ]
 row.names(yields) <- 1:nrow(yields)
 
-write.csv(x = yields, file = "data/yields_long.csv", row.names = FALSE)
+write.csv(x = yields, file = "data/yields.csv", row.names = FALSE)
 
