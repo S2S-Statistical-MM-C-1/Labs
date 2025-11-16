@@ -70,9 +70,9 @@ CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{
 
 ------------------------------------------------------------------------
 
-You can find the derivation of this result and some additional exercises in [Section 8.2.3](https://read.kortext.com/reader/pdf/92741/466){target="_blank"} of *Probability and Statistics with R*.
+You can find the derivation of this result and some additional exercises in **Section 8.2.3** of *Probability and Statistics with R*.
 
-We saw from the Exploratory Analysis completed in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-1){target="_blank"} that the yields of potatoes from fertilised and unfertilised fields both seem to follow a normal distribution with approximately equal variances. To simplify our analysis at this stage, let's first assume that the population variances are known and are equal to $\sigma^2_\mbox{f}=\sigma^2_\mbox{uf}=4^2$.
+We saw from the Exploratory Analysis completed in [Lab 8](../Lab8/03-eda.html#aim-1){target="_blank"} that the yields of potatoes from fertilised and unfertilised fields both seem to follow a normal distribution with approximately equal variances. To simplify our analysis at this stage, let's first assume that the population variances are known and are equal to $\sigma^2_\mbox{f}=\sigma^2_\mbox{uf}=4^2$.
 
 That is, we are assuming that the yield of potatoes from fertilised fields follows a $N(\mu_\mbox{f},4^2)$ distribution, and the yield of potatoes from unfertilised fields follows a $N(\mu_\mbox{uf}, 4^2)$ distribution.
 
@@ -230,9 +230,9 @@ CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-z_{1-\frac{\alpha}{
 
 ------------------------------------------------------------------------
 
-To see some further examples of using this confidence interval, see [Section 8.2.4](https://read.kortext.com/reader/pdf/92741/470){target="_blank"} of *Probability and Statistics with R*.
+To see some further examples of using this confidence interval, see **Section 8.2.4** of *Probability and Statistics with R*.
 
-From the exploratory analysis completed in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-2){target="_blank"}, the yields of wheat from fertilised and unfertilised fields both approximately follow normal distributions, but with unequal variances. At this stage of the analysis, we're going to assume the population variances are known and are $\sigma_{\mbox{f}}^2=3^2$ for yields from fertilised fields, and $\sigma_{\mbox{uf}}^2=1^2$ for yields from unfertilised fields.
+From the exploratory analysis completed in [Lab 8](../Lab8/03-eda.html#aim-2){target="_blank"}, the yields of wheat from fertilised and unfertilised fields both approximately follow normal distributions, but with unequal variances. At this stage of the analysis, we're going to assume the population variances are known and are $\sigma_{\mbox{f}}^2=3^2$ for yields from fertilised fields, and $\sigma_{\mbox{uf}}^2=1^2$ for yields from unfertilised fields.
 
 That is, we're assuming the wheat yields from fertilised fields follow a $N(\mu_{\mbox{f}},3^2)$ distribution and the wheat yields from unfertilised fields follow a $N(\mu_{\mbox{uf}}, 1^2)$ distribution.
 
@@ -392,13 +392,13 @@ CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{
 
 ------------------------------------------------------------------------
 
-To see more examples of calculating these confidence intervals, see [Section 8.2.5](https://read.kortext.com/reader/pdf/92741/474){target="_blank"} of *Probability and Statistics with R*.
+To see more examples of calculating these confidence intervals, see **Section 8.2.5** of *Probability and Statistics with R*.
 
 So far, when calculating the confidence interval for the difference in population mean yield of potatoes, we have been told the value for $\sigma^2_X=\sigma^2_Y=\sigma^2$, the population variance. It might not be the case that we know this value, in which case we would use Equation \eqref{eq:unknown-equal} stated above.
 
 The difference between this one and Equation \eqref{eq:known-equal} from [Section @sec-known-equal] is that the $t$-distribution is now used rather than the standard normal, and that a pooled estimate of the standard deviation is used. This is because we do not know a value for the population standard deviation $\sigma$.
 
-We don't actually know the standard deviations of the distributions that potato yields follow, but based on our exploratory analysis from [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/03-eda.html#aim-1){target="_blank"}, we can assume that they are equal. We also know that potato yields from both fertilised and unfertilised fields approximately follow normal distributions. Therefore, a 95% confidence interval for the difference in mean population potato yields from fertilised and unfertilised fields can be calculated using Equation \eqref{eq:unknown-equal}. The confidence interval can be found in R in a few different ways.
+We don't actually know the standard deviations of the distributions that potato yields follow, but based on our exploratory analysis from [Lab 8](../Lab8/03-eda.html#aim-1){target="_blank"}, we can assume that they are equal. We also know that potato yields from both fertilised and unfertilised fields approximately follow normal distributions. Therefore, a 95% confidence interval for the difference in mean population potato yields from fertilised and unfertilised fields can be calculated using Equation \eqref{eq:unknown-equal}. The confidence interval can be found in R in a few different ways.
 
 :::{.example}
 ::::{.example-header}
@@ -593,7 +593,7 @@ CI_{1-\alpha}(\mu_X-\mu_Y)=\Bigg[&\left(\bar x-\bar y\right)-t_{1-\frac{\alpha}{
 
 ------------------------------------------------------------------------
 
-See [Section 8.2.6](https://read.kortext.com/reader/pdf/92741/476){target="_blank"} of *Probability and Statistics with R* for further examples of finding these confidence intervals.
+See **Section 8.2.6** of *Probability and Statistics with R* for further examples of finding these confidence intervals.
 
 The standard deviations of the distributions that wheat yields follow are not actually known and from the exploratory analysis, it seems that the population variances are likely unequal. Assuming this is the case, we can still calculate a 95% confidence interval for the difference in population mean wheat yield between fertilised and unfertilised fields using Equation \eqref{eq:unknown-unequal} above.
 

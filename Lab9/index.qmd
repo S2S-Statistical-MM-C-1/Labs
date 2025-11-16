@@ -15,7 +15,7 @@ library(tidyverse)
 
 # Introduction {#sec-introduction}
 
-Welcome to the ninth S2S lab. Today we will complete the statistical report that we started in [Lab 8](https://moodle.gla.ac.uk/pluginfile.php/9502911/mod_resource/content/2/){target="_blank"} by completing the **Statistical Analysis** and **Conclusion** sections. If you have completed Lab 8, you should have the beginnings of a statistical analysis report saved.
+Welcome to the ninth S2S lab. Today we will complete the statistical report that we started in [Lab 8](../Lab8/){target="_blank"} by completing the **Statistical Analysis** and **Conclusion** sections. If you have completed Lab 8, you should have the beginnings of a statistical analysis report saved.
 
 We will take a look at different ways of calculating **confidence intervals** in different scenarios in R, which will allow us to complete the statistical report.
 
