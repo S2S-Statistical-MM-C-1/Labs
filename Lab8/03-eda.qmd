@@ -22,7 +22,7 @@ To read *yields.csv* into R, you will first need to download it from **Moodle** 
 To load the data frame into the **Environment** tab and call it `yields`, we can use the code below.
 
 ```{r, echo = FALSE}
-yields <- read.csv("data/yields_long.csv")
+yields <- read.csv("data/yields.csv")
 ```
 
 ::: panel-tabset
@@ -94,12 +94,12 @@ potato_unfertilised <- subset(x = yields,
 ```
 :::
 
-::: question
+:::::: question
 ::: question-header
 Task
 :::
 
-::: question-container
+:::: question-container
 Similarly, we are interested in differences between the mean yields of wheat from fertilised and unfertilised fields.
 
 Create two subsets, `wheat_fertilised` which stores the wheat yields from fields where fertiliser was used, and `wheat_unfertilised` which stores the wheat yields from fields where fertiliser was not used.
@@ -119,8 +119,8 @@ wheat_unfertilised <- subset(x = yields,
 :::
 
 `r unhide()`
-:::
-:::
+::::
+::::::
 
 Now that we have sensible subsets from the data, we can summarise the yield of crops from each type of field in some way. It would be appropriate to find the sample mean yield, for example, in each case and present these in a table within the statistical report.
 
@@ -128,12 +128,12 @@ The `mean()` function can be used to find the mean of a vector of numerical valu
 
 -   `x =`: this is the vector of values to calculate the mean of. This can be numeric or logical.
 
-::: question
+:::::: question
 ::: question-header
 Task
 :::
 
-::: question-container
+:::: question-container
 Use the function `mean()` to find the mean yield of potatoes from each type of field, and the mean yield of wheat from each type of field.
 
 Within the **Exploratory Analysis** section of your report, include the values you calculate in a table similar to the one below. Make sure to caption your table appropriately, and write a short paragraph which introduces where these values come from.
@@ -190,12 +190,12 @@ data.frame(Crop = c("Potato", "Wheat"),
 ```
 
 `r unhide()`
-:::
-:::
+::::
+::::::
 
 For any output we include in the **Exploratory Analysis** section of the statistical report, we want to explain the initial impressions that this output provides and what we might then expect a formal answer to the aims to be. We can use @tbl-yield_means to informally compare the yield of each crop in the presence and absence of fertiliser.
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -209,9 +209,9 @@ optsQ1 <- c(answer = "The sample mean yield of potatoes from fertilised fields s
 
 How do the sample mean yields of potatoes from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ1))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -225,7 +225,7 @@ optsQ2 <- c("The sample mean yield of wheat from fertilised fields seems to be a
 
 How do the sample means of wheat yields from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ2))`
 :::
-:::
+:::::
 
 ````{=html}
 <!--
@@ -279,7 +279,7 @@ In order to informally answer the [aims](02-intro.qmd#sec-aims) of our analysis,
 
 **Is there a difference between the mean yields of potatoes from fields that were fertilised and fields that were unfertilised?**
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -293,7 +293,7 @@ optsQ3.3 <- c(answer = "Boxplots")
 
 What might some sensible plots for summarising the yield of potatoes from the two types of fields be? `r longmcq(sample(c(optsQ3.1, optsQ3.2, optsQ3.3)))`
 :::
-:::
+:::::
 
 To investigate our first aim, we will use a histogram here but there are other sensible options for presenting quantitative data. A histogram allows us to roughly see the spread of the distribution of potato yields from the sample and consider things such as,
 
@@ -351,7 +351,7 @@ par(mfrow = c(1, 1))
 
 Now, we can consider some questions that might be useful to informally answer the aim, or inform the statistical method we could use to formally answer it.
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -365,9 +365,9 @@ optsQ4 <- c(answer = "The sample mean yield of potatoes from fertilised fields s
 
 How do the sample mean yields of potatoes from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ4))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -381,9 +381,9 @@ optsQ5 <- c(answer = "The sample standard deviation of potato yields from fertil
 
 How do the sample standard deviations of potato yields from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ5))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -399,7 +399,7 @@ Write a paragraph that describes what the histograms show, the initial compariso
 
 `r unhide()`
 :::
-:::
+:::::
 
 When it comes to formally looking for a statistical difference between the mean potato yields from the two types of field (we'll look at this in depth in Lab 9), it may be useful to know whether the yields from both types of field follow a normal distribution. We could use the histograms produced above to comment on this assumption of normality, but another useful to plot to show is a QQ plot.
 
@@ -439,7 +439,7 @@ par(mfrow = c(1, 1))
 ```
 :::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -453,9 +453,9 @@ optsQ6 <- c(answer = "The potato yield seems to reasonably follow a normal distr
 
 How would you describe the normality of potato yields from fertilised and unfertilised fields from the sample? `r longmcq(sample(optsQ6))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -465,7 +465,7 @@ Add the QQ plots you have created in R to the **Exploratory Analysis** section o
 
 Write a paragraph that describes what the QQ plots show, describing how closely the yields appear to follow a normal distribution.
 :::
-:::
+:::::
 
 ### Aim 2
 
@@ -529,7 +529,7 @@ par(mfrow = c(1, 1))
 
 The histograms can help give an initial impression of what an informal answer to the second aim might be.
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -543,9 +543,9 @@ optsQ7 <- c("The sample mean yield of wheat from fertilised fields seems to be a
 
 How do the sample means of wheat yields from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ7))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -559,9 +559,9 @@ optsQ8 <- c("The sample standard deviation of wheat yields from fertilised field
 
 How do the sample standard deviations of wheat yields from fertilised and unfertilised fields compare to each other? `r longmcq(sample(optsQ8))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -571,7 +571,7 @@ Add the histograms you have created in R to the **Exploratory Analysis** section
 
 Write a paragraph that describes what the histograms show, the initial comparisons between the two groups of wheat yield and how this relates to the aims of the analysis.
 :::
-:::
+:::::
 
 To help us choose a suitable statistical method to formally answer whether there is a difference in the mean yields of wheat from fertilised and unfertilised fields, we want to assess whether each group of yields follows a normal distribution. This can be done using QQ plots again.
 
@@ -611,7 +611,7 @@ par(mfrow = c(1, 1))
 ```
 :::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -625,9 +625,9 @@ optsQ9 <- c(answer = "The wheat yield seems to reasonably follow a normal distri
 
 How would you describe the normality of wheat yields from fertilised and unfertilised fields from the sample? `r longmcq(sample(optsQ9))`
 :::
-:::
+:::::
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -637,7 +637,7 @@ Add the QQ plots you have created in R to the **Exploratory Analysis** section o
 
 Write a paragraph that describes what the QQ plots show, describing how closely the yields appear to follow a normal distribution.
 :::
-:::
+:::::
 
 ````{=html}
 <!--
@@ -696,7 +696,7 @@ Compare the two proportions of yields which are sold to supermarkets and which e
 -->
 ````
 
-::: question
+::::: question
 ::: question-header
 Task
 :::
@@ -706,7 +706,7 @@ Save your statistical report so far. It should now contain a full **Introduction
 
 We will add to the same statistical report in Lab 9 by working on the **Statistical Analysis** and **Conclusion**.
 :::
-:::
+:::::
 
 ::: webex-highlight
 So far, we have seen from the exploratory analysis that:
