@@ -1,0 +1,157 @@
+---
+title: "S2S Lab 8 Task Solutions"
+output:
+  pdf_document:
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+library(tibble)
+
+setwd("../data")
+yields <- read.csv("yields_long.csv")
+
+yields$fertiliser <- factor(x = yields$fertiliser, 
+                            levels = c("Used", "Not used"))
+
+yields$crop <- factor(x = yields$crop, 
+                      levels = c("potato", "wheat"))
+
+potato_fertilised <- subset(x = yields,
+                            subset = (fertiliser == "Used" & crop == "potato"))
+
+potato_unfertilised <- subset(x = yields,
+                              subset = (fertiliser == "Not used" & crop == "potato"))
+```
+
+# Welcome!
+
+# Writing A Report
+
+**For this lab, we want to start to produce a statistical report detailing the analysis we will work through. A template for a general statistical report is provided on Moodle. Download this template and save it somewhere you are able to access it. We will add to the template throughout this lab.**
+
+# Introduction
+
+## Background to the problem
+
+## Aims
+
+**Now that we know the background of our analysis, give your statistical report a sensible title. This should be informative and give an overview of the context of our report.**
+
+**In your statistical report template, write an Introduction section. Make sure that this clearly provides some background to the analysis and describes what has been measured in the data gathered. Also ensure that you clearly state the aims of the analysis.**
+
+# Exploratory Analysis
+
+## Reading in the data
+
+## Summary statistics
+
+**Similarly, we are interested in differences between the mean yields of wheat from fertilised and unfertilised fields.**
+
+**Create two subsets, wheat_fertilised which stores the wheat yields from fields where fertiliser was used, and wheat_unfertilised which stores the wheat yields from fields where fertiliser was not used.**
+
+```{r summstats-ans1}
+wheat_fertilised <- subset(x = yields,
+                           subset = (fertiliser == "Used" & crop == "wheat"))
+
+wheat_unfertilised <- subset(x = yields,
+                             subset = (fertiliser == "Not used" & crop == "wheat"))
+```
+
+**Use the function mean() to find the mean yield of potatoes from each type of field, and the mean yield of wheat from each type of field.**
+
+**Within the Exploratory Analysis section of your report, include the values you calculate in a table similar to the one below. Make sure to caption your table appropriately, and write a short paragraph which introduces where these values come from.**
+
+In order to find the mean yield in each case we’re interested in, the following code can be used.
+
+```{r}
+mean(x = potato_fertilised$yield)
+mean(x = potato_unfertilised$yield)
+mean(x = wheat_fertilised$yield)
+mean(x = wheat_unfertilised$yield)
+```
+
+These values can then be rounded to 2 decimal places and input into a table in the report such as,
+
+```{r tbl-yield_means, echo = FALSE}
+data.frame(Crop = c("Potato", "Wheat"), 
+           Fertilised = c(round(mean(potato_fertilised$yield), 2),
+                          round(mean(wheat_fertilised$yield), 2)), 
+           Unfertilised = c(round(mean(potato_unfertilised$yield), 2), 
+                            round(mean(wheat_unfertilised$yield), 2))) |>
+  column_to_rownames("Crop") |>
+  kable(table.attr = 'data-quarto-disable-processing="true"; style="width:50%;"',
+        caption = "Sample mean yield of potato and wheat yields from fields where fertiliser was and was not used.") |>
+  kable_styling(bootstrap_options = c("striped")) |>
+  kable_paper(position = "center") |>
+  column_spec(1, bold = TRUE, border_right = TRUE)
+```
+
+**How do the sample mean yields of potatoes from fertilised and unfertilised fields compare to each other?**
+
+The sample mean yield of potatoes from fertilised fields seems to be approximately equal to the sample mean yield of potatoes from unfertilised fields.
+
+**How do the sample means of wheat yields from fertilised and unfertilised fields compare to each other?**
+
+The sample mean yield of wheat from fertilised fields is substantially different from the sample mean yield of wheat from unfertilised fields.
+
+## Exploratory plots
+
+### Aim 1
+
+**What might some sensible plots for summarising the yield of potatoes from the two types of fields be?**
+
+* Histograms
+* Kernel density estimates
+* Boxplots
+
+**How do the sample mean yields of potatoes from fertilised and unfertilised fields compare to each other?**
+
+The sample mean yield of potatoes from fertilised fields seems to be approximately equal to the sample mean yield of potatoes from unfertilised fields.
+
+**How do the sample standard deviations of potato yields from fertilised and unfertilised fields compare to each other?**
+
+The sample standard deviation of potato yields from fertilised fields seems to be approximately equal to the sample standard deviation of potato yields from unfertilised fields.
+
+**Add the histograms you have created in R to the Exploratory Analysis section of your statistical report. Make sure to caption your figure appropriately.**
+
+**Write a paragraph that describes what the histograms show, the initial comparisons between the two groups of potato yield and how this relates to the aims of the analysis.**
+
+**How would you describe the normality of potato yields from fertilised and unfertilised fields from the sample?**
+
+The potato yield seems to reasonably follow a normal distribution for both types of field.
+
+**Add the QQ plots you have created in R to the Exploratory Analysis section of your statistical report. Make sure to caption the figure appropriately.**
+
+**Write a paragraph that describes what the QQ plots show, describing how closely the yields appear to follow a normal distribution.**
+
+### Aim 2
+
+**How do the sample means of wheat yields from fertilised and unfertilised fields compare to each other?**
+
+The sample mean yield of wheat from fertilised fields is substantially different from the sample mean yield of wheat from unfertilised fields.
+
+**How do the sample standard deviations of wheat yields from fertilised and unfertilised fields compare to each other?**
+
+The sample standard deviation of wheat yields from fertilised fields seems to be greater than the sample standard deviation of wheat yields from unfertilised fields.
+
+**Add the histograms you have created in R to the Exploratory Analysis section of your statistical report. Make sure to caption your figure appropriately.**
+
+**Write a paragraph that describes what the histograms show, the initial comparisons between the two groups of wheat yield and how this relates to the aims of the analysis.**
+
+**How would you describe the normality of wheat yields from fertilised and unfertilised fields from the sample?**
+
+The wheat yield seems to reasonably follow a normal distribution for both types of field.
+
+**Add the QQ plots you have created in R to the Exploratory Analysis section of your statistical report. Make sure to caption the figure appropriately.**
+
+**Write a paragraph that describes what the QQ plots show, describing how closely the yields appear to follow a normal distribution.**
+
+**Save your statistical report so far. It should now contain a full Introduction and Exploratory Analysis section.**
+
+**We will add to the same statistical report in Lab 9 by working on the Statistical Analysis and Conclusion.**
+
+
+

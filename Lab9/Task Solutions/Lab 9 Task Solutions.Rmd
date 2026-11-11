@@ -1,0 +1,53 @@
+---
+title: "S2S Lab 9 Task Solutions"
+output:
+  pdf_document:
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+# Lab 8 Recap
+
+# Statistical Analysis
+
+## Difference in Population Means
+
+### Variances are known and equal (8.2.3)
+
+### Variances are known and unequal (8.2.4)
+
+### Variances are unknown and assumed equal (8.2.5)
+
+**How would you interpret the 95% confidence interval for the difference in population mean potato yields between fertilised and unfertilised fields, when the variances are unknown but assumed equal?**
+
+There is not significant evidence to suggest a difference between the population mean potato yields from fertilised and unfertilised fields at the 5% significance level.
+
+**Open the statistical report you have saved from Lab 8. This should already contain complete Introduction and Exploratory Analysis sections.**
+
+**In the Statistical Analysis section, add in an interpretation of the 95% confidence interval for the difference in population mean potato yields between fertilised and unfertilised fields. Make sure you state what the assumptions you have made to calculate this confidence interval are, the values in the interval and how this would be interpreted.**
+
+### Variances are unknown and assumed unequal (8.2.6)
+
+**How would you interpret the 95% confidence interval for the difference in population mean wheat yields between fertilised and unfertilised fields, when the variances are unknown and assumed unequal?**
+
+There is significant evidence to suggest a difference between the population mean wheat yields from fertilised and unfertilised fields at the 5% significance level.
+
+**In the Statistical Analysis section of your report, add in an interpretation of the 95% confidence interval for the difference in population mean wheat yields between fertilised and unfertilised fields.**
+
+**Make sure you state what the assumptions you have made to calculate this confidence interval are, the values in the interval and how this would be interpreted.**
+
+# Conclusion
+
+**For each of our aims, what do your findings suggest?**
+
+1. **Is there a difference between the mean yields of potatoes from fields that were fertilised and fields that were unfertilised?**
+  - No
+2. **Is there a difference between the mean yields of wheat from fields that were fertilised and fields that were unfertilised?**
+  - Yes
+  
+**In the Conclusion section of your report, add a paragraph which compares your initial Exploratory Analysis to your formal Statistical Analysis. Make sure to include a sentence which clearly answers each of your aims.**
