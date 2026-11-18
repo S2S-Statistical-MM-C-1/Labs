@@ -48,10 +48,10 @@ In general, when we have two independent random variables which both follow norm
 
 We will use the following notation in the formulae for confidence intervals for the difference in population means,
 
-- $n_X$: the size of the sample drawn from $X\sim N(\mu_X,\,\sigma_X)$.
-- $n_Y$: the size of the sample drawn from $Y\sim N(\mu_Y,\,\sigma_Y)$.
-- $x_1, x_2, \ldots , x_{n_X}$: the sample taken from $X\sim N(\mu_X,\,\sigma_X)$ with sample mean $\bar{x}$ and sample variance $s^2_X$.
-- $y_1, y_2, \ldots , y_{n_Y}$: the sample taken from $Y\sim N(\mu_Y,\,\sigma_Y)$ with sample mean $\bar{y}$ and sample variance $s^2_Y$.
+- $n_X$: the size of the sample drawn from $X\sim N(\mu_X,\,\sigma_X^2)$.
+- $n_Y$: the size of the sample drawn from $Y\sim N(\mu_Y,\,\sigma_Y^2)$.
+- $x_1, x_2, \ldots , x_{n_X}$: the sample taken from $X\sim N(\mu_X,\,\sigma_X^2)$ with sample mean $\bar{x}$ and sample variance $s^2_X$.
+- $y_1, y_2, \ldots , y_{n_Y}$: the sample taken from $Y\sim N(\mu_Y,\,\sigma_Y^2)$ with sample mean $\bar{y}$ and sample variance $s^2_Y$.
 
 ### Variances are known and equal (8.2.3) {#sec-known-equal}
 
