@@ -44,7 +44,7 @@ In order to do this, we need to learn some new methods of calculating **confiden
 
 <!-- # Confidence Intervals for the Difference in Population Means -->
 
-In general, when we have two independent random variables which both follow normal distributions, say $X\sim N(\mu_X,\,\sigma_X)$ and $Y\sim N(\mu_Y,\,\sigma_Y)$, it is often of interest to find a range of values for the difference between the population means, $\mu_X$ and $\mu_Y$. This range of values can be found using a confidence interval for $\mu_X-\mu_Y$, but we have to be aware of the variances of both distributions, as this can change the way the confidence interval is calculated. In order to construct these confidence intervals, random samples have to be drawn from the underlying distributions.
+In general, when we have two independent random variables which both follow normal distributions, say $X\sim N(\mu_X,\,\sigma_X^2)$ and $Y\sim N(\mu_Y,\,\sigma_Y^2)$, it is often of interest to find a range of values for the difference between the population means, $\mu_X$ and $\mu_Y$. This range of values can be found using a confidence interval for $\mu_X-\mu_Y$, but we have to be aware of the variances of both distributions, as this can change the way the confidence interval is calculated. In order to construct these confidence intervals, random samples have to be drawn from the underlying distributions.
 
 We will use the following notation in the formulae for confidence intervals for the difference in population means,
 
