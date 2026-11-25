@@ -90,7 +90,7 @@ stats_list <- read.csv("stats_list.csv")
 
 Notice that this data frame has 2 columns;
 
-- `naughty` which is a binary variable showing for each student whether they are on the naughty list (1) or not(0).
+- `naughty` which is a binary variable showing for each student whether they are on the naughty list (1) or the nice list (0).
 
 - `level` which states the level each student is studying at (i.e. Level 1 or Level 2)
 
@@ -343,14 +343,14 @@ This matrix, `stats_list_counts` can be set up using the code below which makes 
 ```{r, eval=FALSE}
 level1_naughty <- sum(subset(x = stats_list,
                              subset = level == "Level 1")$naughty)
-level1_notnaughty <- 184 - level1_naughty
+level1_nice <- 184 - level1_naughty
 
 level2_naughty <- sum(subset(x = stats_list,
                              subset = level == "Level 2")$naughty)
-level2_notnaughty <- 126 - level2_naughty
+level2_nice <- 126 - level2_naughty
 
-stats_list_counts <- matrix(data = c(level1_naughty, level1_notnaughty,
-                                     level2_naughty, level2_notnaughty),
+stats_list_counts <- matrix(data = c(level1_naughty, level1_nice,
+                                     level2_naughty, level2_nice),
                             nrow = 2, byrow = TRUE)
 stats_list_counts
 ```
@@ -359,14 +359,14 @@ stats_list_counts
 ```{r, echo=FALSE}
 level1_naughty <- sum(subset(x = stats_list,
                              subset = level == "Level 1")$naughty)
-level1_notnaughty <- 184 - level1_naughty
+level1_nice <- 184 - level1_naughty
 
 level2_naughty <- sum(subset(x = stats_list,
                              subset = level == "Level 2")$naughty)
-level2_notnaughty <- 126 - level2_naughty
+level2_nice <- 126 - level2_naughty
 
-stats_list_counts <- matrix(data = c(level1_naughty, level1_notnaughty,
-                                     level2_naughty, level2_notnaughty),
+stats_list_counts <- matrix(data = c(level1_naughty, level1_nice,
+                                     level2_naughty, level2_nice),
                             nrow = 2, byrow = TRUE)
 stats_list_counts
 ```
